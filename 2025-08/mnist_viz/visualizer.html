@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MNIST MLP Visualizer — 2×16 Hidden (No TF.js)</title>
+  <title>MNIST MLP Visualizer — 2×16 Hidden</title>
   <style>
     :root{
       --bg:#0f1220; --panel:#171a2b; --ink:#e6ebff; --muted:#9aa3c7; --accent:#6ad1ff; --good:#65d38a; --bad:#ff6a89; --warn:#ffd66a;
@@ -45,12 +45,29 @@
     .chip-a{background:#5cd39f}
     .chip-i{background:#ffd66a}
     footer{grid-column:1/-1; padding:8px 12px; font-size:12px; color:var(--muted); border-top:1px solid #222642; background:#0f1220}
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #0f1220;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #2a356a;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3a4a8a;
+    }
   </style>
 </head>
 <body>
   <div class="app">
     <header>
-      <h1>MNIST MLP Visualizer <span class="sub">— 2 hidden layers × 16 nodes (no TF.js)</span></h1>
+      <h1>MNIST MLP Visualizer <span class="sub">— 2 hidden layers × 16 nodes</span></h1>
       <div class="legend">
         <span class="chip chip-w"></span> weights
         <span class="chip chip-a"></span> activations
