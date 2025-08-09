@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MNIST MLP Visualizer — 2×16 Hidden (No TF.js)</title>
+  <style>
+    :root{
+      --bg:#0f1220; --panel:#171a2b; --ink:#e6ebff; --muted:#9aa3c7; --accent:#6ad1ff; --good:#65d38a; --bad:#ff6a89; --warn:#ffd66a;
+    }
+    html,body{height:100%; margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial; background:var(--bg); color:var(--ink);}
+    a{color:var(--accent); text-decoration:none}
+    .app{display:grid; grid-template-columns: 320px 1fr; grid-template-rows: auto 1fr auto; height:100%;}
+    header{grid-column:1/-1; padding:12px 16px; display:flex; gap:16px; align-items:center; border-bottom:1px solid #222642; background:linear-gradient(180deg, #15182a, #111427);}    
+    header h1{font-size:18px; margin:0; font-weight:600; letter-spacing:.2px}
+    header .sub{font-size:12px; color:var(--muted)}
+    .sidebar{grid-row:2/4; padding:12px; overflow:auto; border-right:1px solid #222642; background:var(--panel)}
+    .pane{background:#111427; border:1px solid #232745; border-radius:14px; padding:12px; margin:10px 0;}
+    .pane h3{margin:6px 0 10px 0; font-size:14px; color:var(--muted); font-weight:600; letter-spacing:.2px}
+    label{display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:12px; margin:6px 0; color:#c6cdf0}
+    input[type=number], select, input[type=text]{background:#0e1226; color:var(--ink); border:1px solid #30365e; border-radius:10px; padding:6px 8px; width:110px;}
+    input[type=range]{width:100%}
+    button{background:#1b2142; color:#e6ebff; border:1px solid #313764; border-radius:12px; padding:8px 10px; cursor:pointer}
+    button.primary{background:#203164; border-color:#3558a6}
+    button.warn{background:#3b2a1a; border-color:#7a4f22}
+    button:disabled{opacity:.5; cursor:not-allowed}
+    .row{display:flex; gap:8px; flex-wrap:wrap}
+    .big-num{font-variant-numeric: tabular-nums; font-weight:700}
+    .muted{color:var(--muted)}
+    .main{padding:10px; overflow:auto}
+    .grid{display:grid; grid-template-columns: 360px 1fr; gap:10px;}
+    .card{background:#111427; border:1px solid #232745; border-radius:14px; padding:12px;}
+    .card h2{font-size:14px; margin:6px 0 10px 0; color:#c6cdf0}
+    canvas{image-rendering: pixelated; background:#0d0f1c; border-radius:10px; border:1px solid #232745}
+    .section{display:grid; grid-template-columns: 360px 1fr; gap:10px}
+    .bar{height:10px; background:#1b2142; border-radius:5px; overflow:hidden;}
+    .bar>div{height:100%; background:linear-gradient(90deg,#3ea2ff,#70ffc3)}
+    table{border-collapse:collapse; width:100%}
+    td,th{border:1px solid #232745; padding:4px 6px; font-size:12px; text-align:center}
+    .kbd{font-family:ui-monospace, Menlo, Consolas, monospace; background:#0c1022; border:1px solid #29305c; padding:2px 5px; border-radius:6px}
+    .pill{font-size:11px; padding:2px 8px; border-radius:999px; background:#17204a; border:1px solid #2b3c83}
+    .legend{display:flex; gap:10px; align-items:center; font-size:12px; color:#c6cdf0}
+    .legend .chip{width:10px; height:10px; border-radius:2px; display:inline-block;}
+    .chip-w{background:#4b71ff}
+    .chip-a{background:#5cd39f}
+    .chip-i{background:#ffd66a}
+    footer{grid-column:1/-1; padding:8px 12px; font-size:12px; color:var(--muted); border-top:1px solid #222642; background:#0f1220}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>MNIST MLP Visualizer <span class="sub">— 2 hidden layers × 16 nodes (no TF.js)</span></h1>
+      <div class="legend">
+        <span class="chip chip-w"></span> weights
+        <span class="chip chip-a"></span> activations
+        <span class="chip chip-i"></span> input intensity
+      </div>
+      <div style="margin-left:auto" class="muted">Tip: drag in the pad, press <span class="kbd">Shift</span> to erase</div>
+    </header>
+
+    <aside class="sidebar">
+      <div class="pane">
+        <h3>Dataset</h3>
+        <label>Train size <input id="trainSize" type="number" min="500" max="20000" step="100" value="6000" /></label>
+        <label>Test size <input id="testSize" type="number" min="200" max="5000" step="50" value="1000" /></label>
+        <div class="row">
+          <button id="btnLoad" class="primary">Load MNIST</button>
+          <button id="btnCancelLoad">Cancel</button>
+        </div>
+        <div id="loadInfo" class="muted">Ready.</div>
+      </div>
+
+      <div class="pane">
+        <h3>Model</h3>
+        <label>Hidden sizes <input id="hidSizes" type="text" value="16,16" /></label>
+        <label>Activation
+          <select id="activation">
+            <option value="relu">ReLU</option>
+            <option value="tanh">tanh</option>
+          </select>
+        </label>
+        <label>Optimizer
+          <select id="opt">
+            <option value="adam">Adam</option>
+            <option value="sgd">SGD</option>
+          </select>
+        </label>
+        <label>Learning rate <input id="lr" type="number" min="0.0001" max="1" step="0.0001" value="0.001" /></label>
+        <label>L2 (λ) <input id="l2" type="number" min="0" max="0.1" step="0.0001" value="0.0005" /></label>
+        <label>Dropout (hidden) <input id="drop" type="range" min="0" max="0.7" step="0.05" value="0" /></label>
+        <div class="row">
+          <button id="btnInit">Init / Reset Weights</button>
+          <button id="btnExport">Export</button>
+          <button id="btnImport">Import</button>
+        </div>
+      </div>
+
+      <div class="pane">
+        <h3>Training</h3>
+        <label>Batch size <input id="batch" type="number" min="8" max="512" step="8" value="64" /></label>
+        <label>Steps / sec <input id="sps" type="number" min="1" max="200" step="1" value="150" /></label>
+        <div class="row">
+          <button id="btnTrain" class="primary">Start</button>
+          <button id="btnStep">Step</button>
+          <button id="btnEval">Eval</button>
+        </div>
+        <div class="row">
+          <button id="btnClearStats" class="warn">Clear Stats</button>
+        </div>
+        <div id="trainInfo" class="muted">Idle.</div>
+      </div>
+
+      <div class="pane">
+        <h3>Visuals</h3>
+        <label><span>Show connections</span>
+          <select id="connMode">
+            <option value="l2">Hidden2→Output</option>
+            <option value="l1">Hidden1→Hidden2</option>
+          </select>
+        </label>
+        <label>Clamp weight range <input id="wClamp" type="number" step="0.1" value="2.5" /></label>
+        <label><input id="chkLive" type="checkbox" checked /> Live update during training</label>
+      </div>
+
+      <div class="pane">
+        <h3>Scratchpad → 28×28</h3>
+        <div class="row">
+          <button id="btnPredict" class="primary">Predict</button>
+          <button id="btnClear">Clear</button>
+        </div>
+        <div class="row">
+          <label>Brush <input id="brush" type="range" min="6" max="32" step="2" value="20" /></label>
+          <label>Softness <input id="soft" type="range" min="0" max="1" step="0.05" value="0.2" /></label>
+        </div>
+        <div class="row">
+          <label>Add to train as →
+            <select id="addLabel"></select>
+          </label>
+          <button id="btnAdd">Add</button>
+        </div>
+        <div class="muted">Hold <span class="kbd">Shift</span> to erase • Use a trackpad or mouse</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="grid">
+        <div class="card">
+          <h2>Input & Activations</h2>
+          <div class="row" style="align-items:flex-start">
+            <div>
+              <canvas id="img28" width="28" height="28" style="width:140px;height:140px"></canvas>
+              <div class="muted" style="text-align:center">28×28</div>
+            </div>
+            <canvas id="viz" width="300" height="360" style="width:300px;height:360px"></canvas></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Output Probabilities</h2>
+          <div id="probs"></div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:10px">
+        <div class="card">
+          <h2>Scratchpad</h2>
+          <canvas id="pad" width="280" height="280" style="width:280px;height:280px;background:#000"></canvas>
+          <canvas id="down" width="28" height="28" style="display:none"></canvas>
+        </div>
+        <div class="card">
+          <h2>Stats</h2>
+          <div class="row" style="gap:16px">
+            <div>
+              <div class="muted">Step</div>
+              <div class="big-num" id="statStep">0</div>
+            </div>
+            <div>
+              <div class="muted">Train acc</div>
+              <div class="big-num" id="statTrAcc">—</div>
+            </div>
+            <div>
+              <div class="muted">Test acc</div>
+              <div class="big-num" id="statTeAcc">—</div>
+            </div>
+            <div>
+              <div class="muted">Loss (avg)</div>
+              <div class="big-num" id="statLoss">—</div>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <table id="cm"></table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>All core ML is implemented in plain JavaScript (forward, backprop, optimizers). Dataset: <code>mnist_images.png</code> (784×65,000) — one digit per <em>row</em>. Labels loaded from <code>mnist_labels_uint8</code>. No TensorFlow.js used.</span>
+    </footer>
+  </div>
+
+  <script>
+  // --------------------------- Helpers & UI ---------------------------
+  const get = id => document.getElementById(id);
+  const fmt = x => (isNaN(x)? '—' : (Math.round(x*1000)/1000).toString());
+  const clamp = (v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+  const randn = (()=>{ // Box-Muller
+    let spare=null; return ()=>{ if(spare!==null){const v=spare; spare=null; return v} let u=0,v=0,s=0; do{u=Math.random()*2-1; v=Math.random()*2-1; s=u*u+v*v;}while(s===0||s>=1); const mul=Math.sqrt(-2*Math.log(s)/s); spare=v*mul; return u*mul; };
+  })();
+
+  // --------------------------- Dataset Loader ---------------------------
+  const IMG_URL = 'https://storage.googleapis.com/learnjs-data/model-builder/mnist_images.png';
+  const LAB_URL = 'https://storage.googleapis.com/learnjs-data/model-builder/mnist_labels_uint8'; // one-hot uint8, length=65000*10
+
+  class MnistLoader {
+    constructor(){
+      this.total=65000;
+      this.width=784; // columns (28*28)
+      this.height=this.total; // rows
+      this._abort=false;
+      this.labelsAll=null; // Uint8Array of length total*10
+    }
+    cancel(){this._abort=true}
+
+    async loadLabels(){
+      const t0=performance.now();
+      const res = await fetch(LAB_URL);
+      if(!res.ok) throw new Error('Failed to fetch labels');
+      const buf = await res.arrayBuffer();
+      this.labelsAll = new Uint8Array(buf);
+      if(this.labelsAll.length !== this.total*10){
+        console.warn('Unexpected labels length', this.labelsAll.length);
+      }
+      console.log('Labels loaded in', Math.round(performance.now()-t0),'ms');
+    }
+
+    labelAt(i){
+      if(!this.labelsAll) return i%10; // fallback guess
+      // labels are one-hot of length 10 per sample
+      let off=i*10; for(let k=0;k<10;k++){ if(this.labelsAll[off+k]) return k; }
+      return 0;
+    }
+
+    async loadSubset(trainN, testN, onProgress){
+      this._abort=false;
+      await this.loadLabels().catch(e=>{console.warn('Label load failed:', e)});
+      const pick = (n)=>{
+        const set=new Set();
+        while(set.size<n) set.add((Math.random()*this.total)|0);
+        return Array.from(set).sort((a,b)=>a-b);
+      };
+      const trainIdx = pick(trainN);
+      const testIdx  = pick(testN);
+      const need = [...new Set([...trainIdx, ...testIdx])].sort((a,b)=>a-b);
+
+      // Read the PNG by chunks of rows, using an offscreen canvas.
+      const img = await new Promise((resolve,reject)=>{
+        const im = new Image(); im.crossOrigin = 'anonymous';
+        im.onload=()=>resolve(im); im.onerror=reject; im.src=IMG_URL;
+      });
+      const chunkRows = 1500; // keep memory/canvas size modest
+      const off = document.createElement('canvas');
+      off.width=this.width; off.height=chunkRows; const ictx=off.getContext('2d',{willReadFrequently:true});
+
+      const grabRows = async (startRow, count)=>{
+        const h=Math.min(count, chunkRows);
+        ictx.clearRect(0,0,off.width,off.height);
+        ictx.drawImage(img, 0, startRow, this.width, h, 0, 0, this.width, h);
+        const {data} = ictx.getImageData(0,0,this.width,h);
+        return data; // RGBA flattened
+      };
+
+      const Xtr = new Float32Array(trainN*784);
+      const Ytr = new Uint8Array(trainN);
+      const Xte = new Float32Array(testN*784);
+      const Yte = new Uint8Array(testN);
+
+      let ti=0, vi=0;
+      let p=0;
+      for(let k=0;k<need.length;){
+        if(this._abort) throw new Error('Cancelled');
+        const start = need[k];
+        const endBlock = Math.min(start+chunkRows, need[need.length-1]+1);
+        const data = await grabRows(start, endBlock-start);
+        // Iterate rows we actually need inside this block
+        while(k<need.length && need[k] < endBlock){
+          const row = need[k];
+          const local = row - start; // row index inside data
+          const base = local * this.width * 4; // RGBA stride
+          const srcOff = base;
+          // normalize to 0..1 by red channel
+          // Copy 784 values
+          let arr784 = new Float32Array(784);
+          for(let i=0;i<784;i++) arr784[i] = data[srcOff + i*4] / 255;
+
+          // assign into train/test arrays
+          // decide whether row belongs to train or test via binary search membership
+          // We'll advance ti/vi using next indices
+          if(ti<trainIdx.length && row===trainIdx[ti]){
+            Xtr.set(arr784, ti*784);
+            Ytr[ti] = this.labelAt(row);
+            ti++;
+          }
+          if(vi<testIdx.length && row===testIdx[vi]){
+            Xte.set(arr784, vi*784);
+            Yte[vi] = this.labelAt(row);
+            vi++;
+          }
+          k++;
+          p++;
+          if(onProgress && (p%50===0)) onProgress(p/(need.length));
+        }
+        await new Promise(r=>setTimeout(r,0)); // yield to UI
+      }
+      onProgress && onProgress(1);
+      return {Xtr, Ytr, Xte, Yte};
+    }
+  }
+
+  // --------------------------- Math/ML Core ---------------------------
+  function zeros(n){return new Float32Array(n)}
+  function randMat(rows, cols, scale){
+    const W = new Float32Array(rows*cols);
+    for(let i=0;i<W.length;i++) W[i] = randn()*scale;
+    return W;
+  }
+  function matVec(W, rows, cols, x, yOut){ // y = W x
+    const y = yOut || new Float32Array(rows);
+    for(let r=0; r<rows; r++){
+      let sum=0.0, off=r*cols;
+      for(let c=0;c<cols;c++) sum += W[off+c]*x[c];
+      y[r]=sum;
+    }
+    return y;
+  }
+  function outerAdd(dW, rows, cols, u, v, scale){ // dW += scale * u * v^T
+    for(let r=0;r<rows;r++){
+      const ur = u[r]*scale; const off=r*cols;
+      for(let c=0;c<cols;c++) dW[off+c] += ur * v[c];
+    }
+  }
+  function addInPlace(a,b){ for(let i=0;i<a.length;i++) a[i]+=b[i]; }
+  function addScaled(a,b,alpha){ for(let i=0;i<a.length;i++) a[i]+=alpha*b[i]; }
+  function mulInPlace(a,alpha){ for(let i=0;i<a.length;i++) a[i]*=alpha; }
+
+  const Activations = {
+    relu: {
+      f: (z, out)=>{ const y=out||new Float32Array(z.length); for(let i=0;i<z.length;i++) y[i]=z[i]>0?z[i]:0; return y; },
+      df: (z, out)=>{ const y=out||new Float32Array(z.length); for(let i=0;i<z.length;i++) y[i]=z[i]>0?1:0; return y; }
+    },
+    tanh: {
+      f: (z, out)=>{ const y=out||new Float32Array(z.length); for(let i=0;i<z.length;i++){ y[i]=Math.tanh(z[i]); } return y; },
+      df: (z, out)=>{ const y=out||new Float32Array(z.length); for(let i=0;i<z.length;i++){ const t=Math.tanh(z[i]); y[i]=1-t*t; } return y; }
+    }
+  };
+
+  class MLP {
+    constructor(inputDim, h1, h2, outDim){
+      this.dims = {in:inputDim, h1, h2, out:outDim};
+      this.actName = 'relu';
+      this.dropout=0;
+      this.reset();
+    }
+    reset(){
+      const {in:din,h1,h2,out:dout}=this.dims;
+      // He init for ReLU; Xavier-ish for tanh
+      const s1 = this.actName==='tanh' ? Math.sqrt(1/din) : Math.sqrt(2/din);
+      const s2 = this.actName==='tanh' ? Math.sqrt(1/h1) : Math.sqrt(2/h1);
+      const s3 = Math.sqrt(1/h2);
+      this.W1=randMat(h1,din,s1); this.b1=zeros(h1);
+      this.W2=randMat(h2,h1,s2); this.b2=zeros(h2);
+      this.W3=randMat(dout,h2,s3); this.b3=zeros(dout);
+
+      // Adam states
+      const makeAdam=(n)=>({m:zeros(n), v:zeros(n)});
+      this.opt='adam'; this.t=0;
+      this.adW1=makeAdam(this.W1.length); this.adb1=makeAdam(this.b1.length);
+      this.adW2=makeAdam(this.W2.length); this.adb2=makeAdam(this.b2.length);
+      this.adW3=makeAdam(this.W3.length); this.adb3=makeAdam(this.b3.length);
+    }
+    setActivation(name){ this.actName=name; }
+
+    forward(x){ // x: Float32Array(784)
+      const A = Activations[this.actName];
+      // z1 = W1 x + b1
+      const z1 = matVec(this.W1, this.dims.h1, this.dims.in, x);
+      addInPlace(z1, this.b1);
+      const a1 = A.f(z1);
+      // Optionally dropout for training (mask stored externally by trainer)
+      const z2 = matVec(this.W2, this.dims.h2, this.dims.h1, a1);
+      addInPlace(z2, this.b2);
+      const a2 = A.f(z2);
+      const logits = matVec(this.W3, this.dims.out, this.dims.h2, a2);
+      addInPlace(logits, this.b3);
+      // softmax
+      let max=logits[0]; for(let i=1;i<logits.length;i++) if(logits[i]>max) max=logits[i];
+      let sum=0; for(let i=0;i<logits.length;i++){ logits[i]=Math.exp(logits[i]-max); sum+=logits[i]; }
+      const probs = new Float32Array(logits.length); for(let i=0;i<logits.length;i++) probs[i]=logits[i]/sum;
+      return {z1,a1,z2,a2,probs};
+    }
+
+    // One SGD/Adam step over a mini-batch
+    step(batchX, batchY, cfg){
+      const {lr=1e-3, l2=0.0, opt='adam', dropout=0} = cfg;
+      const A = Activations[this.actName];
+      const B = batchY.length; // batch size
+
+      const gW1=zeros(this.W1.length), gb1=zeros(this.b1.length);
+      const gW2=zeros(this.W2.length), gb2=zeros(this.b2.length);
+      const gW3=zeros(this.W3.length), gb3=zeros(this.b3.length);
+
+      // per-sample loop
+      for(let n=0;n<B;n++){
+        const x = batchX.subarray(n*784,(n+1)*784);
+        const y = batchY[n];
+
+        // FWD
+        const z1 = matVec(this.W1, this.dims.h1, this.dims.in, x);
+        addInPlace(z1, this.b1);
+        const a1 = A.f(z1);
+        // dropout mask on a1 (training only)
+        let mask1=null; let a1d=a1;
+        if(dropout>0){ mask1=new Float32Array(a1.length); for(let i=0;i<a1.length;i++){ const keep=(Math.random()>dropout)?1:0; mask1[i]=keep; a1d[i]=a1[i]*keep/(1-dropout); } }
+
+        const z2 = matVec(this.W2, this.dims.h2, this.dims.h1, a1d);
+        addInPlace(z2, this.b2);
+        const a2 = A.f(z2);
+        let mask2=null; let a2d=a2;
+        if(dropout>0){ mask2=new Float32Array(a2.length); for(let i=0;i<a2.length;i++){ const keep=(Math.random()>dropout)?1:0; mask2[i]=keep; a2d[i]=a2[i]*keep/(1-dropout); } }
+
+        const logits = matVec(this.W3, this.dims.out, this.dims.h2, a2d);
+        addInPlace(logits, this.b3);
+        let max=logits[0]; for(let i=1;i<logits.length;i++) if(logits[i]>max) max=logits[i];
+        let sum=0; for(let i=0;i<logits.length;i++){ logits[i]=Math.exp(logits[i]-max); sum+=logits[i]; }
+        const probs = new Float32Array(logits.length); for(let i=0;i<logits.length;i++) probs[i]=logits[i]/sum;
+
+        // Loss grad: dL/dlogits = probs - onehot(y)
+        const dlog = probs; dlog[y]-=1;
+        // Backprop
+        outerAdd(gW3, this.dims.out, this.dims.h2, dlog, a2d, 1);
+        addInPlace(gb3, dlog);
+        // da2d = W3^T dlog
+        const da2d = new Float32Array(this.dims.h2);
+        for(let j=0;j<this.dims.h2;j++){
+          let s=0; for(let i=0;i<this.dims.out;i++) s += this.W3[i*this.dims.h2 + j] * dlog[i];
+          da2d[j]=s;
+        }
+        // account for dropout
+        const da2 = new Float32Array(this.dims.h2);
+        if(dropout>0){ for(let j=0;j<this.dims.h2;j++) da2[j] = da2d[j]*(mask2[j]||0); }
+        else da2.set(da2d);
+        // dz2 = da2 * A'(z2)
+        const dz2 = A.df(z2);
+        for(let j=0;j<dz2.length;j++) dz2[j]*=da2[j];
+        outerAdd(gW2, this.dims.h2, this.dims.h1, dz2, a1d, 1);
+        addInPlace(gb2, dz2);
+
+        // da1d = W2^T dz2
+        const da1d = new Float32Array(this.dims.h1);
+        for(let j=0;j<this.dims.h1;j++){
+          let s=0; for(let i=0;i<this.dims.h2;i++) s += this.W2[i*this.dims.h1 + j] * dz2[i];
+          da1d[j]=s;
+        }
+        const da1 = new Float32Array(this.dims.h1);
+        if(dropout>0){ for(let j=0;j<this.dims.h1;j++) da1[j] = da1d[j]*(mask1[j]||0); }
+        else da1.set(da1d);
+        const dz1 = A.df(z1);
+        for(let j=0;j<dz1.length;j++) dz1[j]*=da1[j];
+        outerAdd(gW1, this.dims.h1, this.dims.in, dz1, x, 1);
+        addInPlace(gb1, dz1);
+      }
+
+      // L2
+      if(cfg.l2>0){
+        addScaled(gW1, this.W1, l2);
+        addScaled(gW2, this.W2, l2);
+        addScaled(gW3, this.W3, l2);
+      }
+
+      const scale = 1/B;
+      mulInPlace(gW1, scale); mulInPlace(gW2, scale); mulInPlace(gW3, scale);
+      mulInPlace(gb1, scale); mulInPlace(gb2, scale); mulInPlace(gb3, scale);
+
+      if(opt==='adam') this._adamUpdate({gW1,gW2,gW3,gb1,gb2,gb3, lr});
+      else this._sgdUpdate({gW1,gW2,gW3,gb1,gb2,gb3, lr});
+    }
+
+    _sgdUpdate(G){
+      const {gW1,gW2,gW3,gb1,gb2,gb3, lr} = G;
+      addScaled(this.W1, gW1, -lr); addScaled(this.W2, gW2, -lr); addScaled(this.W3, gW3, -lr);
+      addScaled(this.b1, gb1, -lr); addScaled(this.b2, gb2, -lr); addScaled(this.b3, gb3, -lr);
+    }
+
+    _adamUpdate(G){
+      const {gW1,gW2,gW3,gb1,gb2,gb3, lr} = G; this.t++;
+      const b1=0.9, b2=0.999, eps=1e-8;
+      const upd=(w,g,adam)=>{
+        const {m,v} = adam; const t=this.t; const a = lr*Math.sqrt(1-Math.pow(b2,t))/(1-Math.pow(b1,t));
+        for(let i=0;i<w.length;i++){
+          m[i]=b1*m[i]+(1-b1)*g[i];
+          v[i]=b2*v[i]+(1-b2)*g[i]*g[i];
+          w[i]-= a*m[i]/(Math.sqrt(v[i])+eps);
+        }
+      };
+      upd(this.W1,gW1,this.adW1); upd(this.W2,gW2,this.adW2); upd(this.W3,gW3,this.adW3);
+      upd(this.b1,gb1,this.adb1); upd(this.b2,gb2,this.adb2); upd(this.b3,gb3,this.adb3);
+    }
+
+    predict(x){
+      const {probs,a1,a2} = this.forward(x);
+      let best=0, bi=0; for(let i=1;i<probs.length;i++) if(probs[i]>best){best=probs[i]; bi=i}
+      return {probs, pred: bi, a1, a2};
+    }
+  }
+
+  // --------------------------- Trainer & Metrics ---------------------------
+  class Trainer {
+    constructor(){
+      this.loader = new MnistLoader();
+      this.Xtr=this.Ytr=this.Xte=this.Yte=null;
+      this.model = new MLP(784, 16, 16, 10);
+      this.cfg = { lr:0.001, l2:0.0005, opt:'adam', dropout:0 };
+      this.stepCount=0; this.lossMA=null; this.cm=new Uint32Array(100);
+      this.running=false; this.timer=null; this.live=true; this.connMode='l2';
+    }
+
+    setDims(h1,h2){ this.model = new MLP(784,h1,h2,10); }
+
+    async load(trainN, testN, onProgress){
+      const t0=performance.now();
+      const {Xtr,Ytr,Xte,Yte} = await this.loader.loadSubset(trainN,testN,onProgress);
+      this.Xtr=Xtr; this.Ytr=Ytr; this.Xte=Xte; this.Yte=Yte;
+      console.log('Loaded subsets in', Math.round(performance.now()-t0),'ms');
+    }
+
+    sampleBatch(B){
+      const xs = new Float32Array(B*784); const ys = new Uint8Array(B);
+      for(let i=0;i<B;i++){
+        const j=(Math.random()*this.Ytr.length)|0;
+        xs.set(this.Xtr.subarray(j*784,(j+1)*784), i*784);
+        ys[i]=this.Ytr[j];
+      }
+      return {xs,ys};
+    }
+
+    batchLossAcc(B=200){
+      if(!this.Xtr) return {loss:NaN, acc:NaN};
+      let n=B; let correct=0; let loss=0;
+      for(let i=0;i<n;i++){
+        const j=(Math.random()*this.Ytr.length)|0;
+        const x=this.Xtr.subarray(j*784,(j+1)*784); const y=this.Ytr[j];
+        const {probs} = this.model.forward(x);
+        loss += -Math.log(Math.max(1e-9, probs[y]));
+        let bi=0, best=probs[0]; for(let k=1;k<10;k++) if(probs[k]>best){best=probs[k]; bi=k}
+        if(bi===y) correct++;
+      }
+      return {loss:loss/n, acc:correct/n};
+    }
+
+    evalFull(X,Y){
+      let correct=0; const cm=new Uint32Array(100);
+      for(let i=0;i<Y.length;i++){
+        const x=X.subarray(i*784,(i+1)*784); const y=Y[i];
+        const {probs} = this.model.forward(x);
+        let bi=0, best=probs[0]; for(let k=1;k<10;k++) if(probs[k]>best){best=probs[k]; bi=k}
+        if(bi===y) correct++; cm[bi*10+y]++;
+      }
+      return {acc: correct/Y.length, cm};
+    }
+
+    async start(loop){
+      if(this.running) return; this.running=true;
+      const sps = +get('sps').value;
+      const interval = 1000/Math.max(1,sps);
+      const B = +get('batch').value;
+      this.cfg = { lr:+get('lr').value, l2:+get('l2').value, opt:get('opt').value, dropout:+get('drop').value };
+      const tick = ()=>{
+        if(!this.running){ clearInterval(this.timer); return; }
+        if(!this.Xtr){ return; }
+        const {xs,ys} = this.sampleBatch(B);
+        this.model.step(xs,ys,this.cfg);
+        this.stepCount++;
+        const m = this.batchLossAcc(100);
+        this.lossMA = this.lossMA==null ? m.loss : (0.95*this.lossMA + 0.05*m.loss);
+        if(this.live) loop();
+      };
+      this.timer = setInterval(tick, interval);
+    }
+    stop(){ this.running=false; clearInterval(this.timer); }
+  }
+
+  // --------------------------- Visualization ---------------------------
+  function draw28(canvas, arr){
+    const ctx=canvas.getContext('2d'); const img=ctx.getImageData(0,0,28,28); const d=img.data;
+    for(let i=0;i<784;i++){ const v=clamp(arr[i],0,1)*255; const j=i*4; d[j]=d[j+1]=d[j+2]=v; d[j+3]=255; }
+    ctx.putImageData(img,0,0);
+  }
+
+  function bars(container, probs){
+    container.innerHTML='';
+    for(let i=0;i<10;i++){
+      const p=probs?probs[i]:0; const row=document.createElement('div'); row.style.display='grid'; row.style.gridTemplateColumns='24px 1fr 52px'; row.style.gap='8px'; row.style.alignItems='center'; row.style.margin='6px 0';
+      row.innerHTML=`<div class="pill">${i}</div><div class="bar"><div style="width:${(p*100).toFixed(1)}%"></div></div><div class="muted" style="text-align:right">${(p*100).toFixed(1)}%</div>`;
+      container.appendChild(row);
+    }
+  }
+
+  function drawNetwork(ctx, trainer, x){
+    const {model} = trainer; const W1=model.W1, W2=model.W2, W3=model.W3;
+    const h1=model.dims.h1, h2=model.dims.h2; const clampW=+get('wClamp').value;
+    ctx.clearRect(0,0,ctx.canvas.width, ctx.canvas.height);
+    const w=ctx.canvas.width, h=ctx.canvas.height;
+    const left=40, right=w-40, top=30, bottom=h-30;
+
+    // Node positions
+    const layerX=[left, (left+right)/2, right];
+    const posL1=[], posL2=[], posL3=[];
+    for(let i=0;i<h1;i++) posL1.push([layerX[0], top + (i+0.5)*((bottom-top)/h1)]);
+    for(let i=0;i<h2;i++) posL2.push([layerX[1], top + (i+0.5)*((bottom-top)/h2)]);
+    for(let i=0;i<10;i++) posL3.push([layerX[2], top + (i+0.5)*((bottom-top)/10)]);
+
+    // Forward for activations from current x
+    let acts = x? model.forward(x) : null;
+
+    // connections
+    ctx.lineWidth=1;
+    ctx.globalAlpha=0.7;
+    ctx.strokeStyle='#2a356a';
+
+    const mode=get('connMode').value; // l1 or l2
+    if(mode==='l1'){
+      // H1 -> H2
+      for(let i=0;i<h1;i++){
+        for(let j=0;j<h2;j++){
+          const w = W2[j*h1+i];
+          const a = clamp(Math.abs(w)/clampW,0,1);
+          ctx.strokeStyle = w>=0? 'rgba(74,113,255,'+a+')' : 'rgba(255,106,137,'+a+')';
+          ctx.beginPath(); ctx.moveTo(posL1[i][0], posL1[i][1]); ctx.lineTo(posL2[j][0], posL2[j][1]); ctx.stroke();
+        }
+      }
+    } else {
+      // H2 -> Out
+      for(let i=0;i<h2;i++){
+        for(let j=0;j<10;j++){
+          const w = W3[j*h2+i];
+          const a = clamp(Math.abs(w)/clampW,0,1);
+          ctx.strokeStyle = w>=0? 'rgba(74,113,255,'+a+')' : 'rgba(255,106,137,'+a+')';
+          ctx.beginPath(); ctx.moveTo(posL2[i][0], posL2[i][1]); ctx.lineTo(posL3[j][0], posL3[j][1]); ctx.stroke();
+        }
+      }
+    }
+
+    ctx.globalAlpha=1;
+
+    // nodes with activation color
+    const drawNodes=(pos, vals)=>{
+      for(let i=0;i<pos.length;i++){
+        const [x,y]=pos[i];
+        const v = vals? vals[i] : 0; // -1..+1 roughly
+        const a = clamp((v+1)/2,0,1); // map -1..1 to 0..1
+        ctx.beginPath(); ctx.arc(x,y,8,0,Math.PI*2);
+        // green by activation intensity
+        ctx.fillStyle='rgba(92,211,159,'+ (0.15+0.85*Math.abs(v)) +')';
+        ctx.fill();
+        ctx.strokeStyle='#2b3c83'; ctx.lineWidth=1; ctx.stroke();
+      }
+    };
+
+    if(acts){ drawNodes(posL1, acts.a1); drawNodes(posL2, acts.a2); }
+    else { drawNodes(posL1,null); drawNodes(posL2,null); }
+
+    // output nodes labels
+    ctx.font='12px ui-monospace, monospace'; ctx.fillStyle='#c6cdf0'; ctx.textAlign='center';
+    for(let i=0;i<10;i++){
+      const [x,y]=posL3[i];
+      ctx.beginPath(); ctx.arc(x,y,9,0,Math.PI*2);
+      ctx.fillStyle='#131936'; ctx.fill(); ctx.strokeStyle='#2b3c83'; ctx.stroke();
+      ctx.fillText(i.toString(), x, y+4);
+    }
+  }
+
+  function renderCM(tbl, cm){
+    tbl.innerHTML='';
+    const head = document.createElement('tr'); head.innerHTML='<th></th>'+Array.from({length:10},(_,i)=>`<th>${i}</th>`).join(''); tbl.appendChild(head);
+    for(let r=0;r<10;r++){
+      const tr=document.createElement('tr'); tr.innerHTML=`<th>${r}</th>`;
+      for(let c=0;c<10;c++){
+        const v = cm[r*10+c]||0; const td=document.createElement('td'); td.textContent=v; td.style.background = v? `rgba(60,170,120,${Math.min(0.9, 0.1+Math.log10(1+v)/2)})` : 'transparent'; tr.appendChild(td);
+      }
+      tbl.appendChild(tr);
+    }
+    const cap=document.createElement('caption'); cap.textContent='Confusion Matrix — rows=predicted, columns=true'; cap.style.captionSide='bottom'; cap.style.color='#9aa3c7'; cap.style.paddingTop='6px'; tbl.appendChild(cap);
+  }
+
+  // --------------------------- Scratchpad ---------------------------
+  const pad = get('pad'); const pctx = pad.getContext('2d');
+  function clearPad(){ pctx.fillStyle='#000'; pctx.fillRect(0,0,pad.width,pad.height); }
+  clearPad();
+  let drawing=false, erase=false; let last=null;
+  pad.addEventListener('pointerdown', e=>{ drawing=true; last=[e.offsetX, e.offsetY]; erase=e.shiftKey; });
+  pad.addEventListener('pointerup', ()=>{ drawing=false; last=null; });
+  pad.addEventListener('pointerleave', ()=>{ drawing=false; last=null; });
+  pad.addEventListener('pointermove', e=>{
+    if(!drawing) return; const b=+get('brush').value; const soft=+get('soft').value; const x=e.offsetX, y=e.offsetY;
+    pctx.lineCap='round'; pctx.lineJoin='round'; pctx.lineWidth=b; pctx.globalCompositeOperation = erase? 'destination-out' : 'source-over';
+    pctx.strokeStyle= erase? 'rgba(0,0,0,1)' : `rgba(255,255,255,${1-soft})`;
+    pctx.beginPath(); if(last){ pctx.moveTo(last[0], last[1]); pctx.lineTo(x,y); } else { pctx.moveTo(x,y); pctx.lineTo(x+0.01,y+0.01); }
+    pctx.stroke(); last=[x,y];
+  });
+  get('btnClear').onclick=()=>clearPad();
+
+  function getDownscaled(){
+    const down = get('down'); const dctx = down.getContext('2d');
+    // scale pad (280×280) to down (28×28)
+    dctx.clearRect(0,0,28,28); dctx.drawImage(pad,0,0,28,28);
+    const {data} = dctx.getImageData(0,0,28,28);
+    const arr = new Float32Array(784);
+    for(let i=0;i<784;i++) arr[i] = data[i*4] / 255; // use red channel (grayscale)
+    return arr;
+  }
+
+  // --------------------------- Wire up UI ---------------------------
+  const trainer = new Trainer();
+  const viz = get('viz').getContext('2d');
+  const img28 = get('img28');
+
+  // Label dropdown 0..9
+  for(let i=0;i<10;i++){ const opt=document.createElement('option'); opt.value=i; opt.textContent=i; get('addLabel').appendChild(opt); }
+
+  function refreshStatsUI(){
+    get('statStep').textContent = trainer.stepCount;
+    const ba = trainer.batchLossAcc(100);
+    get('statLoss').textContent = fmt(trainer.lossMA ?? ba.loss);
+    get('statTrAcc').textContent = isNaN(ba.acc)? '—' : (ba.acc*100).toFixed(1)+'%';
+  }
+
+  function drawLive(){
+    refreshStatsUI();
+    // pick a random train sample to visualize
+    if(!trainer.Xtr) return;
+    const j=(Math.random()*trainer.Ytr.length)|0;
+    const x=trainer.Xtr.subarray(j*784,(j+1)*784); const y=trainer.Ytr[j];
+    const {probs} = trainer.model.forward(x);
+    draw28(img28, x);
+    bars(get('probs'), probs);
+    drawNetwork(viz, trainer, x);
+  }
+
+  // Idle auto-refresh removed to prevent looping after load. }, 500);
+
+  get('btnLoad').onclick=async ()=>{
+    try{
+      get('btnLoad').disabled=true; get('btnCancelLoad').disabled=false; get('loadInfo').textContent='Loading… labels + image chunks';
+      const trainN=+get('trainSize').value, testN=+get('testSize').value;
+      await trainer.load(trainN, testN, p=>{ get('loadInfo').textContent = `Loading… ${(p*100).toFixed(0)}%`; });
+      get('loadInfo').textContent = `Loaded ${trainer.Ytr.length} train, ${trainer.Yte.length} test.`;
+      drawLive();
+    }catch(e){
+      get('loadInfo').textContent = 'Load cancelled or failed: '+e.message;
+    }finally{
+      get('btnLoad').disabled=false; get('btnCancelLoad').disabled=true;
+    }
+  };
+  get('btnCancelLoad').onclick=()=>trainer.loader.cancel();
+
+  get('btnInit').onclick=()=>{
+    const dims = get('hidSizes').value.split(',').map(s=>parseInt(s.trim(),10)).filter(n=>n>0);
+    const h1=dims[0]||16, h2=dims[1]||16; trainer.setDims(h1,h2);
+    trainer.model.setActivation(get('activation').value);
+    trainer.model.reset(); trainer.stepCount=0; trainer.lossMA=null; trainer.cm.fill(0);
+    drawNetwork(viz, trainer, null); get('trainInfo').textContent='Weights reset.';
+  };
+
+  get('activation').onchange=()=>{ trainer.model.setActivation(get('activation').value); trainer.model.reset(); drawLive(); };
+
+  get('btnTrain').onclick=async ()=>{
+    if(!trainer.running){
+      get('btnTrain').textContent='Pause'; trainer.live=get('chkLive').checked; await trainer.start(()=>{
+        // On each loop tick
+        if(get('chkLive').checked){
+          drawLive(); get('trainInfo').textContent=`Training… step ${trainer.stepCount}`;
+        }
+      });
+    } else {
+      trainer.stop(); get('btnTrain').textContent='Start'; get('trainInfo').textContent='Paused.';
+    }
+  };
+
+  get('btnStep').onclick=()=>{
+    if(!trainer.Xtr) return;
+    const B=+get('batch').value; trainer.cfg = { lr:+get('lr').value, l2:+get('l2').value, opt:get('opt').value, dropout:+get('drop').value };
+    const {xs,ys} = trainer.sampleBatch(B); trainer.model.step(xs,ys, trainer.cfg); trainer.stepCount++;
+    drawLive(); get('trainInfo').textContent=`Stepped once (batch=${B}).`;
+  };
+
+  get('btnEval').onclick=()=>{
+    if(!trainer.Xte) return; const m=trainer.evalFull(trainer.Xte, trainer.Yte);
+    get('statTeAcc').textContent=(m.acc*100).toFixed(2)+'%'; renderCM(get('cm'), m.cm);
+  };
+
+  get('btnClearStats').onclick=()=>{ trainer.stepCount=0; trainer.lossMA=null; trainer.cm.fill(0); get('cm').innerHTML=''; refreshStatsUI(); };
+
+  get('chkLive').onchange=()=>{ trainer.live=get('chkLive').checked; if(trainer.live) drawLive(); };
+
+  get('connMode').onchange=()=>drawLive();
+
+  get('btnPredict').onclick=()=>{
+    const x=getDownscaled(); draw28(img28, x);
+    const {probs} = trainer.model.predict(x); bars(get('probs'), probs); drawNetwork(viz, trainer, x);
+  };
+
+  get('btnAdd').onclick=()=>{
+    const x=getDownscaled(); const y=+get('addLabel').value;
+    if(!trainer.Xtr){ trainer.Xtr = new Float32Array(784); trainer.Ytr = new Uint8Array(1); trainer.Xtr.set(x,0); trainer.Ytr[0]=y; }
+    else {
+      const N=trainer.Ytr.length; const Xnew=new Float32Array((N+1)*784); Xnew.set(trainer.Xtr,0); Xnew.set(x, N*784);
+      const Ynew=new Uint8Array(N+1); Ynew.set(trainer.Ytr,0); Ynew[N]=y; trainer.Xtr=Xnew; trainer.Ytr=Ynew;
+    }
+    get('trainInfo').textContent = 'Added 1 sample to training set.';
+  };
+
+  // Export/Import
+  get('btnExport').onclick=()=>{
+    const state={dims:trainer.model.dims, act:trainer.model.actName, W1:Array.from(trainer.model.W1), b1:Array.from(trainer.model.b1), W2:Array.from(trainer.model.W2), b2:Array.from(trainer.model.b2), W3:Array.from(trainer.model.W3), b3:Array.from(trainer.model.b3)};
+    const blob=new Blob([JSON.stringify(state)],{type:'application/json'}); const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download='mnist-mlp.json'; a.click(); URL.revokeObjectURL(url);
+  };
+
+  get('btnImport').onclick=()=>{
+    const inp=document.createElement('input'); inp.type='file'; inp.accept='.json,application/json'; inp.onchange=()=>{
+      const f=inp.files[0]; const fr=new FileReader(); fr.onload=()=>{
+        try{
+          const s=JSON.parse(fr.result);
+          trainer.model=new MLP(784, s.dims.h1, s.dims.h2, 10);
+          trainer.model.setActivation(s.act||'relu');
+          trainer.model.W1.set(s.W1); trainer.model.b1.set(s.b1);
+          trainer.model.W2.set(s.W2); trainer.model.b2.set(s.b2);
+          trainer.model.W3.set(s.W3); trainer.model.b3.set(s.b3);
+          get('hidSizes').value = `${s.dims.h1},${s.dims.h2}`;
+          get('activation').value = s.act||'relu';
+          drawLive();
+        }catch(err){ alert('Import failed: '+err.message); }
+      }; fr.readAsText(f);
+    }; inp.click();
+  };
+
+  // Initialize default view
+  get('btnInit').click();
+  bars(get('probs'), new Array(10).fill(0));
+  drawNetwork(viz, trainer, null);
+  </script>
+</body>
+</html>
