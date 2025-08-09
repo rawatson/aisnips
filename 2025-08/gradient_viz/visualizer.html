@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gradient Descent Visualizer — Vanilla JS</title>
+<style>
+  :root{
+    --bg:#0b1020; /* deep space */
+    --panel:#121932;
+    --ink:#e8ecff;
+    --muted:#b8c0ffcc;
+    --accent:#7aa2ff;
+    --accent-2:#ffd166;
+    --good:#49e68a;
+    --bad:#ff6b6b;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background: radial-gradient(1000px 600px at 20% -10%, #1a2350, transparent),
+                radial-gradient(1000px 600px at 120% 120%, #1a304f, transparent),
+                var(--bg);
+    color:var(--ink);
+  }
+  header{
+    padding:16px 20px; position:sticky; top:0; z-index:2; backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, #0b1020cc, #0b102000);
+    border-bottom:1px solid #ffffff14;
+  }
+  header h1{font-size:18px; margin:0 0 6px; letter-spacing:.3px}
+  header .sub{font-size:12px; color:var(--muted)}
+
+  .wrap{display:grid; grid-template-columns: 1fr 1fr; gap:14px; padding:14px 14px 0}
+  .panel{background:linear-gradient(180deg, #0e1532, #0a0f24); border:1px solid #ffffff18; border-radius:16px; box-shadow: 0 10px 30px #00000055;}
+  .panel h2{margin:0; font-size:14px; padding:10px 12px; border-bottom:1px solid #ffffff14; color:#dbe2ffcc; letter-spacing:.2px}
+  .panel .body{padding:10px 12px}
+  canvas{width:100%; height:420px; display:block; border-radius:12px}
+  .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+  .controls{margin:14px; padding:12px; border-radius:14px; border:1px dashed #ffffff1e}
+  .controls .row{margin:6px 0}
+  .kv{display:grid; grid-template-columns: max-content 1fr max-content; gap:8px; align-items:center; width: min(680px, 100%)}
+  .kv label{font-size:12px; color:var(--muted)}
+  .kv input[type="range"]{width:100%}
+  .pill{padding:8px 12px; border:1px solid #ffffff22; border-radius:999px; background:#0e1532; font-size:12px; cursor:pointer; color:white}
+  button.pill{transition: .2s transform}
+  button.pill:active{transform: translateY(1px)}
+  .pill[aria-pressed="true"], .pill.active{background: linear-gradient(180deg, #1a2a6a, #13204d); border-color:#ffffff33}
+  .tags{display:flex; gap:8px; flex-wrap:wrap}
+  .tag{font-size:11px; padding:4px 8px; border:1px solid #ffffff22; border-radius:999px; color:#d4dbff}
+  .metrics{display:grid; grid-template-columns: repeat(5, 1fr); gap:8px; margin-top:8px}
+  .metric{background:#0d1430; border:1px solid #ffffff12; border-radius:10px; padding:8px}
+  .metric .k{font-size:11px; color:#a6b1ff}
+  .metric .v{font-size:14px; font-weight:600}
+  footer{padding:12px 20px 20px; color:#9fb0ff; font-size:12px; opacity:.85}
+  .note{color:#b8c0ff; font-size:12px}
+  .legend{font-size:12px; color:var(--muted)}
+  .spacer{flex:1}
+  .muted{color:var(--muted)}
+  .hotkey{padding:2px 6px; border:1px solid #ffffff2a; border-radius:6px; background:#0f1738; font-size:11px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Gradient Descent Visualizer <span class="muted">Simple linear function generated with noise</span></h1>
+  <div class="sub">Linear regression with MSE. Left: data + model. Right: loss landscape J(w, b). Drag on the right to reposition (w,b). Press <span class="hotkey">Space</span> to play/pause, <span class="hotkey">S</span> to step.</div>
+</header>
+
+<main class="wrap">
+  <section class="panel">
+    <h2>Data & Model</h2>
+    <div class="body">
+      <canvas id="dataCanvas" width="900" height="540" aria-label="Scatter plot with regression line"></canvas>
+      <div class="legend">Dots: training points. Line: y = w·x + b. Residuals in <span style="color:var(--bad)">red</span> (toggleable).</div>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Loss Landscape</h2>
+    <div class="body">
+      <canvas id="lossCanvas" width="900" height="540" aria-label="Loss landscape heatmap"></canvas>
+      <div class="legend">Heatmap of J(w,b) over a grid. <span style="color:var(--accent)">●</span> current (w,b); <span style="color:var(--good)">★</span> closed-form optimum; trail shows descent path; arrow is −∇J.</div>
+    </div>
+  </section>
+</main>
+
+<section class="panel controls">
+  <div class="row tags">
+    <button id="playBtn" class="pill" aria-pressed="false">▶ Play</button>
+    <button id="stepBtn" class="pill">Step</button>
+    <button id="resetBtn" class="pill">Reset</button>
+    <div class="spacer"></div>
+    <button id="regenBtn" class="pill" title="New dataset with random ground truth">↻ Regenerate Data</button>
+    <button id="randomStartBtn" class="pill" title="Randomize starting (w,b)">🎲 Random Start</button>
+    <label class="pill" style="display:flex; align-items:center; gap:8px">
+      <input id="residualsChk" type="checkbox" checked /> Show residuals
+    </label>
+  </div>
+
+  <div class="row kv">
+    <label for="lr">Learning rate</label>
+    <input id="lr" type="range" min="0.0001" max="0.01" step="0.0001" value="0.001" />
+    <output id="lrOut">0.05</output>
+
+    <label for="mom">Momentum</label>
+    <input id="mom" type="range" min="0" max="0.99" step="0.01" value="0.0" />
+    <output id="momOut">0.00</output>
+
+    <label for="speed">Steps / frame</label>
+    <input id="speed" type="range" min="1" max="50" step="1" value="1" />
+    <output id="speedOut">1</output>
+
+    <label for="npts">Points</label>
+    <input id="npts" type="range" min="8" max="400" step="1" value="80" />
+    <output id="nptsOut">80</output>
+
+    <label for="noise">Noise σ</label>
+    <input id="noise" type="range" min="0" max="3" step="0.01" value="0.6" />
+    <output id="noiseOut">0.60</output>
+
+    <label for="batch">Batch size</label>
+    <input id="batch" type="range" min="1" max="400" step="1" value="80" />
+    <output id="batchOut">80</output>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="k">Iteration</div><div class="v" id="mIt">0</div></div>
+    <div class="metric"><div class="k">w</div><div class="v" id="mW">0.00</div></div>
+    <div class="metric"><div class="k">b</div><div class="v" id="mB">0.00</div></div>
+    <div class="metric"><div class="k">J(w,b)</div><div class="v" id="mJ">0.000</div></div>
+    <div class="metric"><div class="k">‖∇J‖</div><div class="v" id="mG">0.000</div></div>
+  </div>
+</section>
+
+<footer>
+  Drag on the right canvas to set the starting (w, b). Double‑click the right canvas to clear the path. Tip: crank the learning rate to see divergence/oscillation, then add a little momentum to stabilize.
+</footer>
+
+<script>
+(function(){
+  // ------ Utilities ------
+  const $ = sel => document.querySelector(sel);
+  const clamp = (x,a,b)=> Math.max(a, Math.min(b,x));
+  function rng(seed){ // tiny LCG so regen feels deterministic-ish between interactions
+    let s = (seed>>>0) || (Math.random()*1e9)|0;
+    return ()=> (s = (s*1664525 + 1013904223)>>>0)/2**32;
+  }
+  function niceNumber(n, p=2){ return (+n).toFixed(p); }
+
+  // HiDPI canvas helpers
+  function fixDPI(canvas){
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const {width, height} = canvas.getBoundingClientRect();
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    return ctx;
+  }
+
+  // ------ Data Generation ------
+  let state = {
+    data: [], // {x,y}
+    trueW: 2.0,
+    trueB: -1.0,
+    w: 0, b: 0,
+    vw: 0, vb: 0, // momentum
+    it: 0,
+    running: false,
+    path: [],
+    heatmapCache: null,
+    wRange: [-6, 6],
+    bRange: [-8, 8],
+    optimum: {w:0, b:0},
+  };
+
+  function genData(n=80, sigma=0.6){
+    const r = rng((Math.random()*1e9)|0);
+    state.trueW = (r()*8 - 4); // [-4,4]
+    state.trueB = (r()*8 - 4); // [-4,4]
+    const xs = Array.from({length:n}, ()=> r()*10 - 5); // [-5,5]
+    const data = xs.map(x => ({x, y: state.trueW*x + state.trueB + gauss(r)*sigma}));
+    state.data = data;
+    computeClosedForm();
+    state.heatmapCache = null; // invalidate
+  }
+
+  function gauss(r){ // Box-Muller, r = uniform rng
+    let u = 0, v = 0; while(u===0) u = r(); while(v===0) v = r();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2*Math.PI*v);
+  }
+
+  function computeClosedForm(){
+    const n = state.data.length; if(!n) return;
+    const mean = arr => arr.reduce((a,c)=>a+c,0)/arr.length;
+    const xs = state.data.map(d=>d.x), ys = state.data.map(d=>d.y);
+    const mx = mean(xs), my = mean(ys);
+    let num=0, den=0; for(let i=0;i<n;i++){ const dx=xs[i]-mx; num += dx*(ys[i]-my); den += dx*dx; }
+    const w = den===0?0:num/den; const b = my - w*mx; state.optimum = {w,b};
+  }
+
+  // ------ Loss & Gradients ------
+  function lossAndGrad(w, b, batchIdx=null){
+    const N = batchIdx? batchIdx.length : state.data.length;
+    let sum=0, gw=0, gb=0;
+    if(batchIdx){
+      for(const i of batchIdx){ const d=state.data[i]; const e = (w*d.x + b - d.y); sum += e*e; gw += e*d.x; gb += e; }
+    } else {
+      for(const d of state.data){ const e = (w*d.x + b - d.y); sum += e*e; gw += e*d.x; gb += e; }
+    }
+    const J = sum / N; // MSE (no 1/2)
+    return { J, gw: 2*gw/N, gb: 2*gb/N };
+  }
+
+  // ------ Heatmap of J(w,b) ------
+  const lossCanvas = $('#lossCanvas');
+  const lossCtx = fixDPI(lossCanvas);
+  let lossBox = lossCanvas.getBoundingClientRect();
+
+  function paramToPx(w,b){
+    const [w0,w1] = state.wRange, [b0,b1] = state.bRange;
+    const x = (w - w0)/(w1 - w0) * (lossBox.width);
+    const y = (1 - (b - b0)/(b1 - b0)) * (lossBox.height);
+    return {x,y};
+  }
+  function pxToParam(x,y){
+    const [w0,w1] = state.wRange, [b0,b1] = state.bRange;
+    const w = w0 + (x/lossBox.width) * (w1 - w0);
+    const b = b0 + (1 - y/lossBox.height) * (b1 - b0);
+    return {w,b};
+  }
+
+  function colorFor(t){ // t in [0,1] -> pleasant heat ramp (blue->cyan->lime->yellow->red)
+    t = clamp(t,0,1);
+    // piecewise gradient
+    const stops = [
+      [0.00, [26, 54, 140]],   // deep blue
+      [0.25, [33, 147, 176]],  // teal
+      [0.50, [80, 220, 120]],  // green
+      [0.75, [255, 210, 102]], // yellow
+      [1.00, [241, 96, 96]],   // red
+    ];
+    for(let i=1;i<stops.length;i++){
+      if(t<=stops[i][0]){
+        const [t0,c0] = stops[i-1]; const [t1,c1] = stops[i];
+        const u = (t - t0)/(t1 - t0);
+        return [
+          Math.round(c0[0] + u*(c1[0]-c0[0])),
+          Math.round(c0[1] + u*(c1[1]-c0[1])),
+          Math.round(c0[2] + u*(c1[2]-c0[2]))
+        ];
+      }
+    }
+    return stops.at(-1)[1];
+  }
+
+  function buildHeatmap(){
+    const W = Math.floor(lossBox.width), H = Math.floor(lossBox.height);
+    const img = lossCtx.createImageData(W, H);
+    // sample a coarser grid for min/max normalization
+    const samples = []; const grid=120;
+    let min=Infinity, max=-Infinity;
+    for(let yi=0; yi<=grid; yi++){
+      const b = state.bRange[0] + (yi/grid)*(state.bRange[1]-state.bRange[0]);
+      for(let xi=0; xi<=grid; xi++){
+        const w = state.wRange[0] + (xi/grid)*(state.wRange[1]-state.wRange[0]);
+        const {J} = lossAndGrad(w,b);
+        samples.push(J); if(J<min) min=J; if(J>max) max=J;
+      }
+    }
+    // fill each pixel by interpolating params from pixel coords
+    const denom = (max-min)||1;
+    let p=0;
+    for(let y=0;y<H;y++){
+      const b = state.bRange[0] + (1 - y/H)*(state.bRange[1]-state.bRange[0]);
+      for(let x=0;x<W;x++){
+        const w = state.wRange[0] + (x/W)*(state.wRange[1]-state.wRange[0]);
+        const {J} = lossAndGrad(w,b);
+        const t = (J - min)/denom;
+        const [r,g,bv] = colorFor(t);
+        img.data[p++] = r; img.data[p++] = g; img.data[p++] = bv; img.data[p++] = 255;
+      }
+    }
+    state.heatmapCache = {img, min, max};
+  }
+
+  function drawLoss(){
+    if(!state.heatmapCache) buildHeatmap();
+    const {img, min, max} = state.heatmapCache;
+    lossCtx.clearRect(0,0,lossBox.width, lossBox.height);
+    lossCtx.putImageData(img, 0, 0);
+
+    // axes ticks w, b
+    lossCtx.save();
+    lossCtx.strokeStyle = '#ffffff22'; lossCtx.lineWidth = 1;
+    lossCtx.beginPath();
+    for(let i=0;i<=10;i++){
+      const x = i/10*lossBox.width; lossCtx.moveTo(x,0); lossCtx.lineTo(x,lossBox.height);
+    }
+    for(let i=0;i<=10;i++){
+      const y = i/10*lossBox.height; lossCtx.moveTo(0,y); lossCtx.lineTo(lossBox.width,y);
+    }
+    lossCtx.stroke();
+    lossCtx.restore();
+
+    // optimum star
+    const op = paramToPx(state.optimum.w, state.optimum.b);
+    drawStar(lossCtx, op.x, op.y, 6, 10, 4, '#49e68a');
+
+    // path
+    if(state.path.length>1){
+      lossCtx.save();
+      lossCtx.lineWidth = 2;
+      lossCtx.strokeStyle = '#ffffffcc';
+      lossCtx.beginPath();
+      const p0 = paramToPx(state.path[0].w, state.path[0].b);
+      lossCtx.moveTo(p0.x, p0.y);
+      for(let i=1;i<state.path.length;i++){
+        const p = paramToPx(state.path[i].w, state.path[i].b);
+        lossCtx.lineTo(p.x, p.y);
+      }
+      lossCtx.stroke();
+      lossCtx.restore();
+    }
+
+    // current point
+    const p = paramToPx(state.w, state.b);
+    lossCtx.fillStyle = '#7aa2ff';
+    lossCtx.beginPath(); lossCtx.arc(p.x, p.y, 6, 0, Math.PI*2); lossCtx.fill();
+
+    // gradient arrow (−∇J)
+    const {gw, gb} = lossAndGrad(state.w, state.b);
+    const gradNorm = Math.hypot(gw, gb) || 1;
+    const scale = 60/gradNorm; // visual scale
+    const tip = paramToPx(state.w - gw*scale/(state.wRange[1]-state.wRange[0]), state.b - gb*scale/(state.bRange[1]-state.bRange[0]));
+    lossCtx.strokeStyle = '#ffffff'; lossCtx.lineWidth=2;
+    lossCtx.beginPath(); lossCtx.moveTo(p.x, p.y); lossCtx.lineTo(tip.x, tip.y); lossCtx.stroke();
+    drawArrowHead(lossCtx, p.x, p.y, tip.x, tip.y, 10);
+
+    // labels
+    lossCtx.fillStyle = '#dbe2ffcc';
+    lossCtx.font = '12px system-ui, -apple-system, Segoe UI, Roboto';
+    lossCtx.fillText(`w: ${niceNumber(state.w,3)}  b: ${niceNumber(state.b,3)}`, 10, 18);
+    const {J} = lossAndGrad(state.w, state.b);
+    lossCtx.fillText(`J: ${niceNumber(J,4)}  (min≈${niceNumber(state.heatmapCache.min,4)})`, 10, 34);
+  }
+
+  function drawStar(ctx, x, y, spikes, outerRadius, innerRadius, color){
+    let rot = Math.PI / 2 * 3; let cx = x; let cy = y;
+    let step = Math.PI / spikes; ctx.save(); ctx.beginPath(); ctx.moveTo(cx, cy - outerRadius);
+    for (let i = 0; i < spikes; i++) {
+      cx = x + Math.cos(rot) * outerRadius; cy = y + Math.sin(rot) * outerRadius; ctx.lineTo(cx, cy); rot += step;
+      cx = x + Math.cos(rot) * innerRadius; cy = y + Math.sin(rot) * innerRadius; ctx.lineTo(cx, cy); rot += step;
+    }
+    ctx.lineTo(x, y - outerRadius); ctx.closePath(); ctx.fillStyle = color; ctx.fill(); ctx.restore();
+  }
+  function drawArrowHead(ctx, x0, y0, x1, y1, size){
+    const ang = Math.atan2(y1-y0, x1-x0);
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x1 - size*Math.cos(ang - Math.PI/6), y1 - size*Math.sin(ang - Math.PI/6));
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x1 - size*Math.cos(ang + Math.PI/6), y1 - size*Math.sin(ang + Math.PI/6));
+    ctx.stroke();
+  }
+
+  // ------ Data Plot ------
+  const dataCanvas = $('#dataCanvas');
+  const dataCtx = fixDPI(dataCanvas);
+  let dataBox = dataCanvas.getBoundingClientRect();
+
+  function getDataBounds(){
+    const xs = state.data.map(d=>d.x), ys = state.data.map(d=>d.y);
+    const pad = 0.2;
+    const xmin = Math.min(...xs), xmax = Math.max(...xs);
+    const ymin = Math.min(...ys), ymax = Math.max(...ys);
+    const xr = xmax - xmin || 1, yr = ymax - ymin || 1;
+    return { xmin: xmin - xr*pad, xmax: xmax + xr*pad, ymin: ymin - yr*pad, ymax: ymax + yr*pad };
+  }
+  function dataToPx(x,y){
+    const {xmin, xmax, ymin, ymax} = getDataBounds();
+    const px = (x - xmin)/(xmax - xmin) * dataBox.width;
+    const py = (1 - (y - ymin)/(ymax - ymin)) * dataBox.height;
+    return {x:px, y:py};
+  }
+
+  function drawData(){
+    dataCtx.clearRect(0,0,dataBox.width, dataBox.height);
+    // grid
+    dataCtx.save(); dataCtx.strokeStyle='#ffffff12'; dataCtx.lineWidth=1;
+    dataCtx.beginPath();
+    for(let i=0;i<=10;i++){ const x=i/10*dataBox.width; dataCtx.moveTo(x,0); dataCtx.lineTo(x,dataBox.height); }
+    for(let i=0;i<=10;i++){ const y=i/10*dataBox.height; dataCtx.moveTo(0,y); dataCtx.lineTo(dataBox.width,y); }
+    dataCtx.stroke(); dataCtx.restore();
+
+    // residuals
+    if($('#residualsChk').checked){
+      dataCtx.save(); dataCtx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--bad'); dataCtx.lineWidth=1.5; dataCtx.globalAlpha=.8;
+      for(const d of state.data){
+        const yhat = state.w*d.x + state.b;
+        const p1 = dataToPx(d.x, d.y); const p2 = dataToPx(d.x, yhat);
+        dataCtx.beginPath(); dataCtx.moveTo(p1.x, p1.y); dataCtx.lineTo(p2.x, p2.y); dataCtx.stroke();
+      }
+      dataCtx.restore();
+    }
+
+    // points
+    dataCtx.fillStyle = '#cfe3ff';
+    for(const d of state.data){ const p = dataToPx(d.x, d.y); dataCtx.beginPath(); dataCtx.arc(p.x, p.y, 3.5, 0, Math.PI*2); dataCtx.fill(); }
+
+    // model line
+    const {xmin, xmax} = getDataBounds();
+    const pA = dataToPx(xmin, state.w*xmin + state.b);
+    const pB = dataToPx(xmax, state.w*xmax + state.b);
+    dataCtx.save(); dataCtx.strokeStyle = '#7aa2ff'; dataCtx.lineWidth=3; dataCtx.beginPath(); dataCtx.moveTo(pA.x, pA.y); dataCtx.lineTo(pB.x, pB.y); dataCtx.stroke(); dataCtx.restore();
+
+    // text
+    dataCtx.fillStyle = '#dbe2ffcc'; dataCtx.font = '12px system-ui, -apple-system, Segoe UI, Roboto';
+    dataCtx.fillText(`y = w·x + b`, 10, 18);
+  }
+
+  // ------ Interaction: Drag in loss space to set (w,b) ------
+  let dragging=false;
+  lossCanvas.addEventListener('pointerdown', (e)=>{
+    dragging = true; lossCanvas.setPointerCapture(e.pointerId); moveFromEvent(e, true);
+  });
+  lossCanvas.addEventListener('pointermove', (e)=>{ if(dragging) moveFromEvent(e, false); });
+  lossCanvas.addEventListener('pointerup', ()=> dragging=false);
+  lossCanvas.addEventListener('pointerleave', ()=> dragging=false);
+  lossCanvas.addEventListener('dblclick', ()=> { state.path = [{w:state.w, b:state.b}]; });
+  function moveFromEvent(e, resetTrail){
+    const rect = lossCanvas.getBoundingClientRect();
+    const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+    const {w,b} = pxToParam(x,y);
+    state.w = clamp(w, ...state.wRange); state.b = clamp(b, ...state.bRange);
+    if(resetTrail) state.path = [{w:state.w, b:state.b}];
+    updateMetrics();
+  }
+
+  // ------ Controls ------
+  const lr = $('#lr'), mom=$('#mom'), speed=$('#speed'), npts=$('#npts'), noise=$('#noise'), batch=$('#batch');
+  const outs = { lrOut:$('#lrOut'), momOut:$('#momOut'), speedOut:$('#speedOut'), nptsOut:$('#nptsOut'), noiseOut:$('#noiseOut'), batchOut:$('#batchOut') };
+  function wireRange(input, out, fmt=(x)=>x){
+    const sync=()=> out.textContent = fmt(input.value);
+    input.addEventListener('input', ()=>{ sync(); if(input===npts||input===noise){ regenData(); } if(input===batch){ batch.max = String(state.data.length); outs.batchOut.textContent = String(batch.value); } });
+    sync();
+  }
+  wireRange(lr, outs.lrOut, v=>(+v).toFixed(4));
+  wireRange(mom, outs.momOut, v=>(+v).toFixed(2));
+  wireRange(speed, outs.speedOut);
+  wireRange(npts, outs.nptsOut);
+  wireRange(noise, outs.noiseOut, v=>(+v).toFixed(2));
+  wireRange(batch, outs.batchOut);
+
+  $('#playBtn').addEventListener('click', ()=>{ state.running = !state.running; $('#playBtn').setAttribute('aria-pressed', String(state.running)); $('#playBtn').textContent = state.running? '⏸ Pause' : '▶ Play'; });
+  $('#stepBtn').addEventListener('click', ()=>{ step(); render(); });
+  $('#resetBtn').addEventListener('click', ()=>{ reset(); });
+  $('#regenBtn').addEventListener('click', ()=>{ regenData(); });
+  $('#randomStartBtn').addEventListener('click', ()=>{ randomStart(); });
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.code==='Space'){ e.preventDefault(); $('#playBtn').click(); }
+    else if(e.key==='s' || e.key==='S'){ e.preventDefault(); $('#stepBtn').click(); }
+  });
+
+  function reset(){ state.it=0; state.vw=0; state.vb=0; state.w=0; state.b=0; state.path=[{w:state.w,b:state.b}]; updateMetrics(); }
+  function regenData(){ genData(+npts.value, +noise.value); batch.max = String(state.data.length); if(+batch.value>state.data.length) batch.value = String(state.data.length); state.path=[{w:state.w,b:state.b}]; state.heatmapCache=null; updateMetrics(); }
+  function randomStart(){ state.w = state.wRange[0] + Math.random()*(state.wRange[1]-state.wRange[0]); state.b = state.bRange[0] + Math.random()*(state.bRange[1]-state.bRange[0]); state.vw=0; state.vb=0; state.path=[{w:state.w,b:state.b}]; updateMetrics(); }
+
+  // ------ Descent Step ------
+  function step(){
+    const bs = clamp(+batch.value|0, 1, state.data.length);
+    let idx=null;
+    if(bs < state.data.length){ // random mini-batch
+      idx = new Array(bs);
+      for(let i=0;i<bs;i++) idx[i] = (Math.random()*state.data.length)|0;
+    }
+    const {J, gw, gb} = lossAndGrad(state.w, state.b, idx);
+    const rate = +lr.value; const beta = +mom.value;
+    // momentum (classical): v = beta*v - lr*grad; param += v
+    state.vw = beta*state.vw - rate*gw;
+    state.vb = beta*state.vb - rate*gb;
+    state.w += state.vw; state.b += state.vb;
+    // keep in range
+    state.w = clamp(state.w, ...state.wRange); state.b = clamp(state.b, ...state.bRange);
+    state.it++;
+    // trail
+    const last = state.path[state.path.length-1];
+    if(!last || Math.hypot(last.w-state.w, last.b-state.b) > 0.002) state.path.push({w:state.w, b:state.b});
+  }
+
+  function updateMetrics(){
+    const {J, gw, gb} = lossAndGrad(state.w, state.b);
+    $('#mIt').textContent = String(state.it);
+    $('#mW').textContent = niceNumber(state.w, 3);
+    $('#mB').textContent = niceNumber(state.b, 3);
+    $('#mJ').textContent = niceNumber(J, 5);
+    $('#mG').textContent = niceNumber(Math.hypot(gw,gb), 5);
+  }
+
+  // ------ Render Loop ------
+  function render(){
+    drawData(); drawLoss(); updateMetrics();
+  }
+  function tick(){
+    if(state.running){ const k = +speed.value|0; for(let i=0;i<k;i++) step(); }
+    render(); requestAnimationFrame(tick);
+  }
+
+  // ------ Resize Handling ------
+  function onResize(){
+    // Recompute boxes and DPR transforms
+    fixDPI(dataCanvas); fixDPI(lossCanvas);
+    dataBox = dataCanvas.getBoundingClientRect();
+    lossBox = lossCanvas.getBoundingClientRect();
+    state.heatmapCache = null; // rebuild for new size
+  }
+  const ro = new ResizeObserver(()=> onResize()); ro.observe(dataCanvas); ro.observe(lossCanvas);
+
+  // ------ Init ------
+  genData(+npts.value, +noise.value);
+  reset();
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
