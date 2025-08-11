@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MNIST Trainer — 3Blue1Brown‑style Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+  <style>
+    :root {
+      --bg: #0e0f12;
+      --panel: #151821;
+      --ink: #e6e6ea;
+      --muted: #98a2b3;
+      --accent: #86efac; /* soft green */
+      --accent2: #60a5fa; /* soft blue */
+      --warn: #f87171;
+      --ok: #34d399;
+      --grid: #1f2430;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink); background: radial-gradient(1000px 500px at 20% -10%, #111523, #0c0d11 60%);
+      letter-spacing: 0.1px;
+    }
+    header {
+      display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+      padding: 16px 20px; border-bottom: 1px solid #1a1f2b; position: sticky; top: 0; background: rgba(14,15,18,0.9); backdrop-filter: blur(6px);
+    }
+    header h1 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: 0.2px; }
+    header .sub { font-size: 12px; color: var(--muted); }
+    #app { display: grid; grid-template-columns: 320px 1fr 360px; gap: 16px; padding: 16px; }
+    .card { background: var(--panel); border: 1px solid #1a1f2b; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      overflow: clip; }
+    .card h2 { font-size: 14px; margin: 0; padding: 12px 14px; border-bottom: 1px solid #1a1f2b; color: #d7e1f9; background: linear-gradient(180deg, #172033, #141824);
+      position: sticky; top: 48px; z-index: 1; }
+    .pad { padding: 12px 14px; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .col { display: flex; flex-direction: column; gap: 8px; }
+    .btn {
+      background: #1b2333; color: #dbe4ff; border: 1px solid #28324a; padding: 8px 10px; border-radius: 10px; font-size: 12px; cursor: pointer;
+      transition: transform .05s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover { background: #222b40; }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: #1f2d4a; border-color: #344a72; }
+    .btn.ghost { background: transparent; border-color: #2a3349; }
+    .btn.warn { border-color: #6b1f2b; color: #fecaca; background: #2a1116; }
+    .btn.good { border-color: #1c4931; color: #d1fae5; background: #10251c; }
+    .slider { width: 100%; }
+    label { font-size: 12px; color: var(--muted); }
+    .kpi { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .kpi .tile { background: #121722; border: 1px dashed #2a3347; border-radius: 12px; padding: 10px; }
+    .kpi .tile .v { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 16px; }
+    canvas { image-rendering: pixelated; }
+
+    /* Visual blocks */
+    .stack { display: grid; gap: 12px; }
+    .grid { display: grid; gap: 8px; }
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+    .viz-panel { border: 1px solid #212636; border-radius: 12px; padding: 10px; background: #0f1320; }
+    .title { font-size: 12px; color: #a9b8d9; margin-bottom: 6px; display: flex; gap: 8px; align-items: center; }
+    .pill {
+      border: 1px solid #33415e; background: #121827; padding: 2px 6px; border-radius: 8px; font-size: 10px; color: #8fb5ff;
+    }
+    .legend { font-size: 11px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+    .bar { height: 10px; background: #202a3f; border: 1px solid #2e3b5a; border-radius: 999px; overflow: hidden; }
+    .bar > i { display: block; height: 100%; background: linear-gradient(90deg, #89f7a1, #66c3ff); }
+    .mono { font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; }
+    .hr { height: 1px; background: #1a1f2b; margin: 10px 0; }
+    .note { color: #9aa4b2; font-size: 12px; }
+    .hot { color: #86efac; }
+    .cold { color: #fda4af; }
+    .hint { color: #cbd5e1; font-size: 12px; opacity: 0.9; }
+    .dim { color: var(--muted); font-size: 12px; }
+
+    /* Weight thumbnails grid */
+    #wThumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    #wThumbs .thumb { border: 1px solid #2b3350; border-radius: 8px; padding: 6px; background: #0f1320; cursor: pointer; }
+    #wThumbs .thumb.active { outline: 2px solid #60a5fa; }
+    #wThumbs canvas { display: block; margin: 0 auto; }
+
+    .equation { font-size: 13px; color: #9fb5ff; }
+    .eqvar { color: #e5e7eb; }
+    .eqop { color: #93c5fd; }
+    .eqhl { color: #86efac; font-weight: 700; }
+
+    .footer { color: #94a3b8; font-size: 11px; padding: 12px 14px; border-top: 1px solid #1a1f2b; background: #0f1220; }
+    a, a:visited { color: #93c5fd; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Neural Network Trainer for MNIST — 3Blue1Brown‑style</h1>
+      <div class="sub">A hands‑on, math‑first visualization of <em>layers → weighted sums → squishification → prediction</em>.</div>
+    </div>
+    <div class="row">
+      <button class="btn" id="btnLoad">1) Load Data</button>
+      <button class="btn primary" id="btnBuild">2) Build Model</button>
+      <button class="btn good" id="btnTrain">Start Training</button>
+      <button class="btn ghost" id="btnPause">Pause</button>
+      <button class="btn warn" id="btnReset">Reset</button>
+    </div>
+  </header>
+
+  <div id="app">
+    <!-- Left: Controls -->
+    <section class="card" id="controls">
+      <h2>Controls & Hyperparameters</h2>
+      <div class="pad stack">
+        <div class="kpi">
+          <div class="tile"><div class="dim">Status</div><div class="v" id="kStatus">Idle</div></div>
+          <div class="tile"><div class="dim">Seen (train)</div><div class="v" id="kSeen">0</div></div>
+        </div>
+        <div class="grid two">
+          <div class="col">
+            <label>Activation (hidden)</label>
+            <div class="row">
+              <label class="row"><input type="radio" name="act" value="sigmoid" checked> Sigmoid</label>
+              <label class="row"><input type="radio" name="act" value="relu"> ReLU</label>
+            </div>
+          </div>
+          <div class="col">
+            <label>Learning rate: <span id="lrVal" class="mono">0.01</span></label>
+            <input id="lr" class="slider" type="range" min="0.0001" max="0.2" step="0.0001" value="0.01" />
+          </div>
+          <div class="col">
+            <label>Batch size: <span id="bsVal" class="mono">128</span></label>
+            <input id="bs" class="slider" type="range" min="16" max="512" step="16" value="128" />
+          </div>
+          <div class="col">
+            <label>Epochs (cap per click): <span id="epVal" class="mono">1</span></label>
+            <input id="ep" class="slider" type="range" min="1" max="5" step="1" value="1" />
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stack">
+          <div class="title">Try a quick inference</div>
+          <div class="grid two">
+            <div class="viz-panel">
+              <div class="title">Draw a digit</div>
+              <canvas id="draw" width="280" height="280" style="background:#0b0e16; border:1px solid #27314a; border-radius: 8px; cursor: crosshair"></canvas>
+              <div class="row" style="margin-top:8px">
+                <button class="btn" id="btnClear">Clear</button>
+                <button class="btn" id="btnPredict">Predict</button>
+                <div class="hint">(28×28 downscaled)</div>
+              </div>
+            </div>
+            <div class="viz-panel">
+              <div class="title">Model guess</div>
+              <div id="outBars"></div>
+              <div class="hr"></div>
+              <div class="equation mono">Output is softmax(W₂ · <span class="eqvar">a₁</span> + b₂)</div>
+              <div class="dim" style="margin-top:6px">Bars show probabilities for digits 0–9. Most lit bar = prediction.</div>
+            </div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="note">Tip: Start with <span class="hot">sigmoid</span> to mirror the classic explanation, then flip to <span class="hot">ReLU</span> to see why modern nets train faster.</div>
+      </div>
+      <div class="footer">
+        This page trains a tiny dense net (784→16→16→10) and exposes its internals so you can watch <span class="hot">weighted sums</span>, <span class="hot">biases</span>, and <span class="hot">squishification</span> change as learning progresses.
+      </div>
+    </section>
+
+    <!-- Middle: Network internals / live forward pass -->
+    <section class="card" id="internals">
+      <h2>Forward Pass — Numbers Lighting Up</h2>
+      <div class="pad stack">
+        <div class="grid three">
+          <div class="viz-panel">
+            <div class="title">
+              <span class="pill">Input (28×28)</span>
+              <span class="dim">Each pixel is a number in [0,1]</span>
+            </div>
+            <canvas id="cInput" width="168" height="168"></canvas>
+            <div class="legend"><div class="bar" style="width:120px"><i style="width: 100%"></i></div> darker → brighter</div>
+          </div>
+          <div class="viz-panel">
+            <div class="title"><span class="pill">Hidden layer 1 (16)</span><span class="dim">Activations <span class="mono">a₁ = σ(W₀·x + b₀)</span></span></div>
+            <canvas id="cH1" width="168" height="168"></canvas>
+          </div>
+          <div class="viz-panel">
+            <div class="title"><span class="pill">Hidden layer 2 (16)</span><span class="dim">Activations <span class="mono">a₂ = σ(W₁·a₁ + b₁)</span></span></div>
+            <canvas id="cH2" width="168" height="168"></canvas>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div class="viz-panel">
+            <div class="title"><span class="pill">Output (10)</span><span class="dim">Softmax probabilities</span></div>
+            <canvas id="cOut" width="300" height="180"></canvas>
+          </div>
+          <div class="viz-panel">
+            <div class="title"><span class="pill">Loss</span><span class="dim">Cross‑entropy over time</span></div>
+            <canvas id="cLoss" width="300" height="180"></canvas>
+          </div>
+        </div>
+
+        <div class="viz-panel">
+          <div class="title"><span class="pill">Matrix view</span><span class="dim">The whole step is just matrices + a squish</span></div>
+          <div class="equation mono">a₁ = <span class="eqhl">σ</span>( <span class="eqvar">W₀</span>·<span class="eqvar">x</span> + <span class="eqvar">b₀</span> ) &nbsp;&nbsp;→&nbsp;&nbsp; a₂ = <span class="eqhl">σ</span>( <span class="eqvar">W₁</span>·a₁ + <span class="eqvar">b₁</span> ) &nbsp;&nbsp;→&nbsp;&nbsp; ŷ = softmax( <span class="eqvar">W₂</span>·a₂ + <span class="eqvar">b₂</span> )</div>
+          <div class="dim" style="margin-top:6px">σ is either the <span class="hot">sigmoid</span> (classic squishification) or <span class="hot">ReLU</span> (modern default). Toggle in the controls.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: Weight explorer / single-neuron microscope -->
+    <section class="card" id="weights">
+      <h2>Weight Explorer — From Pixels → Edges</h2>
+      <div class="pad stack">
+        <div class="viz-panel">
+          <div class="title"><span class="pill">Hidden layer 1 kernels (784 → 16)</span><span class="dim">Green = positive, Red = negative</span></div>
+          <div id="wThumbs"></div>
+        </div>
+        <div class="grid two">
+          <div class="viz-panel">
+            <div class="title"><span class="pill">Selected neuron’s weights</span> <span class="dim">as a 28×28 image</span></div>
+            <canvas id="cW" width="168" height="168"></canvas>
+          </div>
+          <div class="viz-panel">
+            <div class="title"><span class="pill">Squishification (σ)</span> <span class="dim">Weighted sum → activation</span></div>
+            <canvas id="cSig" width="300" height="180"></canvas>
+            <div class="hint">Dot shows <span class="mono">z = w·x + b</span> for the current input; y‑value is the activation <span class="mono">a = σ(z)</span>.</div>
+          </div>
+        </div>
+        <div class="viz-panel">
+          <div class="title"><span class="pill">Bias</span> <span class="dim">How much push before lighting up</span></div>
+          <div class="equation mono">z = <span class="eqvar">w·x</span> <span class="eqop">+</span> <span class="eqvar">b</span> &nbsp;&nbsp;→&nbsp;&nbsp; a = σ(z)</div>
+          <div class="grid two" style="margin-top:8px">
+            <div>
+              <div class="dim">Selected neuron</div>
+              <div class="mono" id="selNeuron">0</div>
+            </div>
+            <div>
+              <div class="dim">Bias <span class="mono">b</span></div>
+              <div class="mono" id="biasVal">0.000</div>
+            </div>
+          </div>
+        </div>
+        <div class="note">As training progresses, many first‑layer neurons settle into <em>edge detectors</em>. Positive (green) weights inside a region with negative (red) periphery light up when there’s a bright‑on‑dark edge — exactly the intuition from the video.</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+  /********************
+   * Utilities & drawing
+   ********************/
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  function clearCanvas(ctx) { ctx.clearRect(0,0,ctx.canvas.width, ctx.canvas.height); }
+
+  function drawHeatmap(ctx, data, w, h, {min=null, max=null, diverging=false}={}) {
+    // data: Float32Array or Array length w*h
+    const N = w*h;
+    const arr = (data.length === N) ? data : new Array(N).fill(0);
+    if (min===null) min = Math.min(0, ...arr);
+    if (max===null) max = Math.max(1e-6, ...arr);
+    const img = ctx.createImageData(w, h);
+    for (let i=0;i<N;i++) {
+      const v = arr[i];
+      let r=0,g=0,b=0;
+      if (diverging) {
+        // Red (neg) ↔ White (0) ↔ Green (pos)
+        const m = Math.max(Math.abs(min), Math.abs(max));
+        const t = clamp((v + m)/(2*m), 0, 1);
+        // Map to red→white→green
+        r = t < 0.5 ? 255 : 255*(1-(t-0.5)*2);
+        g = t < 0.5 ? 255*(t*2) : 255;
+        b = t < 0.5 ? 255*(t*2) : 255*(1-(t-0.5)*2);
+      } else {
+        const t = clamp((v - min)/(max - min + 1e-9), 0, 1);
+        // Blue→Cyan→Green→Yellow→White
+        r = 255 * Math.pow(t, 0.25);
+        g = 255 * t;
+        b = 255 * (1 - t);
+      }
+      const j = i*4; img.data[j]=r; img.data[j+1]=g; img.data[j+2]=b; img.data[j+3]=255;
+    }
+    const tmp = document.createElement('canvas'); tmp.width=w; tmp.height=h; const tctx=tmp.getContext('2d');
+    tctx.putImageData(img,0,0);
+    // scale to destination canvas size
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(tmp, 0, 0, ctx.canvas.width, ctx.canvas.height);
+  }
+
+  function drawBars(ctx, probs) {
+    clearCanvas(ctx);
+    const w = ctx.canvas.width, h = ctx.canvas.height;
+    const pad = 16, barH = (h - pad*2)/10 - 6;
+    const maxVal = Math.max(...probs, 1);
+    ctx.font = '12px Inter, sans-serif';
+    for (let i=0;i<10;i++) {
+      const y = pad + i*(barH+6);
+      const p = probs[i] || 0;
+      const bw = (w - 80) * (p / maxVal);
+      // Track
+      ctx.fillStyle = '#202a3f';
+      ctx.strokeStyle = '#2e3b5a';
+      const x0 = 60;
+      ctx.fillRect(x0, y, w-x0-pad, barH);
+      ctx.strokeRect(x0, y, w-x0-pad, barH);
+      // Fill
+      const grad = ctx.createLinearGradient(x0,0,x0+bw,0);
+      grad.addColorStop(0, '#89f7a1');
+      grad.addColorStop(1, '#66c3ff');
+      ctx.fillStyle = grad;
+      ctx.fillRect(x0, y, bw, barH);
+      // Label
+      ctx.fillStyle = '#aab4c8';
+      ctx.fillText(String(i), 16, y + barH*0.75);
+      ctx.fillStyle = '#e5e7eb';
+      ctx.fillText((p*100).toFixed(1)+'%', x0 + bw + 6, y + barH*0.75);
+    }
+  }
+
+  function drawSigmoidPlot(ctx, activation, pointZ=null) {
+    clearCanvas(ctx);
+    const w = ctx.canvas.width, h = ctx.canvas.height;
+    ctx.strokeStyle = '#334155'; ctx.strokeRect(0,0,w,h);
+    // Axes
+    ctx.strokeStyle = '#2a3347'; ctx.beginPath();
+    const xMid = w*0.5, yMid = h*0.5; ctx.moveTo(0,yMid); ctx.lineTo(w,yMid); ctx.moveTo(xMid,0); ctx.lineTo(xMid,h); ctx.stroke();
+    // Function
+    ctx.strokeStyle = '#86efac'; ctx.lineWidth = 2; ctx.beginPath();
+    for (let ix=0; ix<w; ix++) {
+      const z = (ix/w)*12 - 6; // map to [-6,6]
+      let a;
+      if (activation === 'relu') a = Math.max(0, z);
+      else a = 1/(1+Math.exp(-z));
+      const x = ix; const y = h - (activation==='relu' ? (a/6)*h : a*h);
+      if (ix===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    // Point
+    if (pointZ != null) {
+      const px = ((pointZ + 6)/12)*w; let pa;
+      if (activation==='relu') pa = Math.max(0, pointZ);
+      else pa = 1/(1+Math.exp(-pointZ));
+      const py = h - (activation==='relu' ? (pa/6)*h : pa*h);
+      ctx.fillStyle = '#60a5fa'; ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#93c5fd'; ctx.font = '12px Inter, sans-serif';
+      ctx.fillText(`z=${pointZ.toFixed(3)}  a=${pa.toFixed(3)}`, clamp(px+8, 4, w-120), clamp(py-8, 12, h-4));
+    }
+  }
+
+  /********************
+   * Simple MNIST loader (spritesheet)
+   * Based on TFJS examples; uses a hosted sprite + labels file.
+   ********************/
+  class MnistData {
+    constructor() { this.shuffledTrainIndex = 0; this.shuffledTestIndex = 0; }
+    async load() {
+      const IMG_SIZE = 28*28;
+      const NUM_CLASSES = 10;
+      const NUM_DATASET_ELEMENTS = 65000;
+      const NUM_TRAIN_ELEMENTS = 55000;
+      const NUM_TEST_ELEMENTS = NUM_DATASET_ELEMENTS - NUM_TRAIN_ELEMENTS;
+      const MNIST_IMAGES_SPRITE_PATH = 'https://storage.googleapis.com/learnjs-data/model-builder/mnist_images.png';
+      const MNIST_LABELS_PATH = 'https://storage.googleapis.com/learnjs-data/model-builder/mnist_labels_uint8';
+
+      // Load images
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = MNIST_IMAGES_SPRITE_PATH;
+      await new Promise((res, rej) => { img.onload = () => res(); img.onerror = rej; });
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const {width, height} = img; canvas.width = width; canvas.height = height; ctx.drawImage(img, 0, 0);
+      const imageData = ctx.getImageData(0,0,width,height).data;
+      const images = new Float32Array(NUM_DATASET_ELEMENTS * IMG_SIZE);
+      for (let i=0; i<NUM_DATASET_ELEMENTS; i++) {
+        const start = i*IMG_SIZE*4;
+        for (let j=0;j<IMG_SIZE;j++) {
+          images[i*IMG_SIZE + j] = imageData[start + j*4] / 255; // use red channel
+        }
+      }
+      // Load labels
+      const labelsReq = await fetch(MNIST_LABELS_PATH);
+      const labelsBuf = await labelsReq.arrayBuffer();
+      const labels = new Uint8Array(labelsBuf);
+
+      this.trainImages = images.slice(0, IMG_SIZE*NUM_TRAIN_ELEMENTS);
+      this.testImages  = images.slice(IMG_SIZE*NUM_TRAIN_ELEMENTS);
+      this.trainLabels = labels.slice(0, NUM_TRAIN_ELEMENTS*NUM_CLASSES);
+      this.testLabels  = labels.slice(NUM_TRAIN_ELEMENTS*NUM_CLASSES);
+
+      this.trainIndices = tf.util.createShuffledIndices(NUM_TRAIN_ELEMENTS);
+      this.testIndices  = tf.util.createShuffledIndices(NUM_TEST_ELEMENTS);
+      this.IMG_SIZE = IMG_SIZE; this.NUM_CLASSES = NUM_CLASSES; this.NUM_TRAIN_ELEMENTS = NUM_TRAIN_ELEMENTS; this.NUM_TEST_ELEMENTS = NUM_TEST_ELEMENTS;
+    }
+    nextTrainBatch(batchSize) { return this._nextBatch(batchSize, [this.trainImages, this.trainLabels], this.trainIndices, 'train'); }
+    nextTestBatch(batchSize)  { return this._nextBatch(batchSize, [this.testImages,  this.testLabels ], this.testIndices,  'test'); }
+    _nextBatch(batchSize, data, indices, which) {
+      const [images, labels] = data; const {IMG_SIZE, NUM_CLASSES} = this;
+      const xs = new Float32Array(batchSize * IMG_SIZE);
+      const ys = new Float32Array(batchSize * NUM_CLASSES);
+      for (let i=0; i<batchSize; i++) {
+        const idx = indices[(which==='train'? this.shuffledTrainIndex++ : this.shuffledTestIndex++) % indices.length];
+        const img = images.slice(idx*IMG_SIZE, idx*IMG_SIZE + IMG_SIZE);
+        xs.set(img, i*IMG_SIZE);
+        const label = labels.slice(idx*NUM_CLASSES, idx*NUM_CLASSES + NUM_CLASSES);
+        ys.set(label, i*NUM_CLASSES);
+      }
+      const xsT = tf.tensor2d(xs, [batchSize, IMG_SIZE]);
+      const ysT = tf.tensor2d(ys, [batchSize, NUM_CLASSES]);
+      return {xs: xsT, ys: ysT};
+    }
+  }
+
+  /********************
+   * Model, training, and live visualization wiring
+   ********************/
+  const state = {
+    data: null, model: null,
+    act: 'sigmoid', lr: 0.01, bs: 128, epochs: 1,
+    training: false, seen: 0, lossHistory: [],
+    selectedNeuron: 0, // in hidden layer 1
+    currentZ: 0,
+  };
+
+  // DOM/Canvas refs
+  const ctxInput = $('#cInput').getContext('2d');
+  const ctxH1    = $('#cH1').getContext('2d');
+  const ctxH2    = $('#cH2').getContext('2d');
+  const ctxOut   = $('#cOut').getContext('2d');
+  const ctxLoss  = $('#cLoss').getContext('2d');
+  const ctxW     = $('#cW').getContext('2d');
+  const ctxSig   = $('#cSig').getContext('2d');
+
+  function setStatus(s) { $('#kStatus').textContent = s; }
+  function setSeen(n)   { $('#kSeen').textContent = n.toLocaleString(); }
+
+  // Build output bars container for quick updates without canvas
+  function buildOutBars() {
+    const wrap = $('#outBars'); wrap.innerHTML = '';
+    for (let i=0;i<10;i++) {
+      const row = document.createElement('div'); row.className='row'; row.style.alignItems='center';
+      const lab = document.createElement('div'); lab.className='mono'; lab.style.width='20px'; lab.textContent=i;
+      const bar = document.createElement('div'); bar.className='bar'; bar.style.flex='1';
+      const fill = document.createElement('i'); bar.appendChild(fill);
+      const val = document.createElement('div'); val.className='mono'; val.style.width='50px'; val.style.textAlign='right';
+      row.append(lab, bar, val); wrap.appendChild(row);
+    }
+  }
+  buildOutBars();
+
+  // Drawing pad
+  (function initDrawPad(){
+    const c = $('#draw'), ctx = c.getContext('2d');
+    ctx.fillStyle = '#0b0e16'; ctx.fillRect(0,0,c.width,c.height);
+    let drawing=false, last=null;
+    function drawDot(x,y) {
+      ctx.fillStyle = '#ffffff';
+      ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 24; ctx.lineCap='round';
+      if (!last) { ctx.beginPath(); ctx.arc(x,y,12,0,Math.PI*2); ctx.fill(); }
+      else { ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(x,y); ctx.stroke(); }
+      last = {x,y};
+    }
+    c.addEventListener('mousedown', e=>{ drawing=true; last=null; drawDot(e.offsetX,e.offsetY); });
+    c.addEventListener('mousemove', e=>{ if(drawing) drawDot(e.offsetX,e.offsetY); });
+    window.addEventListener('mouseup', ()=>{ drawing=false; last=null; });
+    $('#btnClear').onclick = ()=>{ ctx.clearRect(0,0,c.width,c.height); ctx.fillStyle='#0b0e16'; ctx.fillRect(0,0,c.width,c.height); };
+    $('#btnPredict').onclick = async ()=>{
+      if (!state.model) return;
+      const x = getDrawn28x28();
+      await updateForward(x);
+    }
+    function getDrawn28x28() {
+      const tmp = document.createElement('canvas'); tmp.width=28; tmp.height=28; const t=tmp.getContext('2d');
+      // downscale with low-pass
+      t.imageSmoothingEnabled = true; t.drawImage(c, 0,0,28,28);
+      const d = t.getImageData(0,0,28,28).data; const arr = new Float32Array(28*28);
+      for (let i=0;i<28*28;i++) arr[i] = d[i*4+3] / 255; // use alpha channel (stroke is opaque on dark bg)
+      return tf.tensor2d(arr, [1, 28*28]);
+    }
+    state.getDrawn28x28 = getDrawn28x28;
+  })();
+
+  // Loss chart
+  function drawLoss() {
+    const ctx = ctxLoss; clearCanvas(ctx);
+    const w = ctx.canvas.width, h = ctx.canvas.height; ctx.strokeStyle = '#334155'; ctx.strokeRect(0,0,w,h);
+    if (state.lossHistory.length < 2) return;
+    const xs = state.lossHistory.map((_,i)=>i), ys = state.lossHistory;
+    const min = Math.min(...ys), max = Math.max(...ys);
+    ctx.strokeStyle = '#66c3ff'; ctx.lineWidth=2; ctx.beginPath();
+    ys.forEach((y,i)=>{
+      const px = (i/(ys.length-1))*w; const py = h - ((y - min)/(max-min+1e-6))*h;
+      if (i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }); ctx.stroke();
+  }
+
+  // Build model
+  function buildModel() {
+    const act = state.act; const model = tf.sequential();
+    model.add(tf.layers.dense({units:16, inputShape:[28*28], activation: act, name:'dense1'}));
+    model.add(tf.layers.dense({units:16, activation: act, name:'dense2'}));
+    model.add(tf.layers.dense({units:10, activation:'softmax', name:'denseOut'}));
+    const opt = tf.train.adam(state.lr);
+    model.compile({optimizer: opt, loss: 'categoricalCrossentropy', metrics:['accuracy']});
+    state.model = model; state.lossHistory = []; state.seen = 0; setSeen(0);
+    // Layer models for introspection
+    state.m1 = tf.model({inputs: model.inputs, outputs: model.getLayer('dense1').output});
+    state.m2 = tf.model({inputs: model.inputs, outputs: model.getLayer('dense2').output});
+    state.mOut = tf.model({inputs: model.inputs, outputs: model.getLayer('denseOut').output});
+    refreshWeightThumbs();
+  }
+
+  // Refresh thumbnails for first-layer weights
+  async function refreshWeightThumbs() {
+    const layer = state.model?.getLayer('dense1'); if (!layer) return;
+    const [kernel, bias] = layer.getWeights();
+    const k = await kernel.data(); const b = await bias.data();
+    const wThumbs = $('#wThumbs'); wThumbs.innerHTML = '';
+    for (let i=0;i<16;i++) {
+      const canvas = document.createElement('canvas'); canvas.width=56; canvas.height=56; const cctx=canvas.getContext('2d');
+      const vec = new Float32Array(28*28);
+      for (let p=0;p<28*28;p++) vec[p] = k[p*16 + i];
+      drawHeatmap(cctx, vec, 28, 28, {diverging:true});
+      const cell = document.createElement('div'); cell.className='thumb'+(i===state.selectedNeuron?' active':'');
+      cell.appendChild(canvas); cell.title = `Neuron ${i}  b=${b[i].toFixed(3)}`;
+      cell.onclick = ()=>{ state.selectedNeuron=i; $$('#wThumbs .thumb').forEach(t=>t.classList.remove('active')); cell.classList.add('active'); updateWeightDetail(); };
+      wThumbs.appendChild(cell);
+    }
+    updateWeightDetail();
+  }
+
+  async function updateWeightDetail() {
+    const layer = state.model?.getLayer('dense1'); if (!layer) return;
+    const [kernel, bias] = layer.getWeights();
+    const k = await kernel.data(); const b = await bias.data();
+    const i = state.selectedNeuron;
+    const vec = new Float32Array(28*28);
+    for (let p=0;p<28*28;p++) vec[p] = k[p*16 + i];
+    drawHeatmap(ctxW, vec, 28, 28, {diverging:true});
+    $('#selNeuron').textContent = i;
+    $('#biasVal').textContent = b[i].toFixed(3);
+    drawSigmoidPlot(ctxSig, state.act, state.currentZ);
+  }
+
+  // Update a live forward pass visualization for a single example (xs: [1,784])
+  async function updateForward(xs) {
+    // draw input
+    const xData = await xs.data();
+    drawHeatmap(ctxInput, xData, 28, 28, {});
+
+    // activations
+    const a1 = state.m1.predict(xs);
+    const a2 = state.m2.predict(xs);
+    const out = state.mOut.predict(xs);
+    const [a1d, a2d, outd] = await Promise.all([a1.data(), a2.data(), out.data()]);
+
+    // Draw hidden activations (4x4 grid)
+    drawHeatmap(ctxH1, a1d, 4, 4, {min:0, max: state.act==='relu'?6:1});
+    drawHeatmap(ctxH2, a2d, 4, 4, {min:0, max: state.act==='relu'?6:1});
+
+    // Output
+    const probs = Array.from(outd);
+    drawBars(ctxOut, probs);
+    // Also update DOM bars
+    const rows = Array.from($('#outBars').children);
+    const max = Math.max(...probs);
+    rows.forEach((row, i)=>{
+      const p = probs[i]; const fill = row.querySelector('i'); const val = row.lastChild;
+      fill.style.width = (p*100)+'%'; val.textContent = (p*100).toFixed(1)+'%';
+      row.style.opacity = (p===max?1:0.75);
+      row.style.filter = (p===max? 'none' : 'saturate(0.6)');
+    });
+
+    // Selected neuron's z and a
+    const layer = state.model.getLayer('dense1');
+    const [kernel, bias] = layer.getWeights();
+    const k = await kernel.data(); const b = await bias.data();
+    const i = state.selectedNeuron; let z = b[i];
+    for (let p=0;p<28*28;p++) z += xData[p] * k[p*16 + i];
+    state.currentZ = z; drawSigmoidPlot(ctxSig, state.act, z);
+
+    a1.dispose(); a2.dispose(); out.dispose();
+  }
+
+  // Train loop with callbacks for visualization
+  async function trainLoop() {
+    if (!state.data || !state.model) return;
+    state.training = true; setStatus('Training…');
+    const {data, model} = state;
+    const epochs = state.epochs; const bs = state.bs;
+
+    // Build a dataset generator to avoid huge allocations
+    const trainBatchesPerEpoch = Math.floor(data.NUM_TRAIN_ELEMENTS / bs);
+
+    for (let epoch=0; epoch<epochs && state.training; epoch++) {
+      for (let b=0; b<trainBatchesPerEpoch && state.training; b++) {
+        const {xs, ys} = data.nextTrainBatch(bs);
+        const h = await model.fit(xs, ys, {batchSize: bs, epochs: 1, shuffle: false, verbose: 0});
+        const loss = h.history.loss[0];
+        state.lossHistory.push(loss); drawLoss();
+        state.seen += bs; setSeen(state.seen);
+        tf.dispose([xs, ys]);
+        if (b % 5 === 0) {
+          refreshWeightThumbs();
+          // Show a random test example forward pass
+          const test = data.nextTestBatch(1); await updateForward(test.xs); tf.dispose([test.xs, test.ys]);
+          await tf.nextFrame();
+        }
+        // Let UI breathe
+        if (b % 10 === 0) await new Promise(r=>setTimeout(r, 0));
+      }
+    }
+    setStatus(state.training ? 'Training…' : 'Paused');
+  }
+
+  /********************
+   * Wire controls
+   ********************/
+  $('#btnLoad').onclick = async ()=>{
+    setStatus('Loading MNIST…');
+    try {
+      state.data = new MnistData(); await state.data.load();
+      setStatus('Data loaded ✔');
+      // Preview a random image
+      const batch = state.data.nextTestBatch(1); await updateForward(batch.xs); tf.dispose([batch.xs, batch.ys]);
+    } catch (e) {
+      setStatus('Load failed'); console.error(e);
+      alert('Could not load MNIST sprites. Are you offline? You can still draw and run inference after training with your own data.');
+    }
+  };
+
+  $('#btnBuild').onclick = ()=>{ buildModel(); setStatus('Model built ✔'); };
+  $('#btnTrain').onclick = ()=>{ if (!state.model || !state.data) return; state.training = true; trainLoop(); };
+  $('#btnPause').onclick = ()=>{ state.training = false; setStatus('Paused'); };
+  $('#btnReset').onclick = ()=>{
+    state.training = false; state.seen = 0; setSeen(0); state.lossHistory=[]; drawLoss();
+    if (state.model) { state.model.dispose(); state.m1.dispose(); state.m2.dispose(); state.mOut.dispose(); }
+    state.model = null; setStatus('Reset. Build the model again.'); $('#wThumbs').innerHTML='';
+    clearCanvas(ctxH1); clearCanvas(ctxH2); clearCanvas(ctxOut); clearCanvas(ctxW); drawSigmoidPlot(ctxSig, state.act, null);
+  };
+
+  // Hyperparameters
+  $('#lr').oninput = e=>{ state.lr = parseFloat(e.target.value); $('#lrVal').textContent = state.lr.toFixed(4); if (state.model) state.model.compile({optimizer: tf.train.adam(state.lr), loss:'categoricalCrossentropy', metrics:['accuracy']}); };
+  $('#bs').oninput = e=>{ state.bs = parseInt(e.target.value); $('#bsVal').textContent = state.bs; };
+  $('#ep').oninput = e=>{ state.epochs = parseInt(e.target.value); $('#epVal').textContent = state.epochs; };
+  $$('input[name="act"]').forEach(r=> r.onchange = (e)=>{ state.act = e.target.value; if (state.model) { buildModel(); setStatus('Rebuilt with '+state.act); } drawSigmoidPlot(ctxSig, state.act, state.currentZ); });
+
+  // Initial plots
+  drawSigmoidPlot(ctxSig, state.act, null);
+
+  // Weight detail updates on interval (in case training updates bias frequently)
+  setInterval(()=>{ if (state.model) updateWeightDetail(); }, 1500);
+  </script>
+</body>
+</html>
+
