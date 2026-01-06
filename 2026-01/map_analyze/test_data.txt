@@ -1,0 +1,91 @@
+# EU5 Market Access Test Data
+# Format: start_location, start_x, start_y, end_location, end_x, end_y, in_game_distance, notes
+# Lines starting with # are comments
+# Notes field is optional
+
+# Somalia (Near Equator)
+hudur, 9698, 3561, luuq, 9646, 3583, 22.58, Near equator
+
+# Norway (Far North), focus on Deatnu - OUTLIERS
+deatnu, 8968, 7801, vardo, 9049, 7794, 40.65, Far north E-W
+deatnu, 8968, 7801, varanger, 9010, 7759, 29.69, Far north E-W
+deatnu, 8968, 7801, lebesby, 8919, 7797, 24.58, Far north E-W
+deatnu, 8968, 7801, utsjoki, 8931, 7730, 40.03, Far north diagonal
+deatnu, 8968, 7801, tana_fjord, 9052, 7809, 16.87, Land to sea
+deatnu, 8968, 7801, north_cape, 8867, 7831, 21.07, Land to sea
+
+# Norway (all routes from korvala)
+korvala, 8883, 7488, sodankyla, 8900, 7564, 46.72, should be more N-S
+korvala, 8883, 7488, ranua, 8876, 7435, 32.07, should be more N-S
+korvala, 8883, 7488, kemijarvi, 8943, 7491, 36.04, more E-W
+korvala, 8883, 7488, rovaniemi, 8816, 7472, 41.33, more E-W
+korvala, 8883, 7488, kittila, 8810, 7543, 54.84, kinda NW
+korvala, 8883, 7488, posio, 8971, 7464, 54.72, kinda SE
+korvala, 8883, 7488, savukoski, 8972, 7551, 65.42, kinda Near
+
+# Norway: gellivaara has some good low dx moves
+gellivaara, 8645, 7520, juckasjarvi, 8660, 7581, 31.40, near vertical
+gellivaara, 8645, 7520, socksjock, 8626, 7484, 20.35, mostly vertical
+porjus, 8574, 7523, jokkmokk, 8575, 7467, 30.80, almost perfectly vertical
+
+# Byzantine
+constantinople, 9005, 5709, silivri, 8981, 5710, 10.08, Byzantine
+gonen, 8952, 5647, lake_manyas, 8964, 5650, 2.47, Land to lake
+lake_manyas, 8964, 5650, bandirma, 8967, 5662, 2.47, Lake to land
+gonen, 8952, 5647, bandirma, 8967, 5662, 11.13, Land to land
+gonen, 8952, 5647, biga, 8928, 5656, 10.89, land to land
+gonen, 8952, 5647, can, 8927, 5632, 15.30, land to land
+gonen, 8952, 5647, balya, 8945, 5618, 14.91, land to land
+gonen, 8952, 5647, dardanelles, 8924, 5670, 7.24, land to inland sea
+
+# Kola Peninsula / Karelia (Far North - Working)
+kola, 9189, 7666, maaselka, 9209, 7598, 35.44, Far north N-S
+loimola, 9125, 7118, salmi, 9141, 7101, 11.67, Karelia
+loimola, 9125, 7118, lake_ladoga, 9122, 7043, 15.01, Land to lake
+kirkenes, 9041, 7715, varanger, 9010, 7759, 26.91, Far north N-S
+pyalitsa, 9521, 7479, ponoi, 9520, 7537, 29.00, Far north N-S
+
+# White Sea (Inland Sea)
+intsi_cape, 9461, 7394, varzuga_estuary, 9273, 7447, 78.13, Inland sea
+intsi_cape, 9461, 7394, arkhangelsk, 9545, 7332, 20.88, go to land
+intsi_cape, 9461, 7394, tetrino, 9437, 7451, 12.36, go to land
+inner_onega_bay, 9352, 7319, varzuga_estuary, 9273, 7447, 60.16, Inland sea
+
+# Somalia Coast (Sea)
+cadde_cape, 9808, 3472, banaadir_coast, 9762, 3433, 24.12, Sea near equator
+
+# Zimbabwe (Southern Africa)
+great_zimbabwe, 9095, 2239, mabveni, 9082, 2252, 10.11, Southern Africa
+great_zimbabwe, 9095, 2239, naletale, 9055, 2236, 22.06, NA
+great_zimbabwe, 9095, 2239, matendere, 9132, 2265, 24.87, NA
+great_zimbabwe, 9095, 2239, majiri, 9120, 2217, 19.14, NA
+great_zimbabwe, 9095, 2239, chipagwe, 9107, 2195, 23.94, NA
+
+# Patagonia / Tierra del Fuego (Far South)
+juni_aiken, 4478, 296, ciaike, 4516, 264, 19.87, Far south
+nakenk, 4619, 126, hamenk, 4587, 136, 15.08, Far south
+aguirre_bay, 4693, 42, blossom_bay, 4794, 69, 41.81, Sea far south
+utumaala, 4627, 73, wakimaala, 4593, 76, 20.47, Far south
+hamenk, 4587, 136, kauwes, 4554, 142, 15.09, Far south
+corpen_aike, 4526, 441, chalten, 4437, 439, 40.06, Southern Patagonia
+
+# Alaska
+uivvak, 183, 7648, kali, 263, 7695, 41.75, Alaska north
+uataaq, 245, 7556, nuurvik, 345, 7508, 44.36, Alaska north
+ungaliq, 392, 7303, unalakleet, 381, 7255, 24.62, Alaska outlier
+ungaliq, 392, 7303, kaltag, 458, 7308, 33.09, horizontal from ungaliq
+ungaliq, 392, 7303, malemiut, 397, 7350, 25.99, vertical from ungaliq
+unalakleet, 381, 7225, grayling, 432, 7238, 24.19, Alaska
+
+# North Russia, near Laptev sea
+yarok, 13947, 7853, kuogastakh, 13871, 7865, 38.47, land
+yarok, 13947, 7853, kazachye, 13895, 7818, 31.34, land
+yarok, 13947, 7853, ukyulyakh, 13956, 7806, 23.92, land
+yarok, 13947, 7853, orotko, 14007, 7836, 31.18, land
+
+# India, with some coastal
+kayal, 11234, 3810, tirunelveli, 11228, 3823, 5.87, land
+kayal, 11234, 3810, thoothukudi, 11245, 3843, 13.91, land
+kayal, 11234, 3810, kanyakumari, 11215, 3804, 9.96, land
+kayal, 11234, 3810, indian_coast31, 11258, 3792, 6.00, land => sea
+kayal, 11234, 3810, indian_coast30, 11219, 3770, 8.54, land => sea

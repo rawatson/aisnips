@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU5 Distance Calculator</title>
+    <style>
+        :root {
+            --bg-color: #1e1e2e;
+            --card-bg: #2b2b3b;
+            --text-main: #cdd6f4;
+            --text-muted: #a6adc8;
+            --accent: #89b4fa;
+            --success: #a6e3a1;
+            --border: #45475a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .point-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        input[type="number"] {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .results {
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .result-value {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .coords-display {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .highlight {
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>EU5 Distance Calculator</h1>
+    <div class="subtitle">Verifies In-Game Distance Logic</div>
+
+    <div class="input-group">
+        <div class="point-inputs">
+            <label>Point A (X, Y)</label>
+            <div style="display: flex; gap: 0.5rem;">
+                <input type="number" id="x1" placeholder="X" value="8698">
+                <input type="number" id="y1" placeholder="Y" value="7801">
+            </div>
+            <div class="coords-display" id="geo1">Lat: 0°, Lon: 0°</div>
+        </div>
+        <div class="point-inputs">
+            <label>Point B (X, Y)</label>
+            <div style="display: flex; gap: 0.5rem;">
+                <input type="number" id="x2" placeholder="X" value="9049">
+                <input type="number" id="y2" placeholder="Y" value="7794">
+            </div>
+            <div class="coords-display" id="geo2">Lat: ?, Lon: ?</div>
+        </div>
+    </div>
+
+    <div class="results">
+        <div class="result-row">
+            <span class="result-label">Map Pixel Distance</span>
+            <span class="result-value" id="pixelDist">0 px</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Real Distance (Great Circle)</span>
+            <span class="result-value" id="realDist">0 km</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Predicted Game Distance</span>
+            <span class="result-value highlight" id="gameDist">0.00</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Formula</span>
+            <span class="result-value" style="font-size: 0.8rem;">(KM / 8) + 5</span>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Based on Gall Stereographic Projection & Reverse-Engineered Game Logic<br>
+        16384x8192 Map | Equator Y=3340
+    </div>
+</div>
+
+<script>
+    // Constants
+    const WIDTH = 16384;
+    const HEIGHT = 8192;
+    const EQUATOR_Y = 3340;
+    const R_EARTH_KM = 6371;
+
+    // Projection Constants
+    const R_MAP = (WIDTH * Math.sqrt(2)) / (2 * Math.PI);
+    const Y_FACTOR = R_MAP * (1 + Math.sqrt(2)/2);
+
+    function toRadians(deg) {
+        return deg * (Math.PI / 180);
+    }
+
+    function toDegrees(rad) {
+        return rad * (180 / Math.PI);
+    }
+
+    function mapToGeo(x, y) {
+        const x_proj = x - (WIDTH / 2);
+        const lon_rad = (x_proj * Math.sqrt(2)) / R_MAP;
+        
+        const y_proj = y - EQUATOR_Y;
+        const term = y_proj / Y_FACTOR;
+        const lat_rad = 2 * Math.atan(term);
+
+        return {
+            lat: toDegrees(lat_rad),
+            lon: toDegrees(lon_rad),
+            lat_rad: lat_rad,
+            lon_rad: lon_rad
+        };
+    }
+
+    function haversineDist(p1, p2) {
+        const dLat = p2.lat_rad - p1.lat_rad;
+        const dLon = p2.lon_rad - p1.lon_rad;
+        const a = 
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(p1.lat_rad) * Math.cos(p2.lat_rad) * 
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return R_EARTH_KM * c;
+    }
+
+    function formatCoord(val, type) {
+        const dir = type === 'lat' 
+            ? (val >= 0 ? 'N' : 'S') 
+            : (val >= 0 ? 'E' : 'W');
+        return `${Math.abs(val).toFixed(2)}° ${dir}`;
+    }
+
+    function update() {
+        const x1 = parseFloat(document.getElementById('x1').value) || 0;
+        const y1 = parseFloat(document.getElementById('y1').value) || 0;
+        const x2 = parseFloat(document.getElementById('x2').value) || 0;
+        const y2 = parseFloat(document.getElementById('y2').value) || 0;
+
+        const geo1 = mapToGeo(x1, y1);
+        const geo2 = mapToGeo(x2, y2);
+
+        document.getElementById('geo1').innerText = `${formatCoord(geo1.lat, 'lat')}, ${formatCoord(geo1.lon, 'lon')}`;
+        document.getElementById('geo2').innerText = `${formatCoord(geo2.lat, 'lat')}, ${formatCoord(geo2.lon, 'lon')}`;
+
+        // Pixel Distance
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        const pxDist = Math.sqrt(dx*dx + dy*dy);
+
+        // Real Distance
+        const realDist = haversineDist(geo1, geo2);
+
+        // Predicted Game Distance
+        // Formula: (RealKM / 8) + 5
+        const gameDist = (realDist / 8.0) + 5.0;
+
+        document.getElementById('pixelDist').innerText = pxDist.toFixed(2) + " px";
+        document.getElementById('realDist').innerText = realDist.toFixed(2) + " km";
+        document.getElementById('gameDist').innerText = gameDist.toFixed(2);
+    }
+
+    // Attach listeners
+    ['x1', 'y1', 'x2', 'y2'].forEach(id => {
+        document.getElementById(id).addEventListener('input', update);
+    });
+
+    // Initial run
+    update();
+
+</script>
+
+</body>
+</html>
