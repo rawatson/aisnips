@@ -75,23 +75,25 @@ The game calculates distances using raw pixel measurements on a **Gall Stereogra
 
 ### Concrete Examples
 
-#### Example 1: Similar Real Distances, Different Game Costs
+These examples use **raw pixel distance** (before terrain multipliers) to isolate the projection distortion effect.
 
-| Route | Real Distance | Game Distance | Ratio |
-|-------|---------------|---------------|-------|
-| hudur → luuq (Somalia, 2°N) | 134 km | 22.58 | 5.9 km/unit |
-| korvala → sodankyla (Finland, 66°N) | 108 km | 46.72 | 2.3 km/unit |
+#### Example 1: E-W Movement at Extreme Latitude
 
-Despite being **20% shorter in real distance**, the Finland route costs **107% more** in game market access terms.
+| Route | Real Distance | Pixel Distance | km/pixel |
+|-------|---------------|----------------|----------|
+| hudur → luuq (Somalia, 2°N) | 134 km | 56.5 | 2.38 |
+| deatnu → vardo (Norway, 70°N, E-W) | 66 km | 81.3 | 0.82 |
 
-#### Example 2: Extreme Northern Penalty
+The Somalia route is **2× longer** in reality but only **0.7× the pixels**. The Norway E-W route has a **2.9× worse** km/pixel ratio due to projection distortion.
 
-| Route | Real Distance | Game Distance | Ratio |
-|-------|---------------|---------------|-------|
-| deatnu → vardo (Norway, 70°N) | 66 km | 40.65 | 1.6 km/unit |
-| great_zimbabwe → naletale (Zimbabwe, 20°S) | 92 km | 22.06 | 4.2 km/unit |
+#### Example 2: N-S vs E-W at Same Latitude
 
-The Norway route is **28% shorter** in reality but costs **84% more** in-game.
+| Route | Real Distance | Pixel Distance | km/pixel |
+|-------|---------------|----------------|----------|
+| korvala → sodankyla (Finland, 67°N, N-S) | 108 km | 77.9 | 1.39 |
+| korvala → kemijarvi (Finland, 67°N, E-W) | 58 km | 60.1 | 0.96 |
+
+At the same latitude, E-W movement yields **1.4× fewer** real km per pixel than N-S movement.
 
 ### Why This Happens
 
