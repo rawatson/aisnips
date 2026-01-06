@@ -818,9 +818,87 @@
 
 ---
 
+### Line 94: north_eastern_atlantic50 → north_eastern_atlantic53 (ocean => ocean)
+| Location | X | Y | Topography | Vegetation | Cost |
+|----------|---|---|------------|------------|------|
+| north_eastern_atlantic50 | 7150 | 5168 | ocean | - | 0.40 |
+| north_eastern_atlantic53 | 7014 | 5138 | ocean | - | 0.40 |
+
+- Pixel Distance: 139.27
+- In-Game Distance: 55.70
+- Expected (avg 0.40): 55.71
+- Status: **MATCH**
+
+---
+
+### Line 95: north_eastern_atlantic50 → north_eastern_atlantic49 (ocean => ocean)
+| Location | X | Y | Topography | Vegetation | Cost |
+|----------|---|---|------------|------------|------|
+| north_eastern_atlantic50 | 7150 | 5168 | ocean | - | 0.40 |
+| north_eastern_atlantic49 | 7189 | 5268 | ocean | - | 0.40 |
+
+- Pixel Distance: 107.34
+- In-Game Distance: 42.93
+- Expected (avg 0.40): 42.93
+- Status: **MATCH**
+
+---
+
+### Line 96: north_eastern_atlantic50 → north_eastern_atlantic51 (ocean => ocean)
+| Location | X | Y | Topography | Vegetation | Cost |
+|----------|---|---|------------|------------|------|
+| north_eastern_atlantic50 | 7150 | 5168 | ocean | - | 0.40 |
+| north_eastern_atlantic51 | 7134 | 5052 | ocean | - | 0.40 |
+
+- Pixel Distance: 117.10
+- In-Game Distance: 46.83
+- Expected (avg 0.40): 46.84
+- Status: **MATCH**
+
+---
+
+### Line 97: north_eastern_atlantic50 → cape_hadid (ocean => coastal ocean)
+| Location | X | Y | Topography | Vegetation | Cost |
+|----------|---|---|------------|------------|------|
+| north_eastern_atlantic50 | 7150 | 5168 | ocean | - | 0.40 |
+| cape_hadid | 7233 | 5150 | coastal_ocean | - | 0.40 |
+
+- Pixel Distance: 84.93
+- In-Game Distance: 33.97
+- Expected (avg 0.40): 33.97
+- Status: **MATCH**
+
+---
+
+### Line 98: north_eastern_atlantic50 → cape_sim (ocean => coastal ocean)
+| Location | X | Y | Topography | Vegetation | Cost |
+|----------|---|---|------------|------------|------|
+| north_eastern_atlantic50 | 7150 | 5168 | ocean | - | 0.40 |
+| cape_sim | 7219 | 5096 | coastal_ocean | - | 0.40 |
+
+- Pixel Distance: 99.72
+- In-Game Distance: 39.88
+- Expected (avg 0.40): 39.89
+- Status: **MATCH**
+
+---
+
+### Line 99: north_eastern_atlantic50 → cape_beddouza (ocean => coastal ocean)
+| Location | X | Y | Topography | Vegetation | Cost |
+|----------|---|---|------------|------------|------|
+| north_eastern_atlantic50 | 7150 | 5168 | ocean | - | 0.40 |
+| cape_beddouza | 7260 | 5206 | coastal_ocean | - | 0.40 |
+
+- Pixel Distance: 116.38
+- In-Game Distance: 46.55
+- Expected (avg 0.40): 46.55
+- Status: **MATCH**
+
+---
+
 ## Summary
 
-**Working Formula (61/61 cases):**
+**Working Formula (67/67 cases):**
 ```
 If either location is water (lakes, coastal_ocean, inland_sea, narrows):
     In-Game Distance = Pixel Distance × 0.20

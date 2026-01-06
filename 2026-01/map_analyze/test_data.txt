@@ -89,3 +89,11 @@ kayal, 11234, 3810, thoothukudi, 11245, 3843, 13.91, land
 kayal, 11234, 3810, kanyakumari, 11215, 3804, 9.96, land
 kayal, 11234, 3810, indian_coast31, 11258, 3792, 6.00, land => sea
 kayal, 11234, 3810, indian_coast30, 11219, 3770, 8.54, land => sea
+
+# Ocean provinces
+north_eastern_atlantic50, 7150, 5168, north_eastern_atlantic53, 7014, 5138, 55.70, ocean => ocean
+north_eastern_atlantic50, 7150, 5168, north_eastern_atlantic49, 7189, 5268, 42.93, ocean => ocean
+north_eastern_atlantic50, 7150, 5168, north_eastern_atlantic51, 7134, 5052, 46.83, ocean => ocean
+north_eastern_atlantic50, 7150, 5168, cape_hadid, 7233, 5150, 33.97, ocean => coastal ocean
+north_eastern_atlantic50, 7150, 5168, cape_sim, 7219, 5096, 39.88, ocean => coastal ocean
+north_eastern_atlantic50, 7150, 5168, cape_beddouza, 7260, 5206, 46.55, ocean => coastal ocean

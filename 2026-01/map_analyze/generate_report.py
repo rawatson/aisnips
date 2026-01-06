@@ -25,6 +25,7 @@ BASE_COSTS = {
     "flatland": 0.40,
     "coastal_ocean": 0.40,
     "inland_sea": 0.40,
+    "ocean": 0.40,
     "plateau": 0.45,
     "hills": 0.50,
     "wetlands": 0.50,
@@ -35,7 +36,7 @@ BASE_COSTS = {
 }
 
 # Water types - transitions to/from these use 0.20 factor
-WATER_TYPES = {'lakes', 'coastal_ocean', 'inland_sea', 'narrows'}
+WATER_TYPES = {'lakes', 'coastal_ocean', 'inland_sea', 'narrows', 'ocean'}
 
 VEG_COSTS = {
     "sparse": 0.00,

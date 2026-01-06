@@ -27,11 +27,11 @@ Where:
 | Topography | Base Cost | | Vegetation | Modifier |
 |------------|-----------|---|------------|----------|
 | flatland   | 0.40      | | sparse     | +0.00    |
-| plateau    | 0.45      | | grasslands | +0.00    |
-| hills      | 0.50      | | desert     | +0.00    |
-| wetlands   | 0.50      | | farmland   | +0.02    |
-| mountains  | 0.60      | | woods      | +0.05    |
-|            |           | | forest     | +0.10    |
+| ocean      | 0.40      | | grasslands | +0.00    |
+| plateau    | 0.45      | | desert     | +0.00    |
+| hills      | 0.50      | | farmland   | +0.02    |
+| wetlands   | 0.50      | | woods      | +0.05    |
+| mountains  | 0.60      | | forest     | +0.10    |
 |            |           | | jungle     | +0.10    |
 
 ### Water Types (Special Handling)
@@ -41,8 +41,11 @@ When crossing between land and water, a flat **0.20** multiplier is used regardl
 - `coastal_ocean`
 - `inland_sea`
 - `narrows`
+- `ocean` (deep ocean tiles)
 
 Water-to-water routes (e.g., sea tile to sea tile) use normal averaging (typically 0.40).
+
+**Note on Ocean Tiles:** Deep `ocean` provinces (e.g., `north_eastern_atlantic50`) use a base cost of **0.40** and follow the same rules as other water types. Ocean↔ocean and ocean↔coastal_ocean routes use normal cost averaging, while ocean↔land routes would use the 0.20 multiplier.
 
 ---
 
@@ -114,13 +117,14 @@ This is not necessarily a bug—it may be intentional game balance—but it's wo
 
 ## Validation
 
-The formula was validated against **61 test cases** spanning:
+The formula was validated against **67 test cases** spanning:
 - All latitudes from 55°S (Patagonia) to 71°N (Siberia)
-- All terrain types (flatland, hills, wetlands, mountains, lakes, seas)
+- All terrain types (flatland, hills, wetlands, mountains, lakes, seas, ocean)
 - Various movement directions (N-S, E-W, diagonal)
 - Water↔land transitions
+- Deep ocean province routes
 
-**Result: 61/61 matches (100%)** with error tolerance of ±1.0 game distance units.
+**Result: 67/67 matches (100%)** with error tolerance of ±1.0 game distance units.
 
 ---
 
