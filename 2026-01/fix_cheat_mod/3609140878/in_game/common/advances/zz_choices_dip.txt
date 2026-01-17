@@ -1,0 +1,576 @@
+﻿############################
+# age_2_renaissance 10/10
+############################
+
+zz_integrated_elites = {
+	age = age_2_renaissance
+	icon = diplomatic_range_age_1
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	requires = renaissance_court
+
+	monthly_diplomats = 0.1
+}
+
+zz_marcher_lords = {
+	age = age_2_renaissance
+	icon = diplomatic_influence
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	
+	requires = zz_integrated_elites
+	
+	
+	unlock_subject_type = march
+}
+
+zz_claim_fabrication = {
+	age = age_2_renaissance
+	icon = expansionism
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	
+	requires = zz_integrated_elites
+	
+	casus_belli_creation_speed_modifier = 0.25
+}
+
+
+zz_shrewd_commerce_practice = {
+	age = age_2_renaissance
+	icon = zmw_merchant_taxes
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	
+	requires = spy_construction_renaissance
+	
+	global_trade_center_power = 0.05
+}
+
+zz_merchant_traditions = {
+	age = age_2_renaissance
+	icon = merchant_power_from_maritime_reformation_advance
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+
+	requires = zz_shrewd_commerce_practice
+	
+	merchant_power_from_maritime_modifier = 0.1
+	
+}
+
+zz_privateers = {
+	age = age_2_renaissance
+	icon = letters_of_marque
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	
+	requires = zz_shrewd_commerce_practice
+	
+	can_hire_privateers = yes
+}
+
+
+zz_experienced_diplomats  = {
+	age = age_2_renaissance
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	
+	requires = law_making_renaissance
+	
+	diplomatic_reputation = diplomatic_reputation_mild_bonus
+}
+
+zz_benign_diplomats = {
+	age = age_2_renaissance
+	icon = cultural_acceptance_advance
+	potential = {
+		has_variable = euro_tech_dip	_age_2
+	}
+	requires = zz_experienced_diplomats
+	
+	improve_relation_impact = 0.2
+
+	ai_weight = {
+		if = {
+			limit = {
+				root = {
+					subjects_relative_power > 0.25
+				}
+			}
+			add = 1
+		}
+	}
+}
+
+
+
+zz_tribute_system = {
+	age = age_2_renaissance
+	icon = debt_and_loans
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+
+	requires = zz_benign_diplomats
+
+	
+	subject_income_modifier = 0.025
+}
+zz_influence = {
+	age = age_2_renaissance
+	icon = expansionism
+	potential = {
+		has_variable = euro_tech_dip_age_2
+	}
+	requires = zz_benign_diplomats
+	global_war_score_cost = -0.05
+}
+
+
+############################
+# age_3_discovery 10/10
+############################
+zz_quest_for_the_new_world = {
+	age = age_3_discovery
+	icon = nav_fearless_seamen
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+
+	requires = colonial_charters
+	
+	exploration_preparation_time_modifier = -0.1
+	exploration_mission_speed = 0.1
+	
+	ai_preference_tags = {
+		exploration
+	}
+}
+zz_overseas_exploration = {
+	age = age_3_discovery
+	icon = ship_building_advance
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+	
+	requires = colonial_policy_advance
+
+	colonial_range_modifier = 0.5
+
+	ai_preference_tags = {
+		exploration
+	}
+}
+
+zz_overseas_trade = {
+	age = age_3_discovery
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+	
+	requires = zz_overseas_exploration
+
+	trade_range_modifier = 0.5
+}
+
+
+
+zz_colonial_ventures = {
+	age = age_3_discovery
+	icon = colonies
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+	
+	requires = coastal_trade_routes_advance
+	
+	colonial_migration_size_modifier = 0.50
+
+	ai_preference_tags = {
+		exploration
+	}
+}
+
+zz_exploration = {
+	age = age_3_discovery
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+
+	colonial_range = 500
+
+	unlock_casus_belli = cb_exploration
+
+	ai_preference_tags = {
+		exploration
+	}
+}
+
+
+zz_foreign_embassies = {
+	age = age_3_discovery
+	icon = diplomatic_influence
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+	
+	monthly_diplomats = 0.1
+}
+zz_efficient_spies = {
+	age = age_3_discovery
+	icon = efficient_spies
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+	
+	spy_network_construction = 0.5
+}	
+
+
+zz_vetting = {
+	age = age_3_discovery
+	icon = debt_and_loans
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+
+	counter_espionage = 0.33
+}
+zz_merchant_adventures = {
+	age = age_3_discovery
+	icon = global_trade_routes_advance
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+
+	trade_sea_movement_cost_modifier = -0.1
+}
+
+zz_ships_penny = {
+	age = age_3_discovery
+	icon = rudimentary_coastal_ship_repair
+	potential = {
+		has_variable = euro_tech_dip_age_3
+	}
+
+	ship_build_speed = 0.1
+}
+
+
+############################
+# age_4_reformation 10/10
+############################
+zz_audit_checks = {
+	age = age_4_reformation
+	icon = genoese_banking_traditions
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	tax_income_efficiency = large_tax_income_efficiency_bonus
+}
+
+zz_cabinet = {
+	age = age_4_reformation
+	icon = scholasticism
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	country_cabinet_efficiency = 0.20
+}
+zz_grand_banquets = {
+	age = age_4_reformation
+	icon = grand_banquets
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	max_diplomats = 1
+}
+zz_fast_negotiations = {
+	age = age_4_reformation
+	icon = merchant_power_from_maritime_reformation_advance
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	merchant_maintenance_cost = -0.10
+}
+zz_trade_manipulation = {
+	age = age_4_reformation
+	icon = global_supply_limit_modifier_advance_5
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	global_trade_center_power = 0.05
+}
+
+zz_diplomatic_influence = {
+	age = age_4_reformation
+	icon = diplomatic_influence
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	diplomatic_reputation = diplomatic_reputation_mild_bonus
+}
+
+zz_free_trade = {
+	age = age_4_reformation
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	global_merchant_capacity_modifier = 0.10
+}
+
+zz_land_of_opportunity = {
+	age = age_4_reformation
+	icon = court_accounting
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	colonial_migration_size_modifier = 0.50
+}
+zz_free_colonies = {
+	age = age_4_reformation
+	icon = scholasticism
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	colonial_maintenance_cost = -0.20
+}
+zz_grand_navy = {
+	age = age_4_reformation
+	icon = maritime_advance_age_2
+	potential = {
+		has_variable = euro_tech_dip_age_4
+	}
+
+	
+	navy_maintenance_cost = -0.1
+}
+
+
+############################
+# age_5_absolutism 10/10
+############################
+zz_agent_training = {
+	age = age_5_absolutism
+	icon = diplomatic_influence
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	max_diplomats = 1
+}
+
+zz_dip_choice_subject_opinions = {
+	age = age_5_absolutism
+	icon = scholasticism
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	subject_opinions = 25
+}
+
+
+zz_state_propaganda = {
+	age = age_5_absolutism
+	icon = expansionism
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	antagonism_received_modifier = -0.2
+}
+zz_formal_diplomacy = {
+	age = age_5_absolutism
+	icon = glorious_arms
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	diplomatic_reputation = diplomatic_reputation_mild_bonus
+}
+zz_diplomatic_corps = {
+	age = age_5_absolutism
+	icon = diplomatic_range_age_1
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	monthly_diplomats = 0.1
+}
+
+zz_national_trade = {
+	age = age_5_absolutism
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	global_merchant_capacity_modifier = 0.10
+}
+zz_national_trade_policy = {
+	age = age_5_absolutism
+	icon = merchant_power_from_maritime_reformation_advance
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	trade_efficiency = small_trade_efficiency_bonus
+}
+
+zz_vice_roys  = {
+	age = age_5_absolutism
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	
+	subject_pays_colonial_cost_modifier = 0.10
+	diplomatic_range_modifier = 0.25
+}
+
+zz_sheltered_ports = {
+	age = age_5_absolutism
+	icon = rudimentary_coastal_ship_repair
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	navy_repair_cost = -0.2
+}
+
+zz_naval_fighting_instruction = {
+	age = age_5_absolutism
+	icon = gunpowder_advance
+	potential = {
+		has_variable = euro_tech_dip_age_5
+	}
+	
+	blockade_efficiency = 0.5
+}
+
+
+############################
+# age_6_revolutions 10/10
+############################
+
+zz_merchant_marine = {
+	age = age_6_revolutions
+	icon = maritime_advance_age_2
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+
+	global_sailors_modifier = 0.20
+}
+
+zz_global_empire = {
+	age = age_6_revolutions
+	icon = genoese_banking_traditions
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+
+	subject_income_modifier = 0.025
+	tax_income_efficiency = medium_tax_income_efficiency_bonus
+}
+
+zz_buffer_states = {
+	age = age_6_revolutions
+	icon = diplomatic_range_age_1
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+	
+	diplomatic_capacity = 1
+}
+
+
+
+
+zz_flexible_negotiation = {
+	age = age_6_revolutions
+	icon = scholasticism
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+	
+	global_war_score_cost = -0.05
+}
+zz_overseas_merchants = {
+	age = age_6_revolutions
+	icon = merchant_power_from_maritime_reformation_advance
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+	
+	trade_range_modifier = 0.5
+}
+
+zz_postal_service = {
+	age = age_6_revolutions
+	icon = road_building
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+
+	road_cost_on_distance_from_capital = -2
+	sea_cost_on_distance_from_capital_when_maritime = -1
+}
+
+zz_additional_loyalist_recruitment = {
+	age = age_6_revolutions
+	icon = crown_power_advance_renaissance
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+
+	subject_loyalty = 5
+}
+
+
+zz_morale_recovery_rev_dip_choice = {
+	age = age_6_revolutions
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+
+	morale_recovery_in_friendly = 0.05
+}
+
+
+zz_merchant_power_from_maritime_rev_dip_choice = {
+	age = age_6_revolutions
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+
+	merchant_power_from_maritime_modifier = 0.1
+}
+
+
+
+zz_sea_hawks = {
+	age = age_6_revolutions
+	potential = {
+		has_variable = euro_tech_dip_age_6
+	}
+	icon = safe_exploration_techniques_advance
+
+	navy_initiative = 1.0
+}

@@ -1,0 +1,50 @@
+euro_selectable_advances_cabinet_action = {
+	ability = adm
+
+	potential = {
+		is_human = yes
+	}
+
+	allow = {
+		always = yes
+	}
+
+	select_trigger = {
+		looking_for_a = location
+		source = actor
+		target_flag = target
+		name = "euro_select_any_province"
+		none_available_msg_key = "euro_cant_select_any_province"
+		column = {
+			data = name
+		}
+		column = {
+			data = development
+		}
+		column = {
+			data = population
+		}
+		visible = {
+			scope:actor = {
+				not = {
+					any_cabinet = {
+						has_cabinet_action = yes
+						cabinet_action = cabinet_action:euro_selectable_advances_cabinet_action
+						interaction_target:target ?= root
+					}
+				}
+			}
+		}
+	}
+	
+	on_activate = {
+		scope:actor = {
+			trigger_event_non_silently = euro_advances_event.1
+			set_variable = euro_advances_event_on
+		}
+	}
+	
+	ai_will_do = {
+		value = -1000000
+	}
+}

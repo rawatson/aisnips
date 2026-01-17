@@ -1,0 +1,34 @@
+npl_the_divya_upadesh = {
+	age = age_6_revolutions
+	potential = {
+		OR = {
+			has_variable = euro_tech_nepali_language
+			has_variable = euro_tech_NPL
+			AND = {
+				OR = {
+					culture.language = language:nepali_language
+					has_or_had_tag = NPL
+				}
+			}
+		}
+	}
+	diplomatic_reputation = diplomatic_reputation_mild_bonus
+	requires = enlightened_court
+}
+npl_gurkhas = {
+	age = age_6_revolutions
+	potential = {
+		OR = {
+			has_variable = euro_tech_nepali_language
+			has_variable = euro_tech_NPL
+			AND = {
+				OR = {
+					culture.language = language:nepali_language
+					has_or_had_tag = NPL
+				}
+			}
+		}
+	}
+	unlock_unit = a_gurkha
+	requires = unlock_fusiliers_advance
+}

@@ -1,0 +1,59 @@
+italian_universities = {
+	age = age_1_traditions
+	icon = scholasticism
+	potential = {
+		OR = {
+			has_variable = euro_tech_italia
+			AND = {
+				has_or_had_tag = ITA
+			}
+		}
+	}
+	global_max_literacy = 5
+	global_monthly_literacy = 0.01
+	requires = guilds
+}
+italy_great_families = {
+	age = age_2_renaissance
+	icon = cultural_acceptance_advance
+	potential = {
+		OR = {
+			has_variable = euro_tech_italia
+			AND = {
+				has_or_had_tag = ITA
+			}
+		}
+	}
+	monthly_prestige = 0.1
+	diplomatic_capacity_modifier = 0.1
+	requires = correct_box_advance_renaissance
+}
+italian_innovativeness = {
+	age = age_3_discovery
+	icon = genoese_banking_traditions
+	potential = {
+		OR = {
+			has_variable = euro_tech_italia
+			AND = {
+				has_or_had_tag = ITA
+			}
+		}
+	}
+	embrace_institution_cost_modifier = -0.2
+	requires = study_institutions_advance
+}
+italian_condottieri = {
+	age = age_4_reformation
+	icon = glorious_arms
+	potential = {
+		OR = {
+			has_variable = euro_tech_italia
+			AND = {
+				has_or_had_tag = ITA
+			}
+		}
+	}
+	hire_mercenary_premium_cost_modifier = -0.2
+	hire_mercenary_leader_cost_modifier = -0.2
+	requires = trade_envoys
+}

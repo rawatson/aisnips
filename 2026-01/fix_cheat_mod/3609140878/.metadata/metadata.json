@@ -1,0 +1,11 @@
+﻿{
+	"name":	"Selectable advances cheat mod",
+	"id":	"Selectable_advances_cheat_mod",
+	"version":	"1.1",
+	"supported_game_version":	"1.0.8",
+	"short_description":	"Cheat mode to get other countries advances.\nRight-click the portrait of the head of the country and enter the cheat menu to select advances.\nIf you want to cancel, you can cancel by click the button again.",
+	"tags":	["Gameplay"],
+	"relationships":	[],
+	"game_custom_data":	{
+}
+}

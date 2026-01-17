@@ -1,0 +1,42 @@
+euro_tech_menu = { 
+
+	on_own_nation = yes
+	is_consort_action = no
+	message = no
+	
+	ai_tick = never
+	
+	potential = {
+		is_human = yes
+	}
+
+	allow = {
+		is_human = yes
+	}
+	
+	select_trigger = {
+		looking_for_a = character
+		source = actor
+		target_flag = recipient
+		name = "choose_character"
+		column = {
+			data = name
+		}
+		visible = {
+			scope:actor = {
+				ruler ?= root
+			}
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			trigger_event_non_silently = euro_advances_event.1
+			set_variable = euro_advances_event_on
+		}
+	}
+	
+	ai_will_do = {
+		base = -1000  
+	}
+}	

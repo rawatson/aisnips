@@ -1,0 +1,133 @@
+dai_vietnamese_architecture = {
+	age = age_1_traditions
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = feudalism_advance
+	global_build_buildings_cost = -0.1
+}
+dai_hung_dao_trans_military_feats = {
+	age = age_1_traditions
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = legalism_advance
+	possible_frontage_modifier = 0.1
+}
+dai_nha_nhac = {
+	age = age_2_renaissance
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = renaissance_sculptures
+	cultural_tradition_modifier = 0.2
+}
+dai_confucian_administration = {
+	icon = confucian_influences
+	age = age_2_renaissance
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				government_type = government_type:monarchy
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = dai_nha_nhac
+	legislative_efficiency = 0.1
+}
+dai_giao_chi_arquebus = {
+	age = age_3_discovery
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = correct_box_advance_discovery
+	global_firearms_output_modifier = 0.1
+	army_infantry_power = 0.1
+}
+dai_ca_tru = {
+	age = age_3_discovery
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = crown_power_advance_discovery
+	cultural_influence_modifier = 0.25
+}
+dai_trade_advance = {
+	age = age_4_reformation
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = maritime_advance_age_4
+	trade_range_modifier = 0.2
+}
+dai_literary_reform = {
+	age = age_5_absolutism
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = newspapers_advance
+	global_monthly_literacy = 0.02
+}
+dai_don_dien = {
+	age = age_5_absolutism
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = country_unification_advance
+	global_integration_speed_modifier = 0.1
+}
+dai_thuan_thien = {
+	age = age_6_revolutions
+	potential = {
+		OR = {
+			has_variable = euro_tech_vietnamese
+			AND = {
+				culture = culture:vietnamese_culture
+			}
+		}
+	}
+	requires = crown_power_advance_revolutions
+	global_crown_estate_power = 0.1
+}
