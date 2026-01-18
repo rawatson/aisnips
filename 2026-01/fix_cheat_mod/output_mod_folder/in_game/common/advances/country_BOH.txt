@@ -1,8 +1,8 @@
-students_of_foreign_courts = {
+﻿students_of_foreign_courts = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -16,7 +16,7 @@ wagenburg = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -29,7 +29,7 @@ bohemian_imperial_standing = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -42,7 +42,7 @@ urbanization_decrees = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -55,7 +55,7 @@ bohemian_crystal = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -68,7 +68,7 @@ fortified_towns = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -82,7 +82,10 @@ hussite_traditions = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
+			has_variable = adv_cheat_religion_calvinist
+			has_variable = adv_cheat_religion_hussite
+			has_variable = adv_cheat_religion_lutheran
 			AND = {
 				has_or_had_tag = BOH
 				OR = {
@@ -100,7 +103,7 @@ kutnohorian_deal = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}
@@ -113,7 +116,7 @@ bohemian_thaler = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOH
+			has_variable = adv_cheat_BOH
 			AND = {
 				has_or_had_tag = BOH
 			}

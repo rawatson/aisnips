@@ -1,8 +1,8 @@
-glh_kipchak_khanate = {
+﻿glh_kipchak_khanate = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
@@ -16,20 +16,20 @@ glh_legacy_of_jochi = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
 		}
 	}
 	requires = horse_riding_advance
-	army_cavalry_maintenance_cost_modifier = -0.20
+	army_cavalry_maintenance_cost_modifier = -0.2
 }
 glh_legacy_of_the_golden_horde = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
@@ -43,7 +43,7 @@ glh_perso_mongol_administration = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
@@ -56,7 +56,7 @@ glh_tatar_traditions = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
@@ -69,7 +69,7 @@ glh_secure_the_trade_routes = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
@@ -82,7 +82,7 @@ glh_religious_pragmatism = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}
@@ -95,7 +95,7 @@ glh_modernization_of_steppes = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GLH
+			has_variable = adv_cheat_GLH
 			AND = {
 				has_or_had_tag = GLH
 			}

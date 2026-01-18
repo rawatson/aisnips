@@ -1,8 +1,8 @@
-sruti = {
+﻿sruti = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -15,7 +15,7 @@ vedah = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -28,7 +28,7 @@ smrti = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -41,7 +41,7 @@ mahabarata = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -54,7 +54,7 @@ ramayana = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -67,7 +67,7 @@ purana = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -79,12 +79,7 @@ purana = {
 atman = {
 	age = age_2_renaissance
 	potential = {
-		OR = {
-			has_variable = euro_tech_hindu
-			AND = {
-				religion.group = religion_group:dharmic
-			}
-		}
+		religion.group = religion_group:dharmic
 	}
 	stability_investment = tiny_stability_investment
 	requires = global_nobles_max_literacy_advance
@@ -92,12 +87,7 @@ atman = {
 nastika_schools = {
 	age = age_2_renaissance
 	potential = {
-		OR = {
-			has_variable = euro_tech_hindu
-			AND = {
-				religion.group = religion_group:dharmic
-			}
-		}
+		religion.group = religion_group:dharmic
 	}
 	tolerance_heretic = 1
 	requires = atman
@@ -106,7 +96,7 @@ astika_schools = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -119,7 +109,7 @@ diversity_of_beliefs = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -132,7 +122,7 @@ ishvara = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -149,7 +139,7 @@ sanskritization = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -161,12 +151,7 @@ sanskritization = {
 bhakti_movement = {
 	age = age_3_discovery
 	potential = {
-		OR = {
-			has_variable = euro_tech_hindu
-			AND = {
-				religion.group = religion_group:dharmic
-			}
-		}
+		religion.group = religion_group:dharmic
 	}
 	change_policy_cost_modifier = -0.1
 	requires = new_currency_demands
@@ -174,12 +159,7 @@ bhakti_movement = {
 yoga = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_hindu
-			AND = {
-				religion.group = religion_group:dharmic
-			}
-		}
+		religion.group = religion_group:dharmic
 	}
 	global_life_expectancy = 2
 	requires = pop_promotion_speed_age_4
@@ -187,12 +167,7 @@ yoga = {
 diwali = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_hindu
-			AND = {
-				religion.group = religion_group:dharmic
-			}
-		}
+		religion.group = religion_group:dharmic
 	}
 	monthly_prestige = 0.1
 	requires = artists_advance_reformations
@@ -200,21 +175,16 @@ diwali = {
 holi = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_hindu
-			AND = {
-				religion.group = religion_group:dharmic
-			}
-		}
+		religion.group = religion_group:dharmic
 	}
-	global_population_growth = 0.0003
+	global_population_growth = 0.0002
 	requires = gov_reform_reformation_a
 }
 holy_rivers = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -227,7 +197,7 @@ advaita_vedanta = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -240,7 +210,7 @@ hindu_muslim_relations = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -253,7 +223,7 @@ hindu_unification = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -266,7 +236,7 @@ hindu_architecture = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -279,7 +249,7 @@ varna_system = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -293,7 +263,7 @@ extreme_pacifism = {
 	icon = bhakti_movement
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -306,7 +276,7 @@ hindu_empires = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}
@@ -319,7 +289,7 @@ sacred_cattle = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_hindu
+			has_variable = adv_cheat_religion_hindu
 			AND = {
 				religion = religion:hindu
 			}

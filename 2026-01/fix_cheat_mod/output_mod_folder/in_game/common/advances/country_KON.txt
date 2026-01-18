@@ -1,8 +1,8 @@
-kon_bakongo_confederation = {
+﻿kon_bakongo_confederation = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KON
+			has_variable = adv_cheat_KON
 			AND = {
 				has_or_had_tag = KON
 			}
@@ -16,7 +16,7 @@ kon_lineage_lukeni_lua_nimi = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KON
+			has_variable = adv_cheat_KON
 			AND = {
 				has_or_had_tag = KON
 			}
@@ -30,7 +30,7 @@ kon_european_contact = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KON
+			has_variable = adv_cheat_KON
 			AND = {
 				has_or_had_tag = KON
 			}
@@ -45,7 +45,7 @@ kon_cultural_syncreticism = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KON
+			has_variable = adv_cheat_KON
 			AND = {
 				has_or_had_tag = KON
 			}
@@ -59,7 +59,7 @@ kon_study_european_firearms = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KON
+			has_variable = adv_cheat_KON
 			AND = {
 				has_or_had_tag = KON
 			}
@@ -74,18 +74,18 @@ kon_transatlantic_slave_trade = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KON
+			has_variable = adv_cheat_KON
 			AND = {
 				has_or_had_tag = KON
 			}
 		}
 	}
 	allow = {
-		current_age_or_later = {
-			age = age_5_absolutism
+			current_age_or_later = {
+				age = age_5_absolutism
+			}
+			modifier:slavery_blocked = no
 		}
-		modifier:slavery_blocked = no
-	}
 	requires = global_trade_advance
 	icon = west_african_slave_trade
 	global_slaves_goods_output_modifier = 0.1

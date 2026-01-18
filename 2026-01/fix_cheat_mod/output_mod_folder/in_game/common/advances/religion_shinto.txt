@@ -1,8 +1,8 @@
-heian_kyo = {
+﻿heian_kyo = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -16,7 +16,7 @@ matsuri = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -29,7 +29,7 @@ onmyodo = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -42,7 +42,7 @@ sumo = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -55,7 +55,7 @@ nanto_rokushuu = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -68,7 +68,7 @@ shinbutsu_shuugou = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -81,7 +81,7 @@ honji_suijaku = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -94,7 +94,7 @@ hachiman_worship = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -108,7 +108,7 @@ gozan_jissetsu = {
 	icon = smooth_administration
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -121,7 +121,7 @@ bodaiji = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -134,7 +134,7 @@ kagura = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -147,7 +147,7 @@ obon = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -161,7 +161,7 @@ neo_confucianism = {
 	icon = crown_power_advance_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -175,7 +175,7 @@ danka_system = {
 	icon = cultural_acceptance_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -188,7 +188,7 @@ harae = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -203,7 +203,7 @@ jisha_bugyou = {
 	icon = buddhist_syncretism
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -217,7 +217,7 @@ kokugaku = {
 	icon = buddhist_syncretism
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -230,7 +230,7 @@ home_shrines = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}
@@ -243,7 +243,7 @@ fukko_shinto = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_shinto
+			has_variable = adv_cheat_religion_shinto
 			AND = {
 				religion = religion:shinto
 			}

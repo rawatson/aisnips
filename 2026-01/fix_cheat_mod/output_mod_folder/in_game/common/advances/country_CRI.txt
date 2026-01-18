@@ -1,8 +1,8 @@
-cri_genghisid_legacy = {
+﻿cri_genghisid_legacy = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRI
+			has_variable = adv_cheat_CRI
 			AND = {
 				has_or_had_tag = CRI
 			}
@@ -15,7 +15,7 @@ cri_slavers = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRI
+			has_variable = adv_cheat_CRI
 			AND = {
 				has_or_had_tag = CRI
 			}
@@ -28,7 +28,7 @@ cri_steppe_commanders = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRI
+			has_variable = adv_cheat_CRI
 			AND = {
 				has_or_had_tag = CRI
 			}
@@ -42,7 +42,7 @@ cri_free_cattle_grazing = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRI
+			has_variable = adv_cheat_CRI
 			AND = {
 				has_or_had_tag = CRI
 			}
@@ -55,7 +55,7 @@ cri_devshirme_of_the_steppes = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRI
+			has_variable = adv_cheat_CRI
 			AND = {
 				has_or_had_tag = CRI
 			}

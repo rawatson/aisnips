@@ -1,8 +1,8 @@
-hsa_holpfennige = {
+﻿hsa_holpfennige = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -16,7 +16,7 @@ hsa_the_cog = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -29,7 +29,7 @@ hsa_hanseatic_ties = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -42,7 +42,7 @@ hsa_seal_of_the_hansa = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -55,7 +55,7 @@ hsa_hanseatic_shipwrights = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -68,7 +68,7 @@ hsa_draft_merchant_privileges = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -81,7 +81,7 @@ hsa_mastery_of_the_sea = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -95,7 +95,7 @@ hsa_exchange_of_ideas = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -108,7 +108,7 @@ hsa_global_reach = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -121,7 +121,7 @@ hsa_hanseatic_treasury = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -134,7 +134,7 @@ hsa_regularized_contributions = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -147,7 +147,7 @@ the_hansa_bank = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -161,7 +161,7 @@ hsa_reform_the_hanstag = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}
@@ -175,7 +175,7 @@ hsa_concept_of_mercantilism = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_HSA
+			has_variable = adv_cheat_HSA
 			AND = {
 				has_or_had_tag = HSA
 			}

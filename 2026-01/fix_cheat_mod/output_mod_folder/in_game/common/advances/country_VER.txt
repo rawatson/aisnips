@@ -1,8 +1,8 @@
-perpetual_general_captain_of_the_people = {
+﻿perpetual_general_captain_of_the_people = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_VER
+			has_variable = adv_cheat_VER
 			AND = {
 				has_or_had_tag = VER
 			}
@@ -17,7 +17,7 @@ scaligers_military_ambitions = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_VER
+			has_variable = adv_cheat_VER
 			AND = {
 				has_or_had_tag = VER
 			}
@@ -32,7 +32,7 @@ court_of_great_refugees = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VER
+			has_variable = adv_cheat_VER
 			AND = {
 				has_or_had_tag = VER
 			}
@@ -46,7 +46,7 @@ consolidate_italian_holdings = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VER
+			has_variable = adv_cheat_VER
 			AND = {
 				has_or_had_tag = VER
 			}
@@ -61,7 +61,7 @@ the_adige = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VER
+			has_variable = adv_cheat_VER
 			AND = {
 				has_or_had_tag = VER
 			}
@@ -75,7 +75,7 @@ marmorina = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VER
+			has_variable = adv_cheat_VER
 			AND = {
 				has_or_had_tag = VER
 			}

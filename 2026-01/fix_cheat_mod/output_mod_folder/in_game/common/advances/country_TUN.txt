@@ -1,8 +1,8 @@
-tunisian_corsairs = {
+﻿tunisian_corsairs = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -17,7 +17,7 @@ tamazight = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -31,7 +31,7 @@ guardians_of_ifriqiya = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -45,7 +45,7 @@ saharan_trade = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -59,7 +59,7 @@ al_caid = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -74,7 +74,7 @@ connections_with_the_christian_world = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -88,7 +88,7 @@ attract_foreign_pirates = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -102,7 +102,7 @@ rais_of_the_navy = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}
@@ -116,7 +116,7 @@ export_monopolies = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TUN
+			has_variable = adv_cheat_TUN
 			AND = {
 				has_or_had_tag = TUN
 			}

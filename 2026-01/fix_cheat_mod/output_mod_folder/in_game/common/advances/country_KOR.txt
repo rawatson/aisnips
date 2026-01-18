@@ -1,22 +1,22 @@
-kor_fortresses_of_goguryeo = {
+﻿kor_fortresses_of_goguryeo = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
 		}
 	}
 	global_defensive = 0.2
-	fort_limit_modifier = 0.10
+	fort_limit_modifier = 0.1
 	requires = feudalism_advance
 }
 kor_korean_artisanry = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -30,7 +30,7 @@ kor_korean_barracks_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -43,7 +43,7 @@ kor_metal_movable_type = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -56,7 +56,7 @@ kor_court_poetry = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -71,20 +71,20 @@ kor_gunpowder_engines = {
 	depth = 1
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
 		}
 	}
 	allow = {
-		OR = {
-			has_advance = gun_smith_advance
-			has_unlocked_advance_trigger = {
-				type = kor_gunpowder_engines
+			OR = {
+				has_advance = gun_smith_advance
+				has_unlocked_advance_trigger = {
+					type = kor_gunpowder_engines
+				}
 			}
 		}
-	}
 	requires = gun_smith_advance
 	global_firearms_output_modifier = 0.2
 }
@@ -92,7 +92,7 @@ kor_korean_gunnery = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -100,13 +100,13 @@ kor_korean_gunnery = {
 	}
 	requires = kor_gunpowder_engines
 	unlock_building = korean_gunnery_land_defense
-	unlock_building = korean_gunnery_coastal_defense
+unlock_building = korean_gunnery_coastal_defense
 }
 kor_hwachas_advance = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -119,7 +119,7 @@ kor_early_turtle_ship_advance = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -132,7 +132,7 @@ kor_grand_code = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -145,7 +145,7 @@ kor_hangeul_alphabet = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -159,7 +159,7 @@ hyanyak_system = {
 	icon = vegetarianism
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -172,7 +172,7 @@ kor_border_defense_council = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -185,16 +185,16 @@ kor_geobukseon = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
 		}
 	}
 	allow = {
-		has_advance = kor_early_turtle_ship_advance
-	}
-	naval_damage_taken = -0.10
+			has_advance = kor_early_turtle_ship_advance
+		}
+	naval_damage_taken = -0.1
 	unlock_unit = n_turtle_ship
 	requires = assault_ability_reformation
 }
@@ -202,7 +202,7 @@ kor_panokseon_advance = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -215,7 +215,7 @@ kor_hopae_system = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -228,7 +228,7 @@ kor_korean_cannon = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}
@@ -242,7 +242,7 @@ kor_daedongbeop = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOR
+			has_variable = adv_cheat_KOR
 			AND = {
 				has_or_had_tag = KOR
 			}

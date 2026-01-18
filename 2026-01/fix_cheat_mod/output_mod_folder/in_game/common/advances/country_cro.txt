@@ -1,8 +1,8 @@
-cro_maritime_connections = {
+﻿cro_maritime_connections = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRO
+			has_variable = adv_cheat_CRO
 			AND = {
 				has_or_had_tag = CRO
 			}
@@ -16,7 +16,7 @@ cro_reliance_on_adriatic = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRO
+			has_variable = adv_cheat_CRO
 			AND = {
 				has_or_had_tag = CRO
 			}
@@ -31,7 +31,8 @@ cro_trade_posts = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRO
+			has_variable = adv_cheat_CRO
+			has_variable = adv_cheat_religion_catholic
 			AND = {
 				has_or_had_tag = CRO
 				religion = religion:catholic
@@ -46,7 +47,7 @@ cro_influx_of_foreign_knowledge = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRO
+			has_variable = adv_cheat_CRO
 			AND = {
 				has_or_had_tag = CRO
 			}
@@ -61,7 +62,7 @@ cro_antemurale_christianitatis = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRO
+			has_variable = adv_cheat_CRO
 			AND = {
 				has_or_had_tag = CRO
 				religion.group = religion_group:christian
@@ -78,7 +79,7 @@ cro_pandurs_recruitment = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CRO
+			has_variable = adv_cheat_CRO
 			AND = {
 				has_or_had_tag = CRO
 			}

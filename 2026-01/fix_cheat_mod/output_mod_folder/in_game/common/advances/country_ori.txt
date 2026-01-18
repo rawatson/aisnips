@@ -1,8 +1,8 @@
-ori_bulwark_of_the_hindu = {
+﻿ori_bulwark_of_the_hindu = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -15,7 +15,7 @@ ori_anka_year_system = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -29,7 +29,7 @@ ori_lord_of_elephants = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -42,7 +42,7 @@ ori_servitor_of_jagganath = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -55,7 +55,7 @@ ori_parikshas = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -68,7 +68,7 @@ ori_odia_militarization = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -81,7 +81,7 @@ ori_patronize_temple_construction = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -94,7 +94,7 @@ ori_refined_cloth_production = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -108,7 +108,7 @@ ori_encourage_salt_trade = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
@@ -122,12 +122,12 @@ ori_expansion_of_infrastructure = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORI
+			has_variable = adv_cheat_ORI
 			AND = {
 				has_or_had_tag = ORI
 			}
 		}
 	}
-	global_monthly_development = 0.002
+	global_monthly_development = 0.001
 	requires = the_gold_standard
 }

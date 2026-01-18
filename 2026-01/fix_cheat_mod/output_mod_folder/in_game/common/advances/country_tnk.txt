@@ -1,8 +1,8 @@
-tnk_legitimate_rule = {
+﻿tnk_legitimate_rule = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TNK
+			has_variable = adv_cheat_TNK
 			AND = {
 				has_or_had_tag = TNK
 			}
@@ -15,7 +15,7 @@ tnk_resist_invaders = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TNK
+			has_variable = adv_cheat_TNK
 			AND = {
 				has_or_had_tag = TNK
 			}
@@ -28,7 +28,7 @@ tnk_pearls_of_india = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TNK
+			has_variable = adv_cheat_TNK
 			AND = {
 				has_or_had_tag = TNK
 			}
@@ -42,7 +42,7 @@ tnk_expertise_in_conflicts = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TNK
+			has_variable = adv_cheat_TNK
 			AND = {
 				has_or_had_tag = TNK
 			}
@@ -56,7 +56,7 @@ tnk_imperial_legacy = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TNK
+			has_variable = adv_cheat_TNK
 			AND = {
 				has_or_had_tag = TNK
 			}

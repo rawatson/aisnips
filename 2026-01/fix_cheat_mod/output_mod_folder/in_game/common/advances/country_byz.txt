@@ -1,8 +1,8 @@
-byz_heart_of_orthodoxy_advance = {
+﻿byz_heart_of_orthodoxy_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -14,7 +14,7 @@ byz_heart_of_orthodoxy_advance = {
 byz_cataphracts_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -27,7 +27,7 @@ byz_cataphracts_advance = {
 byz_akritai_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -40,7 +40,7 @@ byz_akritai_advance = {
 byz_historiography_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -54,7 +54,7 @@ men_of_letters_advance = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -67,7 +67,7 @@ byz_shield_of_the_west = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -80,7 +80,7 @@ byz_court_of_languages = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -93,7 +93,7 @@ byz_poikilia = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -106,7 +106,7 @@ expand_varangian_guard_advance = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -119,7 +119,7 @@ byz_crossroads_of_continents = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -132,7 +132,7 @@ byz_the_new_helepolis = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -145,7 +145,7 @@ byz_reaffirm_synod_powers = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -160,7 +160,7 @@ byz_byzantine_inquisition = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -173,7 +173,7 @@ byz_autokratoria_rhomaion = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -186,7 +186,7 @@ byz_modernized_strategikon = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -199,7 +199,7 @@ byz_ancient_greek_studies = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}
@@ -212,7 +212,7 @@ byz_the_new_imperial_army = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BUR
+			has_variable = adv_cheat_BYZ
 			AND = {
 				has_or_had_tag = BYZ
 			}

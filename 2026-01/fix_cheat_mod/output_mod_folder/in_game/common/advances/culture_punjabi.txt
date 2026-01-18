@@ -1,14 +1,9 @@
-pun_breadbasket_of_india = {
+﻿pun_breadbasket_of_india = {
 	age = age_3_discovery
 	potential = {
-		OR = {
-			has_variable = euro_tech_punjabi_language
-			AND = {
-				culture.language = language:punjabi_language
-				capital = {
-					area = area:punjab_area
-				}
-			}
+		culture.language = language:punjabi_language
+		capital = {
+			area = area:punjab_area
 		}
 	}
 	requires = rgo_logistics_discovery
@@ -17,12 +12,7 @@ pun_breadbasket_of_india = {
 pun_encourage_indo_persian_trade = {
 	age = age_3_discovery
 	potential = {
-		OR = {
-			has_variable = euro_tech_punjabi_language
-			AND = {
-				culture.language = language:punjabi_language
-			}
-		}
+		culture.language = language:punjabi_language
 	}
 	requires = exploration_maintenance_advance
 	global_merchant_capacity_modifier = 0.2
@@ -31,7 +21,7 @@ pun_gurmukhi_script = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_punjabi_language
+			has_variable = adv_cheat_religion_sikhism
 			AND = {
 				culture.language = language:punjabi_language
 				religion = religion:sikhism
@@ -46,7 +36,7 @@ pun_foundation_of_the_khalsa = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_punjabi_language
+			has_variable = adv_cheat_religion_sikhism
 			AND = {
 				culture.language = language:punjabi_language
 				religion = religion:sikhism
@@ -59,12 +49,7 @@ pun_foundation_of_the_khalsa = {
 pun_punjabi_textile_industry = {
 	age = age_5_absolutism
 	potential = {
-		OR = {
-			has_variable = euro_tech_punjabi_language
-			AND = {
-				culture.language = language:punjabi_language
-			}
-		}
+		culture.language = language:punjabi_language
 	}
 	requires = absolutist_court
 	global_cloth_output_modifier = 0.2
@@ -73,12 +58,7 @@ pun_punjabi_textile_industry = {
 pun_strength_of_the_misls = {
 	age = age_5_absolutism
 	potential = {
-		OR = {
-			has_variable = euro_tech_punjabi_language
-			AND = {
-				culture.language = language:punjabi_language
-			}
-		}
+		culture.language = language:punjabi_language
 	}
 	requires = war_score_absolutism_advance
 	army_cavalry_build_cost_modifier = -0.2
@@ -86,12 +66,7 @@ pun_strength_of_the_misls = {
 pun_reforming_the_punjabi_army = {
 	age = age_6_revolutions
 	potential = {
-		OR = {
-			has_variable = euro_tech_punjabi_language
-			AND = {
-				culture.language = language:punjabi_language
-			}
-		}
+		culture.language = language:punjabi_language
 	}
 	requires = army_movement_speed_revolutions
 	discipline = 0.05

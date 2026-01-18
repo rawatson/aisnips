@@ -1,8 +1,8 @@
-milanese_tradition = {
+﻿milanese_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -15,7 +15,7 @@ milanese_heritage = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -28,7 +28,7 @@ renaissance_prince = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -40,7 +40,7 @@ patron_of_music = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -53,7 +53,7 @@ lowered_power_of_barons = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -65,7 +65,7 @@ age_of_condottieri = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -77,7 +77,7 @@ encouragement_of_philosophers = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -90,7 +90,7 @@ merchant_princes = {
 	icon = a_central_power
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -102,7 +102,7 @@ rulership_of_enlightened_principals = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}
@@ -115,7 +115,7 @@ milanese_ambition = {
 	icon = milanese_heritage
 	potential = {
 		OR = {
-			has_variable = euro_tech_MLO
+			has_variable = adv_cheat_MLO
 			AND = {
 				has_or_had_tag = MLO
 			}

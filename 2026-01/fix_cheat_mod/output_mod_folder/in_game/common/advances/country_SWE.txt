@@ -1,7 +1,7 @@
-swedish_tradition = {
+﻿swedish_tradition = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -14,7 +14,7 @@ swedish_tradition = {
 swedish_heritage = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -27,7 +27,7 @@ swedish_heritage = {
 kung_och_riksdag = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -40,7 +40,7 @@ kung_och_riksdag = {
 swedish_steel = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -53,8 +53,8 @@ swedish_steel = {
 mulltimmer_masugn = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
-			has_variable = euro_tech_FIN
+			has_variable = adv_cheat_FIN
+			has_variable = adv_cheat_SWE
 			AND = {
 				OR = {
 					has_or_had_tag = SWE
@@ -69,7 +69,7 @@ mulltimmer_masugn = {
 swedish_royal_post_office = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -81,7 +81,7 @@ swedish_royal_post_office = {
 indelningsverket = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -94,8 +94,8 @@ indelningsverket = {
 hakkapelitta = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
-			has_variable = euro_tech_FIN
+			has_variable = adv_cheat_FIN
+			has_variable = adv_cheat_SWE
 			AND = {
 				OR = {
 					has_or_had_tag = SWE
@@ -111,7 +111,7 @@ hakkapelitta = {
 caroleans_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -124,7 +124,7 @@ caroleans_advance = {
 swedish_absolutism = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -138,7 +138,7 @@ swedish_absolutism = {
 polhem_machina_nova = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}
@@ -152,7 +152,7 @@ polhem_machina_nova = {
 produktplakatet = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_SWE
+			has_variable = adv_cheat_SWE
 			AND = {
 				has_or_had_tag = SWE
 			}

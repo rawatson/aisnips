@@ -1,8 +1,8 @@
-sme_jaqeli_dynasty = {
+﻿sme_jaqeli_dynasty = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -15,7 +15,7 @@ sme_atabegs_of_samtskhe = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -28,7 +28,7 @@ sme_proactive_diplomacy = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -42,7 +42,7 @@ sme_fortresses_of_samtskhe = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -55,7 +55,7 @@ sme_independent_ambitions = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -68,7 +68,7 @@ sme_protect_trade_routes = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -81,7 +81,7 @@ sme_frontier_warriors = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -95,7 +95,7 @@ sme_sacred_land = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}
@@ -108,7 +108,7 @@ sme_bridge_between_worlds = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SME
+			has_variable = adv_cheat_SME
 			AND = {
 				has_or_had_tag = SME
 			}

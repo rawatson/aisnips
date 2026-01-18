@@ -1,8 +1,8 @@
-ven_venetian_thalassocracy = {
+﻿ven_venetian_thalassocracy = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -15,7 +15,7 @@ venetian_arsenal_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -28,7 +28,7 @@ ven_stato_da_mar = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -41,7 +41,7 @@ ven_venetian_palaces = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -54,7 +54,7 @@ ven_gothic_architecture = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -67,7 +67,7 @@ ven_ship_mounted_gunpowder_weapons = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -80,20 +80,21 @@ ven_printing_industry = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
 		}
 	}
-	diplomatic_reputation = diplomatic_reputation_mild_bonus
+	global_books_output_modifier = 0.1
+	global_paper_output_modifier = 0.1
 	requires = diplomatic_training
 }
 ven_state_inquisition = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -106,7 +107,7 @@ ven_magistrato_alla_sanita = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -119,7 +120,7 @@ ven_venetian_painting = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -132,7 +133,7 @@ ven_naval_conscription = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -145,7 +146,7 @@ ven_venetian_school_of_music = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -158,7 +159,7 @@ ven_mixed_naval_tactics = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}
@@ -172,7 +173,7 @@ ven_provveditori_ai_beni_inculti = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_VEN
+			has_variable = adv_cheat_VEN
 			AND = {
 				has_or_had_tag = VEN
 			}

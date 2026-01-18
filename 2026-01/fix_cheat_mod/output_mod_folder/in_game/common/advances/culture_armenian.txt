@@ -1,8 +1,8 @@
-arm_legacy_of_hayk = {
+﻿arm_legacy_of_hayk = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -15,7 +15,7 @@ arm_mount_ararat = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -29,7 +29,8 @@ arm_apostolic_church = {
 	icon = life_among_infidels
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				culture = culture:armenian_culture
 				religion = religion:miaphysite
@@ -43,7 +44,7 @@ arm_land_reclamation = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -56,7 +57,7 @@ arm_border_nation = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -69,7 +70,7 @@ arm_melikdom_organization = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -82,7 +83,7 @@ arm_mountain_armies = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -95,7 +96,7 @@ arm_nakharar_titles = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -108,7 +109,7 @@ arm_greater_armenia = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_armenian
+			has_variable = adv_cheat_culture_armenian_culture
 			AND = {
 				culture = culture:armenian_culture
 			}
@@ -121,8 +122,8 @@ arm_highland_fortresses = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ARM
-			has_variable = euro_tech_MLK
+			has_variable = adv_cheat_ARM
+			has_variable = adv_cheat_MLK
 			AND = {
 				OR = {
 					has_or_had_tag = ARM

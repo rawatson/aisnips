@@ -1,12 +1,7 @@
-people_of_allah = {
+﻿people_of_allah = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	tolerance_own = 1
 	requires = organized_religion
@@ -14,12 +9,7 @@ people_of_allah = {
 holy_revelation = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	cultural_tradition_modifier = 0.1
 	requires = people_of_allah
@@ -27,12 +17,7 @@ holy_revelation = {
 islamic_calligraphy = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	has_cultural_maintenance = yes
 	num_possible_artists = 1
@@ -41,12 +26,7 @@ islamic_calligraphy = {
 islamic_prayer = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	pilgrimage_piety_cost_modifier = -0.1
 	requires = holy_revelation
@@ -54,12 +34,7 @@ islamic_prayer = {
 zakah = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	minting_inflation_threshold = 0.01
 	unemployed_slave_promotion = 0.001
@@ -68,12 +43,7 @@ zakah = {
 muslim_lineage = {
 	age = age_2_renaissance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	monthly_legitimacy = 0.1
 	monthly_republican_tradition = 0.1
@@ -85,12 +55,7 @@ muslim_caravans = {
 	age = age_2_renaissance
 	icon = trade_caravans
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	trade_land_movement_cost_modifier = -0.1
 	requires = global_burghers_max_literacy_advance
@@ -99,12 +64,7 @@ islamic_golden_age = {
 	icon = improve_relation_impact_renaissance
 	age = age_2_renaissance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	cultural_influence_modifier = 0.1
 	requires = patron_of_art
@@ -112,12 +72,7 @@ islamic_golden_age = {
 ramadan = {
 	age = age_2_renaissance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	global_pop_food_consumption = -0.05
 	requires = renaissance_city_rights
@@ -126,7 +81,7 @@ sunnah = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_muslim
+			has_variable = adv_cheat_religion_sunni
 			AND = {
 				religion = religion:sunni
 			}
@@ -139,7 +94,7 @@ imamate = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_muslim
+			has_variable = adv_cheat_religion_shia
 			AND = {
 				religion = religion:shia
 			}
@@ -152,12 +107,7 @@ indian_sea_trade = {
 	age = age_3_discovery
 	icon = safe_exploration_techniques_advance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	trade_sea_movement_cost_modifier = -0.1
 	requires = port_cost_distance_from_capital_advance
@@ -166,12 +116,7 @@ muslim_trade_communities = {
 	age = age_3_discovery
 	icon = cultural_acceptance_advance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	tolerance_heathen = 1
 	requires = indian_sea_trade
@@ -179,12 +124,7 @@ muslim_trade_communities = {
 expansionist_faith = {
 	age = age_3_discovery
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	casus_belli_creation_speed_modifier = 0.1
 	requires = correct_box_advance_discovery
@@ -192,12 +132,7 @@ expansionist_faith = {
 blend_of_influences = {
 	age = age_3_discovery
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	cultures_capacity_modifier = 0.2
 	requires = expansionist_faith
@@ -205,12 +140,7 @@ blend_of_influences = {
 islamic_schoolars = {
 	age = age_3_discovery
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	global_clergy_max_literacy = 10
 	requires = faceting
@@ -219,12 +149,7 @@ gunpowder_empires = {
 	age = age_4_reformation
 	icon = artillery_institution_advance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	army_artillery_maintenance_cost_modifier = -0.1
 	requires = maurician_infantry
@@ -232,12 +157,7 @@ gunpowder_empires = {
 established_holy_sites = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	monthly_prestige = 0.05
 	requires = war_score_reformations_advance
@@ -245,12 +165,7 @@ established_holy_sites = {
 islamic_courts = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	nobles_estate_target_satisfaction = small_permanent_target_satisfaction
 	requires = confessional_court
@@ -258,12 +173,7 @@ islamic_courts = {
 schools_of_thought = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	embrace_institution_cost_modifier = -0.1
 	requires = spy_construction_reformation
@@ -271,12 +181,7 @@ schools_of_thought = {
 distant_trade_ventures = {
 	age = age_4_reformation
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	trade_range_modifier = 0.1
 	requires = imperial_ambitions
@@ -285,12 +190,7 @@ resilient_merchants = {
 	age = age_5_absolutism
 	icon = merchants_and_trade
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	merchant_maintenance_cost = -0.1
 	requires = absolutist_court
@@ -298,12 +198,7 @@ resilient_merchants = {
 jewels_of_the_desert = {
 	age = age_5_absolutism
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	global_max_rgo_size_modifier = 0.1
 	requires = resilient_merchants
@@ -312,12 +207,7 @@ comprehensive_land_survey = {
 	age = age_5_absolutism
 	icon = genoese_banking_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	tax_income_efficiency = small_tax_income_efficiency_bonus
 	requires = scientific_mapping_advance
@@ -326,12 +216,7 @@ counting_the_people = {
 	age = age_5_absolutism
 	icon = muslim_lineage
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	global_manpower_modifier = 0.05
 	requires = comprehensive_land_survey
@@ -339,12 +224,7 @@ counting_the_people = {
 cosmopolitan_court = {
 	age = age_5_absolutism
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	set_cabinet_member_cost_modifier = -0.1
 	requires = power_projection_advance_5
@@ -353,7 +233,7 @@ caliphate = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_muslim
+			has_variable = adv_cheat_religion_ibadi
 			AND = {
 				religion.group = religion_group:muslim
 				NOT = {
@@ -370,7 +250,7 @@ ibadi_imamate = {
 	icon = diplomatic_range_age_1
 	potential = {
 		OR = {
-			has_variable = euro_tech_muslim
+			has_variable = adv_cheat_religion_ibadi
 			AND = {
 				religion = religion:ibadi
 			}
@@ -382,12 +262,7 @@ ibadi_imamate = {
 contacts_network = {
 	age = age_6_revolutions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	diplomatic_capacity_modifier = 0.1
 	requires = enlightened_court
@@ -395,12 +270,7 @@ contacts_network = {
 infiltration_tactics = {
 	age = age_6_revolutions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	spy_network_construction = 0.1
 	requires = recruitment_improvements_revolutions
@@ -409,12 +279,7 @@ unified_armies = {
 	age = age_6_revolutions
 	icon = regiment_reinforcement_speed_renaissance
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	wrong_culture_levy_size = 0.1
 	requires = assault_ability_revolutions
@@ -422,12 +287,7 @@ unified_armies = {
 harsh_environments = {
 	age = age_6_revolutions
 	potential = {
-		OR = {
-			has_variable = euro_tech_muslim
-			AND = {
-				religion.group = religion_group:muslim
-			}
-		}
+		religion.group = religion_group:muslim
 	}
 	global_hostile_attrition = 0.5
 	requires = artillery_vs_fort_age_6_revolutions

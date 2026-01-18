@@ -1,8 +1,8 @@
-bos_land_of_many_churches = {
+﻿bos_land_of_many_churches = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOS
+			has_variable = adv_cheat_BOS
 			AND = {
 				has_or_had_tag = BOS
 			}
@@ -16,7 +16,7 @@ bos_cultural_customs = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOS
+			has_variable = adv_cheat_BOS
 			AND = {
 				has_or_had_tag = BOS
 			}
@@ -30,7 +30,7 @@ bos_katun_communities = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOS
+			has_variable = adv_cheat_BOS
 			AND = {
 				has_or_had_tag = BOS
 			}
@@ -44,7 +44,7 @@ bos_influence_of_the_stanak = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOS
+			has_variable = adv_cheat_BOS
 			AND = {
 				has_or_had_tag = BOS
 			}
@@ -58,7 +58,7 @@ bos_defiant_terrain = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOS
+			has_variable = adv_cheat_BOS
 			AND = {
 				has_or_had_tag = BOS
 			}
@@ -72,7 +72,7 @@ bos_kingly_ambitions = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_BOS
+			has_variable = adv_cheat_BOS
 			AND = {
 				has_or_had_tag = BOS
 			}

@@ -1,8 +1,8 @@
-dai_lang = {
+﻿dai_lang = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_DAI
+			has_variable = adv_cheat_DAI
 			AND = {
 				has_or_had_tag = DAI
 			}
@@ -16,7 +16,7 @@ nghia_quan = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_DAI
+			has_variable = adv_cheat_DAI
 			AND = {
 				has_or_had_tag = DAI
 			}

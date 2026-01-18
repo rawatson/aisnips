@@ -1,8 +1,8 @@
-maj_bubu_and_jala = {
+﻿maj_bubu_and_jala = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -15,7 +15,7 @@ maj_home_of_the_sea_nomads = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -28,7 +28,7 @@ maj_jong_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -41,7 +41,7 @@ foreign_architectural_influence = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -55,7 +55,7 @@ maj_bajang_ratu = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -68,7 +68,7 @@ maj_late_karambit_warriors = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -81,7 +81,7 @@ maj_sumpah_palapa = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -95,7 +95,7 @@ maj_the_magic_arrow = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -109,7 +109,7 @@ maj_maritime_silk_road = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -122,7 +122,7 @@ maj_restore_candi_shrines = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -135,15 +135,15 @@ maj_the_ghali = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
 		}
 	}
 	allow = {
-		has_advance = maj_the_magic_arrow
-	}
+			has_advance = maj_the_magic_arrow
+		}
 	requires = pharmacology_advance
 	unlock_unit = n_madurese_gali
 }
@@ -151,7 +151,7 @@ maj_island_colonies = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}
@@ -164,7 +164,7 @@ maj_preservation_of_javanese_history = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAJ
+			has_variable = adv_cheat_MAJ
 			AND = {
 				has_or_had_tag = MAJ
 			}

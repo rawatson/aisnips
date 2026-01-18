@@ -1,8 +1,8 @@
-gra_banu_nasr = {
+﻿gra_banu_nasr = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -15,7 +15,7 @@ gra_nasrid_art = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -29,7 +29,7 @@ gra_skillful_envoys = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -43,7 +43,7 @@ gra_razzias = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -56,21 +56,21 @@ gra_muttavia_armies = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
 		}
 	}
-	hire_mercenary_premium_cost_modifier = -0.10
-	mercenary_maintenance_cost = -0.10
+	hire_mercenary_premium_cost_modifier = -0.1
+	mercenary_maintenance_cost = -0.1
 	requires = regiment_reinforcement_speed_discovery
 }
 gra_expand_qanahs = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -83,13 +83,13 @@ gra_adaptative_trade = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
 		}
 	}
-	merchant_maintenance_cost = -0.10
+	merchant_maintenance_cost = -0.1
 	trade_efficiency = small_trade_efficiency_bonus
 	requires = global_trade_routes_advance
 }
@@ -97,7 +97,7 @@ gra_expand_the_frontier = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -110,20 +110,20 @@ gra_a_strong_rule = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
 		}
 	}
-	global_crown_estate_power = 0.10
+	global_crown_estate_power = 0.1
 	requires = the_constitution
 }
 gra_modernized_economy = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -136,7 +136,7 @@ gra_ghazawat = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}
@@ -149,7 +149,7 @@ gra_a_new_golden_era = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GRA
+			has_variable = adv_cheat_GRA
 			AND = {
 				has_or_had_tag = GRA
 			}

@@ -1,8 +1,8 @@
-defense_of_the_faith = {
+﻿defense_of_the_faith = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -14,7 +14,7 @@ assistance_to_the_suffering = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -26,20 +26,20 @@ reconquista_of_the_sea = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
 		}
 	}
 	navy_galley_power = 0.2
-	ship_capture_chance = 0.2
+	ship_capture_chance = 0.05
 }
 friends_in_need = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -51,7 +51,7 @@ scourge_of_the_corsairs = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -63,7 +63,7 @@ crusader_tradition = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -75,7 +75,7 @@ ecumenical_defenders_of_christendom = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -87,7 +87,7 @@ a_neverending_crusade = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -99,7 +99,7 @@ inspired_builders = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -113,7 +113,7 @@ the_right_hand_pope = {
 	icon = pap_head_of_the_church
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -126,7 +126,7 @@ a_brand_new_world = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}
@@ -138,7 +138,7 @@ an_order_with_state = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KNI
+			has_variable = adv_cheat_KNI
 			AND = {
 				has_or_had_tag = KNI
 			}

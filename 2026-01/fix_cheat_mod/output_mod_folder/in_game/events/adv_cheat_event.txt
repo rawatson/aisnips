@@ -1,0 +1,5559 @@
+﻿namespace = adv_cheat_event
+
+# Main menu
+adv_cheat_event.1 = {
+	type = country_event
+	title = adv_cheat_event.1.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	immediate = {
+		set_variable = adv_cheat_menu_open
+	}
+
+	trigger = {
+		is_human = yes
+	}
+
+	option = {
+		name = adv_cheat_event.1.countries
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+
+	option = {
+		name = adv_cheat_event.1.cultures
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+
+	option = {
+		name = adv_cheat_event.1.religions
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = adv_cheat_event.exit
+		remove_variable = adv_cheat_menu_open
+	}
+}
+
+# Country region selector
+adv_cheat_event.10 = {
+	type = country_event
+	title = adv_cheat_event.10.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.central_africa
+			trigger = { NOT = { is_adv_cheat_central_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.central_africa.selected
+			trigger = { is_adv_cheat_central_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.100 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.central_america
+			trigger = { NOT = { is_adv_cheat_central_america_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.central_america.selected
+			trigger = { is_adv_cheat_central_america_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.101 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.central_asia
+			trigger = { NOT = { is_adv_cheat_central_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.central_asia.selected
+			trigger = { is_adv_cheat_central_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.102 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.central_europe
+			trigger = { NOT = { is_adv_cheat_central_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.central_europe.selected
+			trigger = { is_adv_cheat_central_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.east_africa
+			trigger = { NOT = { is_adv_cheat_east_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.east_africa.selected
+			trigger = { is_adv_cheat_east_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.104 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.east_asia
+			trigger = { NOT = { is_adv_cheat_east_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.east_asia.selected
+			trigger = { is_adv_cheat_east_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.105 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.eastern_europe
+			trigger = { NOT = { is_adv_cheat_eastern_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.eastern_europe.selected
+			trigger = { is_adv_cheat_eastern_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.japan
+			trigger = { NOT = { is_adv_cheat_japan_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.japan.selected
+			trigger = { is_adv_cheat_japan_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.north_africa
+			trigger = { NOT = { is_adv_cheat_north_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.north_africa.selected
+			trigger = { is_adv_cheat_north_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.108 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.north_america
+			trigger = { NOT = { is_adv_cheat_north_america_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.north_america.selected
+			trigger = { is_adv_cheat_north_america_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.109 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.northern_europe
+			trigger = { NOT = { is_adv_cheat_northern_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.northern_europe.selected
+			trigger = { is_adv_cheat_northern_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.oceania
+			trigger = { NOT = { is_adv_cheat_oceania_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.oceania.selected
+			trigger = { is_adv_cheat_oceania_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.111 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.other
+			trigger = { NOT = { is_adv_cheat_other_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.other.selected
+			trigger = { is_adv_cheat_other_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.south_america
+			trigger = { NOT = { is_adv_cheat_south_america_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.south_america.selected
+			trigger = { is_adv_cheat_south_america_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.113 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.south_asia
+			trigger = { NOT = { is_adv_cheat_south_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.south_asia.selected
+			trigger = { is_adv_cheat_south_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.southeast_asia
+			trigger = { NOT = { is_adv_cheat_southeast_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.southeast_asia.selected
+			trigger = { is_adv_cheat_southeast_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.southern_africa
+			trigger = { NOT = { is_adv_cheat_southern_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.southern_africa.selected
+			trigger = { is_adv_cheat_southern_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.116 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.southern_europe
+			trigger = { NOT = { is_adv_cheat_southern_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.southern_europe.selected
+			trigger = { is_adv_cheat_southern_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.special
+			trigger = { NOT = { is_adv_cheat_special_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.special.selected
+			trigger = { is_adv_cheat_special_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.118 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.west_africa
+			trigger = { NOT = { is_adv_cheat_west_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.west_africa.selected
+			trigger = { is_adv_cheat_west_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.119 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.western_asia
+			trigger = { NOT = { is_adv_cheat_western_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.western_asia.selected
+			trigger = { is_adv_cheat_western_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.western_europe
+			trigger = { NOT = { is_adv_cheat_western_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.western_europe.selected
+			trigger = { is_adv_cheat_western_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.1 }
+	}
+}
+
+# Country - Central Africa
+adv_cheat_event.100 = {
+	type = country_event
+	title = adv_cheat_event.100.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KBO
+			trigger = { NOT = { has_variable = adv_cheat_KBO } }
+		}
+		name = {
+			text = adv_cheat_event.country.KBO.selected
+			trigger = { has_variable = adv_cheat_KBO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KBO } }
+			set_variable = adv_cheat_KBO
+		}
+		else = {
+			remove_variable = adv_cheat_KBO
+		}
+		trigger_event_silently = { id = adv_cheat_event.100 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KON
+			trigger = { NOT = { has_variable = adv_cheat_KON } }
+		}
+		name = {
+			text = adv_cheat_event.country.KON.selected
+			trigger = { has_variable = adv_cheat_KON }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KON } }
+			set_variable = adv_cheat_KON
+		}
+		else = {
+			remove_variable = adv_cheat_KON
+		}
+		trigger_event_silently = { id = adv_cheat_event.100 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Central America
+adv_cheat_event.101 = {
+	type = country_event
+	title = adv_cheat_event.101.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.AZT
+			trigger = { NOT = { has_variable = adv_cheat_AZT } }
+		}
+		name = {
+			text = adv_cheat_event.country.AZT.selected
+			trigger = { has_variable = adv_cheat_AZT }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_AZT } }
+			set_variable = adv_cheat_AZT
+		}
+		else = {
+			remove_variable = adv_cheat_AZT
+		}
+		trigger_event_silently = { id = adv_cheat_event.101 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TNC
+			trigger = { NOT = { has_variable = adv_cheat_TNC } }
+		}
+		name = {
+			text = adv_cheat_event.country.TNC.selected
+			trigger = { has_variable = adv_cheat_TNC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TNC } }
+			set_variable = adv_cheat_TNC
+		}
+		else = {
+			remove_variable = adv_cheat_TNC
+		}
+		trigger_event_silently = { id = adv_cheat_event.101 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Central Asia
+adv_cheat_event.102 = {
+	type = country_event
+	title = adv_cheat_event.102.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CHG
+			trigger = { NOT = { has_variable = adv_cheat_CHG } }
+		}
+		name = {
+			text = adv_cheat_event.country.CHG.selected
+			trigger = { has_variable = adv_cheat_CHG }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CHG } }
+			set_variable = adv_cheat_CHG
+		}
+		else = {
+			remove_variable = adv_cheat_CHG
+		}
+		trigger_event_silently = { id = adv_cheat_event.102 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GLH
+			trigger = { NOT = { has_variable = adv_cheat_GLH } }
+		}
+		name = {
+			text = adv_cheat_event.country.GLH.selected
+			trigger = { has_variable = adv_cheat_GLH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GLH } }
+			set_variable = adv_cheat_GLH
+		}
+		else = {
+			remove_variable = adv_cheat_GLH
+		}
+		trigger_event_silently = { id = adv_cheat_event.102 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MGE
+			trigger = { NOT = { has_variable = adv_cheat_MGE } }
+		}
+		name = {
+			text = adv_cheat_event.country.MGE.selected
+			trigger = { has_variable = adv_cheat_MGE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MGE } }
+			set_variable = adv_cheat_MGE
+		}
+		else = {
+			remove_variable = adv_cheat_MGE
+		}
+		trigger_event_silently = { id = adv_cheat_event.102 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TIM
+			trigger = { NOT = { has_variable = adv_cheat_TIM } }
+		}
+		name = {
+			text = adv_cheat_event.country.TIM.selected
+			trigger = { has_variable = adv_cheat_TIM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TIM } }
+			set_variable = adv_cheat_TIM
+		}
+		else = {
+			remove_variable = adv_cheat_TIM
+		}
+		trigger_event_silently = { id = adv_cheat_event.102 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Central Europe
+adv_cheat_event.103 = {
+	type = country_event
+	title = adv_cheat_event.103.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BAV
+			trigger = { NOT = { has_variable = adv_cheat_BAV } }
+		}
+		name = {
+			text = adv_cheat_event.country.BAV.selected
+			trigger = { has_variable = adv_cheat_BAV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BAV } }
+			set_variable = adv_cheat_BAV
+		}
+		else = {
+			remove_variable = adv_cheat_BAV
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BOH
+			trigger = { NOT = { has_variable = adv_cheat_BOH } }
+		}
+		name = {
+			text = adv_cheat_event.country.BOH.selected
+			trigger = { has_variable = adv_cheat_BOH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BOH } }
+			set_variable = adv_cheat_BOH
+		}
+		else = {
+			remove_variable = adv_cheat_BOH
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BRA
+			trigger = { NOT = { has_variable = adv_cheat_BRA } }
+		}
+		name = {
+			text = adv_cheat_event.country.BRA.selected
+			trigger = { has_variable = adv_cheat_BRA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BRA } }
+			set_variable = adv_cheat_BRA
+		}
+		else = {
+			remove_variable = adv_cheat_BRA
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HAB
+			trigger = { NOT = { has_variable = adv_cheat_HAB } }
+		}
+		name = {
+			text = adv_cheat_event.country.HAB.selected
+			trigger = { has_variable = adv_cheat_HAB }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HAB } }
+			set_variable = adv_cheat_HAB
+		}
+		else = {
+			remove_variable = adv_cheat_HAB
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MAI
+			trigger = { NOT = { has_variable = adv_cheat_MAI } }
+		}
+		name = {
+			text = adv_cheat_event.country.MAI.selected
+			trigger = { has_variable = adv_cheat_MAI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MAI } }
+			set_variable = adv_cheat_MAI
+		}
+		else = {
+			remove_variable = adv_cheat_MAI
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MEI
+			trigger = { NOT = { has_variable = adv_cheat_MEI } }
+		}
+		name = {
+			text = adv_cheat_event.country.MEI.selected
+			trigger = { has_variable = adv_cheat_MEI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MEI } }
+			set_variable = adv_cheat_MEI
+		}
+		else = {
+			remove_variable = adv_cheat_MEI
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.OBW
+			trigger = { NOT = { has_variable = adv_cheat_OBW } }
+		}
+		name = {
+			text = adv_cheat_event.country.OBW.selected
+			trigger = { has_variable = adv_cheat_OBW }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_OBW } }
+			set_variable = adv_cheat_OBW
+		}
+		else = {
+			remove_variable = adv_cheat_OBW
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PRU
+			trigger = { NOT = { has_variable = adv_cheat_PRU } }
+		}
+		name = {
+			text = adv_cheat_event.country.PRU.selected
+			trigger = { has_variable = adv_cheat_PRU }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PRU } }
+			set_variable = adv_cheat_PRU
+		}
+		else = {
+			remove_variable = adv_cheat_PRU
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SAX
+			trigger = { NOT = { has_variable = adv_cheat_SAX } }
+		}
+		name = {
+			text = adv_cheat_event.country.SAX.selected
+			trigger = { has_variable = adv_cheat_SAX }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SAX } }
+			set_variable = adv_cheat_SAX
+		}
+		else = {
+			remove_variable = adv_cheat_SAX
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SYZ
+			trigger = { NOT = { has_variable = adv_cheat_SYZ } }
+		}
+		name = {
+			text = adv_cheat_event.country.SYZ.selected
+			trigger = { has_variable = adv_cheat_SYZ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SYZ } }
+			set_variable = adv_cheat_SYZ
+		}
+		else = {
+			remove_variable = adv_cheat_SYZ
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.URI
+			trigger = { NOT = { has_variable = adv_cheat_URI } }
+		}
+		name = {
+			text = adv_cheat_event.country.URI.selected
+			trigger = { has_variable = adv_cheat_URI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_URI } }
+			set_variable = adv_cheat_URI
+		}
+		else = {
+			remove_variable = adv_cheat_URI
+		}
+		trigger_event_silently = { id = adv_cheat_event.103 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - East Africa
+adv_cheat_event.104 = {
+	type = country_event
+	title = adv_cheat_event.104.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ETH
+			trigger = { NOT = { has_variable = adv_cheat_ETH } }
+		}
+		name = {
+			text = adv_cheat_event.country.ETH.selected
+			trigger = { has_variable = adv_cheat_ETH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ETH } }
+			set_variable = adv_cheat_ETH
+		}
+		else = {
+			remove_variable = adv_cheat_ETH
+		}
+		trigger_event_silently = { id = adv_cheat_event.104 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ZAN
+			trigger = { NOT = { has_variable = adv_cheat_ZAN } }
+		}
+		name = {
+			text = adv_cheat_event.country.ZAN.selected
+			trigger = { has_variable = adv_cheat_ZAN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ZAN } }
+			set_variable = adv_cheat_ZAN
+		}
+		else = {
+			remove_variable = adv_cheat_ZAN
+		}
+		trigger_event_silently = { id = adv_cheat_event.104 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - East Asia
+adv_cheat_event.105 = {
+	type = country_event
+	title = adv_cheat_event.105.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CHI
+			trigger = { NOT = { has_variable = adv_cheat_CHI } }
+		}
+		name = {
+			text = adv_cheat_event.country.CHI.selected
+			trigger = { has_variable = adv_cheat_CHI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CHI } }
+			set_variable = adv_cheat_CHI
+		}
+		else = {
+			remove_variable = adv_cheat_CHI
+		}
+		trigger_event_silently = { id = adv_cheat_event.105 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KOR
+			trigger = { NOT = { has_variable = adv_cheat_KOR } }
+		}
+		name = {
+			text = adv_cheat_event.country.KOR.selected
+			trigger = { has_variable = adv_cheat_KOR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KOR } }
+			set_variable = adv_cheat_KOR
+		}
+		else = {
+			remove_variable = adv_cheat_KOR
+		}
+		trigger_event_silently = { id = adv_cheat_event.105 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MCH
+			trigger = { NOT = { has_variable = adv_cheat_MCH } }
+		}
+		name = {
+			text = adv_cheat_event.country.MCH.selected
+			trigger = { has_variable = adv_cheat_MCH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MCH } }
+			set_variable = adv_cheat_MCH
+		}
+		else = {
+			remove_variable = adv_cheat_MCH
+		}
+		trigger_event_silently = { id = adv_cheat_event.105 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SKO
+			trigger = { NOT = { has_variable = adv_cheat_SKO } }
+		}
+		name = {
+			text = adv_cheat_event.country.SKO.selected
+			trigger = { has_variable = adv_cheat_SKO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SKO } }
+			set_variable = adv_cheat_SKO
+		}
+		else = {
+			remove_variable = adv_cheat_SKO
+		}
+		trigger_event_silently = { id = adv_cheat_event.105 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TIB
+			trigger = { NOT = { has_variable = adv_cheat_TIB } }
+		}
+		name = {
+			text = adv_cheat_event.country.TIB.selected
+			trigger = { has_variable = adv_cheat_TIB }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TIB } }
+			set_variable = adv_cheat_TIB
+		}
+		else = {
+			remove_variable = adv_cheat_TIB
+		}
+		trigger_event_silently = { id = adv_cheat_event.105 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Eastern Europe
+adv_cheat_event.106 = {
+	type = country_event
+	title = adv_cheat_event.106.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ARM
+			trigger = { NOT = { has_variable = adv_cheat_ARM } }
+		}
+		name = {
+			text = adv_cheat_event.country.ARM.selected
+			trigger = { has_variable = adv_cheat_ARM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ARM } }
+			set_variable = adv_cheat_ARM
+		}
+		else = {
+			remove_variable = adv_cheat_ARM
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BOS
+			trigger = { NOT = { has_variable = adv_cheat_BOS } }
+		}
+		name = {
+			text = adv_cheat_event.country.BOS.selected
+			trigger = { has_variable = adv_cheat_BOS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BOS } }
+			set_variable = adv_cheat_BOS
+		}
+		else = {
+			remove_variable = adv_cheat_BOS
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BUL
+			trigger = { NOT = { has_variable = adv_cheat_BUL } }
+		}
+		name = {
+			text = adv_cheat_event.country.BUL.selected
+			trigger = { has_variable = adv_cheat_BUL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BUL } }
+			set_variable = adv_cheat_BUL
+		}
+		else = {
+			remove_variable = adv_cheat_BUL
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BYZ
+			trigger = { NOT = { has_variable = adv_cheat_BYZ } }
+		}
+		name = {
+			text = adv_cheat_event.country.BYZ.selected
+			trigger = { has_variable = adv_cheat_BYZ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BYZ } }
+			set_variable = adv_cheat_BYZ
+		}
+		else = {
+			remove_variable = adv_cheat_BYZ
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CIR
+			trigger = { NOT = { has_variable = adv_cheat_CIR } }
+		}
+		name = {
+			text = adv_cheat_event.country.CIR.selected
+			trigger = { has_variable = adv_cheat_CIR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CIR } }
+			set_variable = adv_cheat_CIR
+		}
+		else = {
+			remove_variable = adv_cheat_CIR
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CRI
+			trigger = { NOT = { has_variable = adv_cheat_CRI } }
+		}
+		name = {
+			text = adv_cheat_event.country.CRI.selected
+			trigger = { has_variable = adv_cheat_CRI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CRI } }
+			set_variable = adv_cheat_CRI
+		}
+		else = {
+			remove_variable = adv_cheat_CRI
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CRO
+			trigger = { NOT = { has_variable = adv_cheat_CRO } }
+		}
+		name = {
+			text = adv_cheat_event.country.CRO.selected
+			trigger = { has_variable = adv_cheat_CRO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CRO } }
+			set_variable = adv_cheat_CRO
+		}
+		else = {
+			remove_variable = adv_cheat_CRO
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GEO
+			trigger = { NOT = { has_variable = adv_cheat_GEO } }
+		}
+		name = {
+			text = adv_cheat_event.country.GEO.selected
+			trigger = { has_variable = adv_cheat_GEO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GEO } }
+			set_variable = adv_cheat_GEO
+		}
+		else = {
+			remove_variable = adv_cheat_GEO
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HUN
+			trigger = { NOT = { has_variable = adv_cheat_HUN } }
+		}
+		name = {
+			text = adv_cheat_event.country.HUN.selected
+			trigger = { has_variable = adv_cheat_HUN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HUN } }
+			set_variable = adv_cheat_HUN
+		}
+		else = {
+			remove_variable = adv_cheat_HUN
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.LIT
+			trigger = { NOT = { has_variable = adv_cheat_LIT } }
+		}
+		name = {
+			text = adv_cheat_event.country.LIT.selected
+			trigger = { has_variable = adv_cheat_LIT }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_LIT } }
+			set_variable = adv_cheat_LIT
+		}
+		else = {
+			remove_variable = adv_cheat_LIT
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MOS
+			trigger = { NOT = { has_variable = adv_cheat_MOS } }
+		}
+		name = {
+			text = adv_cheat_event.country.MOS.selected
+			trigger = { has_variable = adv_cheat_MOS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MOS } }
+			set_variable = adv_cheat_MOS
+		}
+		else = {
+			remove_variable = adv_cheat_MOS
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NOV
+			trigger = { NOT = { has_variable = adv_cheat_NOV } }
+		}
+		name = {
+			text = adv_cheat_event.country.NOV.selected
+			trigger = { has_variable = adv_cheat_NOV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NOV } }
+			set_variable = adv_cheat_NOV
+		}
+		else = {
+			remove_variable = adv_cheat_NOV
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PLC
+			trigger = { NOT = { has_variable = adv_cheat_PLC } }
+		}
+		name = {
+			text = adv_cheat_event.country.PLC.selected
+			trigger = { has_variable = adv_cheat_PLC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PLC } }
+			set_variable = adv_cheat_PLC
+		}
+		else = {
+			remove_variable = adv_cheat_PLC
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.POL
+			trigger = { NOT = { has_variable = adv_cheat_POL } }
+		}
+		name = {
+			text = adv_cheat_event.country.POL.selected
+			trigger = { has_variable = adv_cheat_POL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_POL } }
+			set_variable = adv_cheat_POL
+		}
+		else = {
+			remove_variable = adv_cheat_POL
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.RUS
+			trigger = { NOT = { has_variable = adv_cheat_RUS } }
+		}
+		name = {
+			text = adv_cheat_event.country.RUS.selected
+			trigger = { has_variable = adv_cheat_RUS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_RUS } }
+			set_variable = adv_cheat_RUS
+		}
+		else = {
+			remove_variable = adv_cheat_RUS
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SER
+			trigger = { NOT = { has_variable = adv_cheat_SER } }
+		}
+		name = {
+			text = adv_cheat_event.country.SER.selected
+			trigger = { has_variable = adv_cheat_SER }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SER } }
+			set_variable = adv_cheat_SER
+		}
+		else = {
+			remove_variable = adv_cheat_SER
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SME
+			trigger = { NOT = { has_variable = adv_cheat_SME } }
+		}
+		name = {
+			text = adv_cheat_event.country.SME.selected
+			trigger = { has_variable = adv_cheat_SME }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SME } }
+			set_variable = adv_cheat_SME
+		}
+		else = {
+			remove_variable = adv_cheat_SME
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SMO
+			trigger = { NOT = { has_variable = adv_cheat_SMO } }
+		}
+		name = {
+			text = adv_cheat_event.country.SMO.selected
+			trigger = { has_variable = adv_cheat_SMO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SMO } }
+			set_variable = adv_cheat_SMO
+		}
+		else = {
+			remove_variable = adv_cheat_SMO
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TEU
+			trigger = { NOT = { has_variable = adv_cheat_TEU } }
+		}
+		name = {
+			text = adv_cheat_event.country.TEU.selected
+			trigger = { has_variable = adv_cheat_TEU }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TEU } }
+			set_variable = adv_cheat_TEU
+		}
+		else = {
+			remove_variable = adv_cheat_TEU
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TUR
+			trigger = { NOT = { has_variable = adv_cheat_TUR } }
+		}
+		name = {
+			text = adv_cheat_event.country.TUR.selected
+			trigger = { has_variable = adv_cheat_TUR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TUR } }
+			set_variable = adv_cheat_TUR
+		}
+		else = {
+			remove_variable = adv_cheat_TUR
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.WAL
+			trigger = { NOT = { has_variable = adv_cheat_WAL } }
+		}
+		name = {
+			text = adv_cheat_event.country.WAL.selected
+			trigger = { has_variable = adv_cheat_WAL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_WAL } }
+			set_variable = adv_cheat_WAL
+		}
+		else = {
+			remove_variable = adv_cheat_WAL
+		}
+		trigger_event_silently = { id = adv_cheat_event.106 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Japan
+adv_cheat_event.107 = {
+	type = country_event
+	title = adv_cheat_event.107.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.AKM
+			trigger = { NOT = { has_variable = adv_cheat_AKM } }
+		}
+		name = {
+			text = adv_cheat_event.country.AKM.selected
+			trigger = { has_variable = adv_cheat_AKM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_AKM } }
+			set_variable = adv_cheat_AKM
+		}
+		else = {
+			remove_variable = adv_cheat_AKM
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.AKT
+			trigger = { NOT = { has_variable = adv_cheat_AKT } }
+		}
+		name = {
+			text = adv_cheat_event.country.AKT.selected
+			trigger = { has_variable = adv_cheat_AKT }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_AKT } }
+			set_variable = adv_cheat_AKT
+		}
+		else = {
+			remove_variable = adv_cheat_AKT
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ASA
+			trigger = { NOT = { has_variable = adv_cheat_ASA } }
+		}
+		name = {
+			text = adv_cheat_event.country.ASA.selected
+			trigger = { has_variable = adv_cheat_ASA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ASA } }
+			set_variable = adv_cheat_ASA
+		}
+		else = {
+			remove_variable = adv_cheat_ASA
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ASK
+			trigger = { NOT = { has_variable = adv_cheat_ASK } }
+		}
+		name = {
+			text = adv_cheat_event.country.ASK.selected
+			trigger = { has_variable = adv_cheat_ASK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ASK } }
+			set_variable = adv_cheat_ASK
+		}
+		else = {
+			remove_variable = adv_cheat_ASK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CBA
+			trigger = { NOT = { has_variable = adv_cheat_CBA } }
+		}
+		name = {
+			text = adv_cheat_event.country.CBA.selected
+			trigger = { has_variable = adv_cheat_CBA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CBA } }
+			set_variable = adv_cheat_CBA
+		}
+		else = {
+			remove_variable = adv_cheat_CBA
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CSK
+			trigger = { NOT = { has_variable = adv_cheat_CSK } }
+		}
+		name = {
+			text = adv_cheat_event.country.CSK.selected
+			trigger = { has_variable = adv_cheat_CSK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CSK } }
+			set_variable = adv_cheat_CSK
+		}
+		else = {
+			remove_variable = adv_cheat_CSK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.DTE
+			trigger = { NOT = { has_variable = adv_cheat_DTE } }
+		}
+		name = {
+			text = adv_cheat_event.country.DTE.selected
+			trigger = { has_variable = adv_cheat_DTE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_DTE } }
+			set_variable = adv_cheat_DTE
+		}
+		else = {
+			remove_variable = adv_cheat_DTE
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HSK
+			trigger = { NOT = { has_variable = adv_cheat_HSK } }
+		}
+		name = {
+			text = adv_cheat_event.country.HSK.selected
+			trigger = { has_variable = adv_cheat_HSK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HSK } }
+			set_variable = adv_cheat_HSK
+		}
+		else = {
+			remove_variable = adv_cheat_HSK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HTK
+			trigger = { NOT = { has_variable = adv_cheat_HTK } }
+		}
+		name = {
+			text = adv_cheat_event.country.HTK.selected
+			trigger = { has_variable = adv_cheat_HTK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HTK } }
+			set_variable = adv_cheat_HTK
+		}
+		else = {
+			remove_variable = adv_cheat_HTK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.IMG
+			trigger = { NOT = { has_variable = adv_cheat_IMG } }
+		}
+		name = {
+			text = adv_cheat_event.country.IMG.selected
+			trigger = { has_variable = adv_cheat_IMG }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_IMG } }
+			set_variable = adv_cheat_IMG
+		}
+		else = {
+			remove_variable = adv_cheat_IMG
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ISK
+			trigger = { NOT = { has_variable = adv_cheat_ISK } }
+		}
+		name = {
+			text = adv_cheat_event.country.ISK.selected
+			trigger = { has_variable = adv_cheat_ISK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ISK } }
+			set_variable = adv_cheat_ISK
+		}
+		else = {
+			remove_variable = adv_cheat_ISK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ITO
+			trigger = { NOT = { has_variable = adv_cheat_ITO } }
+		}
+		name = {
+			text = adv_cheat_event.country.ITO.selected
+			trigger = { has_variable = adv_cheat_ITO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ITO } }
+			set_variable = adv_cheat_ITO
+		}
+		else = {
+			remove_variable = adv_cheat_ITO
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KGK
+			trigger = { NOT = { has_variable = adv_cheat_KGK } }
+		}
+		name = {
+			text = adv_cheat_event.country.KGK.selected
+			trigger = { has_variable = adv_cheat_KGK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KGK } }
+			set_variable = adv_cheat_KGK
+		}
+		else = {
+			remove_variable = adv_cheat_KGK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KKC
+			trigger = { NOT = { has_variable = adv_cheat_KKC } }
+		}
+		name = {
+			text = adv_cheat_event.country.KKC.selected
+			trigger = { has_variable = adv_cheat_KKC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KKC } }
+			set_variable = adv_cheat_KKC
+		}
+		else = {
+			remove_variable = adv_cheat_KKC
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KNO
+			trigger = { NOT = { has_variable = adv_cheat_KNO } }
+		}
+		name = {
+			text = adv_cheat_event.country.KNO.selected
+			trigger = { has_variable = adv_cheat_KNO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KNO } }
+			set_variable = adv_cheat_KNO
+		}
+		else = {
+			remove_variable = adv_cheat_KNO
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KTB
+			trigger = { NOT = { has_variable = adv_cheat_KTB } }
+		}
+		name = {
+			text = adv_cheat_event.country.KTB.selected
+			trigger = { has_variable = adv_cheat_KTB }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KTB } }
+			set_variable = adv_cheat_KTB
+		}
+		else = {
+			remove_variable = adv_cheat_KTB
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MRI
+			trigger = { NOT = { has_variable = adv_cheat_MRI } }
+		}
+		name = {
+			text = adv_cheat_event.country.MRI.selected
+			trigger = { has_variable = adv_cheat_MRI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MRI } }
+			set_variable = adv_cheat_MRI
+		}
+		else = {
+			remove_variable = adv_cheat_MRI
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NBU
+			trigger = { NOT = { has_variable = adv_cheat_NBU } }
+		}
+		name = {
+			text = adv_cheat_event.country.NBU.selected
+			trigger = { has_variable = adv_cheat_NBU }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NBU } }
+			set_variable = adv_cheat_NBU
+		}
+		else = {
+			remove_variable = adv_cheat_NBU
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ODA
+			trigger = { NOT = { has_variable = adv_cheat_ODA } }
+		}
+		name = {
+			text = adv_cheat_event.country.ODA.selected
+			trigger = { has_variable = adv_cheat_ODA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ODA } }
+			set_variable = adv_cheat_ODA
+		}
+		else = {
+			remove_variable = adv_cheat_ODA
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.OGS
+			trigger = { NOT = { has_variable = adv_cheat_OGS } }
+		}
+		name = {
+			text = adv_cheat_event.country.OGS.selected
+			trigger = { has_variable = adv_cheat_OGS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_OGS } }
+			set_variable = adv_cheat_OGS
+		}
+		else = {
+			remove_variable = adv_cheat_OGS
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.OTM
+			trigger = { NOT = { has_variable = adv_cheat_OTM } }
+		}
+		name = {
+			text = adv_cheat_event.country.OTM.selected
+			trigger = { has_variable = adv_cheat_OTM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_OTM } }
+			set_variable = adv_cheat_OTM
+		}
+		else = {
+			remove_variable = adv_cheat_OTM
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.OUC
+			trigger = { NOT = { has_variable = adv_cheat_OUC } }
+		}
+		name = {
+			text = adv_cheat_event.country.OUC.selected
+			trigger = { has_variable = adv_cheat_OUC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_OUC } }
+			set_variable = adv_cheat_OUC
+		}
+		else = {
+			remove_variable = adv_cheat_OUC
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SBA
+			trigger = { NOT = { has_variable = adv_cheat_SBA } }
+		}
+		name = {
+			text = adv_cheat_event.country.SBA.selected
+			trigger = { has_variable = adv_cheat_SBA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SBA } }
+			set_variable = adv_cheat_SBA
+		}
+		else = {
+			remove_variable = adv_cheat_SBA
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SHN
+			trigger = { NOT = { has_variable = adv_cheat_SHN } }
+		}
+		name = {
+			text = adv_cheat_event.country.SHN.selected
+			trigger = { has_variable = adv_cheat_SHN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SHN } }
+			set_variable = adv_cheat_SHN
+		}
+		else = {
+			remove_variable = adv_cheat_SHN
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SMZ
+			trigger = { NOT = { has_variable = adv_cheat_SMZ } }
+		}
+		name = {
+			text = adv_cheat_event.country.SMZ.selected
+			trigger = { has_variable = adv_cheat_SMZ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SMZ } }
+			set_variable = adv_cheat_SMZ
+		}
+		else = {
+			remove_variable = adv_cheat_SMZ
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SOO
+			trigger = { NOT = { has_variable = adv_cheat_SOO } }
+		}
+		name = {
+			text = adv_cheat_event.country.SOO.selected
+			trigger = { has_variable = adv_cheat_SOO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SOO } }
+			set_variable = adv_cheat_SOO
+		}
+		else = {
+			remove_variable = adv_cheat_SOO
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.STK
+			trigger = { NOT = { has_variable = adv_cheat_STK } }
+		}
+		name = {
+			text = adv_cheat_event.country.STK.selected
+			trigger = { has_variable = adv_cheat_STK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_STK } }
+			set_variable = adv_cheat_STK
+		}
+		else = {
+			remove_variable = adv_cheat_STK
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SUW
+			trigger = { NOT = { has_variable = adv_cheat_SUW } }
+		}
+		name = {
+			text = adv_cheat_event.country.SUW.selected
+			trigger = { has_variable = adv_cheat_SUW }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SUW } }
+			set_variable = adv_cheat_SUW
+		}
+		else = {
+			remove_variable = adv_cheat_SUW
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TKD
+			trigger = { NOT = { has_variable = adv_cheat_TKD } }
+		}
+		name = {
+			text = adv_cheat_event.country.TKD.selected
+			trigger = { has_variable = adv_cheat_TKD }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TKD } }
+			set_variable = adv_cheat_TKD
+		}
+		else = {
+			remove_variable = adv_cheat_TKD
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TKI
+			trigger = { NOT = { has_variable = adv_cheat_TKI } }
+		}
+		name = {
+			text = adv_cheat_event.country.TKI.selected
+			trigger = { has_variable = adv_cheat_TKI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TKI } }
+			set_variable = adv_cheat_TKI
+		}
+		else = {
+			remove_variable = adv_cheat_TKI
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.UES
+			trigger = { NOT = { has_variable = adv_cheat_UES } }
+		}
+		name = {
+			text = adv_cheat_event.country.UES.selected
+			trigger = { has_variable = adv_cheat_UES }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_UES } }
+			set_variable = adv_cheat_UES
+		}
+		else = {
+			remove_variable = adv_cheat_UES
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.UTN
+			trigger = { NOT = { has_variable = adv_cheat_UTN } }
+		}
+		name = {
+			text = adv_cheat_event.country.UTN.selected
+			trigger = { has_variable = adv_cheat_UTN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_UTN } }
+			set_variable = adv_cheat_UTN
+		}
+		else = {
+			remove_variable = adv_cheat_UTN
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.YMN
+			trigger = { NOT = { has_variable = adv_cheat_YMN } }
+		}
+		name = {
+			text = adv_cheat_event.country.YMN.selected
+			trigger = { has_variable = adv_cheat_YMN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_YMN } }
+			set_variable = adv_cheat_YMN
+		}
+		else = {
+			remove_variable = adv_cheat_YMN
+		}
+		trigger_event_silently = { id = adv_cheat_event.107 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - North Africa
+adv_cheat_event.108 = {
+	type = country_event
+	title = adv_cheat_event.108.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CTH
+			trigger = { NOT = { has_variable = adv_cheat_CTH } }
+		}
+		name = {
+			text = adv_cheat_event.country.CTH.selected
+			trigger = { has_variable = adv_cheat_CTH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CTH } }
+			set_variable = adv_cheat_CTH
+		}
+		else = {
+			remove_variable = adv_cheat_CTH
+		}
+		trigger_event_silently = { id = adv_cheat_event.108 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MAM
+			trigger = { NOT = { has_variable = adv_cheat_MAM } }
+		}
+		name = {
+			text = adv_cheat_event.country.MAM.selected
+			trigger = { has_variable = adv_cheat_MAM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MAM } }
+			set_variable = adv_cheat_MAM
+		}
+		else = {
+			remove_variable = adv_cheat_MAM
+		}
+		trigger_event_silently = { id = adv_cheat_event.108 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MOR
+			trigger = { NOT = { has_variable = adv_cheat_MOR } }
+		}
+		name = {
+			text = adv_cheat_event.country.MOR.selected
+			trigger = { has_variable = adv_cheat_MOR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MOR } }
+			set_variable = adv_cheat_MOR
+		}
+		else = {
+			remove_variable = adv_cheat_MOR
+		}
+		trigger_event_silently = { id = adv_cheat_event.108 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TLE
+			trigger = { NOT = { has_variable = adv_cheat_TLE } }
+		}
+		name = {
+			text = adv_cheat_event.country.TLE.selected
+			trigger = { has_variable = adv_cheat_TLE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TLE } }
+			set_variable = adv_cheat_TLE
+		}
+		else = {
+			remove_variable = adv_cheat_TLE
+		}
+		trigger_event_silently = { id = adv_cheat_event.108 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TUN
+			trigger = { NOT = { has_variable = adv_cheat_TUN } }
+		}
+		name = {
+			text = adv_cheat_event.country.TUN.selected
+			trigger = { has_variable = adv_cheat_TUN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TUN } }
+			set_variable = adv_cheat_TUN
+		}
+		else = {
+			remove_variable = adv_cheat_TUN
+		}
+		trigger_event_silently = { id = adv_cheat_event.108 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - North America
+adv_cheat_event.109 = {
+	type = country_event
+	title = adv_cheat_event.109.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.USA
+			trigger = { NOT = { has_variable = adv_cheat_USA } }
+		}
+		name = {
+			text = adv_cheat_event.country.USA.selected
+			trigger = { has_variable = adv_cheat_USA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_USA } }
+			set_variable = adv_cheat_USA
+		}
+		else = {
+			remove_variable = adv_cheat_USA
+		}
+		trigger_event_silently = { id = adv_cheat_event.109 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Northern Europe
+adv_cheat_event.110 = {
+	type = country_event
+	title = adv_cheat_event.110.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.DAN
+			trigger = { NOT = { has_variable = adv_cheat_DAN } }
+		}
+		name = {
+			text = adv_cheat_event.country.DAN.selected
+			trigger = { has_variable = adv_cheat_DAN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_DAN } }
+			set_variable = adv_cheat_DAN
+		}
+		else = {
+			remove_variable = adv_cheat_DAN
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.FIN
+			trigger = { NOT = { has_variable = adv_cheat_FIN } }
+		}
+		name = {
+			text = adv_cheat_event.country.FIN.selected
+			trigger = { has_variable = adv_cheat_FIN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_FIN } }
+			set_variable = adv_cheat_FIN
+		}
+		else = {
+			remove_variable = adv_cheat_FIN
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.LIV
+			trigger = { NOT = { has_variable = adv_cheat_LIV } }
+		}
+		name = {
+			text = adv_cheat_event.country.LIV.selected
+			trigger = { has_variable = adv_cheat_LIV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_LIV } }
+			set_variable = adv_cheat_LIV
+		}
+		else = {
+			remove_variable = adv_cheat_LIV
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NOR
+			trigger = { NOT = { has_variable = adv_cheat_NOR } }
+		}
+		name = {
+			text = adv_cheat_event.country.NOR.selected
+			trigger = { has_variable = adv_cheat_NOR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NOR } }
+			set_variable = adv_cheat_NOR
+		}
+		else = {
+			remove_variable = adv_cheat_NOR
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SCA
+			trigger = { NOT = { has_variable = adv_cheat_SCA } }
+		}
+		name = {
+			text = adv_cheat_event.country.SCA.selected
+			trigger = { has_variable = adv_cheat_SCA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SCA } }
+			set_variable = adv_cheat_SCA
+		}
+		else = {
+			remove_variable = adv_cheat_SCA
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SWE
+			trigger = { NOT = { has_variable = adv_cheat_SWE } }
+		}
+		name = {
+			text = adv_cheat_event.country.SWE.selected
+			trigger = { has_variable = adv_cheat_SWE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SWE } }
+			set_variable = adv_cheat_SWE
+		}
+		else = {
+			remove_variable = adv_cheat_SWE
+		}
+		trigger_event_silently = { id = adv_cheat_event.110 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Oceania
+adv_cheat_event.111 = {
+	type = country_event
+	title = adv_cheat_event.111.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MLK
+			trigger = { NOT = { has_variable = adv_cheat_MLK } }
+		}
+		name = {
+			text = adv_cheat_event.country.MLK.selected
+			trigger = { has_variable = adv_cheat_MLK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MLK } }
+			set_variable = adv_cheat_MLK
+		}
+		else = {
+			remove_variable = adv_cheat_MLK
+		}
+		trigger_event_silently = { id = adv_cheat_event.111 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Other
+adv_cheat_event.112 = {
+	type = country_event
+	title = adv_cheat_event.112.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.FRE
+			trigger = { NOT = { has_variable = adv_cheat_FRE } }
+		}
+		name = {
+			text = adv_cheat_event.country.FRE.selected
+			trigger = { has_variable = adv_cheat_FRE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_FRE } }
+			set_variable = adv_cheat_FRE
+		}
+		else = {
+			remove_variable = adv_cheat_FRE
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GRF
+			trigger = { NOT = { has_variable = adv_cheat_GRF } }
+		}
+		name = {
+			text = adv_cheat_event.country.GRF.selected
+			trigger = { has_variable = adv_cheat_GRF }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GRF } }
+			set_variable = adv_cheat_GRF
+		}
+		else = {
+			remove_variable = adv_cheat_GRF
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.LBV
+			trigger = { NOT = { has_variable = adv_cheat_LBV } }
+		}
+		name = {
+			text = adv_cheat_event.country.LBV.selected
+			trigger = { has_variable = adv_cheat_LBV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_LBV } }
+			set_variable = adv_cheat_LBV
+		}
+		else = {
+			remove_variable = adv_cheat_LBV
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.LOI
+			trigger = { NOT = { has_variable = adv_cheat_LOI } }
+		}
+		name = {
+			text = adv_cheat_event.country.LOI.selected
+			trigger = { has_variable = adv_cheat_LOI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_LOI } }
+			set_variable = adv_cheat_LOI
+		}
+		else = {
+			remove_variable = adv_cheat_LOI
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PSS
+			trigger = { NOT = { has_variable = adv_cheat_PSS } }
+		}
+		name = {
+			text = adv_cheat_event.country.PSS.selected
+			trigger = { has_variable = adv_cheat_PSS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PSS } }
+			set_variable = adv_cheat_PSS
+		}
+		else = {
+			remove_variable = adv_cheat_PSS
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.REG
+			trigger = { NOT = { has_variable = adv_cheat_REG } }
+		}
+		name = {
+			text = adv_cheat_event.country.REG.selected
+			trigger = { has_variable = adv_cheat_REG }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_REG } }
+			set_variable = adv_cheat_REG
+		}
+		else = {
+			remove_variable = adv_cheat_REG
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SBL
+			trigger = { NOT = { has_variable = adv_cheat_SBL } }
+		}
+		name = {
+			text = adv_cheat_event.country.SBL.selected
+			trigger = { has_variable = adv_cheat_SBL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SBL } }
+			set_variable = adv_cheat_SBL
+		}
+		else = {
+			remove_variable = adv_cheat_SBL
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SLZ
+			trigger = { NOT = { has_variable = adv_cheat_SLZ } }
+		}
+		name = {
+			text = adv_cheat_event.country.SLZ.selected
+			trigger = { has_variable = adv_cheat_SLZ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SLZ } }
+			set_variable = adv_cheat_SLZ
+		}
+		else = {
+			remove_variable = adv_cheat_SLZ
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.STY
+			trigger = { NOT = { has_variable = adv_cheat_STY } }
+		}
+		name = {
+			text = adv_cheat_event.country.STY.selected
+			trigger = { has_variable = adv_cheat_STY }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_STY } }
+			set_variable = adv_cheat_STY
+		}
+		else = {
+			remove_variable = adv_cheat_STY
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TIR
+			trigger = { NOT = { has_variable = adv_cheat_TIR } }
+		}
+		name = {
+			text = adv_cheat_event.country.TIR.selected
+			trigger = { has_variable = adv_cheat_TIR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TIR } }
+			set_variable = adv_cheat_TIR
+		}
+		else = {
+			remove_variable = adv_cheat_TIR
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TUS
+			trigger = { NOT = { has_variable = adv_cheat_TUS } }
+		}
+		name = {
+			text = adv_cheat_event.country.TUS.selected
+			trigger = { has_variable = adv_cheat_TUS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TUS } }
+			set_variable = adv_cheat_TUS
+		}
+		else = {
+			remove_variable = adv_cheat_TUS
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.UBV
+			trigger = { NOT = { has_variable = adv_cheat_UBV } }
+		}
+		name = {
+			text = adv_cheat_event.country.UBV.selected
+			trigger = { has_variable = adv_cheat_UBV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_UBV } }
+			set_variable = adv_cheat_UBV
+		}
+		else = {
+			remove_variable = adv_cheat_UBV
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - South America
+adv_cheat_event.113 = {
+	type = country_event
+	title = adv_cheat_event.113.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CSU
+			trigger = { NOT = { has_variable = adv_cheat_CSU } }
+		}
+		name = {
+			text = adv_cheat_event.country.CSU.selected
+			trigger = { has_variable = adv_cheat_CSU }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CSU } }
+			set_variable = adv_cheat_CSU
+		}
+		else = {
+			remove_variable = adv_cheat_CSU
+		}
+		trigger_event_silently = { id = adv_cheat_event.113 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.INC
+			trigger = { NOT = { has_variable = adv_cheat_INC } }
+		}
+		name = {
+			text = adv_cheat_event.country.INC.selected
+			trigger = { has_variable = adv_cheat_INC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_INC } }
+			set_variable = adv_cheat_INC
+		}
+		else = {
+			remove_variable = adv_cheat_INC
+		}
+		trigger_event_silently = { id = adv_cheat_event.113 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - South Asia
+adv_cheat_event.114 = {
+	type = country_event
+	title = adv_cheat_event.114.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.AHO
+			trigger = { NOT = { has_variable = adv_cheat_AHO } }
+		}
+		name = {
+			text = adv_cheat_event.country.AHO.selected
+			trigger = { has_variable = adv_cheat_AHO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_AHO } }
+			set_variable = adv_cheat_AHO
+		}
+		else = {
+			remove_variable = adv_cheat_AHO
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.DLH
+			trigger = { NOT = { has_variable = adv_cheat_DLH } }
+		}
+		name = {
+			text = adv_cheat_event.country.DLH.selected
+			trigger = { has_variable = adv_cheat_DLH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_DLH } }
+			set_variable = adv_cheat_DLH
+		}
+		else = {
+			remove_variable = adv_cheat_DLH
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HIN
+			trigger = { NOT = { has_variable = adv_cheat_HIN } }
+		}
+		name = {
+			text = adv_cheat_event.country.HIN.selected
+			trigger = { has_variable = adv_cheat_HIN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HIN } }
+			set_variable = adv_cheat_HIN
+		}
+		else = {
+			remove_variable = adv_cheat_HIN
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MLB
+			trigger = { NOT = { has_variable = adv_cheat_MLB } }
+		}
+		name = {
+			text = adv_cheat_event.country.MLB.selected
+			trigger = { has_variable = adv_cheat_MLB }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MLB } }
+			set_variable = adv_cheat_MLB
+		}
+		else = {
+			remove_variable = adv_cheat_MLB
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MSA
+			trigger = { NOT = { has_variable = adv_cheat_MSA } }
+		}
+		name = {
+			text = adv_cheat_event.country.MSA.selected
+			trigger = { has_variable = adv_cheat_MSA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MSA } }
+			set_variable = adv_cheat_MSA
+		}
+		else = {
+			remove_variable = adv_cheat_MSA
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MUG
+			trigger = { NOT = { has_variable = adv_cheat_MUG } }
+		}
+		name = {
+			text = adv_cheat_event.country.MUG.selected
+			trigger = { has_variable = adv_cheat_MUG }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MUG } }
+			set_variable = adv_cheat_MUG
+		}
+		else = {
+			remove_variable = adv_cheat_MUG
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NPL
+			trigger = { NOT = { has_variable = adv_cheat_NPL } }
+		}
+		name = {
+			text = adv_cheat_event.country.NPL.selected
+			trigger = { has_variable = adv_cheat_NPL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NPL } }
+			set_variable = adv_cheat_NPL
+		}
+		else = {
+			remove_variable = adv_cheat_NPL
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ORI
+			trigger = { NOT = { has_variable = adv_cheat_ORI } }
+		}
+		name = {
+			text = adv_cheat_event.country.ORI.selected
+			trigger = { has_variable = adv_cheat_ORI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ORI } }
+			set_variable = adv_cheat_ORI
+		}
+		else = {
+			remove_variable = adv_cheat_ORI
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TNK
+			trigger = { NOT = { has_variable = adv_cheat_TNK } }
+		}
+		name = {
+			text = adv_cheat_event.country.TNK.selected
+			trigger = { has_variable = adv_cheat_TNK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TNK } }
+			set_variable = adv_cheat_TNK
+		}
+		else = {
+			remove_variable = adv_cheat_TNK
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.VIJ
+			trigger = { NOT = { has_variable = adv_cheat_VIJ } }
+		}
+		name = {
+			text = adv_cheat_event.country.VIJ.selected
+			trigger = { has_variable = adv_cheat_VIJ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_VIJ } }
+			set_variable = adv_cheat_VIJ
+		}
+		else = {
+			remove_variable = adv_cheat_VIJ
+		}
+		trigger_event_silently = { id = adv_cheat_event.114 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Southeast Asia
+adv_cheat_event.115 = {
+	type = country_event
+	title = adv_cheat_event.115.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.AYU
+			trigger = { NOT = { has_variable = adv_cheat_AYU } }
+		}
+		name = {
+			text = adv_cheat_event.country.AYU.selected
+			trigger = { has_variable = adv_cheat_AYU }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_AYU } }
+			set_variable = adv_cheat_AYU
+		}
+		else = {
+			remove_variable = adv_cheat_AYU
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CHA
+			trigger = { NOT = { has_variable = adv_cheat_CHA } }
+		}
+		name = {
+			text = adv_cheat_event.country.CHA.selected
+			trigger = { has_variable = adv_cheat_CHA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CHA } }
+			set_variable = adv_cheat_CHA
+		}
+		else = {
+			remove_variable = adv_cheat_CHA
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.DAI
+			trigger = { NOT = { has_variable = adv_cheat_DAI } }
+		}
+		name = {
+			text = adv_cheat_event.country.DAI.selected
+			trigger = { has_variable = adv_cheat_DAI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_DAI } }
+			set_variable = adv_cheat_DAI
+		}
+		else = {
+			remove_variable = adv_cheat_DAI
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KHM
+			trigger = { NOT = { has_variable = adv_cheat_KHM } }
+		}
+		name = {
+			text = adv_cheat_event.country.KHM.selected
+			trigger = { has_variable = adv_cheat_KHM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KHM } }
+			set_variable = adv_cheat_KHM
+		}
+		else = {
+			remove_variable = adv_cheat_KHM
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MAJ
+			trigger = { NOT = { has_variable = adv_cheat_MAJ } }
+		}
+		name = {
+			text = adv_cheat_event.country.MAJ.selected
+			trigger = { has_variable = adv_cheat_MAJ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MAJ } }
+			set_variable = adv_cheat_MAJ
+		}
+		else = {
+			remove_variable = adv_cheat_MAJ
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MLC
+			trigger = { NOT = { has_variable = adv_cheat_MLC } }
+		}
+		name = {
+			text = adv_cheat_event.country.MLC.selected
+			trigger = { has_variable = adv_cheat_MLC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MLC } }
+			set_variable = adv_cheat_MLC
+		}
+		else = {
+			remove_variable = adv_cheat_MLC
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SIA
+			trigger = { NOT = { has_variable = adv_cheat_SIA } }
+		}
+		name = {
+			text = adv_cheat_event.country.SIA.selected
+			trigger = { has_variable = adv_cheat_SIA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SIA } }
+			set_variable = adv_cheat_SIA
+		}
+		else = {
+			remove_variable = adv_cheat_SIA
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SUK
+			trigger = { NOT = { has_variable = adv_cheat_SUK } }
+		}
+		name = {
+			text = adv_cheat_event.country.SUK.selected
+			trigger = { has_variable = adv_cheat_SUK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SUK } }
+			set_variable = adv_cheat_SUK
+		}
+		else = {
+			remove_variable = adv_cheat_SUK
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SUN
+			trigger = { NOT = { has_variable = adv_cheat_SUN } }
+		}
+		name = {
+			text = adv_cheat_event.country.SUN.selected
+			trigger = { has_variable = adv_cheat_SUN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SUN } }
+			set_variable = adv_cheat_SUN
+		}
+		else = {
+			remove_variable = adv_cheat_SUN
+		}
+		trigger_event_silently = { id = adv_cheat_event.115 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Southern Africa
+adv_cheat_event.116 = {
+	type = country_event
+	title = adv_cheat_event.116.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ZMW
+			trigger = { NOT = { has_variable = adv_cheat_ZMW } }
+		}
+		name = {
+			text = adv_cheat_event.country.ZMW.selected
+			trigger = { has_variable = adv_cheat_ZMW }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ZMW } }
+			set_variable = adv_cheat_ZMW
+		}
+		else = {
+			remove_variable = adv_cheat_ZMW
+		}
+		trigger_event_silently = { id = adv_cheat_event.116 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Southern Europe
+adv_cheat_event.117 = {
+	type = country_event
+	title = adv_cheat_event.117.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ARA
+			trigger = { NOT = { has_variable = adv_cheat_ARA } }
+		}
+		name = {
+			text = adv_cheat_event.country.ARA.selected
+			trigger = { has_variable = adv_cheat_ARA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ARA } }
+			set_variable = adv_cheat_ARA
+		}
+		else = {
+			remove_variable = adv_cheat_ARA
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CAS
+			trigger = { NOT = { has_variable = adv_cheat_CAS } }
+		}
+		name = {
+			text = adv_cheat_event.country.CAS.selected
+			trigger = { has_variable = adv_cheat_CAS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CAS } }
+			set_variable = adv_cheat_CAS
+		}
+		else = {
+			remove_variable = adv_cheat_CAS
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.FLO
+			trigger = { NOT = { has_variable = adv_cheat_FLO } }
+		}
+		name = {
+			text = adv_cheat_event.country.FLO.selected
+			trigger = { has_variable = adv_cheat_FLO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_FLO } }
+			set_variable = adv_cheat_FLO
+		}
+		else = {
+			remove_variable = adv_cheat_FLO
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GEN
+			trigger = { NOT = { has_variable = adv_cheat_GEN } }
+		}
+		name = {
+			text = adv_cheat_event.country.GEN.selected
+			trigger = { has_variable = adv_cheat_GEN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GEN } }
+			set_variable = adv_cheat_GEN
+		}
+		else = {
+			remove_variable = adv_cheat_GEN
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GRA
+			trigger = { NOT = { has_variable = adv_cheat_GRA } }
+		}
+		name = {
+			text = adv_cheat_event.country.GRA.selected
+			trigger = { has_variable = adv_cheat_GRA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GRA } }
+			set_variable = adv_cheat_GRA
+		}
+		else = {
+			remove_variable = adv_cheat_GRA
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ITA
+			trigger = { NOT = { has_variable = adv_cheat_ITA } }
+		}
+		name = {
+			text = adv_cheat_event.country.ITA.selected
+			trigger = { has_variable = adv_cheat_ITA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ITA } }
+			set_variable = adv_cheat_ITA
+		}
+		else = {
+			remove_variable = adv_cheat_ITA
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MLO
+			trigger = { NOT = { has_variable = adv_cheat_MLO } }
+		}
+		name = {
+			text = adv_cheat_event.country.MLO.selected
+			trigger = { has_variable = adv_cheat_MLO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MLO } }
+			set_variable = adv_cheat_MLO
+		}
+		else = {
+			remove_variable = adv_cheat_MLO
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NAP
+			trigger = { NOT = { has_variable = adv_cheat_NAP } }
+		}
+		name = {
+			text = adv_cheat_event.country.NAP.selected
+			trigger = { has_variable = adv_cheat_NAP }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NAP } }
+			set_variable = adv_cheat_NAP
+		}
+		else = {
+			remove_variable = adv_cheat_NAP
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NAV
+			trigger = { NOT = { has_variable = adv_cheat_NAV } }
+		}
+		name = {
+			text = adv_cheat_event.country.NAV.selected
+			trigger = { has_variable = adv_cheat_NAV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NAV } }
+			set_variable = adv_cheat_NAV
+		}
+		else = {
+			remove_variable = adv_cheat_NAV
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PAP
+			trigger = { NOT = { has_variable = adv_cheat_PAP } }
+		}
+		name = {
+			text = adv_cheat_event.country.PAP.selected
+			trigger = { has_variable = adv_cheat_PAP }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PAP } }
+			set_variable = adv_cheat_PAP
+		}
+		else = {
+			remove_variable = adv_cheat_PAP
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PIS
+			trigger = { NOT = { has_variable = adv_cheat_PIS } }
+		}
+		name = {
+			text = adv_cheat_event.country.PIS.selected
+			trigger = { has_variable = adv_cheat_PIS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PIS } }
+			set_variable = adv_cheat_PIS
+		}
+		else = {
+			remove_variable = adv_cheat_PIS
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.POR
+			trigger = { NOT = { has_variable = adv_cheat_POR } }
+		}
+		name = {
+			text = adv_cheat_event.country.POR.selected
+			trigger = { has_variable = adv_cheat_POR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_POR } }
+			set_variable = adv_cheat_POR
+		}
+		else = {
+			remove_variable = adv_cheat_POR
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ROM
+			trigger = { NOT = { has_variable = adv_cheat_ROM } }
+		}
+		name = {
+			text = adv_cheat_event.country.ROM.selected
+			trigger = { has_variable = adv_cheat_ROM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ROM } }
+			set_variable = adv_cheat_ROM
+		}
+		else = {
+			remove_variable = adv_cheat_ROM
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SIC
+			trigger = { NOT = { has_variable = adv_cheat_SIC } }
+		}
+		name = {
+			text = adv_cheat_event.country.SIC.selected
+			trigger = { has_variable = adv_cheat_SIC }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SIC } }
+			set_variable = adv_cheat_SIC
+		}
+		else = {
+			remove_variable = adv_cheat_SIC
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SIE
+			trigger = { NOT = { has_variable = adv_cheat_SIE } }
+		}
+		name = {
+			text = adv_cheat_event.country.SIE.selected
+			trigger = { has_variable = adv_cheat_SIE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SIE } }
+			set_variable = adv_cheat_SIE
+		}
+		else = {
+			remove_variable = adv_cheat_SIE
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SPA
+			trigger = { NOT = { has_variable = adv_cheat_SPA } }
+		}
+		name = {
+			text = adv_cheat_event.country.SPA.selected
+			trigger = { has_variable = adv_cheat_SPA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SPA } }
+			set_variable = adv_cheat_SPA
+		}
+		else = {
+			remove_variable = adv_cheat_SPA
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TWS
+			trigger = { NOT = { has_variable = adv_cheat_TWS } }
+		}
+		name = {
+			text = adv_cheat_event.country.TWS.selected
+			trigger = { has_variable = adv_cheat_TWS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TWS } }
+			set_variable = adv_cheat_TWS
+		}
+		else = {
+			remove_variable = adv_cheat_TWS
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.VEN
+			trigger = { NOT = { has_variable = adv_cheat_VEN } }
+		}
+		name = {
+			text = adv_cheat_event.country.VEN.selected
+			trigger = { has_variable = adv_cheat_VEN }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_VEN } }
+			set_variable = adv_cheat_VEN
+		}
+		else = {
+			remove_variable = adv_cheat_VEN
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.VER
+			trigger = { NOT = { has_variable = adv_cheat_VER } }
+		}
+		name = {
+			text = adv_cheat_event.country.VER.selected
+			trigger = { has_variable = adv_cheat_VER }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_VER } }
+			set_variable = adv_cheat_VER
+		}
+		else = {
+			remove_variable = adv_cheat_VER
+		}
+		trigger_event_silently = { id = adv_cheat_event.117 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Special
+adv_cheat_event.118 = {
+	type = country_event
+	title = adv_cheat_event.118.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HSA
+			trigger = { NOT = { has_variable = adv_cheat_HSA } }
+		}
+		name = {
+			text = adv_cheat_event.country.HSA.selected
+			trigger = { has_variable = adv_cheat_HSA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HSA } }
+			set_variable = adv_cheat_HSA
+		}
+		else = {
+			remove_variable = adv_cheat_HSA
+		}
+		trigger_event_silently = { id = adv_cheat_event.118 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KNI
+			trigger = { NOT = { has_variable = adv_cheat_KNI } }
+		}
+		name = {
+			text = adv_cheat_event.country.KNI.selected
+			trigger = { has_variable = adv_cheat_KNI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KNI } }
+			set_variable = adv_cheat_KNI
+		}
+		else = {
+			remove_variable = adv_cheat_KNI
+		}
+		trigger_event_silently = { id = adv_cheat_event.118 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - West Africa
+adv_cheat_event.119 = {
+	type = country_event
+	title = adv_cheat_event.119.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.DAH
+			trigger = { NOT = { has_variable = adv_cheat_DAH } }
+		}
+		name = {
+			text = adv_cheat_event.country.DAH.selected
+			trigger = { has_variable = adv_cheat_DAH }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_DAH } }
+			set_variable = adv_cheat_DAH
+		}
+		else = {
+			remove_variable = adv_cheat_DAH
+		}
+		trigger_event_silently = { id = adv_cheat_event.119 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.MAL
+			trigger = { NOT = { has_variable = adv_cheat_MAL } }
+		}
+		name = {
+			text = adv_cheat_event.country.MAL.selected
+			trigger = { has_variable = adv_cheat_MAL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_MAL } }
+			set_variable = adv_cheat_MAL
+		}
+		else = {
+			remove_variable = adv_cheat_MAL
+		}
+		trigger_event_silently = { id = adv_cheat_event.119 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SON
+			trigger = { NOT = { has_variable = adv_cheat_SON } }
+		}
+		name = {
+			text = adv_cheat_event.country.SON.selected
+			trigger = { has_variable = adv_cheat_SON }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SON } }
+			set_variable = adv_cheat_SON
+		}
+		else = {
+			remove_variable = adv_cheat_SON
+		}
+		trigger_event_silently = { id = adv_cheat_event.119 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Western Asia
+adv_cheat_event.120 = {
+	type = country_event
+	title = adv_cheat_event.120.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ILK
+			trigger = { NOT = { has_variable = adv_cheat_ILK } }
+		}
+		name = {
+			text = adv_cheat_event.country.ILK.selected
+			trigger = { has_variable = adv_cheat_ILK }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ILK } }
+			set_variable = adv_cheat_ILK
+		}
+		else = {
+			remove_variable = adv_cheat_ILK
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.IRA
+			trigger = { NOT = { has_variable = adv_cheat_IRA } }
+		}
+		name = {
+			text = adv_cheat_event.country.IRA.selected
+			trigger = { has_variable = adv_cheat_IRA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_IRA } }
+			set_variable = adv_cheat_IRA
+		}
+		else = {
+			remove_variable = adv_cheat_IRA
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KAR
+			trigger = { NOT = { has_variable = adv_cheat_KAR } }
+		}
+		name = {
+			text = adv_cheat_event.country.KAR.selected
+			trigger = { has_variable = adv_cheat_KAR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KAR } }
+			set_variable = adv_cheat_KAR
+		}
+		else = {
+			remove_variable = adv_cheat_KAR
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KOJ
+			trigger = { NOT = { has_variable = adv_cheat_KOJ } }
+		}
+		name = {
+			text = adv_cheat_event.country.KOJ.selected
+			trigger = { has_variable = adv_cheat_KOJ }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KOJ } }
+			set_variable = adv_cheat_KOJ
+		}
+		else = {
+			remove_variable = adv_cheat_KOJ
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.KRS
+			trigger = { NOT = { has_variable = adv_cheat_KRS } }
+		}
+		name = {
+			text = adv_cheat_event.country.KRS.selected
+			trigger = { has_variable = adv_cheat_KRS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_KRS } }
+			set_variable = adv_cheat_KRS
+		}
+		else = {
+			remove_variable = adv_cheat_KRS
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.OMA
+			trigger = { NOT = { has_variable = adv_cheat_OMA } }
+		}
+		name = {
+			text = adv_cheat_event.country.OMA.selected
+			trigger = { has_variable = adv_cheat_OMA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_OMA } }
+			set_variable = adv_cheat_OMA
+		}
+		else = {
+			remove_variable = adv_cheat_OMA
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ORM
+			trigger = { NOT = { has_variable = adv_cheat_ORM } }
+		}
+		name = {
+			text = adv_cheat_event.country.ORM.selected
+			trigger = { has_variable = adv_cheat_ORM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ORM } }
+			set_variable = adv_cheat_ORM
+		}
+		else = {
+			remove_variable = adv_cheat_ORM
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.TRE
+			trigger = { NOT = { has_variable = adv_cheat_TRE } }
+		}
+		name = {
+			text = adv_cheat_event.country.TRE.selected
+			trigger = { has_variable = adv_cheat_TRE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_TRE } }
+			set_variable = adv_cheat_TRE
+		}
+		else = {
+			remove_variable = adv_cheat_TRE
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.YEM
+			trigger = { NOT = { has_variable = adv_cheat_YEM } }
+		}
+		name = {
+			text = adv_cheat_event.country.YEM.selected
+			trigger = { has_variable = adv_cheat_YEM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_YEM } }
+			set_variable = adv_cheat_YEM
+		}
+		else = {
+			remove_variable = adv_cheat_YEM
+		}
+		trigger_event_silently = { id = adv_cheat_event.120 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Country - Western Europe
+adv_cheat_event.121 = {
+	type = country_event
+	title = adv_cheat_event.121.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BRB
+			trigger = { NOT = { has_variable = adv_cheat_BRB } }
+		}
+		name = {
+			text = adv_cheat_event.country.BRB.selected
+			trigger = { has_variable = adv_cheat_BRB }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BRB } }
+			set_variable = adv_cheat_BRB
+		}
+		else = {
+			remove_variable = adv_cheat_BRB
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BRI
+			trigger = { NOT = { has_variable = adv_cheat_BRI } }
+		}
+		name = {
+			text = adv_cheat_event.country.BRI.selected
+			trigger = { has_variable = adv_cheat_BRI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BRI } }
+			set_variable = adv_cheat_BRI
+		}
+		else = {
+			remove_variable = adv_cheat_BRI
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.BUR
+			trigger = { NOT = { has_variable = adv_cheat_BUR } }
+		}
+		name = {
+			text = adv_cheat_event.country.BUR.selected
+			trigger = { has_variable = adv_cheat_BUR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_BUR } }
+			set_variable = adv_cheat_BUR
+		}
+		else = {
+			remove_variable = adv_cheat_BUR
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.CEL
+			trigger = { NOT = { has_variable = adv_cheat_CEL } }
+		}
+		name = {
+			text = adv_cheat_event.country.CEL.selected
+			trigger = { has_variable = adv_cheat_CEL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_CEL } }
+			set_variable = adv_cheat_CEL
+		}
+		else = {
+			remove_variable = adv_cheat_CEL
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.ENG
+			trigger = { NOT = { has_variable = adv_cheat_ENG } }
+		}
+		name = {
+			text = adv_cheat_event.country.ENG.selected
+			trigger = { has_variable = adv_cheat_ENG }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_ENG } }
+			set_variable = adv_cheat_ENG
+		}
+		else = {
+			remove_variable = adv_cheat_ENG
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.FLA
+			trigger = { NOT = { has_variable = adv_cheat_FLA } }
+		}
+		name = {
+			text = adv_cheat_event.country.FLA.selected
+			trigger = { has_variable = adv_cheat_FLA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_FLA } }
+			set_variable = adv_cheat_FLA
+		}
+		else = {
+			remove_variable = adv_cheat_FLA
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.FRA
+			trigger = { NOT = { has_variable = adv_cheat_FRA } }
+		}
+		name = {
+			text = adv_cheat_event.country.FRA.selected
+			trigger = { has_variable = adv_cheat_FRA }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_FRA } }
+			set_variable = adv_cheat_FRA
+		}
+		else = {
+			remove_variable = adv_cheat_FRA
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GBR
+			trigger = { NOT = { has_variable = adv_cheat_GBR } }
+		}
+		name = {
+			text = adv_cheat_event.country.GBR.selected
+			trigger = { has_variable = adv_cheat_GBR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GBR } }
+			set_variable = adv_cheat_GBR
+		}
+		else = {
+			remove_variable = adv_cheat_GBR
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.GEL
+			trigger = { NOT = { has_variable = adv_cheat_GEL } }
+		}
+		name = {
+			text = adv_cheat_event.country.GEL.selected
+			trigger = { has_variable = adv_cheat_GEL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_GEL } }
+			set_variable = adv_cheat_GEL
+		}
+		else = {
+			remove_variable = adv_cheat_GEL
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HAI
+			trigger = { NOT = { has_variable = adv_cheat_HAI } }
+		}
+		name = {
+			text = adv_cheat_event.country.HAI.selected
+			trigger = { has_variable = adv_cheat_HAI }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HAI } }
+			set_variable = adv_cheat_HAI
+		}
+		else = {
+			remove_variable = adv_cheat_HAI
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HOL
+			trigger = { NOT = { has_variable = adv_cheat_HOL } }
+		}
+		name = {
+			text = adv_cheat_event.country.HOL.selected
+			trigger = { has_variable = adv_cheat_HOL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HOL } }
+			set_variable = adv_cheat_HOL
+		}
+		else = {
+			remove_variable = adv_cheat_HOL
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.HYM
+			trigger = { NOT = { has_variable = adv_cheat_HYM } }
+		}
+		name = {
+			text = adv_cheat_event.country.HYM.selected
+			trigger = { has_variable = adv_cheat_HYM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_HYM } }
+			set_variable = adv_cheat_HYM
+		}
+		else = {
+			remove_variable = adv_cheat_HYM
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.IRE
+			trigger = { NOT = { has_variable = adv_cheat_IRE } }
+		}
+		name = {
+			text = adv_cheat_event.country.IRE.selected
+			trigger = { has_variable = adv_cheat_IRE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_IRE } }
+			set_variable = adv_cheat_IRE
+		}
+		else = {
+			remove_variable = adv_cheat_IRE
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.LIE
+			trigger = { NOT = { has_variable = adv_cheat_LIE } }
+		}
+		name = {
+			text = adv_cheat_event.country.LIE.selected
+			trigger = { has_variable = adv_cheat_LIE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_LIE } }
+			set_variable = adv_cheat_LIE
+		}
+		else = {
+			remove_variable = adv_cheat_LIE
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.LUX
+			trigger = { NOT = { has_variable = adv_cheat_LUX } }
+		}
+		name = {
+			text = adv_cheat_event.country.LUX.selected
+			trigger = { has_variable = adv_cheat_LUX }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_LUX } }
+			set_variable = adv_cheat_LUX
+		}
+		else = {
+			remove_variable = adv_cheat_LUX
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NED
+			trigger = { NOT = { has_variable = adv_cheat_NED } }
+		}
+		name = {
+			text = adv_cheat_event.country.NED.selected
+			trigger = { has_variable = adv_cheat_NED }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NED } }
+			set_variable = adv_cheat_NED
+		}
+		else = {
+			remove_variable = adv_cheat_NED
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.NRM
+			trigger = { NOT = { has_variable = adv_cheat_NRM } }
+		}
+		name = {
+			text = adv_cheat_event.country.NRM.selected
+			trigger = { has_variable = adv_cheat_NRM }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_NRM } }
+			set_variable = adv_cheat_NRM
+		}
+		else = {
+			remove_variable = adv_cheat_NRM
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PAL
+			trigger = { NOT = { has_variable = adv_cheat_PAL } }
+		}
+		name = {
+			text = adv_cheat_event.country.PAL.selected
+			trigger = { has_variable = adv_cheat_PAL }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PAL } }
+			set_variable = adv_cheat_PAL
+		}
+		else = {
+			remove_variable = adv_cheat_PAL
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PLE
+			trigger = { NOT = { has_variable = adv_cheat_PLE } }
+		}
+		name = {
+			text = adv_cheat_event.country.PLE.selected
+			trigger = { has_variable = adv_cheat_PLE }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PLE } }
+			set_variable = adv_cheat_PLE
+		}
+		else = {
+			remove_variable = adv_cheat_PLE
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.PRO
+			trigger = { NOT = { has_variable = adv_cheat_PRO } }
+		}
+		name = {
+			text = adv_cheat_event.country.PRO.selected
+			trigger = { has_variable = adv_cheat_PRO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_PRO } }
+			set_variable = adv_cheat_PRO
+		}
+		else = {
+			remove_variable = adv_cheat_PRO
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SAV
+			trigger = { NOT = { has_variable = adv_cheat_SAV } }
+		}
+		name = {
+			text = adv_cheat_event.country.SAV.selected
+			trigger = { has_variable = adv_cheat_SAV }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SAV } }
+			set_variable = adv_cheat_SAV
+		}
+		else = {
+			remove_variable = adv_cheat_SAV
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.SCO
+			trigger = { NOT = { has_variable = adv_cheat_SCO } }
+		}
+		name = {
+			text = adv_cheat_event.country.SCO.selected
+			trigger = { has_variable = adv_cheat_SCO }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SCO } }
+			set_variable = adv_cheat_SCO
+		}
+		else = {
+			remove_variable = adv_cheat_SCO
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.UTR
+			trigger = { NOT = { has_variable = adv_cheat_UTR } }
+		}
+		name = {
+			text = adv_cheat_event.country.UTR.selected
+			trigger = { has_variable = adv_cheat_UTR }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_UTR } }
+			set_variable = adv_cheat_UTR
+		}
+		else = {
+			remove_variable = adv_cheat_UTR
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.country.WLS
+			trigger = { NOT = { has_variable = adv_cheat_WLS } }
+		}
+		name = {
+			text = adv_cheat_event.country.WLS.selected
+			trigger = { has_variable = adv_cheat_WLS }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_WLS } }
+			set_variable = adv_cheat_WLS
+		}
+		else = {
+			remove_variable = adv_cheat_WLS
+		}
+		trigger_event_silently = { id = adv_cheat_event.121 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.10 }
+	}
+}
+
+# Culture region selector
+adv_cheat_event.20 = {
+	type = country_event
+	title = adv_cheat_event.20.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.central_europe
+			trigger = { NOT = { is_adv_cheat_culture_central_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.central_europe.selected
+			trigger = { is_adv_cheat_culture_central_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.eastern_europe
+			trigger = { NOT = { is_adv_cheat_culture_eastern_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.eastern_europe.selected
+			trigger = { is_adv_cheat_culture_eastern_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.201 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.oceania
+			trigger = { NOT = { is_adv_cheat_culture_oceania_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.oceania.selected
+			trigger = { is_adv_cheat_culture_oceania_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.202 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.other
+			trigger = { NOT = { is_adv_cheat_culture_other_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.other.selected
+			trigger = { is_adv_cheat_culture_other_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.southern_africa
+			trigger = { NOT = { is_adv_cheat_culture_southern_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.southern_africa.selected
+			trigger = { is_adv_cheat_culture_southern_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.204 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.southern_europe
+			trigger = { NOT = { is_adv_cheat_culture_southern_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.southern_europe.selected
+			trigger = { is_adv_cheat_culture_southern_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.western_europe
+			trigger = { NOT = { is_adv_cheat_culture_western_europe_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.western_europe.selected
+			trigger = { is_adv_cheat_culture_western_europe_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.1 }
+	}
+}
+
+# Culture - Central Europe
+adv_cheat_event.200 = {
+	type = country_event
+	title = adv_cheat_event.200.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.angrian
+			trigger = { NOT = { has_variable = adv_cheat_culture_angrian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.angrian.selected
+			trigger = { has_variable = adv_cheat_culture_angrian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_angrian } }
+			set_variable = adv_cheat_culture_angrian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_angrian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.east_franconian
+			trigger = { NOT = { has_variable = adv_cheat_culture_east_franconian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.east_franconian.selected
+			trigger = { has_variable = adv_cheat_culture_east_franconian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_east_franconian } }
+			set_variable = adv_cheat_culture_east_franconian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_east_franconian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.eastern_pomeranian
+			trigger = { NOT = { has_variable = adv_cheat_culture_eastern_pomeranian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.eastern_pomeranian.selected
+			trigger = { has_variable = adv_cheat_culture_eastern_pomeranian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_eastern_pomeranian } }
+			set_variable = adv_cheat_culture_eastern_pomeranian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_eastern_pomeranian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.eastphalian
+			trigger = { NOT = { has_variable = adv_cheat_culture_eastphalian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.eastphalian.selected
+			trigger = { has_variable = adv_cheat_culture_eastphalian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_eastphalian } }
+			set_variable = adv_cheat_culture_eastphalian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_eastphalian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.hanseatic
+			trigger = { NOT = { has_variable = adv_cheat_culture_hanseatic } }
+		}
+		name = {
+			text = adv_cheat_event.culture.hanseatic.selected
+			trigger = { has_variable = adv_cheat_culture_hanseatic }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_hanseatic } }
+			set_variable = adv_cheat_culture_hanseatic
+		}
+		else = {
+			remove_variable = adv_cheat_culture_hanseatic
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.holsatian
+			trigger = { NOT = { has_variable = adv_cheat_culture_holsatian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.holsatian.selected
+			trigger = { has_variable = adv_cheat_culture_holsatian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_holsatian } }
+			set_variable = adv_cheat_culture_holsatian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_holsatian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.lower_saxon
+			trigger = { NOT = { has_variable = adv_cheat_culture_lower_saxon } }
+		}
+		name = {
+			text = adv_cheat_event.culture.lower_saxon.selected
+			trigger = { has_variable = adv_cheat_culture_lower_saxon }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_lower_saxon } }
+			set_variable = adv_cheat_culture_lower_saxon
+		}
+		else = {
+			remove_variable = adv_cheat_culture_lower_saxon
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.moselle_franconian
+			trigger = { NOT = { has_variable = adv_cheat_culture_moselle_franconian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.moselle_franconian.selected
+			trigger = { has_variable = adv_cheat_culture_moselle_franconian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_moselle_franconian } }
+			set_variable = adv_cheat_culture_moselle_franconian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_moselle_franconian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.rhine_franconian
+			trigger = { NOT = { has_variable = adv_cheat_culture_rhine_franconian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.rhine_franconian.selected
+			trigger = { has_variable = adv_cheat_culture_rhine_franconian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_rhine_franconian } }
+			set_variable = adv_cheat_culture_rhine_franconian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_rhine_franconian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.ripuarian_franconian
+			trigger = { NOT = { has_variable = adv_cheat_culture_ripuarian_franconian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.ripuarian_franconian.selected
+			trigger = { has_variable = adv_cheat_culture_ripuarian_franconian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_ripuarian_franconian } }
+			set_variable = adv_cheat_culture_ripuarian_franconian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_ripuarian_franconian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.swabian
+			trigger = { NOT = { has_variable = adv_cheat_culture_swabian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.swabian.selected
+			trigger = { has_variable = adv_cheat_culture_swabian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_swabian } }
+			set_variable = adv_cheat_culture_swabian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_swabian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.western_pomeranian
+			trigger = { NOT = { has_variable = adv_cheat_culture_western_pomeranian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.western_pomeranian.selected
+			trigger = { has_variable = adv_cheat_culture_western_pomeranian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_western_pomeranian } }
+			set_variable = adv_cheat_culture_western_pomeranian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_western_pomeranian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.westphalian
+			trigger = { NOT = { has_variable = adv_cheat_culture_westphalian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.westphalian.selected
+			trigger = { has_variable = adv_cheat_culture_westphalian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_westphalian } }
+			set_variable = adv_cheat_culture_westphalian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_westphalian
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Eastern Europe
+adv_cheat_event.201 = {
+	type = country_event
+	title = adv_cheat_event.201.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.ruthenian
+			trigger = { NOT = { has_variable = adv_cheat_culture_ruthenian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.ruthenian.selected
+			trigger = { has_variable = adv_cheat_culture_ruthenian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_ruthenian } }
+			set_variable = adv_cheat_culture_ruthenian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_ruthenian
+		}
+		trigger_event_silently = { id = adv_cheat_event.201 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Oceania
+adv_cheat_event.202 = {
+	type = country_event
+	title = adv_cheat_event.202.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.maori_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_maori_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.maori_culture.selected
+			trigger = { has_variable = adv_cheat_culture_maori_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_maori_culture } }
+			set_variable = adv_cheat_culture_maori_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_maori_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.202 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Other
+adv_cheat_event.203 = {
+	type = country_event
+	title = adv_cheat_event.203.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.armenian_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_armenian_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.armenian_culture.selected
+			trigger = { has_variable = adv_cheat_culture_armenian_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_armenian_culture } }
+			set_variable = adv_cheat_culture_armenian_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_armenian_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.circassian_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_circassian_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.circassian_culture.selected
+			trigger = { has_variable = adv_cheat_culture_circassian_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_circassian_culture } }
+			set_variable = adv_cheat_culture_circassian_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_circassian_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.english
+			trigger = { NOT = { has_variable = adv_cheat_culture_english } }
+		}
+		name = {
+			text = adv_cheat_event.culture.english.selected
+			trigger = { has_variable = adv_cheat_culture_english }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_english } }
+			set_variable = adv_cheat_culture_english
+		}
+		else = {
+			remove_variable = adv_cheat_culture_english
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.georgian_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_georgian_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.georgian_culture.selected
+			trigger = { has_variable = adv_cheat_culture_georgian_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_georgian_culture } }
+			set_variable = adv_cheat_culture_georgian_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_georgian_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.jurchen_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_jurchen_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.jurchen_culture.selected
+			trigger = { has_variable = adv_cheat_culture_jurchen_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_jurchen_culture } }
+			set_variable = adv_cheat_culture_jurchen_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_jurchen_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.lorrain
+			trigger = { NOT = { has_variable = adv_cheat_culture_lorrain } }
+		}
+		name = {
+			text = adv_cheat_event.culture.lorrain.selected
+			trigger = { has_variable = adv_cheat_culture_lorrain }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_lorrain } }
+			set_variable = adv_cheat_culture_lorrain
+		}
+		else = {
+			remove_variable = adv_cheat_culture_lorrain
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.neapolitan
+			trigger = { NOT = { has_variable = adv_cheat_culture_neapolitan } }
+		}
+		name = {
+			text = adv_cheat_event.culture.neapolitan.selected
+			trigger = { has_variable = adv_cheat_culture_neapolitan }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_neapolitan } }
+			set_variable = adv_cheat_culture_neapolitan
+		}
+		else = {
+			remove_variable = adv_cheat_culture_neapolitan
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.sicilian
+			trigger = { NOT = { has_variable = adv_cheat_culture_sicilian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.sicilian.selected
+			trigger = { has_variable = adv_cheat_culture_sicilian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_sicilian } }
+			set_variable = adv_cheat_culture_sicilian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_sicilian
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.thai_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_thai_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.thai_culture.selected
+			trigger = { has_variable = adv_cheat_culture_thai_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_thai_culture } }
+			set_variable = adv_cheat_culture_thai_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_thai_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.turkish_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_turkish_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.turkish_culture.selected
+			trigger = { has_variable = adv_cheat_culture_turkish_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_turkish_culture } }
+			set_variable = adv_cheat_culture_turkish_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_turkish_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.turkoman_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_turkoman_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.turkoman_culture.selected
+			trigger = { has_variable = adv_cheat_culture_turkoman_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_turkoman_culture } }
+			set_variable = adv_cheat_culture_turkoman_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_turkoman_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.vietnamese_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_vietnamese_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.vietnamese_culture.selected
+			trigger = { has_variable = adv_cheat_culture_vietnamese_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_vietnamese_culture } }
+			set_variable = adv_cheat_culture_vietnamese_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_vietnamese_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.welsh
+			trigger = { NOT = { has_variable = adv_cheat_culture_welsh } }
+		}
+		name = {
+			text = adv_cheat_event.culture.welsh.selected
+			trigger = { has_variable = adv_cheat_culture_welsh }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_welsh } }
+			set_variable = adv_cheat_culture_welsh
+		}
+		else = {
+			remove_variable = adv_cheat_culture_welsh
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Southern Africa
+adv_cheat_event.204 = {
+	type = country_event
+	title = adv_cheat_event.204.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.shona_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_shona_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.shona_culture.selected
+			trigger = { has_variable = adv_cheat_culture_shona_culture }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_shona_culture } }
+			set_variable = adv_cheat_culture_shona_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_shona_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.204 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Southern Europe
+adv_cheat_event.205 = {
+	type = country_event
+	title = adv_cheat_event.205.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.aragonese
+			trigger = { NOT = { has_variable = adv_cheat_culture_aragonese } }
+		}
+		name = {
+			text = adv_cheat_event.culture.aragonese.selected
+			trigger = { has_variable = adv_cheat_culture_aragonese }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_aragonese } }
+			set_variable = adv_cheat_culture_aragonese
+		}
+		else = {
+			remove_variable = adv_cheat_culture_aragonese
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.castilian
+			trigger = { NOT = { has_variable = adv_cheat_culture_castilian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.castilian.selected
+			trigger = { has_variable = adv_cheat_culture_castilian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_castilian } }
+			set_variable = adv_cheat_culture_castilian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_castilian
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.catalan
+			trigger = { NOT = { has_variable = adv_cheat_culture_catalan } }
+		}
+		name = {
+			text = adv_cheat_event.culture.catalan.selected
+			trigger = { has_variable = adv_cheat_culture_catalan }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_catalan } }
+			set_variable = adv_cheat_culture_catalan
+		}
+		else = {
+			remove_variable = adv_cheat_culture_catalan
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.portuguese
+			trigger = { NOT = { has_variable = adv_cheat_culture_portuguese } }
+		}
+		name = {
+			text = adv_cheat_event.culture.portuguese.selected
+			trigger = { has_variable = adv_cheat_culture_portuguese }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_portuguese } }
+			set_variable = adv_cheat_culture_portuguese
+		}
+		else = {
+			remove_variable = adv_cheat_culture_portuguese
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.tuscan
+			trigger = { NOT = { has_variable = adv_cheat_culture_tuscan } }
+		}
+		name = {
+			text = adv_cheat_event.culture.tuscan.selected
+			trigger = { has_variable = adv_cheat_culture_tuscan }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_tuscan } }
+			set_variable = adv_cheat_culture_tuscan
+		}
+		else = {
+			remove_variable = adv_cheat_culture_tuscan
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Western Europe
+adv_cheat_event.206 = {
+	type = country_event
+	title = adv_cheat_event.206.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.anglo_irish
+			trigger = { NOT = { has_variable = adv_cheat_culture_anglo_irish } }
+		}
+		name = {
+			text = adv_cheat_event.culture.anglo_irish.selected
+			trigger = { has_variable = adv_cheat_culture_anglo_irish }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_anglo_irish } }
+			set_variable = adv_cheat_culture_anglo_irish
+		}
+		else = {
+			remove_variable = adv_cheat_culture_anglo_irish
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.frisian
+			trigger = { NOT = { has_variable = adv_cheat_culture_frisian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.frisian.selected
+			trigger = { has_variable = adv_cheat_culture_frisian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_frisian } }
+			set_variable = adv_cheat_culture_frisian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_frisian
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.irish
+			trigger = { NOT = { has_variable = adv_cheat_culture_irish } }
+		}
+		name = {
+			text = adv_cheat_event.culture.irish.selected
+			trigger = { has_variable = adv_cheat_culture_irish }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_irish } }
+			set_variable = adv_cheat_culture_irish
+		}
+		else = {
+			remove_variable = adv_cheat_culture_irish
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.norse_gael
+			trigger = { NOT = { has_variable = adv_cheat_culture_norse_gael } }
+		}
+		name = {
+			text = adv_cheat_event.culture.norse_gael.selected
+			trigger = { has_variable = adv_cheat_culture_norse_gael }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_norse_gael } }
+			set_variable = adv_cheat_culture_norse_gael
+		}
+		else = {
+			remove_variable = adv_cheat_culture_norse_gael
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Religion - Religion
+adv_cheat_event.30 = {
+	type = country_event
+	title = adv_cheat_event.30.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.anglican
+			trigger = { NOT = { has_variable = adv_cheat_religion_anglican } }
+		}
+		name = {
+			text = adv_cheat_event.religion.anglican.selected
+			trigger = { has_variable = adv_cheat_religion_anglican }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_anglican } }
+			set_variable = adv_cheat_religion_anglican
+		}
+		else = {
+			remove_variable = adv_cheat_religion_anglican
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.bon
+			trigger = { NOT = { has_variable = adv_cheat_religion_bon } }
+		}
+		name = {
+			text = adv_cheat_event.religion.bon.selected
+			trigger = { has_variable = adv_cheat_religion_bon }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_bon } }
+			set_variable = adv_cheat_religion_bon
+		}
+		else = {
+			remove_variable = adv_cheat_religion_bon
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.calvinist
+			trigger = { NOT = { has_variable = adv_cheat_religion_calvinist } }
+		}
+		name = {
+			text = adv_cheat_event.religion.calvinist.selected
+			trigger = { has_variable = adv_cheat_religion_calvinist }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_calvinist } }
+			set_variable = adv_cheat_religion_calvinist
+		}
+		else = {
+			remove_variable = adv_cheat_religion_calvinist
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.catholic
+			trigger = { NOT = { has_variable = adv_cheat_religion_catholic } }
+		}
+		name = {
+			text = adv_cheat_event.religion.catholic.selected
+			trigger = { has_variable = adv_cheat_religion_catholic }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_catholic } }
+			set_variable = adv_cheat_religion_catholic
+		}
+		else = {
+			remove_variable = adv_cheat_religion_catholic
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.hindu
+			trigger = { NOT = { has_variable = adv_cheat_religion_hindu } }
+		}
+		name = {
+			text = adv_cheat_event.religion.hindu.selected
+			trigger = { has_variable = adv_cheat_religion_hindu }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_hindu } }
+			set_variable = adv_cheat_religion_hindu
+		}
+		else = {
+			remove_variable = adv_cheat_religion_hindu
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.hussite
+			trigger = { NOT = { has_variable = adv_cheat_religion_hussite } }
+		}
+		name = {
+			text = adv_cheat_event.religion.hussite.selected
+			trigger = { has_variable = adv_cheat_religion_hussite }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_hussite } }
+			set_variable = adv_cheat_religion_hussite
+		}
+		else = {
+			remove_variable = adv_cheat_religion_hussite
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.ibadi
+			trigger = { NOT = { has_variable = adv_cheat_religion_ibadi } }
+		}
+		name = {
+			text = adv_cheat_event.religion.ibadi.selected
+			trigger = { has_variable = adv_cheat_religion_ibadi }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_ibadi } }
+			set_variable = adv_cheat_religion_ibadi
+		}
+		else = {
+			remove_variable = adv_cheat_religion_ibadi
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.jain
+			trigger = { NOT = { has_variable = adv_cheat_religion_jain } }
+		}
+		name = {
+			text = adv_cheat_event.religion.jain.selected
+			trigger = { has_variable = adv_cheat_religion_jain }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_jain } }
+			set_variable = adv_cheat_religion_jain
+		}
+		else = {
+			remove_variable = adv_cheat_religion_jain
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.lollardy
+			trigger = { NOT = { has_variable = adv_cheat_religion_lollardy } }
+		}
+		name = {
+			text = adv_cheat_event.religion.lollardy.selected
+			trigger = { has_variable = adv_cheat_religion_lollardy }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_lollardy } }
+			set_variable = adv_cheat_religion_lollardy
+		}
+		else = {
+			remove_variable = adv_cheat_religion_lollardy
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.lutheran
+			trigger = { NOT = { has_variable = adv_cheat_religion_lutheran } }
+		}
+		name = {
+			text = adv_cheat_event.religion.lutheran.selected
+			trigger = { has_variable = adv_cheat_religion_lutheran }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_lutheran } }
+			set_variable = adv_cheat_religion_lutheran
+		}
+		else = {
+			remove_variable = adv_cheat_religion_lutheran
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.mahayana
+			trigger = { NOT = { has_variable = adv_cheat_religion_mahayana } }
+		}
+		name = {
+			text = adv_cheat_event.religion.mahayana.selected
+			trigger = { has_variable = adv_cheat_religion_mahayana }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_mahayana } }
+			set_variable = adv_cheat_religion_mahayana
+		}
+		else = {
+			remove_variable = adv_cheat_religion_mahayana
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.miaphysite
+			trigger = { NOT = { has_variable = adv_cheat_religion_miaphysite } }
+		}
+		name = {
+			text = adv_cheat_event.religion.miaphysite.selected
+			trigger = { has_variable = adv_cheat_religion_miaphysite }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_miaphysite } }
+			set_variable = adv_cheat_religion_miaphysite
+		}
+		else = {
+			remove_variable = adv_cheat_religion_miaphysite
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.orthodox
+			trigger = { NOT = { has_variable = adv_cheat_religion_orthodox } }
+		}
+		name = {
+			text = adv_cheat_event.religion.orthodox.selected
+			trigger = { has_variable = adv_cheat_religion_orthodox }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_orthodox } }
+			set_variable = adv_cheat_religion_orthodox
+		}
+		else = {
+			remove_variable = adv_cheat_religion_orthodox
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.sanjiao
+			trigger = { NOT = { has_variable = adv_cheat_religion_sanjiao } }
+		}
+		name = {
+			text = adv_cheat_event.religion.sanjiao.selected
+			trigger = { has_variable = adv_cheat_religion_sanjiao }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_sanjiao } }
+			set_variable = adv_cheat_religion_sanjiao
+		}
+		else = {
+			remove_variable = adv_cheat_religion_sanjiao
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.shia
+			trigger = { NOT = { has_variable = adv_cheat_religion_shia } }
+		}
+		name = {
+			text = adv_cheat_event.religion.shia.selected
+			trigger = { has_variable = adv_cheat_religion_shia }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_shia } }
+			set_variable = adv_cheat_religion_shia
+		}
+		else = {
+			remove_variable = adv_cheat_religion_shia
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.shinto
+			trigger = { NOT = { has_variable = adv_cheat_religion_shinto } }
+		}
+		name = {
+			text = adv_cheat_event.religion.shinto.selected
+			trigger = { has_variable = adv_cheat_religion_shinto }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_shinto } }
+			set_variable = adv_cheat_religion_shinto
+		}
+		else = {
+			remove_variable = adv_cheat_religion_shinto
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.sikhism
+			trigger = { NOT = { has_variable = adv_cheat_religion_sikhism } }
+		}
+		name = {
+			text = adv_cheat_event.religion.sikhism.selected
+			trigger = { has_variable = adv_cheat_religion_sikhism }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_sikhism } }
+			set_variable = adv_cheat_religion_sikhism
+		}
+		else = {
+			remove_variable = adv_cheat_religion_sikhism
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.sunni
+			trigger = { NOT = { has_variable = adv_cheat_religion_sunni } }
+		}
+		name = {
+			text = adv_cheat_event.religion.sunni.selected
+			trigger = { has_variable = adv_cheat_religion_sunni }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_sunni } }
+			set_variable = adv_cheat_religion_sunni
+		}
+		else = {
+			remove_variable = adv_cheat_religion_sunni
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.theravada
+			trigger = { NOT = { has_variable = adv_cheat_religion_theravada } }
+		}
+		name = {
+			text = adv_cheat_event.religion.theravada.selected
+			trigger = { has_variable = adv_cheat_religion_theravada }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_theravada } }
+			set_variable = adv_cheat_religion_theravada
+		}
+		else = {
+			remove_variable = adv_cheat_religion_theravada
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.religion.waldensian
+			trigger = { NOT = { has_variable = adv_cheat_religion_waldensian } }
+		}
+		name = {
+			text = adv_cheat_event.religion.waldensian.selected
+			trigger = { has_variable = adv_cheat_religion_waldensian }
+		}
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_religion_waldensian } }
+			set_variable = adv_cheat_religion_waldensian
+		}
+		else = {
+			remove_variable = adv_cheat_religion_waldensian
+		}
+		trigger_event_silently = { id = adv_cheat_event.30 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.1 }
+	}
+}

@@ -1,8 +1,8 @@
-diocese_of_smolensk = {
+﻿diocese_of_smolensk = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SMO
+			has_variable = adv_cheat_SMO
 			AND = {
 				has_or_had_tag = SMO
 			}
@@ -17,7 +17,7 @@ smolenskian_resolve = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SMO
+			has_variable = adv_cheat_SMO
 			AND = {
 				has_or_had_tag = SMO
 			}
@@ -32,7 +32,7 @@ link_the_steppes_trade = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SMO
+			has_variable = adv_cheat_SMO
 			AND = {
 				has_or_had_tag = SMO
 			}
@@ -46,7 +46,7 @@ hub_of_militarism = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SMO
+			has_variable = adv_cheat_SMO
 			AND = {
 				has_or_had_tag = SMO
 			}
@@ -61,7 +61,7 @@ armories_of_smolensk = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SMO
+			has_variable = adv_cheat_SMO
 			AND = {
 				has_or_had_tag = SMO
 			}

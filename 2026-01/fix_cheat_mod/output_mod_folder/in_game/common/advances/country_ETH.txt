@@ -1,8 +1,8 @@
-the_ark_of_the_covenant = {
+﻿the_ark_of_the_covenant = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 				religion.group = religion_group:christian
@@ -16,7 +16,7 @@ roof_of_africa = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -29,7 +29,7 @@ solomonid_claim = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -41,7 +41,7 @@ nagusa_negast = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -53,7 +53,7 @@ a_permanent_capital = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -65,7 +65,7 @@ external_friends = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -77,7 +77,7 @@ eternal_crusade = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 				religion.group = religion_group:christian
@@ -90,19 +90,19 @@ prester_john = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
 		}
 	}
-	global_institution_growth_modifier = 0.20
+	global_institution_growth_modifier = 0.2
 }
 an_iron_fist = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -114,7 +114,7 @@ a_true_ethiopian_church = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -126,7 +126,7 @@ origin_of_coffee = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -139,7 +139,7 @@ a_modern_nation = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -150,7 +150,7 @@ a_modern_nation = {
 cawa_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -164,7 +164,7 @@ cawa_advance = {
 a_renaissance_cawa_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -177,7 +177,7 @@ a_renaissance_cawa_advance = {
 a_discovery_cawa_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -190,7 +190,7 @@ a_discovery_cawa_advance = {
 a_reformation_cawa_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -203,7 +203,7 @@ a_reformation_cawa_advance = {
 a_absolutism_cawa_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}
@@ -216,7 +216,7 @@ a_absolutism_cawa_advance = {
 a_revolutions_cawa_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_ETH
+			has_variable = adv_cheat_ETH
 			AND = {
 				has_or_had_tag = ETH
 			}

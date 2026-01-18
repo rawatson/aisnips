@@ -1,8 +1,8 @@
-kbo_fixed_military_camps = {
+﻿kbo_fixed_military_camps = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KBO
+			has_variable = adv_cheat_KBO
 			AND = {
 				has_or_had_tag = KBO
 			}
@@ -17,7 +17,7 @@ kbo_permanent_sieges = {
 	icon = mandinka_warrior_spirit
 	potential = {
 		OR = {
-			has_variable = euro_tech_KBO
+			has_variable = adv_cheat_KBO
 			AND = {
 				has_or_had_tag = KBO
 			}
@@ -31,7 +31,7 @@ kbo_iron_helmet_musketeers = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KBO
+			has_variable = adv_cheat_KBO
 			AND = {
 				has_or_had_tag = KBO
 			}
@@ -44,7 +44,7 @@ kbo_council_clan_heads = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KBO
+			has_variable = adv_cheat_KBO
 			AND = {
 				has_or_had_tag = KBO
 			}
@@ -57,7 +57,7 @@ kbo_ribat_fortifications = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KBO
+			has_variable = adv_cheat_KBO
 			AND = {
 				has_or_had_tag = KBO
 			}

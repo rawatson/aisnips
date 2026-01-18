@@ -1,8 +1,8 @@
-orm_a_vast_emporium = {
+﻿orm_a_vast_emporium = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}
@@ -16,7 +16,7 @@ hormuz_toll = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}
@@ -30,7 +30,7 @@ gate_of_the_persian_gulf = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}
@@ -44,7 +44,7 @@ moqarrariya = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}
@@ -59,7 +59,7 @@ develop_qeshm_and_ormuz = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}
@@ -67,13 +67,13 @@ develop_qeshm_and_ormuz = {
 	}
 	icon = dlh_revive_the_tughlaq_architecture
 	requires = moqarrariya
-	global_monthly_development = 0.002
+	global_monthly_development = 0.001
 }
 ormuzi_navy = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}
@@ -87,7 +87,7 @@ mint_of_the_gulf = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ORM
+			has_variable = adv_cheat_ORM
 			AND = {
 				has_or_had_tag = ORM
 			}

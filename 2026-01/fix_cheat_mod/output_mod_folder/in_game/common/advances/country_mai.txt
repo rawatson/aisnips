@@ -1,8 +1,8 @@
-mai_diadema_regni = {
+﻿mai_diadema_regni = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}
@@ -16,7 +16,7 @@ mai_city_and_archbishop = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}
@@ -31,7 +31,8 @@ mai_leader_rheinish_league = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
+			has_variable = adv_cheat_religion_catholic
 			AND = {
 				has_or_had_tag = MAI
 				religion = religion:catholic
@@ -46,7 +47,7 @@ mai_zealous_fight_against_heretics = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}
@@ -60,7 +61,7 @@ mai_vicar_of_mainz = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}
@@ -74,7 +75,7 @@ mai_mainz_kingdom = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}
@@ -88,7 +89,7 @@ mai_center_of_printing = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}
@@ -102,7 +103,7 @@ mai_garrison_of_the_rhine = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAI
+			has_variable = adv_cheat_MAI
 			AND = {
 				has_or_had_tag = MAI
 			}

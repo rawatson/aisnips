@@ -1,8 +1,8 @@
-lor_mining_tradition = {
+﻿lor_mining_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_LOR
+			has_variable = adv_cheat_culture_lorrain
 			AND = {
 				culture = culture:lorrain
 			}
@@ -17,7 +17,7 @@ lor_cultural_diversity = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_LOR
+			has_variable = adv_cheat_culture_lorrain
 			AND = {
 				culture = culture:lorrain
 			}
@@ -31,7 +31,7 @@ lor_three_bishoprics = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_LOR
+			has_variable = adv_cheat_culture_lorrain
 			AND = {
 				culture = culture:lorrain
 			}
@@ -46,7 +46,7 @@ lor_between_great_powers = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_LOR
+			has_variable = adv_cheat_culture_lorrain
 			AND = {
 				culture = culture:lorrain
 			}
@@ -61,7 +61,7 @@ lor_fortified_cities = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_LOR
+			has_variable = adv_cheat_culture_lorrain
 			AND = {
 				culture = culture:lorrain
 			}

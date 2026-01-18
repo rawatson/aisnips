@@ -1,8 +1,8 @@
-second_council_of_ephesus = {
+﻿second_council_of_ephesus = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -15,7 +15,7 @@ rejection_of_chalcedon = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -28,7 +28,7 @@ monophysite_vs_miaphysite = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -41,7 +41,7 @@ original_christianity = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -54,7 +54,7 @@ beyond_the_borders = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -67,7 +67,7 @@ isolated_reaches = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -80,7 +80,7 @@ independent_leaders = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -93,7 +93,7 @@ jerusalem_focus = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -106,7 +106,7 @@ acceptance_of_old_testament = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -119,7 +119,7 @@ primacy_of_alexandria = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -132,7 +132,7 @@ school_of_alexandria = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -145,7 +145,7 @@ preserving_of_local_languages = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -158,7 +158,7 @@ double_patriarchate = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -171,7 +171,7 @@ eastern_christianity = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -184,7 +184,7 @@ life_among_infidels = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -197,7 +197,7 @@ gradual_departure = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -210,7 +210,7 @@ thrive_under_persecution = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -223,7 +223,7 @@ preserver_of_national_identity = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -236,7 +236,7 @@ defense_against_heretics = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -249,7 +249,7 @@ remote_patriarchates = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -262,7 +262,7 @@ further_reaches = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -275,7 +275,7 @@ internal_communion = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -288,7 +288,7 @@ cradle_of_monasticism = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}
@@ -301,7 +301,7 @@ unique_architecture = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_miaphysite
+			has_variable = adv_cheat_religion_miaphysite
 			AND = {
 				religion = religion:miaphysite
 			}

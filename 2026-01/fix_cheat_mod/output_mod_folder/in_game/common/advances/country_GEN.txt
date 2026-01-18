@@ -1,7 +1,7 @@
-genoese_banking_traditions = {
+﻿genoese_banking_traditions = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -14,7 +14,7 @@ genoese_banking_traditions = {
 genoese_maritime_diplomacy = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -26,7 +26,7 @@ genoese_maritime_diplomacy = {
 slave_manned_galleys = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -38,7 +38,7 @@ slave_manned_galleys = {
 genoese_galley = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -50,7 +50,7 @@ genoese_galley = {
 genoese_crossbowmen = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -64,7 +64,7 @@ genoese_crossbowmen = {
 bank_of_saint_george = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -72,13 +72,13 @@ bank_of_saint_george = {
 	}
 	age = age_2_renaissance
 	unlock_country_interaction = take_over_loan
-	minting_income_factor = 0.10
+	minting_income_factor = 0.1
 	requires = banking_advance
 }
 alberghi_28_advance = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -91,7 +91,7 @@ alberghi_28_advance = {
 the_age_of_the_genoese = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -105,7 +105,7 @@ the_age_of_the_genoese = {
 genoese_flexibility = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}
@@ -118,7 +118,7 @@ genoese_flexibility = {
 genoese_school = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEN
+			has_variable = adv_cheat_GEN
 			AND = {
 				has_or_had_tag = GEN
 			}

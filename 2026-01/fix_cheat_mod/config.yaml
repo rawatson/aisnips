@@ -1,0 +1,513 @@
+# Selectable Advances Cheat Mod Configuration
+# ============================================
+
+# Export path (Windows path via WSL mount)
+# The mod will be copied here after generation
+export_path: "/mnt/c/Users/Moghar/Documents/Paradox Interactive/Europa Universalis V/mod/output_mod_folder"
+
+# Mod metadata
+mod_name: "Selectable Advances Cheat Mod"
+mod_id: "selectable_advances_cheat"
+mod_version: "2.0"
+game_version: "1.0.10"
+
+# Files to exclude from transformation
+# These are generic game mechanics, not country/culture specific
+excluded_files:
+  - "0_age_*.txt"           # Age advancement files
+  - "1_building_unlocks.txt"
+  - "2_army_unlocks.txt"
+  - "2_ship_unlocks.txt"
+  - "3_cabinet_actions_unlocks.txt"
+  - "3_character_interaction_unlocks.txt"
+  - "3_fort_level.txt"
+  - "3_production_method_unlocks.txt"
+  - "3_reform_unlocks.txt"
+  - "3_road_unlocks.txt"
+  - "3_supply_limit.txt"
+  - "4_choices_adm.txt"
+  - "4_choices_dip.txt"
+  - "4_choices_mil.txt"
+  - "_advances_template.txt"
+  - "ctype_army.txt"
+  - "ctype_buildings.txt"
+  - "ctype_location.txt"
+  - "diplomacy_unlocks.txt"
+  - "readme.txt"
+
+# Country to region mapping
+# Countries not listed here will be auto-assigned based on source file patterns
+country_regions:
+  # Western Europe
+  ENG: western_europe
+  SCO: western_europe
+  WLS: western_europe
+  BRI: western_europe    # Brittany
+  BUR: western_europe    # Burgundy
+  FRA: western_europe
+  LOR: western_europe    # Lorraine
+  BRB: western_europe    # Brabant
+  FLA: western_europe    # Flanders
+  GEL: western_europe    # Gelre
+  HAI: western_europe    # Hainaut
+  HOL: western_europe    # Holland
+  LIE: western_europe    # Liege
+  LUX: western_europe    # Luxembourg
+  UTR: western_europe    # Utrecht
+  NRM: western_europe    # Normandy
+  PAL: western_europe    # Palatinate
+  PRO: western_europe    # Provence
+  SAV: western_europe    # Savoy
+  HYM: western_europe
+  PLE: western_europe
+  GBR: western_europe    # Great Britain (formable)
+  NED: western_europe    # Netherlands (formable)
+  IRE: western_europe    # Ireland (formable)
+  CEL: western_europe    # Celtic (formable)
+
+  # Central Europe
+  BOH: central_europe    # Bohemia
+  BRA: central_europe    # Brandenburg
+  HAB: central_europe    # Habsburg/Austria
+  MAI: central_europe    # Mainz
+  MEI: central_europe    # Meissen
+  BAV: central_europe    # Bavaria
+  BAV_R: central_europe  # Bavaria (alternate)
+  URI: central_europe
+  SYZ: central_europe
+  OBW: central_europe
+  PRU: central_europe    # Prussia (formable)
+  GER: central_europe    # Germany (formable)
+  SAX: central_europe    # Saxony
+
+  # Southern Europe
+  ARA: southern_europe   # Aragon
+  CAS: southern_europe   # Castile
+  FLO: southern_europe   # Florence
+  PIS: southern_europe   # Pisa
+  SIE: southern_europe   # Siena
+  GEN: southern_europe   # Genoa
+  GRA: southern_europe   # Granada
+  MLO: southern_europe   # Milan
+  NAP: southern_europe   # Naples
+  NAV: southern_europe   # Navarra
+  PAP: southern_europe   # Papal States
+  POR: southern_europe   # Portugal
+  SIC: southern_europe   # Sicily
+  VEN: southern_europe   # Venice
+  VER: southern_europe   # Verona
+  TWS: southern_europe   # Two Sicilies (formable)
+  ROM: southern_europe   # Rome/Roman Empire (formable)
+  SPA: southern_europe   # Spain (formable)
+  ITA: southern_europe   # Italy (formable)
+
+  # Northern Europe
+  DAN: northern_europe   # Denmark
+  LIV: northern_europe   # Livonian Order
+  NOR: northern_europe   # Norway
+  SWE: northern_europe   # Sweden
+  SCA: northern_europe   # Scandinavia (formable)
+  FIN: northern_europe   # Finland (formable)
+
+  # Eastern Europe
+  BOS: eastern_europe    # Bosnia
+  TEU: eastern_europe    # Teutonic Order
+  BUL: eastern_europe    # Bulgaria
+  SER: eastern_europe    # Serbia
+  BYZ: eastern_europe    # Byzantine Empire
+  CRO: eastern_europe    # Croatia
+  GEO: eastern_europe    # Georgia
+  HUN: eastern_europe    # Hungary
+  LIT: eastern_europe    # Lithuania
+  MOS: eastern_europe    # Muscovy
+  NOV: eastern_europe    # Novgorod
+  POL: eastern_europe    # Poland
+  SME: eastern_europe
+  SMO: eastern_europe    # Smolensk
+  TUR: eastern_europe    # Turkey/Ottomans
+  WAL: eastern_europe    # Wallachia
+  ARM: eastern_europe    # Armenia
+  CIR: eastern_europe    # Circassia (formable)
+  CRI: eastern_europe    # Crimea
+  RUS: eastern_europe    # Russia (formable)
+  PLC: eastern_europe    # Poland-Lithuania (formable)
+
+  # Western Asia / Middle East
+  KAR: western_asia      # Karaman
+  OMA: western_asia      # Oman
+  ORM: western_asia      # Ormus
+  TRE: western_asia      # Trebizond
+  YEM: western_asia      # Yemen
+  ILK: western_asia      # Ilkhanate (formable)
+  IRA: western_asia      # Iran/Persia (formable)
+  KOJ: western_asia      # Kojid?
+  AIA: western_asia
+  KRS: western_asia      # Kurdistan
+
+  # Central Asia
+  CHG: central_asia      # Chagatai
+  GLH: central_asia      # Golden Horde
+  MGE: central_asia      # Mongol Empire (formable)
+  TIM: central_asia      # Timurid (formable)
+
+  # South Asia
+  DLH: south_asia        # Delhi
+  ORI: south_asia        # Orissa
+  TNK: south_asia
+  VIJ: south_asia        # Vijayanagar
+  AHO: south_asia        # Ahmadnagar
+  MLB: south_asia        # Malwa
+  HIN: south_asia        # Hindustan (formable)
+  MUG: south_asia        # Mughal (formable)
+  NPL: south_asia        # Nepal (formable)
+  MSA: south_asia        # Mysore
+
+  # Southeast Asia
+  CHA: southeast_asia    # Champa
+  DAI: southeast_asia    # Dai Viet
+  KHM: southeast_asia    # Khmer
+  MAJ: southeast_asia    # Majapahit
+  SUK: southeast_asia    # Sukhothai
+  SUN: southeast_asia    # Sunda
+  AYU: southeast_asia    # Ayutthaya (formable)
+  SIA: southeast_asia    # Siam (formable)
+  MLC: southeast_asia    # Malacca
+
+  # East Asia
+  CHI: east_asia         # China/Ming
+  KOR: east_asia         # Korea
+  TIB: east_asia         # Tibet
+  MCH: east_asia         # Manchuria
+  SKO: east_asia         # Korea related
+
+  # Japan (subregion of East Asia)
+  KGK: japan
+  AKT: japan
+  ASA: japan
+  CBA: japan
+  CSK: japan
+  DTE: japan
+  HTK: japan
+  HSK: japan
+  ISK: japan
+  ITO: japan
+  KKC: japan
+  KTB: japan
+  KNO: japan
+  MRI: japan
+  NBU: japan
+  ODA: japan
+  OGS: japan
+  OTM: japan
+  OUC: japan
+  STK: japan
+  SBA: japan
+  SMZ: japan
+  SHN: japan
+  SOO: japan
+  TKD: japan
+  TKI: japan
+  UES: japan
+  UTN: japan
+  YMN: japan
+  IMG: japan
+  AKM: japan
+  SUW: japan
+  ASK: japan
+
+  # North Africa
+  MAM: north_africa      # Mamluks
+  MOR: north_africa      # Morocco
+  TLE: north_africa      # Tlemcen
+  TUN: north_africa      # Tunisia
+  CTH: north_africa      # Carthage (formable)
+
+  # East Africa
+  ETH: east_africa       # Ethiopia
+  ZAN: east_africa       # Zanzibar
+
+  # West Africa
+  MAL: west_africa       # Mali
+  SON: west_africa       # Songhai
+  DAH: west_africa       # Dahomey (formable)
+
+  # Central Africa
+  KBO: central_africa    # Kongo
+  KON: central_africa    # Kongo (formable)
+
+  # Southern Africa
+  ZMW: southern_africa   # Zimbabwe
+
+  # North America
+  USA: north_america     # USA (formable)
+
+  # Central America
+  TNC: central_america   # Tenochtitlan
+  AZT: central_america   # Aztec (formable)
+
+  # South America
+  CSU: south_america     # Cusco
+  INC: south_america     # Inca (formable)
+
+  # Oceania
+  MLK: oceania           # Maluku
+
+  # Special/Building Countries
+  HSA: special           # Hanseatic League
+  KNI: special           # Knights
+
+# Culture to region mapping
+culture_regions:
+  # Western Europe
+  netherlandish_group: western_europe
+  frisian: western_europe
+  celtic_group: western_europe
+  irish: western_europe
+  norse_gael: western_europe
+  anglo_irish: western_europe
+
+  # Central Europe
+  swabian: central_europe
+  westphalian: central_europe
+  angrian: central_europe
+  eastphalian: central_europe
+  lower_saxon: central_europe
+  holsatian: central_europe
+  hanseatic: central_europe
+  moselle_franconian: central_europe
+  rhine_franconian: central_europe
+  ripuarian_franconian: central_europe
+  western_pomeranian: central_europe
+  eastern_pomeranian: central_europe
+  east_franconian: central_europe
+  german_group: central_europe
+  saxon: central_europe
+  brandenburgish: central_europe
+  markish: central_europe
+  german_silesian: central_europe
+  swiss_group: central_europe
+
+  # Southern Europe
+  tuscan: southern_europe
+  iberian_group: southern_europe
+  aragonese: southern_europe
+  catalan: southern_europe
+  castilian: southern_europe
+  portuguese: southern_europe
+
+  # Eastern Europe
+  armenian: eastern_europe
+  georgian: eastern_europe
+  russian_group: eastern_europe
+  ruthenian: eastern_europe
+
+  # Western Asia
+  arabian_group: western_asia
+
+  # Central Asia
+  nomadic_steppe: central_asia
+
+  # South Asia
+  gujarati_language: south_asia
+  indian_group: south_asia
+  kannada_language: south_asia
+  malayalam_language: south_asia
+  marathi_language: south_asia
+  nepali_language: south_asia
+  punjabi_language: south_asia
+  rajasthani_language: south_asia
+  bengali: south_asia
+
+  # Southeast Asia
+  cham: southeast_asia
+  thai: southeast_asia
+  vietnamese: southeast_asia
+
+  # East Asia
+  chinese_group: east_asia
+  japanese_group: east_asia
+  jurchen: east_asia
+
+  # West Africa
+  west_african_group: west_africa
+
+  # Southern Africa
+  shona_culture: southern_africa
+
+  # North America
+  haudenosaunee_group: north_america
+
+  # South America
+  andean_group: south_america
+
+  # Oceania
+  maori_culture: oceania
+
+# Display names for countries (tag -> name)
+# Countries not listed will use the tag as display name
+country_names:
+  # Western Europe
+  ENG: England
+  SCO: Scotland
+  WLS: Wales
+  BRI: Brittany
+  BUR: Burgundy
+  FRA: France
+  LOR: Lorraine
+  BRB: Brabant
+  FLA: Flanders
+  GEL: Gelre
+  HAI: Hainaut
+  HOL: Holland
+  LIE: Liege
+  LUX: Luxembourg
+  UTR: Utrecht
+  NRM: Normandy
+  PAL: Palatinate
+  PRO: Provence
+  SAV: Savoy
+  GBR: Great Britain
+  NED: Netherlands
+  IRE: Ireland
+  CEL: Celtic Union
+
+  # Central Europe
+  BOH: Bohemia
+  BRA: Brandenburg
+  HAB: Austria
+  MAI: Mainz
+  MEI: Meissen
+  BAV: Bavaria
+  BAV_R: Bavaria
+  PRU: Prussia
+  GER: Germany
+  SAX: Saxony
+
+  # Southern Europe
+  ARA: Aragon
+  CAS: Castile
+  FLO: Florence
+  PIS: Pisa
+  SIE: Siena
+  GEN: Genoa
+  GRA: Granada
+  MLO: Milan
+  NAP: Naples
+  NAV: Navarra
+  PAP: Papal States
+  POR: Portugal
+  SIC: Sicily
+  VEN: Venice
+  VER: Verona
+  TWS: Two Sicilies
+  ROM: Roman Empire
+  SPA: Spain
+  ITA: Italy
+
+  # Northern Europe
+  DAN: Denmark
+  LIV: Livonian Order
+  NOR: Norway
+  SWE: Sweden
+  SCA: Scandinavia
+  FIN: Finland
+
+  # Eastern Europe
+  BOS: Bosnia
+  TEU: Teutonic Order
+  BUL: Bulgaria
+  SER: Serbia
+  BYZ: Byzantine Empire
+  CRO: Croatia
+  GEO: Georgia
+  HUN: Hungary
+  LIT: Lithuania
+  MOS: Muscovy
+  NOV: Novgorod
+  POL: Poland
+  SMO: Smolensk
+  TUR: Ottoman Empire
+  WAL: Wallachia
+  ARM: Armenia
+  CIR: Circassia
+  CRI: Crimea
+  RUS: Russia
+  PLC: Poland-Lithuania
+
+  # Western Asia / Middle East
+  KAR: Karaman
+  OMA: Oman
+  ORM: Hormuz
+  TRE: Trebizond
+  YEM: Yemen
+  ILK: Ilkhanate
+  IRA: Persia
+  KRS: Kurdistan
+
+  # Central Asia
+  CHG: Chagatai
+  GLH: Golden Horde
+  MGE: Mongol Empire
+  TIM: Timurids
+
+  # South Asia
+  DLH: Delhi
+  VIJ: Vijayanagar
+  HIN: Hindustan
+  MUG: Mughals
+  NPL: Nepal
+  MSA: Mysore
+
+  # Southeast Asia
+  CHA: Champa
+  DAI: Dai Viet
+  KHM: Khmer
+  MAJ: Majapahit
+  SUK: Sukhothai
+  SUN: Sunda
+  AYU: Ayutthaya
+  SIA: Siam
+  MLC: Malacca
+
+  # East Asia
+  CHI: Ming China
+  KOR: Korea
+  TIB: Tibet
+  MCH: Manchuria
+
+  # North Africa
+  MAM: Mamluks
+  MOR: Morocco
+  TLE: Tlemcen
+  TUN: Tunisia
+  CTH: Carthage
+
+  # East Africa
+  ETH: Ethiopia
+  ZAN: Zanzibar
+
+  # West Africa
+  MAL: Mali
+  SON: Songhai
+  DAH: Dahomey
+
+  # Central Africa
+  KBO: Kongo
+  KON: Kongo
+
+  # Southern Africa
+  ZMW: Zimbabwe
+
+  # Americas
+  USA: United States
+  TNC: Aztec Empire
+  AZT: Aztec Empire
+  CSU: Cusco
+  INC: Inca Empire
+
+  # Oceania
+  MLK: Maluku
+
+  # Special
+  HSA: Hanseatic League
+  KNI: Knights Hospitaller

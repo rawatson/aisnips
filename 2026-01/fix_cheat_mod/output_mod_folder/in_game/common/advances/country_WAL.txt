@@ -1,8 +1,8 @@
-wallachian_tradition = {
+﻿wallachian_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_WAL
+			has_variable = adv_cheat_WAL
 			AND = {
 				has_or_had_tag = WAL
 			}
@@ -15,7 +15,7 @@ wallachian_heritage = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_WAL
+			has_variable = adv_cheat_WAL
 			AND = {
 				has_or_had_tag = WAL
 			}
@@ -28,7 +28,7 @@ cunning_diplomacy = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_WAL
+			has_variable = adv_cheat_WAL
 			AND = {
 				has_or_had_tag = WAL
 			}
@@ -40,7 +40,7 @@ boyar_regime = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_WAL
+			has_variable = adv_cheat_WAL
 			AND = {
 				has_or_had_tag = WAL
 			}

@@ -1,8 +1,8 @@
-capetian_house_of_anjou = {
+﻿capetian_house_of_anjou = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}
@@ -16,7 +16,7 @@ lords_of_the_rhone_corridor = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}
@@ -31,7 +31,7 @@ angevin_heraldry = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}
@@ -45,7 +45,7 @@ le_livre_des_tournois = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}
@@ -60,7 +60,7 @@ statutes_of_aix = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}
@@ -74,7 +74,7 @@ rade_of_toulon = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}
@@ -89,7 +89,7 @@ piqure_de_marseilles = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_PRO
+			has_variable = adv_cheat_PRO
 			AND = {
 				has_or_had_tag = PRO
 			}

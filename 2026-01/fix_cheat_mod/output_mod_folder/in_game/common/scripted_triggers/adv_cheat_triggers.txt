@@ -1,0 +1,407 @@
+﻿# Auto-generated scripted triggers for advance cheat mod
+
+is_adv_cheat_central_africa_on = {
+	OR = {
+		has_variable = adv_cheat_KBO
+		has_variable = adv_cheat_KON
+	}
+}
+
+is_adv_cheat_central_america_on = {
+	OR = {
+		has_variable = adv_cheat_AZT
+		has_variable = adv_cheat_TNC
+	}
+}
+
+is_adv_cheat_central_asia_on = {
+	OR = {
+		has_variable = adv_cheat_CHG
+		has_variable = adv_cheat_GLH
+		has_variable = adv_cheat_MGE
+		has_variable = adv_cheat_TIM
+	}
+}
+
+is_adv_cheat_central_europe_on = {
+	OR = {
+		has_variable = adv_cheat_BAV
+		has_variable = adv_cheat_BOH
+		has_variable = adv_cheat_BRA
+		has_variable = adv_cheat_HAB
+		has_variable = adv_cheat_MAI
+		has_variable = adv_cheat_MEI
+		has_variable = adv_cheat_OBW
+		has_variable = adv_cheat_PRU
+		has_variable = adv_cheat_SAX
+		has_variable = adv_cheat_SYZ
+		has_variable = adv_cheat_URI
+	}
+}
+
+is_adv_cheat_east_africa_on = {
+	OR = {
+		has_variable = adv_cheat_ETH
+		has_variable = adv_cheat_ZAN
+	}
+}
+
+is_adv_cheat_east_asia_on = {
+	OR = {
+		has_variable = adv_cheat_CHI
+		has_variable = adv_cheat_KOR
+		has_variable = adv_cheat_MCH
+		has_variable = adv_cheat_SKO
+		has_variable = adv_cheat_TIB
+	}
+}
+
+is_adv_cheat_eastern_europe_on = {
+	OR = {
+		has_variable = adv_cheat_ARM
+		has_variable = adv_cheat_BOS
+		has_variable = adv_cheat_BUL
+		has_variable = adv_cheat_BYZ
+		has_variable = adv_cheat_CIR
+		has_variable = adv_cheat_CRI
+		has_variable = adv_cheat_CRO
+		has_variable = adv_cheat_GEO
+		has_variable = adv_cheat_HUN
+		has_variable = adv_cheat_LIT
+		has_variable = adv_cheat_MOS
+		has_variable = adv_cheat_NOV
+		has_variable = adv_cheat_PLC
+		has_variable = adv_cheat_POL
+		has_variable = adv_cheat_RUS
+		has_variable = adv_cheat_SER
+		has_variable = adv_cheat_SME
+		has_variable = adv_cheat_SMO
+		has_variable = adv_cheat_TEU
+		has_variable = adv_cheat_TUR
+		has_variable = adv_cheat_WAL
+	}
+}
+
+is_adv_cheat_japan_on = {
+	OR = {
+		has_variable = adv_cheat_AKM
+		has_variable = adv_cheat_AKT
+		has_variable = adv_cheat_ASA
+		has_variable = adv_cheat_ASK
+		has_variable = adv_cheat_CBA
+		has_variable = adv_cheat_CSK
+		has_variable = adv_cheat_DTE
+		has_variable = adv_cheat_HSK
+		has_variable = adv_cheat_HTK
+		has_variable = adv_cheat_IMG
+		has_variable = adv_cheat_ISK
+		has_variable = adv_cheat_ITO
+		has_variable = adv_cheat_KGK
+		has_variable = adv_cheat_KKC
+		has_variable = adv_cheat_KNO
+		has_variable = adv_cheat_KTB
+		has_variable = adv_cheat_MRI
+		has_variable = adv_cheat_NBU
+		has_variable = adv_cheat_ODA
+		has_variable = adv_cheat_OGS
+		has_variable = adv_cheat_OTM
+		has_variable = adv_cheat_OUC
+		has_variable = adv_cheat_SBA
+		has_variable = adv_cheat_SHN
+		has_variable = adv_cheat_SMZ
+		has_variable = adv_cheat_SOO
+		has_variable = adv_cheat_STK
+		has_variable = adv_cheat_SUW
+		has_variable = adv_cheat_TKD
+		has_variable = adv_cheat_TKI
+		has_variable = adv_cheat_UES
+		has_variable = adv_cheat_UTN
+		has_variable = adv_cheat_YMN
+	}
+}
+
+is_adv_cheat_north_africa_on = {
+	OR = {
+		has_variable = adv_cheat_CTH
+		has_variable = adv_cheat_MAM
+		has_variable = adv_cheat_MOR
+		has_variable = adv_cheat_TLE
+		has_variable = adv_cheat_TUN
+	}
+}
+
+is_adv_cheat_north_america_on = {
+	OR = {
+		has_variable = adv_cheat_USA
+	}
+}
+
+is_adv_cheat_northern_europe_on = {
+	OR = {
+		has_variable = adv_cheat_DAN
+		has_variable = adv_cheat_FIN
+		has_variable = adv_cheat_LIV
+		has_variable = adv_cheat_NOR
+		has_variable = adv_cheat_SCA
+		has_variable = adv_cheat_SWE
+	}
+}
+
+is_adv_cheat_oceania_on = {
+	OR = {
+		has_variable = adv_cheat_MLK
+	}
+}
+
+is_adv_cheat_other_on = {
+	OR = {
+		has_variable = adv_cheat_FRE
+		has_variable = adv_cheat_GRF
+		has_variable = adv_cheat_LBV
+		has_variable = adv_cheat_LOI
+		has_variable = adv_cheat_PSS
+		has_variable = adv_cheat_REG
+		has_variable = adv_cheat_SBL
+		has_variable = adv_cheat_SLZ
+		has_variable = adv_cheat_STY
+		has_variable = adv_cheat_TIR
+		has_variable = adv_cheat_TUS
+		has_variable = adv_cheat_UBV
+	}
+}
+
+is_adv_cheat_south_america_on = {
+	OR = {
+		has_variable = adv_cheat_CSU
+		has_variable = adv_cheat_INC
+	}
+}
+
+is_adv_cheat_south_asia_on = {
+	OR = {
+		has_variable = adv_cheat_AHO
+		has_variable = adv_cheat_DLH
+		has_variable = adv_cheat_HIN
+		has_variable = adv_cheat_MLB
+		has_variable = adv_cheat_MSA
+		has_variable = adv_cheat_MUG
+		has_variable = adv_cheat_NPL
+		has_variable = adv_cheat_ORI
+		has_variable = adv_cheat_TNK
+		has_variable = adv_cheat_VIJ
+	}
+}
+
+is_adv_cheat_southeast_asia_on = {
+	OR = {
+		has_variable = adv_cheat_AYU
+		has_variable = adv_cheat_CHA
+		has_variable = adv_cheat_DAI
+		has_variable = adv_cheat_KHM
+		has_variable = adv_cheat_MAJ
+		has_variable = adv_cheat_MLC
+		has_variable = adv_cheat_SIA
+		has_variable = adv_cheat_SUK
+		has_variable = adv_cheat_SUN
+	}
+}
+
+is_adv_cheat_southern_africa_on = {
+	OR = {
+		has_variable = adv_cheat_ZMW
+	}
+}
+
+is_adv_cheat_southern_europe_on = {
+	OR = {
+		has_variable = adv_cheat_ARA
+		has_variable = adv_cheat_CAS
+		has_variable = adv_cheat_FLO
+		has_variable = adv_cheat_GEN
+		has_variable = adv_cheat_GRA
+		has_variable = adv_cheat_ITA
+		has_variable = adv_cheat_MLO
+		has_variable = adv_cheat_NAP
+		has_variable = adv_cheat_NAV
+		has_variable = adv_cheat_PAP
+		has_variable = adv_cheat_PIS
+		has_variable = adv_cheat_POR
+		has_variable = adv_cheat_ROM
+		has_variable = adv_cheat_SIC
+		has_variable = adv_cheat_SIE
+		has_variable = adv_cheat_SPA
+		has_variable = adv_cheat_TWS
+		has_variable = adv_cheat_VEN
+		has_variable = adv_cheat_VER
+	}
+}
+
+is_adv_cheat_special_on = {
+	OR = {
+		has_variable = adv_cheat_HSA
+		has_variable = adv_cheat_KNI
+	}
+}
+
+is_adv_cheat_west_africa_on = {
+	OR = {
+		has_variable = adv_cheat_DAH
+		has_variable = adv_cheat_MAL
+		has_variable = adv_cheat_SON
+	}
+}
+
+is_adv_cheat_western_asia_on = {
+	OR = {
+		has_variable = adv_cheat_ILK
+		has_variable = adv_cheat_IRA
+		has_variable = adv_cheat_KAR
+		has_variable = adv_cheat_KOJ
+		has_variable = adv_cheat_KRS
+		has_variable = adv_cheat_OMA
+		has_variable = adv_cheat_ORM
+		has_variable = adv_cheat_TRE
+		has_variable = adv_cheat_YEM
+	}
+}
+
+is_adv_cheat_western_europe_on = {
+	OR = {
+		has_variable = adv_cheat_BRB
+		has_variable = adv_cheat_BRI
+		has_variable = adv_cheat_BUR
+		has_variable = adv_cheat_CEL
+		has_variable = adv_cheat_ENG
+		has_variable = adv_cheat_FLA
+		has_variable = adv_cheat_FRA
+		has_variable = adv_cheat_GBR
+		has_variable = adv_cheat_GEL
+		has_variable = adv_cheat_HAI
+		has_variable = adv_cheat_HOL
+		has_variable = adv_cheat_HYM
+		has_variable = adv_cheat_IRE
+		has_variable = adv_cheat_LIE
+		has_variable = adv_cheat_LUX
+		has_variable = adv_cheat_NED
+		has_variable = adv_cheat_NRM
+		has_variable = adv_cheat_PAL
+		has_variable = adv_cheat_PLE
+		has_variable = adv_cheat_PRO
+		has_variable = adv_cheat_SAV
+		has_variable = adv_cheat_SCO
+		has_variable = adv_cheat_UTR
+		has_variable = adv_cheat_WLS
+	}
+}
+
+is_adv_cheat_culture_central_europe_on = {
+	OR = {
+		has_variable = adv_cheat_culture_angrian
+		has_variable = adv_cheat_culture_east_franconian
+		has_variable = adv_cheat_culture_eastern_pomeranian
+		has_variable = adv_cheat_culture_eastphalian
+		has_variable = adv_cheat_culture_hanseatic
+		has_variable = adv_cheat_culture_holsatian
+		has_variable = adv_cheat_culture_lower_saxon
+		has_variable = adv_cheat_culture_moselle_franconian
+		has_variable = adv_cheat_culture_rhine_franconian
+		has_variable = adv_cheat_culture_ripuarian_franconian
+		has_variable = adv_cheat_culture_swabian
+		has_variable = adv_cheat_culture_western_pomeranian
+		has_variable = adv_cheat_culture_westphalian
+	}
+}
+
+is_adv_cheat_culture_eastern_europe_on = {
+	OR = {
+		has_variable = adv_cheat_culture_ruthenian
+	}
+}
+
+is_adv_cheat_culture_oceania_on = {
+	OR = {
+		has_variable = adv_cheat_culture_maori_culture
+	}
+}
+
+is_adv_cheat_culture_other_on = {
+	OR = {
+		has_variable = adv_cheat_culture_armenian_culture
+		has_variable = adv_cheat_culture_circassian_culture
+		has_variable = adv_cheat_culture_english
+		has_variable = adv_cheat_culture_georgian_culture
+		has_variable = adv_cheat_culture_jurchen_culture
+		has_variable = adv_cheat_culture_lorrain
+		has_variable = adv_cheat_culture_neapolitan
+		has_variable = adv_cheat_culture_sicilian
+		has_variable = adv_cheat_culture_thai_culture
+		has_variable = adv_cheat_culture_turkish_culture
+		has_variable = adv_cheat_culture_turkoman_culture
+		has_variable = adv_cheat_culture_vietnamese_culture
+		has_variable = adv_cheat_culture_welsh
+	}
+}
+
+is_adv_cheat_culture_southern_africa_on = {
+	OR = {
+		has_variable = adv_cheat_culture_shona_culture
+	}
+}
+
+is_adv_cheat_culture_southern_europe_on = {
+	OR = {
+		has_variable = adv_cheat_culture_aragonese
+		has_variable = adv_cheat_culture_castilian
+		has_variable = adv_cheat_culture_catalan
+		has_variable = adv_cheat_culture_portuguese
+		has_variable = adv_cheat_culture_tuscan
+	}
+}
+
+is_adv_cheat_culture_western_europe_on = {
+	OR = {
+		has_variable = adv_cheat_culture_anglo_irish
+		has_variable = adv_cheat_culture_frisian
+		has_variable = adv_cheat_culture_irish
+		has_variable = adv_cheat_culture_norse_gael
+	}
+}
+
+is_adv_cheat_any_country_on = {
+	OR = {
+		is_adv_cheat_central_africa_on = yes
+		is_adv_cheat_central_america_on = yes
+		is_adv_cheat_central_asia_on = yes
+		is_adv_cheat_central_europe_on = yes
+		is_adv_cheat_east_africa_on = yes
+		is_adv_cheat_east_asia_on = yes
+		is_adv_cheat_eastern_europe_on = yes
+		is_adv_cheat_japan_on = yes
+		is_adv_cheat_north_africa_on = yes
+		is_adv_cheat_north_america_on = yes
+		is_adv_cheat_northern_europe_on = yes
+		is_adv_cheat_oceania_on = yes
+		is_adv_cheat_other_on = yes
+		is_adv_cheat_south_america_on = yes
+		is_adv_cheat_south_asia_on = yes
+		is_adv_cheat_southeast_asia_on = yes
+		is_adv_cheat_southern_africa_on = yes
+		is_adv_cheat_southern_europe_on = yes
+		is_adv_cheat_special_on = yes
+		is_adv_cheat_west_africa_on = yes
+		is_adv_cheat_western_asia_on = yes
+		is_adv_cheat_western_europe_on = yes
+	}
+}
+
+is_adv_cheat_any_culture_on = {
+	OR = {
+		is_adv_cheat_culture_central_europe_on = yes
+		is_adv_cheat_culture_eastern_europe_on = yes
+		is_adv_cheat_culture_oceania_on = yes
+		is_adv_cheat_culture_other_on = yes
+		is_adv_cheat_culture_southern_africa_on = yes
+		is_adv_cheat_culture_southern_europe_on = yes
+		is_adv_cheat_culture_western_europe_on = yes
+	}
+}

@@ -1,0 +1,41 @@
+﻿adv_cheat_menu = {
+	on_own_nation = yes
+	is_consort_action = no
+	message = no
+	
+	ai_tick = never
+	
+	potential = {
+		is_human = yes
+	}
+
+	allow = {
+		is_human = yes
+	}
+	
+	select_trigger = {
+		looking_for_a = character
+		source = actor
+		target_flag = recipient
+		name = "choose_character"
+		column = {
+			data = name
+		}
+		visible = {
+			scope:actor = {
+				ruler ?= root
+			}
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			trigger_event_non_silently = adv_cheat_event.1
+			set_variable = adv_cheat_menu_open
+		}
+	}
+	
+	ai_will_do = {
+		base = -1000
+	}
+}

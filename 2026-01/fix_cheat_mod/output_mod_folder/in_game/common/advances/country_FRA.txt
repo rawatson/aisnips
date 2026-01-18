@@ -1,8 +1,8 @@
-french_tradition = {
+﻿french_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -16,7 +16,7 @@ french_heritage = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -29,7 +29,7 @@ french_language_in_all_courts = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -41,7 +41,7 @@ elan = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -54,7 +54,7 @@ estates_general = {
 	country_cabinet_efficiency = 0.1
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -65,7 +65,7 @@ fra_gendarmes = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -78,7 +78,7 @@ fra_integration_of_new_territories = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -90,7 +90,7 @@ fra_reliance_on_privateers = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -103,7 +103,7 @@ fra_reformation_of_taxation = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -115,7 +115,7 @@ fra_school_of_fontainebleau = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -128,7 +128,7 @@ vauban_fortifications = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -140,7 +140,7 @@ the_philosophes = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -152,7 +152,7 @@ fra_expansion_of_france = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -164,7 +164,7 @@ liberty_egalite_fraternity = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 				is_revolutionary = yes
@@ -179,7 +179,7 @@ fra_code_civil = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}
@@ -191,7 +191,7 @@ french_ambition = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FRA
+			has_variable = adv_cheat_FRA
 			AND = {
 				has_or_had_tag = FRA
 			}

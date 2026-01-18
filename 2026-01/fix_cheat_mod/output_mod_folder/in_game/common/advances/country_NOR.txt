@@ -1,8 +1,8 @@
-nor_seaborn_country = {
+﻿nor_seaborn_country = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
@@ -16,20 +16,20 @@ nor_bounties_of_the_sea = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
 		}
 	}
-	global_fish_output_modifier = 0.20
+	global_fish_output_modifier = 0.2
 	requires = nor_seaborn_country
 }
 natural_seamanship = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
@@ -41,7 +41,7 @@ call_of_our_forefathers = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
@@ -55,7 +55,7 @@ pioneer_spirit = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
@@ -67,7 +67,7 @@ nor_shipbuilding = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
@@ -79,7 +79,7 @@ write_new_sagas = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}
@@ -92,7 +92,7 @@ nor_merchant_tradition = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_NOR
+			has_variable = adv_cheat_NOR
 			AND = {
 				has_or_had_tag = NOR
 			}

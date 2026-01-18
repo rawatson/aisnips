@@ -1,8 +1,8 @@
-mos_skilled_tax_collectors = {
+﻿mos_skilled_tax_collectors = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -15,7 +15,7 @@ mos_dynastic_ties = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -28,7 +28,7 @@ seat_of_metropolitan_bishop = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -36,12 +36,13 @@ seat_of_metropolitan_bishop = {
 	}
 	global_pop_conversion_speed_modifier = 0.1
 	tolerance_own = 1
+	requires = renaissance_city_rights
 }
 pomestnoe_voisko = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -53,7 +54,7 @@ strength_of_the_boyars = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -65,7 +66,7 @@ zasechnaya_cherta = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -77,8 +78,8 @@ hurricane_hardy = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
-			has_variable = euro_tech_RUS
+			has_variable = adv_cheat_MOS
+			has_variable = adv_cheat_RUS
 			AND = {
 				OR = {
 					has_or_had_tag = MOS
@@ -88,10 +89,10 @@ hurricane_hardy = {
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = hurricane_hardy
+			has_unlocked_advance_trigger = {
+				type = hurricane_hardy
+			}
 		}
-	}
 	allow_children = no
 	naval_unit_attrition = -0.05
 }
@@ -99,8 +100,8 @@ preobrazhensky_semyonovsky_imperial_guard = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
-			has_variable = euro_tech_RUS
+			has_variable = adv_cheat_MOS
+			has_variable = adv_cheat_RUS
 			AND = {
 				OR = {
 					has_or_had_tag = MOS
@@ -110,10 +111,10 @@ preobrazhensky_semyonovsky_imperial_guard = {
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = preobrazhensky_semyonovsky_imperial_guard
+			has_unlocked_advance_trigger = {
+				type = preobrazhensky_semyonovsky_imperial_guard
+			}
 		}
-	}
 	allow_children = no
 	global_crown_estate_power = 0.1
 	military_tactics = 0.1
@@ -122,7 +123,7 @@ mos_patrol_the_territories = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MOS
+			has_variable = adv_cheat_MOS
 			AND = {
 				has_or_had_tag = MOS
 			}
@@ -134,17 +135,17 @@ imperatorskiy_moskovskiy_universitet = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_RUS
+			has_variable = adv_cheat_RUS
 			AND = {
 				has_or_had_tag = RUS
 			}
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = imperatorskiy_moskovskiy_universitet
+			has_unlocked_advance_trigger = {
+				type = imperatorskiy_moskovskiy_universitet
+			}
 		}
-	}
 	allow_children = no
 	cultural_tradition_modifier = 0.1
 	global_max_literacy = 5

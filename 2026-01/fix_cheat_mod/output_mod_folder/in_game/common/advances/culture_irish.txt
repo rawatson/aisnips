@@ -1,13 +1,8 @@
-celtic_raiders_advance = {
+﻿celtic_raiders_advance = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_celtic_group
-			AND = {
-				culture = {
-					has_culture_group = culture_group:celtic_group
-				}
-			}
+		culture = {
+			has_culture_group = culture_group:celtic_group
 		}
 	}
 	army_initiative = 0.2
@@ -17,11 +12,13 @@ irish_booleying_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_irish
-			has_variable = euro_tech_norse_gael
+			has_variable = adv_cheat_culture_irish
+			has_variable = adv_cheat_culture_norse_gael
 			AND = {
-				culture = culture:irish
-				culture = culture:norse_gael
+				OR = {
+					culture = culture:irish
+					culture = culture:norse_gael
+				}
 			}
 		}
 	}
@@ -32,8 +29,8 @@ irish_monastacism_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_irish
-			has_variable = euro_tech_norse_gael
+			has_variable = adv_cheat_culture_irish
+			has_variable = adv_cheat_culture_norse_gael
 			AND = {
 				OR = {
 					culture = culture:irish
@@ -48,13 +45,8 @@ irish_monastacism_advance = {
 irish_travelling_bards_advance = {
 	age = age_1_traditions
 	potential = {
-		OR = {
-			has_variable = euro_tech_celtic_group
-			AND = {
-				culture = {
-					has_culture_group = culture_group:celtic_group
-				}
-			}
+		culture = {
+			has_culture_group = culture_group:celtic_group
 		}
 	}
 	hire_artist_cost_modifier = -0.025
@@ -64,7 +56,7 @@ guards_of_the_shannon_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_HYM
+			has_variable = adv_cheat_HYM
 			AND = {
 				has_or_had_tag = HYM
 			}
@@ -78,21 +70,21 @@ hiberno_norman_keeps_advance = {
 	icon = glorious_arms
 	potential = {
 		OR = {
-			has_variable = euro_tech_anglo_irish
+			has_variable = adv_cheat_culture_anglo_irish
 			AND = {
 				culture = culture:anglo_irish
 			}
 		}
 	}
 	requires = feudalism_advance
+requires = feudalism_advance
 	fort_limit = 1
-	requires = feudalism_advance
 }
 irish_frontier_settlement_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_anglo_irish
+			has_variable = adv_cheat_culture_anglo_irish
 			AND = {
 				culture = culture:anglo_irish
 			}
@@ -105,7 +97,7 @@ ple_irish_viking_towns_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PLE
+			has_variable = adv_cheat_PLE
 			AND = {
 				has_or_had_tag = PLE
 			}
@@ -118,7 +110,7 @@ ple_pale_defenseworks_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PLE
+			has_variable = adv_cheat_PLE
 			AND = {
 				has_or_had_tag = PLE
 			}
@@ -132,7 +124,7 @@ ire_grand_jury_system = {
 	icon = smooth_administration
 	potential = {
 		OR = {
-			has_variable = euro_tech_IRE
+			has_variable = adv_cheat_IRE
 			AND = {
 				has_or_had_tag = IRE
 			}
@@ -145,20 +137,20 @@ ire_irish_establishment = {
 	icon = recruitment_improvements_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_IRE
+			has_variable = adv_cheat_IRE
 			AND = {
 				has_or_had_tag = IRE
 			}
 		}
 	}
-	army_maintenance_cost = -0.10
+	army_maintenance_cost = -0.1
 }
 ire_irish_volunteers = {
 	age = age_6_revolutions
 	icon = land_morale_movement_cost_rev_choice_mil
 	potential = {
 		OR = {
-			has_variable = euro_tech_IRE
+			has_variable = adv_cheat_IRE
 			AND = {
 				has_or_had_tag = IRE
 			}
@@ -171,7 +163,7 @@ cel_defensive = {
 	icon = alpine_defensiveness
 	potential = {
 		OR = {
-			has_variable = euro_tech_CEL
+			has_variable = adv_cheat_CEL
 			AND = {
 				has_or_had_tag = CEL
 			}
@@ -184,7 +176,7 @@ cel_western_shore = {
 	icon = nav_fearless_seamen
 	potential = {
 		OR = {
-			has_variable = euro_tech_CEL
+			has_variable = adv_cheat_CEL
 			AND = {
 				has_or_had_tag = CEL
 			}
@@ -197,7 +189,7 @@ cel_the_wests_awake = {
 	icon = expand_varangian_guard_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CEL
+			has_variable = adv_cheat_CEL
 			AND = {
 				has_or_had_tag = CEL
 			}
@@ -210,7 +202,7 @@ cel_celtic_nations = {
 	icon = irish_travelling_bards_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CEL
+			has_variable = adv_cheat_CEL
 			AND = {
 				has_or_had_tag = CEL
 			}
@@ -223,20 +215,20 @@ cel_celtic_diaspora = {
 	icon = colonial_assembly
 	potential = {
 		OR = {
-			has_variable = euro_tech_CEL
+			has_variable = adv_cheat_CEL
 			AND = {
 				has_or_had_tag = CEL
 			}
 		}
 	}
-	colonial_migration_size_modifier = 0.50
+	colonial_migration_size_modifier = 0.5
 }
 cel_pan_celtic_nationalism = {
 	age = age_6_revolutions
 	icon = cultural_ties
 	potential = {
 		OR = {
-			has_variable = euro_tech_CEL
+			has_variable = adv_cheat_CEL
 			AND = {
 				has_or_had_tag = CEL
 			}

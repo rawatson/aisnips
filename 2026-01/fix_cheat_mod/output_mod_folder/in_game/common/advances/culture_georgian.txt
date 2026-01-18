@@ -1,8 +1,8 @@
-geo_georgian_highlands = {
+﻿geo_georgian_highlands = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -15,7 +15,7 @@ geo_georgian_script = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -28,7 +28,7 @@ geo_georgian_isolation = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -41,7 +41,8 @@ geo_legacy_of_saint_nino = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
+			has_variable = adv_cheat_religion_orthodox
 			AND = {
 				culture = culture:georgian_culture
 				religion = religion:orthodox
@@ -55,7 +56,7 @@ geo_restoration_of_fortresses_and_churches = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -68,7 +69,7 @@ geo_sadrosho_districts = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -81,7 +82,7 @@ geo_dasturlamali = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -94,7 +95,7 @@ geo_georgian_embassies = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}
@@ -107,7 +108,7 @@ geo_georgian_unification = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_georgian
+			has_variable = adv_cheat_culture_georgian_culture
 			AND = {
 				culture = culture:georgian_culture
 			}

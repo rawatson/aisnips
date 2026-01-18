@@ -1,8 +1,8 @@
-dlh_origin_of_hindustani = {
+﻿dlh_origin_of_hindustani = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -15,7 +15,7 @@ dlh_indo_persian_culture = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -29,7 +29,7 @@ dlh_turkic_conqueror_roots = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -42,7 +42,7 @@ dlh_revert_ghiyath_reforms = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -55,7 +55,7 @@ dlh_restore_the_delhi_empire = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -68,7 +68,7 @@ dlh_reintegrate_former_provinces = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -81,7 +81,7 @@ dlh_textile_innovation = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -94,7 +94,7 @@ dlh_afghan_nobility = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -108,7 +108,7 @@ dlh_grand_trunk = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -122,7 +122,7 @@ dlh_cosmopolitan_religions = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -135,7 +135,7 @@ dlh_revive_the_tughlaq_architecture = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -149,7 +149,7 @@ dlh_throne_of_india = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}
@@ -162,7 +162,7 @@ dlh_hindustani_identity = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_DLH
+			has_variable = adv_cheat_DLH
 			AND = {
 				has_or_had_tag = DLH
 			}

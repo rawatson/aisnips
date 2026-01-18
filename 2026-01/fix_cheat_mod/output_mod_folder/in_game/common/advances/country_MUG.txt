@@ -1,8 +1,8 @@
-mug_zamindar_system = {
+﻿mug_zamindar_system = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MUG
+			has_variable = adv_cheat_MUG
 			AND = {
 				has_or_had_tag = MUG
 			}
@@ -15,7 +15,7 @@ mug_mughal_ibadat_khana = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MUG
+			has_variable = adv_cheat_MUG
 			AND = {
 				has_or_had_tag = MUG
 			}
@@ -28,7 +28,7 @@ mug_mughal_architecture = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MUG
+			has_variable = adv_cheat_MUG
 			AND = {
 				has_or_had_tag = MUG
 			}
@@ -41,7 +41,7 @@ mug_fatawa_e_alamgiri = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MUG
+			has_variable = adv_cheat_MUG
 			AND = {
 				has_or_had_tag = MUG
 			}
@@ -54,7 +54,7 @@ mug_an_indian_padshah = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MUG
+			has_variable = adv_cheat_MUG
 			AND = {
 				has_or_had_tag = MUG
 			}

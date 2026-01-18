@@ -1,8 +1,8 @@
-arte_della_lana = {
+﻿arte_della_lana = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
 			AND = {
 				has_or_had_tag = FLO
 			}
@@ -15,7 +15,7 @@ florino_d_oro = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
 			AND = {
 				has_or_had_tag = FLO
 			}
@@ -30,13 +30,13 @@ a_land_of_banks = {
 	icon = bank_of_the_medici
 	potential = {
 		OR = {
-			has_variable = euro_tech_tuscan
+			has_variable = adv_cheat_culture_tuscan
 			AND = {
 				culture = culture:tuscan
 			}
 		}
 	}
-	minting_income_factor = 0.10
+	minting_income_factor = 0.1
 	monthly_loan_capacity_investment = 5.0
 	unlock_country_interaction = take_over_loan
 	requires = banking_advance
@@ -46,7 +46,7 @@ florentine_citizen_militia = {
 	icon = glorious_arms
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
 			AND = {
 				has_or_had_tag = FLO
 			}
@@ -61,7 +61,7 @@ birthplace_of_renaissance = {
 	icon = court_cost_advance_renai
 	potential = {
 		OR = {
-			has_variable = euro_tech_tuscan
+			has_variable = adv_cheat_culture_tuscan
 			AND = {
 				culture = culture:tuscan
 			}
@@ -74,9 +74,9 @@ florentine_school = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
 			AND = {
-				tag = FLO
+				has_or_had_tag = FLO
 			}
 		}
 	}
@@ -89,7 +89,7 @@ tuscan_uffizi = {
 	icon = crown_power_advance_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
 			AND = {
 				has_or_had_tag = FLO
 			}
@@ -103,7 +103,8 @@ porto_franco = {
 	icon = maritime_advance_age_4
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
+			has_variable = adv_cheat_TUS
 			AND = {
 				OR = {
 					has_or_had_tag = TUS
@@ -119,7 +120,8 @@ accademia_cimento = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
+			has_variable = adv_cheat_TUS
 			AND = {
 				OR = {
 					has_or_had_tag = TUS
@@ -135,7 +137,7 @@ medici_porcelain = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
 			AND = {
 				has_or_had_tag = FLO
 			}
@@ -150,7 +152,8 @@ tuscan_municipal_reforms = {
 	icon = city_building_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
+			has_variable = adv_cheat_TUS
 			AND = {
 				OR = {
 					has_or_had_tag = TUS
@@ -166,7 +169,8 @@ tuscan_physiocratic_reforms = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
+			has_variable = adv_cheat_TUS
 			AND = {
 				OR = {
 					has_or_had_tag = TUS
@@ -175,7 +179,7 @@ tuscan_physiocratic_reforms = {
 			}
 		}
 	}
-	global_max_rgo_size_modifier = 0.10
+	global_max_rgo_size_modifier = 0.1
 	global_life_expectancy = 2
 	requires = industrialization_advance
 }
@@ -184,7 +188,8 @@ tuscan_new_trade_system = {
 	icon = bank_of_the_medici
 	potential = {
 		OR = {
-			has_variable = euro_tech_FLO
+			has_variable = adv_cheat_FLO
+			has_variable = adv_cheat_TUS
 			AND = {
 				OR = {
 					has_or_had_tag = TUS

@@ -1,7 +1,7 @@
-LIV_crusader_forts = {
+﻿LIV_crusader_forts = {
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIV
+			has_variable = adv_cheat_LIV
 			AND = {
 				has_or_had_tag = LIV
 			}
@@ -9,18 +9,31 @@ LIV_crusader_forts = {
 	}
 	age = age_1_traditions
 	requires = castle_advance
-	fort_limit_modifier = 0.20
+	fort_limit_modifier = 0.2
 }
 LIV_a_order_knights = {
 	age = age_1_traditions
 	unlock_unit = a_order_knights
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIV
+			has_variable = adv_cheat_LIV
 			AND = {
 				has_or_had_tag = LIV
 			}
 		}
 	}
 	requires = LIV_crusader_forts
+}
+LIV_a_order_knights_2 = {
+	age = age_2_renaissance
+	unlock_unit = a_order_knights_2
+	potential = {
+		OR = {
+			has_variable = adv_cheat_LIV
+			AND = {
+				has_or_had_tag = LIV
+			}
+		}
+	}
+	requires = professional_armies_advance
 }

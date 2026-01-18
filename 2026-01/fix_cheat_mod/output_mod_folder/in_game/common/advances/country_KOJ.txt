@@ -1,8 +1,8 @@
-symbol_of_catholicism = {
+﻿symbol_of_catholicism = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOJ
+			has_variable = adv_cheat_KOJ
 			AND = {
 				has_or_had_tag = KOJ
 			}
@@ -16,7 +16,7 @@ protectors_of_jerusalem = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOJ
+			has_variable = adv_cheat_KOJ
 			AND = {
 				has_or_had_tag = KOJ
 			}
@@ -30,7 +30,7 @@ rites_holy_sepulchre = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOJ
+			has_variable = adv_cheat_KOJ
 			AND = {
 				has_or_had_tag = KOJ
 			}
@@ -47,7 +47,7 @@ latin_patriarch = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOJ
+			has_variable = adv_cheat_KOJ
 			AND = {
 				has_or_had_tag = KOJ
 			}
@@ -62,7 +62,7 @@ latinate_integration = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_KOJ
+			has_variable = adv_cheat_KOJ
 			AND = {
 				has_or_had_tag = KOJ
 			}

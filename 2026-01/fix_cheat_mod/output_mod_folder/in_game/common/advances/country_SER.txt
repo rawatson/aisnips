@@ -1,22 +1,8 @@
-home_of_hussars = {
+﻿serbian_mining = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
-			AND = {
-				has_or_had_tag = SER
-			}
-		}
-	}
-	army_cavalry_power = 0.10
-	unlock_unit = a_serbian_hussars
-	requires = cultural_traditions_law_advance
-}
-serbian_mining = {
-	age = age_1_traditions
-	potential = {
-		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -29,7 +15,7 @@ mimic_the_phoenix = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -38,11 +24,25 @@ mimic_the_phoenix = {
 	country_cabinet_efficiency = 0.05
 	requires = government_size_renaissance
 }
+home_of_hussars = {
+	age = age_2_renaissance
+	potential = {
+		OR = {
+			has_variable = adv_cheat_SER
+			AND = {
+				has_or_had_tag = SER
+			}
+		}
+	}
+	army_cavalry_power = 0.1
+	unlock_unit = a_serbian_hussars
+	requires = mimic_the_phoenix
+}
 rallying_the_troops = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -55,7 +55,7 @@ keepers_of_the_gate = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -68,7 +68,7 @@ poklisars = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -81,7 +81,7 @@ the_rebirth_of_the_patriarchate = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -94,7 +94,7 @@ reform_the_ecclesiastical_authorities = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -107,7 +107,7 @@ balkan_hajduks = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -120,7 +120,7 @@ foreign_relations_bureau = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -133,7 +133,7 @@ serbian_enlightenment = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}
@@ -146,7 +146,7 @@ military_modernization = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SER
+			has_variable = adv_cheat_SER
 			AND = {
 				has_or_had_tag = SER
 			}

@@ -1,30 +1,30 @@
-mounted_people = {
+﻿mounted_people = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
 		}
 	}
-	army_cavalry_power = 0.20
+	army_cavalry_power = 0.2
 	unlock_building = jurchen_barracks
 	unlock_unit = a_iron_pagoda_cavalry
-	unlock_unit = a_light_jurchen_cavalry
+unlock_unit = a_light_jurchen_cavalry
 	requires = horse_riding_advance
 }
 falconry_mastery = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
 		}
 	}
-	monthly_prestige = 0.10
+	monthly_prestige = 0.1
 	global_estate_target_satisfaction = small_permanent_target_satisfaction
 	requires = agriculture_advance
 }
@@ -32,20 +32,20 @@ rich_lands = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
 		}
 	}
-	global_max_rgo_size_modifier = 0.10
+	global_max_rgo_size_modifier = 0.1
 	requires = trade_range_advance_age_2
 }
 jurchen_honor = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
@@ -58,7 +58,7 @@ unite_the_tribes = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
@@ -73,7 +73,7 @@ leader_under_sky = {
 	icon = turco_mongol_tradition
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
@@ -91,7 +91,7 @@ foraging_our_way = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
@@ -104,7 +104,7 @@ the_eight_banners = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
@@ -117,20 +117,20 @@ deliberative_council = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
 		}
 	}
-	global_crown_estate_power = 0.10
+	global_crown_estate_power = 0.1
 	requires = absolutism_agressive_advance
 }
 manchu_script = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 			}
@@ -143,7 +143,8 @@ a_new_dawn = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_CHI
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 				NOT = {
@@ -156,7 +157,7 @@ a_new_dawn = {
 			}
 		}
 	}
-	global_monthly_development = 0.002
+	global_monthly_development = 0.001
 	global_monthly_food_modifier = 0.1
 	requires = urbanization
 }
@@ -165,7 +166,8 @@ manchu_reborn = {
 	icon = junji_chu
 	potential = {
 		OR = {
-			has_variable = euro_tech_jurchen
+			has_variable = adv_cheat_CHI
+			has_variable = adv_cheat_culture_jurchen_culture
 			AND = {
 				culture = culture:jurchen_culture
 				NOT = {

@@ -1,8 +1,8 @@
-mge_pax_mongolica = {
+﻿mge_pax_mongolica = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -15,7 +15,7 @@ mge_all_under_a_khan = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -28,7 +28,7 @@ mge_ghostly_horses_of_the_plain = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -41,7 +41,7 @@ mge_yeke_mongol_ulus = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -54,7 +54,7 @@ mge_life_of_steppe_warrior = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -67,7 +67,7 @@ mge_multicultural_empire = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -80,14 +80,14 @@ mge_improved_yam_system = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
 		}
 	}
 	requires = modern_road_advance
-	global_distance_from_capital_cost_modifier = -0.1
+	global_distance_from_capital_cost_modifier = -0.05
 	army_infantry_reinforce_cost_modifier = -0.15
 }
 mge_mongolian_mobility = {
@@ -95,21 +95,21 @@ mge_mongolian_mobility = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
 		}
 	}
 	requires = mge_improved_yam_system
-	food_consumption_modifier = -0.10
+	food_consumption_modifier = -0.1
 	army_movement_speed = 0.1
 }
 mge_kheshig = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}
@@ -123,7 +123,7 @@ mge_glory_of_the_khan = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MGE
+			has_variable = adv_cheat_MGE
 			AND = {
 				has_or_had_tag = MGE
 			}

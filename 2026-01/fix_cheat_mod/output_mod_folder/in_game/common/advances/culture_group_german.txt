@@ -1,9 +1,9 @@
-swabian_league_of_cities = {
+﻿swabian_league_of_cities = {
 	age = age_1_traditions
 	icon = genoese_banking_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_swabian
+			has_variable = adv_cheat_culture_swabian
 			AND = {
 				culture = culture:swabian
 			}
@@ -18,9 +18,9 @@ westphalian_monastic_traditions = {
 	icon = cultural_acceptance_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_westphalian
-			has_variable = euro_tech_angrian
-			has_variable = euro_tech_eastphalian
+			has_variable = adv_cheat_culture_angrian
+			has_variable = adv_cheat_culture_eastphalian
+			has_variable = adv_cheat_culture_westphalian
 			AND = {
 				OR = {
 					culture = culture:westphalian
@@ -38,9 +38,9 @@ north_german_hanseatic_traditions = {
 	icon = cultural_acceptance_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_lower_saxon
-			has_variable = euro_tech_holsatian
-			has_variable = euro_tech_hanseatic
+			has_variable = adv_cheat_culture_hanseatic
+			has_variable = adv_cheat_culture_holsatian
+			has_variable = adv_cheat_culture_lower_saxon
 			AND = {
 				OR = {
 					culture = culture:lower_saxon
@@ -57,9 +57,9 @@ custom_union_of_the_rhine = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_moselle_franconian
-			has_variable = euro_tech_rhine_franconian
-			has_variable = euro_tech_ripuarian_franconian
+			has_variable = adv_cheat_culture_moselle_franconian
+			has_variable = adv_cheat_culture_rhine_franconian
+			has_variable = adv_cheat_culture_ripuarian_franconian
 			AND = {
 				OR = {
 					culture = culture:moselle_franconian
@@ -78,10 +78,10 @@ german_baltic_sailors = {
 	icon = hol_sailors
 	potential = {
 		OR = {
-			has_variable = euro_tech_western_pomeranian
-			has_variable = euro_tech_holsatian
-			has_variable = euro_tech_hanseatic
-			has_variable = euro_tech_eastern_pomeranian
+			has_variable = adv_cheat_culture_eastern_pomeranian
+			has_variable = adv_cheat_culture_hanseatic
+			has_variable = adv_cheat_culture_holsatian
+			has_variable = adv_cheat_culture_western_pomeranian
 			AND = {
 				OR = {
 					culture = culture:western_pomeranian
@@ -100,8 +100,8 @@ franconian_proud_knights = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_rhine_franconian
-			has_variable = euro_tech_east_franconian
+			has_variable = adv_cheat_culture_east_franconian
+			has_variable = adv_cheat_culture_rhine_franconian
 			AND = {
 				OR = {
 					culture = culture:rhine_franconian
@@ -118,134 +118,7 @@ saiger_process = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_german_group
-			AND = {
-				OR = {
-					culture ?= {
-						has_culture_group = culture_group:german_group
-					}
-				}
-			}
+			culture = yes
 		}
 	}
-	global_silver_output_modifier = 0.2
-	global_lead_output_modifier = 0.2
-	allow_children = no
-	requires = pop_promotion_speed_age_2
-}
-german_populating_the_countryside = {
-	age = age_3_discovery
-	icon = serbian_mining
-	potential = {
-		OR = {
-			has_variable = euro_tech_saxon
-			has_variable = euro_tech_brandenburgish
-			has_variable = euro_tech_markish
-			has_variable = euro_tech_german_silesian
-			AND = {
-				OR = {
-					culture = culture:saxon
-					culture = culture:brandenburgish
-					culture = culture:markish
-					culture = culture:german_silesian
-				}
-			}
-		}
-	}
-	global_migration_speed_modifier = 0.1
-	global_monthly_prosperity = 0.001
-	requires = burghers_rights_laws_advance
-}
-german_imperial_roads = {
-	age = age_3_discovery
-	icon = road_building
-	potential = {
-		OR = {
-			has_variable = euro_tech_GER
-			AND = {
-				has_or_had_tag = GER
-			}
-		}
-	}
-	global_distance_from_capital_cost_modifier = -0.05
-	global_supply_limit_modifier = 0.1
-	requires = paved_road_advance
-}
-landsknechte = {
-	age = age_3_discovery
-	potential = {
-		OR = {
-			has_variable = euro_tech_german_group
-			AND = {
-				culture ?= {
-					has_culture_group = culture_group:german_group
-				}
-			}
-		}
-	}
-	unlock_unit = a_landsknechte
-	requires = pike_square
-}
-swabian_frugal_people = {
-	age = age_4_reformation
-	icon = genoese_banking_traditions
-	potential = {
-		OR = {
-			has_variable = euro_tech_swabian
-			AND = {
-				culture = culture:swabian
-			}
-		}
-	}
-	bank_interest = -0.01
-	court_spending_cost = -0.02
-	requires = gov_reform_reformation_a
-}
-franconian_wine_bottles = {
-	age = age_4_reformation
-	icon = scholasticism
-	potential = {
-		OR = {
-			has_variable = euro_tech_rhine_franconian
-			has_variable = euro_tech_east_franconian
-			AND = {
-				OR = {
-					culture = culture:rhine_franconian
-					culture = culture:east_franconian
-				}
-			}
-		}
-	}
-	global_wine_output_modifier = 0.2
-	global_glass_output_modifier = 0.1
-	requires = gov_reform_reformation_a
-}
-german_fair_towns = {
-	age = age_4_reformation
-	icon = genoese_banking_traditions
-	potential = {
-		OR = {
-			has_variable = euro_tech_GER
-			AND = {
-				has_or_had_tag = GER
-			}
-		}
-	}
-	trade_range_modifier = 0.1
-	merchant_maintenance_cost = -0.1
-}
-german_biedermeier = {
-	age = age_6_revolutions
-	icon = renaissance_advance
-	potential = {
-		OR = {
-			has_variable = euro_tech_GER
-			AND = {
-				has_or_had_tag = GER
-			}
-		}
-	}
-	stability_cost = -0.2
-	num_possible_artists = 1
-	requires = crown_power_advance_revolutions
 }

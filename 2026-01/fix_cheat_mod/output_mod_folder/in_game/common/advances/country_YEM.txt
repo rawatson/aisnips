@@ -1,8 +1,8 @@
-arabia_felix = {
+﻿arabia_felix = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 			}
@@ -17,7 +17,7 @@ coffea_arabica = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 			}
@@ -31,7 +31,7 @@ zaydi_scholarly_traditions = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 				religion.group = religion_group:muslim
@@ -46,7 +46,7 @@ rasulid_bureaucracy = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 			}
@@ -61,7 +61,7 @@ control_of_the_red_sea = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 			}
@@ -75,7 +75,7 @@ yem_unite_the_tribes = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 			}
@@ -89,26 +89,15 @@ port_of_aden = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_YEM
+			has_variable = adv_cheat_YEM
 			AND = {
 				has_or_had_tag = YEM
 			}
 		}
 	}
 	allow = {
-		location:adan = {
-			owner ?= c:YEM
-			OR = {
-				location_rank ?= location_rank:city
-				is_market_center = yes
+			location:adan = {
+				owner = yes
 			}
 		}
-	}
-	requires = spy_construction_renaissance
-	icon = port_customs
-	trade_efficiency = medium_trade_efficiency_bonus
-	modifier_while_progressing = {
-		global_maritime_presence_modifier = 0.33
-	}
-	allow_children = no
 }

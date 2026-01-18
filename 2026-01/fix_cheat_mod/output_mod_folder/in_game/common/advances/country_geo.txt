@@ -1,8 +1,8 @@
-geo_legacy_of_saint_george = {
+﻿geo_legacy_of_saint_george = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -15,7 +15,7 @@ geo_bagrationi_dynasty = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -28,7 +28,7 @@ geo_georgian_golden_age = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -41,7 +41,7 @@ geo_legacy_of_tamar = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -54,7 +54,7 @@ geo_david_the_builder = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -67,7 +67,7 @@ geo_georgian_titles = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -80,7 +80,7 @@ geo_georgian_numismatics = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -94,7 +94,7 @@ geo_beacon_of_christianity = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 				religion.group = religion_group:christian
@@ -108,7 +108,7 @@ geo_georgian_principalities = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}
@@ -121,7 +121,7 @@ geo_georgian_resilience = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_GEO
+			has_variable = adv_cheat_GEO
 			AND = {
 				has_or_had_tag = GEO
 			}

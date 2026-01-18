@@ -1,8 +1,8 @@
-epic_of_sundiata = {
+﻿epic_of_sundiata = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -15,7 +15,7 @@ kouroukan_fouga_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -28,7 +28,7 @@ gold_of_bure = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -41,7 +41,7 @@ reclamation_of_land = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -53,7 +53,7 @@ accounts_of_the_atlantic_voyage = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -66,7 +66,7 @@ mandinka_warrior_spirit = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -78,7 +78,7 @@ markets_for_salt = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -91,20 +91,20 @@ west_african_slave_trade = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
 		}
 	}
 	global_slaves_goods_output_modifier = 0.1
-	slave_raid_efficiency = 0.10
+	slave_raid_efficiency = 0.1
 }
 kele_koun_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -118,7 +118,7 @@ mandekalu_levies = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -126,13 +126,13 @@ mandekalu_levies = {
 	}
 	requires = kele_koun_advance
 	unlock_unit = a_mandekalu_infantry
-	unlock_unit = a_mandekalu_cavalry
+unlock_unit = a_mandekalu_cavalry
 }
 sofa_levies_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -140,14 +140,14 @@ sofa_levies_advance = {
 	}
 	requires = kele_koun_advance
 	unlock_building = sofa_stockade
-	unlock_building = sofa_barracks
+unlock_building = sofa_barracks
 	unlock_unit = a_sofa_infantry
 }
 farari_corps_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_MAL
+			has_variable = adv_cheat_MAL
 			AND = {
 				has_or_had_tag = MAL
 			}
@@ -156,5 +156,5 @@ farari_corps_advance = {
 	requires = mandekalu_levies
 	army_cavalry_power = 0.05
 	unlock_unit = a_farari_infantry
-	unlock_unit = a_farari_cavalry
+unlock_unit = a_farari_cavalry
 }

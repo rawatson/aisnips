@@ -1,8 +1,8 @@
-beacon_of_maghrebi_trade = {
+﻿beacon_of_maghrebi_trade = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TLE
+			has_variable = adv_cheat_TLE
 			AND = {
 				has_or_had_tag = TLE
 			}
@@ -16,7 +16,7 @@ qalat_al_mashwar_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TLE
+			has_variable = adv_cheat_TLE
 			AND = {
 				has_or_had_tag = TLE
 			}
@@ -30,7 +30,7 @@ hispano_moresque_style = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TLE
+			has_variable = adv_cheat_TLE
 			AND = {
 				has_or_had_tag = TLE
 			}
@@ -44,7 +44,7 @@ city_of_scholars = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TLE
+			has_variable = adv_cheat_TLE
 			AND = {
 				has_or_had_tag = TLE
 			}
@@ -59,7 +59,7 @@ entrepot_connections = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TLE
+			has_variable = adv_cheat_TLE
 			AND = {
 				has_or_had_tag = TLE
 			}

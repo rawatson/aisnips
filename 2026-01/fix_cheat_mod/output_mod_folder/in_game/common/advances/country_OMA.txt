@@ -1,8 +1,8 @@
-omani_tradition = {
+﻿omani_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -15,7 +15,7 @@ omani_heritage = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -28,7 +28,7 @@ local_merchant_preference = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -40,7 +40,7 @@ association_with_unbelievers = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -53,7 +53,7 @@ port_security_improvement = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -65,7 +65,7 @@ end_of_shipbuilding_guilds = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -78,7 +78,7 @@ skilled_captains = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
@@ -90,19 +90,19 @@ expansion_of_trade_contacts = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}
 		}
 	}
-	global_merchant_capacity_modifier = 0.10
+	global_merchant_capacity_modifier = 0.1
 }
 omani_ambition = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_OMA
+			has_variable = adv_cheat_OMA
 			AND = {
 				has_or_had_tag = OMA
 			}

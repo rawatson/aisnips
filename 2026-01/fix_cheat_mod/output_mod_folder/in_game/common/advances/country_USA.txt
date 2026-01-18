@@ -1,8 +1,8 @@
-usa_mayflower_compact = {
+﻿usa_mayflower_compact = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}
@@ -16,7 +16,7 @@ usa_empowered_assemblies = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}
@@ -30,7 +30,7 @@ usa_great_awakening = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}
@@ -45,7 +45,7 @@ usa_declaration_of_independence = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}
@@ -60,7 +60,7 @@ usa_bill_of_rights = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}
@@ -76,7 +76,7 @@ usa_recognized_sovereignty = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}
@@ -90,7 +90,7 @@ usa_era_good_feelings = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_USA
+			has_variable = adv_cheat_USA
 			AND = {
 				has_or_had_tag = USA
 			}

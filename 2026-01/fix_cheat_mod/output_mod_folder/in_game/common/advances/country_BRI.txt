@@ -1,8 +1,8 @@
-breton_tradition = {
+﻿breton_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_BRI
+			has_variable = adv_cheat_BRI
 			AND = {
 				has_or_had_tag = BRI
 			}
@@ -16,7 +16,7 @@ legacy_of_breton_independence = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BRI
+			has_variable = adv_cheat_BRI
 			AND = {
 				has_or_had_tag = BRI
 			}
@@ -28,7 +28,7 @@ estates_of_brittany = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_BRI
+			has_variable = adv_cheat_BRI
 			AND = {
 				has_or_had_tag = BRI
 			}

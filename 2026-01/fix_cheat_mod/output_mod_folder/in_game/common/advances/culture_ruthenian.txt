@@ -1,8 +1,8 @@
-flexible_loyalty = {
+﻿flexible_loyalty = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -15,7 +15,7 @@ heritage_of_the_rus = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -28,7 +28,7 @@ mother_of_russian_cities = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -42,7 +42,7 @@ international_influences = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -56,7 +56,7 @@ reuniting_rus = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -70,7 +70,7 @@ united_faith = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -84,7 +84,7 @@ east_and_west = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -97,7 +97,7 @@ ruthenian_state_advance = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -110,7 +110,7 @@ ruthenian_rural_buildings = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}
@@ -123,7 +123,7 @@ ruthenia_commoner_education = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ruthenian
+			has_variable = adv_cheat_culture_ruthenian
 			AND = {
 				culture = culture:ruthenian
 			}

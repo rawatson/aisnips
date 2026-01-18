@@ -1,16 +1,16 @@
-sakya_hegemony = {
+﻿sakya_hegemony = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}
 		}
 	}
 	allow = {
-		religion = religion:tibetan_buddhism
-	}
+			religion = religion:tibetan_buddhism
+		}
 	requires = codified_laws
 	icon = buddhist_meditation
 	stability_cost = -0.1
@@ -19,7 +19,7 @@ monastic_dominance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}
@@ -33,7 +33,7 @@ the_yak = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}
@@ -48,7 +48,7 @@ drokpa = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}
@@ -63,7 +63,7 @@ tibetan_monastic_education = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}
@@ -78,7 +78,7 @@ tanye_guanxi = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}
@@ -93,7 +93,7 @@ great_three = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TIB
+			has_variable = adv_cheat_TIB
 			AND = {
 				has_or_had_tag = TIB
 			}

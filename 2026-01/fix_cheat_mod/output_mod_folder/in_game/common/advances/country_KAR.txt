@@ -1,8 +1,8 @@
-sons_of_the_salur_tribe = {
+﻿sons_of_the_salur_tribe = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KAR
+			has_variable = adv_cheat_KAR
 			AND = {
 				has_or_had_tag = KAR
 			}
@@ -17,7 +17,7 @@ mehmed_beys_firman = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KAR
+			has_variable = adv_cheat_KAR
 			AND = {
 				has_or_had_tag = KAR
 			}
@@ -25,37 +25,6 @@ mehmed_beys_firman = {
 	}
 	icon = islamic_calligraphy
 	allow = {
-		court_language ?= language:turkish_language
-	}
-	requires = cultural_traditions_law_advance
-	cultural_influence_modifier = 0.1
-}
-karamanid_cavalry = {
-	age = age_1_traditions
-	potential = {
-		OR = {
-			has_variable = euro_tech_KAR
-			AND = {
-				has_or_had_tag = KAR
-			}
+			court_language = yes
 		}
-	}
-	requires = horse_riding_advance
-	icon = timurid_cavalry
-	army_cavalry_power = 0.1
-}
-home_of_the_whirling_dervishes = {
-	age = age_1_traditions
-	potential = {
-		OR = {
-			has_variable = euro_tech_KAR
-			AND = {
-				has_or_had_tag = KAR
-			}
-		}
-	}
-	icon = islamic_schoolars
-	requires = legalism_advance
-	monthly_towards_mysticism = societal_value_monthly_move
-	tolerance_heretic = 2
 }

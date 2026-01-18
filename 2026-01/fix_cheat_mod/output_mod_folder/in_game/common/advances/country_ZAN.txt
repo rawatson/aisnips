@@ -1,8 +1,8 @@
-palm_tree_masters = {
+﻿palm_tree_masters = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -16,7 +16,7 @@ bantu_and_perso_arabian = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -29,7 +29,7 @@ kilwan_trade_network = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -43,7 +43,7 @@ the_dhow = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -56,7 +56,7 @@ the_kilwan_zambuc = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -69,7 +69,7 @@ zanj_taxation = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -82,7 +82,7 @@ zan_food_imports = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -95,7 +95,7 @@ zan_kilwan_latitude_staves = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -109,7 +109,7 @@ shirazi_legacy = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -124,7 +124,7 @@ zan_gold_trade_of_africa = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}
@@ -137,7 +137,7 @@ zan_diplomacy_through_trade = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ZAN
+			has_variable = adv_cheat_ZAN
 			AND = {
 				has_or_had_tag = ZAN
 			}

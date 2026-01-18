@@ -1,15 +1,10 @@
-unlock_gallowglass_advance = {
+﻿unlock_gallowglass_advance = {
 	age = age_1_traditions
 	icon = expand_varangian_guard_advance
 	unlock_levy = levy_a_gallowglass
 	requires = unlock_footmen_advance
 	potential = {
-		OR = {
-			has_variable = euro_tech_SCO
-			AND = {
-				country_has_gallowglass_trigger = yes
-			}
-		}
+		country_has_gallowglass_trigger = yes
 	}
 }
 unlock_reformed_gallowglass_advance = {
@@ -18,12 +13,7 @@ unlock_reformed_gallowglass_advance = {
 	unlock_levy = levy_a_reformed_gallowglass
 	requires = unlock_peasant_levy_advance
 	potential = {
-		OR = {
-			has_variable = euro_tech_SCO
-			AND = {
-				country_has_gallowglass_trigger = yes
-			}
-		}
+		country_has_gallowglass_trigger = yes
 	}
 }
 unlock_late_gallowglass_advance = {
@@ -32,12 +22,7 @@ unlock_late_gallowglass_advance = {
 	unlock_levy = levy_a_late_gallowglass
 	requires = unlock_halberdiers_advance
 	potential = {
-		OR = {
-			has_variable = euro_tech_SCO
-			AND = {
-				country_has_gallowglass_trigger = yes
-			}
-		}
+		country_has_gallowglass_trigger = yes
 	}
 }
 scottish_salmon = {
@@ -45,7 +30,7 @@ scottish_salmon = {
 	requires = agriculture_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -64,9 +49,11 @@ scottish_morale = {
 	requires = unlock_footmen_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SBL
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
+					has_or_had_tag = SBL
 					has_or_had_tag = SCO
 					culture = {
 						has_culture_group = culture_group:scottish_group
@@ -76,13 +63,13 @@ scottish_morale = {
 		}
 	}
 	allow = {
-		NOT = {
-			is_subject_of = c:ENG
+			NOT = {
+				is_subject_of = c:ENG
+			}
+			NOT = {
+				has_or_had_tag = SBL
+			}
 		}
-		NOT = {
-			has_or_had_tag = SBL
-		}
-	}
 	land_morale_modifier = 0.15
 }
 scottish_longbowmen = {
@@ -90,9 +77,11 @@ scottish_longbowmen = {
 	requires = unlock_footmen_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SBL
+			has_variable = adv_cheat_SCO
 			AND = {
-				has_or_had_tag = SCO
+				has_or_had_tag = SBL
+has_or_had_tag = SCO
 				culture = {
 					has_culture_group = culture_group:scottish_group
 				}
@@ -100,8 +89,11 @@ scottish_longbowmen = {
 		}
 	}
 	allow = {
-		is_subject_of = c:ENG
-	}
+			OR = {
+				is_subject_of = c:ENG
+				has_or_had_tag = SBL
+			}
+		}
 	unlock_levy = levy_a_early_longbowmen
 }
 peel_towers_advance = {
@@ -109,7 +101,7 @@ peel_towers_advance = {
 	requires = cultural_traditions_law_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_culture_english
 			AND = {
 				OR = {
 					culture = {
@@ -127,7 +119,7 @@ scottish_tenacity = {
 	requires = unlock_men_at_arms_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				has_or_had_tag = SCO
 				culture = {
@@ -137,13 +129,13 @@ scottish_tenacity = {
 		}
 	}
 	allow = {
-		NOT = {
-			is_subject_of = c:ENG
+			NOT = {
+				is_subject_of = c:ENG
+			}
+			NOT = {
+				has_or_had_tag = SBL
+			}
 		}
-		NOT = {
-			has_or_had_tag = SBL
-		}
-	}
 	monthly_war_exhaustion = -0.05
 }
 influx_of_english_nobles = {
@@ -151,7 +143,7 @@ influx_of_english_nobles = {
 	requires = unlock_men_at_arms_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				has_or_had_tag = SCO
 				culture = {
@@ -161,8 +153,8 @@ influx_of_english_nobles = {
 		}
 	}
 	allow = {
-		is_subject_of = c:ENG
-	}
+			is_subject_of = c:ENG
+		}
 	global_monthly_control = 0.002
 }
 scottish_trade_connections = {
@@ -170,7 +162,7 @@ scottish_trade_connections = {
 	requires = trade_range_advance_age_2
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -189,7 +181,7 @@ comets = {
 	requires = artists_advance_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -207,7 +199,9 @@ modernized_royal_scots_navy = {
 	requires = maritime_advance_age_3
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_GBR
+			has_variable = adv_cheat_LOI
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -232,7 +226,8 @@ royal_revenue = {
 	requires = artists_advance_reformations
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_GBR
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -253,7 +248,7 @@ scottish_education = {
 	requires = crown_power_advance_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -272,7 +267,8 @@ act_of_revocation = {
 	requires = the_constitution
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_GBR
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -293,7 +289,7 @@ scottish_diplomacy = {
 	requires = maritime_advance_age_5
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -312,7 +308,7 @@ scottish_highlander_advance = {
 	requires = militiamen_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -330,7 +326,7 @@ scottish_whisky = {
 	requires = revolutions_subject_opinions_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO
@@ -344,14 +340,14 @@ scottish_whisky = {
 	global_liquor_output_modifier = 0.2
 	global_millet_output_modifier = 0.1
 	unlock_production_method = scottish_whisky_distillery_maintenance
-	unlock_production_method = scottish_whisky_distillery_mill_maintenance
+unlock_production_method = scottish_whisky_distillery_mill_maintenance
 }
 scottish_enlightenment = {
 	age = age_6_revolutions
 	requires = enlightened_court
 	potential = {
 		OR = {
-			has_variable = euro_tech_SCO
+			has_variable = adv_cheat_SCO
 			AND = {
 				OR = {
 					has_or_had_tag = SCO

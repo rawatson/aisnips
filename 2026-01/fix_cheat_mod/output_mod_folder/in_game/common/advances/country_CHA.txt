@@ -1,8 +1,8 @@
-cha_go_tram_huong = {
+﻿cha_go_tram_huong = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CHA
+			has_variable = adv_cheat_CHA
 			AND = {
 				has_or_had_tag = CHA
 			}
@@ -17,7 +17,7 @@ my_son_sanctuary = {
 	requires = cha_go_tram_huong
 	potential = {
 		OR = {
-			has_variable = euro_tech_CHA
+			has_variable = adv_cheat_CHA
 			AND = {
 				has_or_had_tag = CHA
 			}
@@ -25,8 +25,8 @@ my_son_sanctuary = {
 	}
 	icon = hindu_architecture
 	allow = {
-		religion = religion:hindu
-	}
+			religion = religion:hindu
+		}
 	monthly_self_control = 0.01
 	tolerance_own = 1
 }

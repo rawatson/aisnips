@@ -1,8 +1,8 @@
-religious_melting_pot = {
+﻿religious_melting_pot = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -17,7 +17,7 @@ akson_thai = {
 	icon = trading_embassies
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -30,7 +30,7 @@ father_governs_children = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -44,7 +44,7 @@ thai_war_elephants = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -57,7 +57,7 @@ thai_royal_poets = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -71,7 +71,7 @@ trading_links = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -84,7 +84,7 @@ foreign_mercenaries = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -97,7 +97,7 @@ toi_muay = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -110,7 +110,7 @@ trading_embassies = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -123,22 +123,22 @@ photduang = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
 		}
 	}
 	allow = {
-		capital = {
-			market = {
-				OR = {
-					is_produced_in_market = goods:silver
-					is_traded_in_market = goods:silver
+			capital = {
+				market = {
+					OR = {
+						is_produced_in_market = goods:silver
+						is_traded_in_market = goods:silver
+					}
 				}
 			}
 		}
-	}
 	requires = global_trade_routes_advance
 	minting_income_factor = 0.1
 }
@@ -146,7 +146,7 @@ personal_executions = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}
@@ -159,7 +159,7 @@ close_subjects = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_thai
+			has_variable = adv_cheat_culture_thai_culture
 			AND = {
 				culture = culture:thai_culture
 			}

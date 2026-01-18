@@ -1,8 +1,8 @@
-spa_school_salamanca = {
+﻿spa_school_salamanca = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SPA
+			has_variable = adv_cheat_SPA
 			AND = {
 				has_or_had_tag = SPA
 			}
@@ -15,7 +15,7 @@ spa_viceroyalties = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SPA
+			has_variable = adv_cheat_SPA
 			AND = {
 				has_or_had_tag = SPA
 			}
@@ -28,7 +28,7 @@ spa_siglo_de_oro = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SPA
+			has_variable = adv_cheat_SPA
 			AND = {
 				has_or_had_tag = SPA
 			}
@@ -42,7 +42,7 @@ spa_revival_of_ecclesiastical_discipline = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SPA
+			has_variable = adv_cheat_SPA
 			AND = {
 				has_or_had_tag = SPA
 			}
@@ -55,7 +55,7 @@ spa_naval_reforms = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SPA
+			has_variable = adv_cheat_SPA
 			AND = {
 				has_or_had_tag = SPA
 			}
@@ -68,12 +68,12 @@ spa_spanish_enlightenment = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SPA
+			has_variable = adv_cheat_SPA
 			AND = {
 				has_or_had_tag = SPA
 			}
 		}
 	}
-	global_monthly_development = 0.005
+	global_monthly_development = 0.001
 	requires = enlightened_court
 }

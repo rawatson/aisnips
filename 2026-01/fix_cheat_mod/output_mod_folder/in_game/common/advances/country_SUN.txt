@@ -1,8 +1,8 @@
-seren_taun = {
+﻿seren_taun = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUN
+			has_variable = adv_cheat_SUN
 			AND = {
 				has_or_had_tag = SUN
 			}
@@ -16,7 +16,7 @@ pepper_of_the_parahyangan = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUN
+			has_variable = adv_cheat_SUN
 			AND = {
 				has_or_had_tag = SUN
 			}
@@ -30,7 +30,7 @@ pan_asian_trade = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUN
+			has_variable = adv_cheat_SUN
 			AND = {
 				has_or_had_tag = SUN
 			}
@@ -44,7 +44,7 @@ extend_kampung_kampung = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUN
+			has_variable = adv_cheat_SUN
 			AND = {
 				has_or_had_tag = SUN
 			}

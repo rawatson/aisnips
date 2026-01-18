@@ -1,8 +1,8 @@
-khm_religious_flexibility = {
+﻿khm_religious_flexibility = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -15,7 +15,7 @@ khm_royal_procession = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -30,7 +30,7 @@ khm_ballista_elephants = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -43,7 +43,7 @@ khm_great_builders = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -56,7 +56,7 @@ khm_recruitment_of_peasants = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -69,7 +69,7 @@ khm_foreign_production_skills = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -82,7 +82,7 @@ khm_utilize_the_rivers = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -95,7 +95,7 @@ khm_champa_mercenaries = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -108,7 +108,7 @@ khm_restore_angkor = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -122,7 +122,7 @@ khm_modern_navy = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -135,7 +135,7 @@ khm_invest_in_irrigation = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
@@ -148,20 +148,20 @@ khm_protection_from_raids = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}
 		}
 	}
-	global_garrison_growth = 0.1
+	global_garrison_growth = 0.01
 	requires = corps_organisation
 }
 khm_old_grudges = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_KHM
+			has_variable = adv_cheat_KHM
 			AND = {
 				has_or_had_tag = KHM
 			}

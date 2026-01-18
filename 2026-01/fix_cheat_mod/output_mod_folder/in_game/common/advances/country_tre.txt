@@ -1,8 +1,8 @@
-tre_pontic_trail_mastery = {
+﻿tre_pontic_trail_mastery = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -15,7 +15,7 @@ tre_komnenos_legacy = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -29,7 +29,7 @@ tre_princes_of_the_lazes = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -43,7 +43,7 @@ tre_strategic_marriages = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -56,7 +56,7 @@ tre_grand_komnenoi = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -69,7 +69,7 @@ tre_pontic_mountains = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -82,7 +82,7 @@ tre_byzantine_birthright = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -99,7 +99,7 @@ tre_trapezuntine_monasteries = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -113,7 +113,7 @@ tre_greek_stronghold = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -126,7 +126,7 @@ tre_komnenoi_princesses = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -139,7 +139,7 @@ tre_terminus_of_the_silk_road = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -152,7 +152,7 @@ tre_lessons_of_the_fourth_crusade = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}
@@ -165,7 +165,7 @@ tre_trapezuntine_endurance = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_TRE
+			has_variable = adv_cheat_TRE
 			AND = {
 				has_or_had_tag = TRE
 			}

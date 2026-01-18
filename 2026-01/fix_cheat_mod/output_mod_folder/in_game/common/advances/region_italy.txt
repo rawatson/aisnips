@@ -1,9 +1,9 @@
-italian_universities = {
+﻿italian_universities = {
 	age = age_1_traditions
 	icon = scholasticism
 	potential = {
 		OR = {
-			has_variable = euro_tech_italia
+			has_variable = adv_cheat_ITA
 			AND = {
 				has_or_had_tag = ITA
 			}
@@ -18,7 +18,7 @@ italy_great_families = {
 	icon = cultural_acceptance_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_italia
+			has_variable = adv_cheat_ITA
 			AND = {
 				has_or_had_tag = ITA
 			}
@@ -33,7 +33,7 @@ italian_innovativeness = {
 	icon = genoese_banking_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_italia
+			has_variable = adv_cheat_ITA
 			AND = {
 				has_or_had_tag = ITA
 			}
@@ -47,7 +47,7 @@ italian_condottieri = {
 	icon = glorious_arms
 	potential = {
 		OR = {
-			has_variable = euro_tech_italia
+			has_variable = adv_cheat_ITA
 			AND = {
 				has_or_had_tag = ITA
 			}

@@ -1,8 +1,8 @@
-pap_head_of_the_church = {
+﻿pap_head_of_the_church = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -15,7 +15,7 @@ pap_the_word_of_the_lord = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -28,7 +28,7 @@ ecclesiastical_primacy = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -40,7 +40,7 @@ papal_investiture_and_tithes = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -52,7 +52,7 @@ glory_of_rome = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -64,7 +64,7 @@ donation_of_constantine = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -76,7 +76,7 @@ centralize_the_states = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -88,7 +88,7 @@ holy_father = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}
@@ -100,7 +100,7 @@ pap_legacy_of_the_military_orders = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAP
+			has_variable = adv_cheat_PAP
 			AND = {
 				has_or_had_tag = PAP
 			}

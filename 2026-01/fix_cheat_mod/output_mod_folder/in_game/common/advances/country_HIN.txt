@@ -1,9 +1,9 @@
-hin_sepahi = {
+﻿hin_sepahi = {
 	age = age_2_renaissance
 	icon = pike_and_shot_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -17,7 +17,7 @@ hin_united_india = {
 	icon = glorious_arms
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -31,7 +31,7 @@ hin_ganga = {
 	icon = maritime_advance_age_2
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 				religion.group = religion_group:dharmic
@@ -47,7 +47,7 @@ hin_persianate_court = {
 	icon = smooth_administration
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -62,7 +62,7 @@ hin_gunpowder_empire = {
 	icon = artillery_institution_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -76,7 +76,7 @@ hin_sufism = {
 	icon = scholasticism
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 				religion.group = religion_group:muslim
@@ -92,7 +92,7 @@ hin_administration_of_india = {
 	icon = expansionism
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -106,7 +106,7 @@ hin_indian_empire = {
 	icon = expansionism
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -120,7 +120,7 @@ hin_rocketry = {
 	icon = gunpowder_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}
@@ -134,7 +134,7 @@ hin_industrialization = {
 	icon = industrialization_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_HIN
+			has_variable = adv_cheat_HIN
 			AND = {
 				has_or_had_tag = HIN
 			}

@@ -1,8 +1,8 @@
-sia_experienced_ambassadors = {
+﻿sia_experienced_ambassadors = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}
@@ -15,7 +15,7 @@ sia_rise_to_equal_heights = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}
@@ -29,7 +29,7 @@ sia_advanced_elephant_warfare = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}
@@ -42,7 +42,7 @@ sia_consolidation_of_state = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}
@@ -55,7 +55,7 @@ sia_education_reform = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}
@@ -68,7 +68,7 @@ sia_royal_absolutism = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}
@@ -82,7 +82,7 @@ sia_thai_unity = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIA
+			has_variable = adv_cheat_SIA
 			AND = {
 				has_or_had_tag = SIA
 			}

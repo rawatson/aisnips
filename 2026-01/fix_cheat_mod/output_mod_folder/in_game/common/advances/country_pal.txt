@@ -1,8 +1,8 @@
-pal_castles_on_rhine = {
+﻿pal_castles_on_rhine = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAL
+			has_variable = adv_cheat_PAL
 			AND = {
 				has_or_had_tag = PAL
 			}
@@ -15,7 +15,7 @@ pal_cultivate_vineyards = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAL
+			has_variable = adv_cheat_PAL
 			AND = {
 				has_or_had_tag = PAL
 			}
@@ -29,7 +29,7 @@ pal_fractured_territory = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAL
+			has_variable = adv_cheat_PAL
 			AND = {
 				has_or_had_tag = PAL
 			}
@@ -42,7 +42,7 @@ pal_a_just_ruler = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAL
+			has_variable = adv_cheat_PAL
 			AND = {
 				has_or_had_tag = PAL
 			}
@@ -55,7 +55,7 @@ pal_heaven_of_tolerance = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAL
+			has_variable = adv_cheat_PAL
 			AND = {
 				has_or_had_tag = PAL
 			}
@@ -69,7 +69,7 @@ palatinate_romanticism = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_PAL
+			has_variable = adv_cheat_PAL
 			AND = {
 				has_or_had_tag = PAL
 			}

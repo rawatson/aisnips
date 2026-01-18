@@ -1,8 +1,8 @@
-land_of_many_religions = {
+﻿land_of_many_religions = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -16,7 +16,7 @@ migrant_opportunities = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -30,7 +30,7 @@ warlord_dukes = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -44,7 +44,7 @@ two_realms = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -57,7 +57,7 @@ chacery_slavonic = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -71,7 +71,7 @@ ukrainian_farmlands = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -84,7 +84,7 @@ supremus_dux_lithuaniae = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -97,7 +97,8 @@ ties_with_the_holy_see = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
+			has_variable = adv_cheat_religion_catholic
 			AND = {
 				has_or_had_tag = LIT
 				religion = religion:catholic
@@ -112,7 +113,8 @@ patriarchate_of_lithuania = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
+			has_variable = adv_cheat_religion_orthodox
 			AND = {
 				has_or_had_tag = LIT
 				religion = religion:orthodox
@@ -127,7 +129,7 @@ statutes_of_lithuania = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -140,7 +142,7 @@ lithuanian_renaissance = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}
@@ -153,7 +155,7 @@ columns_of_gediminids = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_LIT
+			has_variable = adv_cheat_LIT
 			AND = {
 				has_or_had_tag = LIT
 			}

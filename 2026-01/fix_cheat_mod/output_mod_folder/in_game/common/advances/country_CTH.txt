@@ -1,8 +1,8 @@
-cth_merchant_legacy = {
+﻿cth_merchant_legacy = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -16,7 +16,7 @@ cth_breadbasket_of_rome = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -30,7 +30,7 @@ cth_mercenary_army = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -44,13 +44,13 @@ cth_cothons = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
 		}
 	}
-	ship_build_speed = -0.2
+	ship_build_speed = 0.2
 	requires = maritime_advance_age_2
 	icon = ship_building_advance
 }
@@ -58,7 +58,7 @@ cth_phoenician_sailors = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -72,7 +72,7 @@ cth_legacy_of_hannon = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -87,7 +87,7 @@ cth_beyond_the_pillars = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -101,7 +101,7 @@ cth_wine_traders = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -115,7 +115,7 @@ cth_punic_global_trade = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}
@@ -130,7 +130,7 @@ cth_sufet_rule = {
 	government = republic
 	potential = {
 		OR = {
-			has_variable = euro_tech_CTH
+			has_variable = adv_cheat_CTH
 			AND = {
 				has_or_had_tag = CTH
 			}

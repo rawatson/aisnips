@@ -1,8 +1,8 @@
-english_tradition = {
+﻿english_tradition = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
+			has_variable = adv_cheat_ENG
 			AND = {
 				has_or_had_tag = ENG
 			}
@@ -15,7 +15,7 @@ english_heritage = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
+			has_variable = adv_cheat_ENG
 			AND = {
 				has_or_had_tag = ENG
 			}
@@ -28,7 +28,7 @@ magna_carta_advance = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
+			has_variable = adv_cheat_ENG
 			AND = {
 				has_or_had_tag = ENG
 			}
@@ -42,9 +42,11 @@ unlock_early_longbowmen_advance = {
 	requires = city_building_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_WLS
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
+			has_variable = adv_cheat_WLS
+			has_variable = adv_cheat_culture_english
+			has_variable = adv_cheat_culture_welsh
 			AND = {
 				OR = {
 					has_or_had_tag = WLS
@@ -64,9 +66,11 @@ unlock_longbowmen_advance = {
 	requires = unlock_men_at_arms_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_WLS
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
+			has_variable = adv_cheat_WLS
+			has_variable = adv_cheat_culture_english
+			has_variable = adv_cheat_culture_welsh
 			AND = {
 				OR = {
 					has_or_had_tag = WLS
@@ -85,9 +89,11 @@ unlock_late_longbowmen_advance = {
 	requires = unlock_halberdiers_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_WLS
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
+			has_variable = adv_cheat_WLS
+			has_variable = adv_cheat_culture_english
+			has_variable = adv_cheat_culture_welsh
 			AND = {
 				OR = {
 					has_or_had_tag = WLS
@@ -105,8 +111,8 @@ royal_navy = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -121,8 +127,8 @@ secretaries_of_state = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -137,8 +143,8 @@ eltham_ordinance = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -153,8 +159,8 @@ sick_and_hurt_board = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -169,8 +175,8 @@ british_bill_of_rights = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -185,8 +191,8 @@ navigation_acts = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -201,8 +207,8 @@ inigo_architecture = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -212,10 +218,10 @@ inigo_architecture = {
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = inigo_architecture
+			has_unlocked_advance_trigger = {
+				type = inigo_architecture
+			}
 		}
-	}
 	allow_children = no
 	cultural_tradition_modifier = 0.2
 	global_urban_build_buildings_cost = -0.025
@@ -224,8 +230,8 @@ sailing_and_fighting_instructions = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -235,10 +241,10 @@ sailing_and_fighting_instructions = {
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = sailing_and_fighting_instructions
+			has_unlocked_advance_trigger = {
+				type = sailing_and_fighting_instructions
+			}
 		}
-	}
 	allow_children = no
 	army_disembark_speed = 0.25
 	blockade_efficiency = 0.1
@@ -248,8 +254,8 @@ coke_smelting = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -259,10 +265,10 @@ coke_smelting = {
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = coke_smelting
+			has_unlocked_advance_trigger = {
+				type = coke_smelting
+			}
 		}
-	}
 	allow_children = no
 	global_tools_output_modifier = 0.25
 }
@@ -271,8 +277,8 @@ eng_red_coats = {
 	requires = unlock_fusiliers_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -288,8 +294,8 @@ eng_experimental_riflemen = {
 	requires = eng_red_coats
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -304,8 +310,8 @@ english_ambition = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -314,14 +320,14 @@ english_ambition = {
 			}
 		}
 	}
-	blockade_efficiency = 0.40
+	blockade_efficiency = 0.4
 }
 water_frame = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_ENG
-			has_variable = euro_tech_GBR
+			has_variable = adv_cheat_ENG
+			has_variable = adv_cheat_GBR
 			AND = {
 				OR = {
 					has_or_had_tag = ENG
@@ -331,10 +337,10 @@ water_frame = {
 		}
 	}
 	allow = {
-		has_unlocked_advance_trigger = {
-			type = water_frame
+			has_unlocked_advance_trigger = {
+				type = water_frame
+			}
 		}
-	}
 	allow_children = no
 	global_cloth_output_modifier = 0.33
 }

@@ -1,8 +1,8 @@
-suk_breaker_of_chains = {
+﻿suk_breaker_of_chains = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
@@ -15,7 +15,7 @@ suk_akson_sukhothai = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
@@ -28,7 +28,7 @@ suk_birthplace_of_a_culture = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
@@ -41,7 +41,7 @@ suk_ram_khamhaeng_stele = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
@@ -54,7 +54,7 @@ suk_wat_si_sawai = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
@@ -67,22 +67,22 @@ suk_sukhothai_ceramics = {
 	age = age_4_reformation
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
 		}
 	}
 	allow = {
-		capital = {
-			market = {
-				OR = {
-					is_produced_in_market = goods:clay
-					is_traded_in_market = goods:clay
+			capital = {
+				market = {
+					OR = {
+						is_produced_in_market = goods:clay
+						is_traded_in_market = goods:clay
+					}
 				}
 			}
 		}
-	}
 	requires = slitting_mills
 	trade_efficiency = small_trade_efficiency_bonus
 }
@@ -90,7 +90,7 @@ suk_military_history = {
 	age = age_5_absolutism
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}
@@ -103,7 +103,7 @@ suk_unstoppable_army = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SUK
+			has_variable = adv_cheat_SUK
 			AND = {
 				has_or_had_tag = SUK
 			}

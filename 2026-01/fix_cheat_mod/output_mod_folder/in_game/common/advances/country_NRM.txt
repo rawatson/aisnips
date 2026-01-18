@@ -1,8 +1,8 @@
-heirs_of_rollo = {
+﻿heirs_of_rollo = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_NRM
+			has_variable = adv_cheat_NRM
 			AND = {
 				has_or_had_tag = NRM
 			}
@@ -17,7 +17,7 @@ norman_law = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_NRM
+			has_variable = adv_cheat_NRM
 			AND = {
 				has_or_had_tag = NRM
 			}
@@ -31,7 +31,7 @@ trade_ports_in_the_channel = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_NRM
+			has_variable = adv_cheat_NRM
 			AND = {
 				has_or_had_tag = NRM
 			}
@@ -46,7 +46,7 @@ the_exchequer = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_NRM
+			has_variable = adv_cheat_NRM
 			AND = {
 				has_or_had_tag = NRM
 			}
@@ -61,7 +61,7 @@ frontline_in_the_caroline_war = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_NRM
+			has_variable = adv_cheat_NRM
 			AND = {
 				has_or_had_tag = NRM
 			}

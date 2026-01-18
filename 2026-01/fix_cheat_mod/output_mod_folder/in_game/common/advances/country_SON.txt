@@ -1,9 +1,9 @@
-stories_of_the_gao_empire = {
+﻿stories_of_the_gao_empire = {
 	icon = epic_of_sundiata
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -16,7 +16,7 @@ malian_military_tactics = {
 	age = age_1_traditions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -30,7 +30,7 @@ gold_to_salt_trade = {
 	icon = markets_for_salt
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -42,22 +42,22 @@ independence_from_mali = {
 	age = age_2_renaissance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
 		}
 	}
 	allow = {
-		is_subject = no
-	}
+			is_subject = no
+		}
 	global_defensive = 0.2
 }
 jihad_against_the_pagans = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -69,7 +69,7 @@ sankore_madrassah = {
 	age = age_3_discovery
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -82,7 +82,7 @@ the_hajj = {
 	icon = islamic_prayer
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -95,7 +95,7 @@ sharia = {
 	icon = sunnah
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -109,7 +109,7 @@ trans_sahara_trade = {
 	icon = markets_for_salt
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}
@@ -121,7 +121,7 @@ modernization_of_the_military = {
 	age = age_6_revolutions
 	potential = {
 		OR = {
-			has_variable = euro_tech_SON
+			has_variable = adv_cheat_SON
 			AND = {
 				has_or_had_tag = SON
 			}

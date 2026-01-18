@@ -1,9 +1,9 @@
-pis_anziani_del_popolo = {
+﻿pis_anziani_del_popolo = {
 	age = age_1_traditions
 	icon = laws
 	potential = {
 		OR = {
-			has_variable = euro_tech_PIS
+			has_variable = adv_cheat_PIS
 			AND = {
 				has_or_had_tag = PIS
 			}
@@ -16,7 +16,7 @@ pis_maritimes_legacy = {
 	icon = ship_building_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_PIS
+			has_variable = adv_cheat_PIS
 			AND = {
 				has_or_had_tag = PIS
 			}
@@ -30,7 +30,7 @@ pis_the_university_of_pisa = {
 	icon = scholasticism
 	potential = {
 		OR = {
-			has_variable = euro_tech_PIS
+			has_variable = adv_cheat_PIS
 			AND = {
 				has_or_had_tag = PIS
 			}
@@ -44,7 +44,7 @@ sie_artists = {
 	icon = renaissance_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIE
+			has_variable = adv_cheat_SIE
 			AND = {
 				has_or_had_tag = SIE
 			}
@@ -58,7 +58,7 @@ sie_studium_senese = {
 	icon = abacus_advance
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIE
+			has_variable = adv_cheat_SIE
 			AND = {
 				has_or_had_tag = SIE
 			}
@@ -71,7 +71,7 @@ sie_council_priori = {
 	icon = laws
 	potential = {
 		OR = {
-			has_variable = euro_tech_SIE
+			has_variable = adv_cheat_SIE
 			AND = {
 				has_or_had_tag = SIE
 			}
