@@ -265,6 +265,38 @@ class Advance:
     entities: Set[str] = field(default_factory=set)  # Entity IDs this advance is for
 
 
+@dataclass
+class MergedEntity:
+    """A merged entity representing multiple countries with identical advances"""
+    entity_type: str  # "country", "culture", etc.
+    entities: List[AdvanceEntity]  # The component entities
+    display_name: str = ""  # Combined display name like "Cusco, Inca Empire"
+    region: str = ""
+
+    @property
+    def entity_id(self) -> str:
+        """Return first entity's ID as the primary ID"""
+        return self.entities[0].entity_id if self.entities else ""
+
+    @property
+    def variable_names(self) -> List[str]:
+        """Return all variable names for the component entities"""
+        return [e.variable_name for e in self.entities]
+
+    @property
+    def variable_name(self) -> str:
+        """Return first variable name (for compatibility)"""
+        return self.entities[0].variable_name if self.entities else ""
+
+    def __hash__(self):
+        return hash(tuple(e.entity_id for e in self.entities))
+
+    def __eq__(self, other):
+        if isinstance(other, MergedEntity):
+            return set(e.entity_id for e in self.entities) == set(e.entity_id for e in other.entities)
+        return False
+
+
 # =============================================================================
 # Entity Extraction
 # =============================================================================
@@ -575,6 +607,8 @@ class ModGenerator:
         culture_region_mapping = self.config.get('culture_regions', {})
         country_names = self.config.get('country_names', {})
 
+        # First pass: set up all entities with their properties
+        country_entities = []
         for entity_id, entity in self.entities.items():
             if entity.entity_type == "country":
                 # Determine region from config or source file
@@ -582,7 +616,7 @@ class ModGenerator:
                 entity.region = region
                 # Set display name from config
                 entity.display_name = country_names.get(entity.entity_id, entity.entity_id)
-                self.countries[region].append(entity)
+                country_entities.append(entity)
 
             elif entity.entity_type in ("culture", "culture_group"):
                 region = culture_region_mapping.get(entity.entity_id, "other")
@@ -607,6 +641,12 @@ class ModGenerator:
                 entity.display_name = entity.entity_id.replace('_', ' ').title()
                 self.areas.append(entity)
 
+        # Deduplicate countries with identical advance sets
+        merged_countries = self._deduplicate_countries(country_entities)
+        for entity in merged_countries:
+            region = entity.region if hasattr(entity, 'region') and entity.region else "other"
+            self.countries[region].append(entity)
+
         # Sort entities within each category
         for region in self.countries:
             self.countries[region].sort(key=lambda e: e.entity_id)
@@ -614,6 +654,46 @@ class ModGenerator:
             self.cultures[region].sort(key=lambda e: e.entity_id)
         self.religions.sort(key=lambda e: e.entity_id)
         self.governments.sort(key=lambda e: e.entity_id)
+
+    def _deduplicate_countries(self, country_entities: List[AdvanceEntity]) -> List:
+        """Find countries with identical advance sets and merge them"""
+        # Build mapping: entity_key -> set of advance_ids
+        entity_advances = {}
+        for entity in country_entities:
+            entity_key = f"country:{entity.entity_id}"
+            advances = set()
+            for advance in self.processor.advances.values():
+                if entity_key in advance.entities:
+                    advances.add(advance.advance_id)
+            entity_advances[entity.entity_id] = frozenset(advances)
+
+        # Group countries by their advance sets
+        advances_to_entities = defaultdict(list)
+        for entity in country_entities:
+            advances = entity_advances.get(entity.entity_id, frozenset())
+            advances_to_entities[advances].append(entity)
+
+        # Create merged entities for duplicates, keep singles as-is
+        result = []
+        for advances, entities in advances_to_entities.items():
+            if len(entities) == 1:
+                # Single entity, no merge needed
+                result.append(entities[0])
+            else:
+                # Multiple entities share same advances - merge them
+                # Sort by display name for consistent ordering
+                entities.sort(key=lambda e: e.display_name)
+                combined_name = ", ".join(e.display_name for e in entities)
+                merged = MergedEntity(
+                    entity_type="country",
+                    entities=entities,
+                    display_name=combined_name,
+                    region=entities[0].region  # Use first entity's region
+                )
+                result.append(merged)
+                print(f"  Merged {len(entities)} countries: {combined_name}")
+
+        return result
 
     def _guess_region_from_file(self, entity: AdvanceEntity) -> str:
         """Guess region based on source file naming"""
@@ -628,6 +708,42 @@ class ModGenerator:
                 return 'south_asia'
         return 'other'
 
+    def _get_entity_advances_by_age(self, entity: AdvanceEntity) -> Dict[str, int]:
+        """Get a breakdown of advances by age for a given entity"""
+        # Build the full entity_id key used in advance.entities
+        if entity.entity_type == "country":
+            entity_key = f"country:{entity.entity_id}"
+        elif entity.entity_type in ("culture", "culture_group"):
+            entity_key = f"{entity.entity_type}:{entity.entity_id}"
+        elif entity.entity_type == "religion":
+            entity_key = f"religion:{entity.entity_id}"
+        elif entity.entity_type == "government":
+            entity_key = f"government:{entity.entity_id}"
+        else:
+            entity_key = f"{entity.entity_type}:{entity.entity_id}"
+
+        advances_by_age = defaultdict(int)
+        for advance in self.processor.advances.values():
+            if entity_key in advance.entities:
+                age = advance.age if advance.age else "unknown"
+                advances_by_age[age] += 1
+
+        return dict(advances_by_age)
+
+    def _format_advances_description(self, advances_by_age: Dict[str, int]) -> str:
+        """Format advances breakdown as a localization description string"""
+        total = sum(advances_by_age.values())
+        if total == 0:
+            return "No advances"
+
+        lines = [f"{total} advance{'s' if total != 1 else ''}"]
+        for age in sorted(advances_by_age.keys()):
+            count = advances_by_age[age]
+            age_display = age.replace('_', ' ').title()
+            lines.append(f"{age_display}: {count}")
+
+        return "\\n".join(lines)
+
     def generate_all(self):
         """Generate all mod files"""
         self._ensure_directories()
@@ -640,12 +756,17 @@ class ModGenerator:
 
     def _ensure_directories(self):
         """Create output directories"""
+        # Remove old/stale directories that shouldn't exist
+        old_localization = self.output_path / "in_game" / "localization"
+        if old_localization.exists():
+            shutil.rmtree(old_localization)
+
         dirs = [
             self.output_path / "in_game" / "common" / "advances",
             self.output_path / "in_game" / "common" / "scripted_triggers",
             self.output_path / "in_game" / "common" / "character_interactions",
             self.output_path / "in_game" / "events",
-            self.output_path / "in_game" / "localization" / "english",
+            self.output_path / "main_menu" / "localization" / "english",
             self.output_path / ".metadata",
         ]
         for d in dirs:
@@ -799,6 +920,46 @@ class ModGenerator:
 
         return '\n'.join(lines)
 
+    # Region ordering by continent for menu display
+    REGION_ORDER = [
+        # Europe
+        "western_europe",
+        "central_europe",
+        "southern_europe",
+        "northern_europe",
+        "eastern_europe",
+        # Asia
+        "western_asia",
+        "central_asia",
+        "south_asia",
+        "southeast_asia",
+        "east_asia",
+        "japan",
+        # Africa
+        "north_africa",
+        "west_africa",
+        "central_africa",
+        "east_africa",
+        "southern_africa",
+        # Americas
+        "north_america",
+        "central_america",
+        "south_america",
+        # Oceania & Other
+        "oceania",
+        "special",
+        "other",
+    ]
+
+    def _sort_regions(self, regions: List[str]) -> List[str]:
+        """Sort regions by continent grouping"""
+        def region_key(r):
+            try:
+                return self.REGION_ORDER.index(r)
+            except ValueError:
+                return len(self.REGION_ORDER)  # Put unknown regions at the end
+        return sorted(regions, key=region_key)
+
     def generate_events(self):
         """Generate the event menu system"""
         print("\nGenerating events...")
@@ -806,9 +967,9 @@ class ModGenerator:
 
         lines = [f"namespace = {self.NAMESPACE}", ""]
 
-        # Build region lists and event number mappings
-        country_regions = sorted([r for r in self.countries.keys() if self.countries[r]])
-        culture_regions = sorted([r for r in self.cultures.keys() if self.cultures[r]])
+        # Build region lists and event number mappings (sorted by continent)
+        country_regions = self._sort_regions([r for r in self.countries.keys() if self.countries[r]])
+        culture_regions = self._sort_regions([r for r in self.cultures.keys() if self.cultures[r]])
 
         # Event numbering scheme:
         # 1 = Main menu
@@ -1006,31 +1167,58 @@ class ModGenerator:
 
         return lines
 
-    def _generate_entity_option(self, entity: AdvanceEntity, event_num: int) -> List[str]:
-        """Generate an option for toggling an entity"""
-        var_name = entity.variable_name
+    def _generate_entity_option(self, entity, event_num: int) -> List[str]:
+        """Generate an option for toggling an entity (or merged entity)"""
+        is_merged = isinstance(entity, MergedEntity)
 
-        return [
+        # Get variable name(s) and keys
+        if is_merged:
+            var_names = entity.variable_names
+            primary_var = var_names[0]
+            loc_key = f"{self.NAMESPACE}.{entity.entity_type}.{entity.entities[0].entity_id}"
+        else:
+            var_names = [entity.variable_name]
+            primary_var = entity.variable_name
+            loc_key = f"{self.NAMESPACE}.{entity.entity_type}.{entity.entity_id}"
+
+        tooltip_key = f"{loc_key}.custom_tooltip"
+
+        lines = [
             "\toption = {",
             "\t\tname = {",
-            f"\t\t\ttext = {self.NAMESPACE}.{entity.entity_type}.{entity.entity_id}",
-            f"\t\t\ttrigger = {{ NOT = {{ has_variable = {var_name} }} }}",
+            f"\t\t\ttext = {loc_key}",
+            f"\t\t\ttrigger = {{ NOT = {{ has_variable = {primary_var} }} }}",
             "\t\t}",
             "\t\tname = {",
-            f"\t\t\ttext = {self.NAMESPACE}.{entity.entity_type}.{entity.entity_id}.selected",
-            f"\t\t\ttrigger = {{ has_variable = {var_name} }}",
+            f"\t\t\ttext = {loc_key}.selected",
+            f"\t\t\ttrigger = {{ has_variable = {primary_var} }}",
             "\t\t}",
+            f"\t\tcustom_tooltip = {tooltip_key}",
             "\t\tif = {",
-            f"\t\t\tlimit = {{ NOT = {{ has_variable = {var_name} }} }}",
-            f"\t\t\tset_variable = {var_name}",
+            f"\t\t\tlimit = {{ NOT = {{ has_variable = {primary_var} }} }}",
+        ]
+
+        # Set all variables for merged entities
+        for var in var_names:
+            lines.append(f"\t\t\tset_variable = {var}")
+
+        lines.extend([
             "\t\t}",
             "\t\telse = {",
-            f"\t\t\tremove_variable = {var_name}",
+        ])
+
+        # Remove all variables for merged entities
+        for var in var_names:
+            lines.append(f"\t\t\tremove_variable = {var}")
+
+        lines.extend([
             "\t\t}",
             f"\t\ttrigger_event_silently = {{ id = {self.NAMESPACE}.{event_num} }}",
             "\t}",
             "",
-        ]
+        ])
+
+        return lines
 
     def generate_triggers(self):
         """Generate scripted triggers for UI state"""
@@ -1143,7 +1331,7 @@ class ModGenerator:
     def generate_localization(self):
         """Generate localization file"""
         print("\nGenerating localization...")
-        output_file = self.output_path / "in_game" / "localization" / "english" / "adv_cheat_l_english.yml"
+        output_file = self.output_path / "main_menu" / "localization" / "english" / "adv_cheat_l_english.yml"
 
         # Get sorted region lists
         country_regions = sorted([r for r in self.countries.keys() if self.countries[r]])
@@ -1173,7 +1361,7 @@ class ModGenerator:
         for region in sorted(all_regions):
             display = region.replace('_', ' ').title()
             lines.append(f' {self.NAMESPACE}.region.{region}: "{display}"')
-            lines.append(f' {self.NAMESPACE}.region.{region}.selected: "#G{display}#!"')
+            lines.append(f' {self.NAMESPACE}.region.{region}.selected: "#g {display}#!"')
         lines.append("")
 
         # Country region menu titles
@@ -1187,12 +1375,42 @@ class ModGenerator:
             lines.append(f' {self.NAMESPACE}.{200 + idx}.title: "{display} Cultures"')
         lines.append("")
 
-        # Entity names
+        # Country names (including merged entities)
+        for region_entities in self.countries.values():
+            for entity in region_entities:
+                is_merged = isinstance(entity, MergedEntity)
+
+                if is_merged:
+                    # Use first entity's ID as the key
+                    base_key = f"{self.NAMESPACE}.country.{entity.entities[0].entity_id}"
+                    # Combined display name with $TAG$ lookups
+                    name_parts = [f"${e.entity_id}$" for e in entity.entities]
+                    display_name = ", ".join(name_parts)
+                    # Calculate advances for the first entity (all have same advances)
+                    advances_by_age = self._get_entity_advances_by_age(entity.entities[0])
+                else:
+                    base_key = f"{self.NAMESPACE}.country.{entity.entity_id}"
+                    display_name = f"${entity.entity_id}$"
+                    advances_by_age = self._get_entity_advances_by_age(entity)
+
+                desc = self._format_advances_description(advances_by_age)
+                lines.append(f' {base_key}: "{display_name}"')
+                lines.append(f' {base_key}.selected: "#g {display_name}#!"')
+                lines.append(f' {base_key}.custom_tooltip: "{desc}"')
+
+        # Non-country entities (cultures, religions, etc.)
         for entity in self.entities.values():
+            if entity.entity_type == "country":
+                continue  # Already handled above
+
             base_key = f"{self.NAMESPACE}.{entity.entity_type}.{entity.entity_id}"
+            advances_by_age = self._get_entity_advances_by_age(entity)
+            desc = self._format_advances_description(advances_by_age)
+
             display = entity.display_name or entity.entity_id.replace('_', ' ').title()
             lines.append(f' {base_key}: "{display}"')
-            lines.append(f' {base_key}.selected: "#G{display}#!"')
+            lines.append(f' {base_key}.selected: "#g {display}#!"')
+            lines.append(f' {base_key}.custom_tooltip: "{desc}"')
 
         with open(output_file, 'w', encoding='utf-8-sig') as f:
             f.write('\n'.join(lines))
@@ -1231,6 +1449,44 @@ def load_config(config_path: Path) -> Dict:
     return {}
 
 
+def load_country_names(localization_path: Path) -> Dict[str, str]:
+    """Load country names from the game's localization file"""
+    country_names = {}
+    loc_file = localization_path / "localization" / "english" / "country_names_l_english.yml"
+
+    if not loc_file.exists():
+        print(f"  Warning: Country names file not found: {loc_file}")
+        return country_names
+
+    with open(loc_file, 'r', encoding='utf-8-sig') as f:
+        for line in f:
+            line = line.strip()
+            # Skip empty lines, comments, and the l_english header
+            if not line or line.startswith('#') or line == 'l_english:':
+                continue
+
+            # Parse lines like: TAG: "Name"
+            # Skip _ADJ, _LONG, _THE, etc. variants
+            if ':' in line:
+                key, _, value = line.partition(':')
+                key = key.strip()
+                value = value.strip()
+
+                # Only take base country tags (skip _ADJ, _LONG, _THE, etc.)
+                if '_' in key or not key.isupper():
+                    continue
+
+                # Extract the name from quotes
+                if value.startswith('"') and value.endswith('"'):
+                    name = value[1:-1]
+                    # Skip placeholder/reference values
+                    if not name.startswith('$'):
+                        country_names[key] = name
+
+    print(f"  Loaded {len(country_names)} country names from localization")
+    return country_names
+
+
 def export_mod(output_path: Path, export_path: str) -> bool:
     """Export the generated mod to the target location (e.g., game mod folder)"""
     if not export_path:
@@ -1257,9 +1513,26 @@ def export_mod(output_path: Path, export_path: str) -> bool:
             print(f"  Removing existing mod folder...")
             shutil.rmtree(target)
 
-        # Copy the entire output folder to target
-        print(f"  Copying mod files...")
-        shutil.copytree(output_path, target)
+        # Create target directory
+        target.mkdir(parents=True, exist_ok=True)
+
+        # Copy .metadata folder
+        metadata_src = output_path / ".metadata"
+        if metadata_src.exists():
+            print(f"  Copying .metadata...")
+            shutil.copytree(metadata_src, target / ".metadata")
+
+        # Copy in_game folder (common, events)
+        in_game_src = output_path / "in_game"
+        if in_game_src.exists():
+            print(f"  Copying in_game...")
+            shutil.copytree(in_game_src, target / "in_game")
+
+        # Copy main_menu folder (localization)
+        main_menu_src = output_path / "main_menu"
+        if main_menu_src.exists():
+            print(f"  Copying main_menu...")
+            shutil.copytree(main_menu_src, target / "main_menu")
 
         print(f"  Export complete!")
         return True
@@ -1287,6 +1560,11 @@ def main():
     print("Selectable Advances Cheat Mod Generator")
     print("=" * 60)
 
+    # Load country names from game localization
+    print("\nLoading country names...")
+    country_names = load_country_names(base_path)
+    config['country_names'] = country_names  # Add to config for use by generator
+
     # Process advance files
     print("\nProcessing advance files...")
     processor = AdvanceProcessor(common_path, config)
@@ -1313,6 +1591,18 @@ def main():
     print(f"  Cultures: {sum(len(v) for v in generator.cultures.values())}")
     print(f"  Religions: {len(generator.religions)}")
     print(f"  Governments: {len(generator.governments)}")
+
+    # Advances by age breakdown
+    advances_by_age = defaultdict(int)
+    for advance in processor.advances.values():
+        age = advance.age if advance.age else "Unknown"
+        advances_by_age[age] += 1
+
+    print(f"\n  Advances by Age:")
+    for age in sorted(advances_by_age.keys()):
+        count = advances_by_age[age]
+        age_display = age.replace('_', ' ').title() if age != "Unknown" else "Unknown"
+        print(f"    {age_display}: {count} advance{'s' if count != 1 else ''}")
 
     # Export to game mod folder
     export_path = config.get('export_path', '')

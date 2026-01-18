@@ -64,6 +64,8 @@ country_regions:
   NED: western_europe    # Netherlands (formable)
   IRE: western_europe    # Ireland (formable)
   CEL: western_europe    # Celtic (formable)
+  LOI: western_europe    # Isles
+  SBL: western_europe    # Balliol
 
   # Central Europe
   BOH: central_europe    # Bohemia
@@ -79,8 +81,18 @@ country_regions:
   PRU: central_europe    # Prussia (formable)
   GER: central_europe    # Germany (formable)
   SAX: central_europe    # Saxony
+  FRE: central_europe    # Freising
+  GRF: central_europe    # Grafenau
+  LBV: central_europe    # Lower Bavaria
+  PSS: central_europe    # Passau
+  REG: central_europe    # Regensburg
+  SLZ: central_europe    # Salzburg
+  UBV: central_europe    # Upper Bavaria
+  STY: central_europe    # Styria
 
   # Southern Europe
+  TIR: southern_europe   # Tyrol
+  TUS: southern_europe   # Tuscany
   ARA: southern_europe   # Aragon
   CAS: southern_europe   # Castile
   FLO: southern_europe   # Florence
@@ -178,7 +190,6 @@ country_regions:
   KOR: east_asia         # Korea
   TIB: east_asia         # Tibet
   MCH: east_asia         # Manchuria
-  SKO: east_asia         # Korea related
 
   # Japan (subregion of East Asia)
   KGK: japan
@@ -230,6 +241,7 @@ country_regions:
   MAL: west_africa       # Mali
   SON: west_africa       # Songhai
   DAH: west_africa       # Dahomey (formable)
+  SKO: west_africa       # Sokoto
 
   # Central Africa
   KBO: central_africa    # Kongo
@@ -343,171 +355,4 @@ culture_regions:
   # Oceania
   maori_culture: oceania
 
-# Display names for countries (tag -> name)
-# Countries not listed will use the tag as display name
-country_names:
-  # Western Europe
-  ENG: England
-  SCO: Scotland
-  WLS: Wales
-  BRI: Brittany
-  BUR: Burgundy
-  FRA: France
-  LOR: Lorraine
-  BRB: Brabant
-  FLA: Flanders
-  GEL: Gelre
-  HAI: Hainaut
-  HOL: Holland
-  LIE: Liege
-  LUX: Luxembourg
-  UTR: Utrecht
-  NRM: Normandy
-  PAL: Palatinate
-  PRO: Provence
-  SAV: Savoy
-  GBR: Great Britain
-  NED: Netherlands
-  IRE: Ireland
-  CEL: Celtic Union
-
-  # Central Europe
-  BOH: Bohemia
-  BRA: Brandenburg
-  HAB: Austria
-  MAI: Mainz
-  MEI: Meissen
-  BAV: Bavaria
-  BAV_R: Bavaria
-  PRU: Prussia
-  GER: Germany
-  SAX: Saxony
-
-  # Southern Europe
-  ARA: Aragon
-  CAS: Castile
-  FLO: Florence
-  PIS: Pisa
-  SIE: Siena
-  GEN: Genoa
-  GRA: Granada
-  MLO: Milan
-  NAP: Naples
-  NAV: Navarra
-  PAP: Papal States
-  POR: Portugal
-  SIC: Sicily
-  VEN: Venice
-  VER: Verona
-  TWS: Two Sicilies
-  ROM: Roman Empire
-  SPA: Spain
-  ITA: Italy
-
-  # Northern Europe
-  DAN: Denmark
-  LIV: Livonian Order
-  NOR: Norway
-  SWE: Sweden
-  SCA: Scandinavia
-  FIN: Finland
-
-  # Eastern Europe
-  BOS: Bosnia
-  TEU: Teutonic Order
-  BUL: Bulgaria
-  SER: Serbia
-  BYZ: Byzantine Empire
-  CRO: Croatia
-  GEO: Georgia
-  HUN: Hungary
-  LIT: Lithuania
-  MOS: Muscovy
-  NOV: Novgorod
-  POL: Poland
-  SMO: Smolensk
-  TUR: Ottoman Empire
-  WAL: Wallachia
-  ARM: Armenia
-  CIR: Circassia
-  CRI: Crimea
-  RUS: Russia
-  PLC: Poland-Lithuania
-
-  # Western Asia / Middle East
-  KAR: Karaman
-  OMA: Oman
-  ORM: Hormuz
-  TRE: Trebizond
-  YEM: Yemen
-  ILK: Ilkhanate
-  IRA: Persia
-  KRS: Kurdistan
-
-  # Central Asia
-  CHG: Chagatai
-  GLH: Golden Horde
-  MGE: Mongol Empire
-  TIM: Timurids
-
-  # South Asia
-  DLH: Delhi
-  VIJ: Vijayanagar
-  HIN: Hindustan
-  MUG: Mughals
-  NPL: Nepal
-  MSA: Mysore
-
-  # Southeast Asia
-  CHA: Champa
-  DAI: Dai Viet
-  KHM: Khmer
-  MAJ: Majapahit
-  SUK: Sukhothai
-  SUN: Sunda
-  AYU: Ayutthaya
-  SIA: Siam
-  MLC: Malacca
-
-  # East Asia
-  CHI: Ming China
-  KOR: Korea
-  TIB: Tibet
-  MCH: Manchuria
-
-  # North Africa
-  MAM: Mamluks
-  MOR: Morocco
-  TLE: Tlemcen
-  TUN: Tunisia
-  CTH: Carthage
-
-  # East Africa
-  ETH: Ethiopia
-  ZAN: Zanzibar
-
-  # West Africa
-  MAL: Mali
-  SON: Songhai
-  DAH: Dahomey
-
-  # Central Africa
-  KBO: Kongo
-  KON: Kongo
-
-  # Southern Africa
-  ZMW: Zimbabwe
-
-  # Americas
-  USA: United States
-  TNC: Aztec Empire
-  AZT: Aztec Empire
-  CSU: Cusco
-  INC: Inca Empire
-
-  # Oceania
-  MLK: Maluku
-
-  # Special
-  HSA: Hanseatic League
-  KNI: Knights Hospitaller
+# Country names are now loaded automatically from localization/english/country_names_l_english.yml

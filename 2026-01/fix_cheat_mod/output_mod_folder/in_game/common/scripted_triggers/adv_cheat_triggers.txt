@@ -33,9 +33,7 @@ is_adv_cheat_central_europe_on = {
 		has_variable = adv_cheat_MEI
 		has_variable = adv_cheat_OBW
 		has_variable = adv_cheat_PRU
-		has_variable = adv_cheat_SAX
-		has_variable = adv_cheat_SYZ
-		has_variable = adv_cheat_URI
+		has_variable = adv_cheat_STY
 	}
 }
 
@@ -147,32 +145,8 @@ is_adv_cheat_northern_europe_on = {
 	}
 }
 
-is_adv_cheat_oceania_on = {
-	OR = {
-		has_variable = adv_cheat_MLK
-	}
-}
-
-is_adv_cheat_other_on = {
-	OR = {
-		has_variable = adv_cheat_FRE
-		has_variable = adv_cheat_GRF
-		has_variable = adv_cheat_LBV
-		has_variable = adv_cheat_LOI
-		has_variable = adv_cheat_PSS
-		has_variable = adv_cheat_REG
-		has_variable = adv_cheat_SBL
-		has_variable = adv_cheat_SLZ
-		has_variable = adv_cheat_STY
-		has_variable = adv_cheat_TIR
-		has_variable = adv_cheat_TUS
-		has_variable = adv_cheat_UBV
-	}
-}
-
 is_adv_cheat_south_america_on = {
 	OR = {
-		has_variable = adv_cheat_CSU
 		has_variable = adv_cheat_INC
 	}
 }
@@ -182,7 +156,6 @@ is_adv_cheat_south_asia_on = {
 		has_variable = adv_cheat_AHO
 		has_variable = adv_cheat_DLH
 		has_variable = adv_cheat_HIN
-		has_variable = adv_cheat_MLB
 		has_variable = adv_cheat_MSA
 		has_variable = adv_cheat_MUG
 		has_variable = adv_cheat_NPL
@@ -230,6 +203,8 @@ is_adv_cheat_southern_europe_on = {
 		has_variable = adv_cheat_SIC
 		has_variable = adv_cheat_SIE
 		has_variable = adv_cheat_SPA
+		has_variable = adv_cheat_TIR
+		has_variable = adv_cheat_TUS
 		has_variable = adv_cheat_TWS
 		has_variable = adv_cheat_VEN
 		has_variable = adv_cheat_VER
@@ -281,6 +256,7 @@ is_adv_cheat_western_europe_on = {
 		has_variable = adv_cheat_HYM
 		has_variable = adv_cheat_IRE
 		has_variable = adv_cheat_LIE
+		has_variable = adv_cheat_LOI
 		has_variable = adv_cheat_LUX
 		has_variable = adv_cheat_NED
 		has_variable = adv_cheat_NRM
@@ -288,6 +264,7 @@ is_adv_cheat_western_europe_on = {
 		has_variable = adv_cheat_PLE
 		has_variable = adv_cheat_PRO
 		has_variable = adv_cheat_SAV
+		has_variable = adv_cheat_SBL
 		has_variable = adv_cheat_SCO
 		has_variable = adv_cheat_UTR
 		has_variable = adv_cheat_WLS
@@ -380,8 +357,6 @@ is_adv_cheat_any_country_on = {
 		is_adv_cheat_north_africa_on = yes
 		is_adv_cheat_north_america_on = yes
 		is_adv_cheat_northern_europe_on = yes
-		is_adv_cheat_oceania_on = yes
-		is_adv_cheat_other_on = yes
 		is_adv_cheat_south_america_on = yes
 		is_adv_cheat_south_asia_on = yes
 		is_adv_cheat_southeast_asia_on = yes
