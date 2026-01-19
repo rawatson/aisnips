@@ -2834,26 +2834,6 @@ adv_cheat_event.109 = {
 
 	option = {
 		name = {
-			text = adv_cheat_event.country.SKO
-			trigger = { NOT = { has_variable = adv_cheat_SKO } }
-		}
-		name = {
-			text = adv_cheat_event.country.SKO.selected
-			trigger = { has_variable = adv_cheat_SKO }
-		}
-		custom_tooltip = adv_cheat_event.country.SKO.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_SKO } }
-			set_variable = adv_cheat_SKO
-		}
-		else = {
-			remove_variable = adv_cheat_SKO
-		}
-		trigger_event_silently = { id = adv_cheat_event.109 }
-	}
-
-	option = {
-		name = {
 			text = adv_cheat_event.country.TIB
 			trigger = { NOT = { has_variable = adv_cheat_TIB } }
 		}
@@ -3728,6 +3708,26 @@ adv_cheat_event.112 = {
 
 	option = {
 		name = {
+			text = adv_cheat_event.country.SKO
+			trigger = { NOT = { has_variable = adv_cheat_SKO } }
+		}
+		name = {
+			text = adv_cheat_event.country.SKO.selected
+			trigger = { has_variable = adv_cheat_SKO }
+		}
+		custom_tooltip = adv_cheat_event.country.SKO.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_SKO } }
+			set_variable = adv_cheat_SKO
+		}
+		else = {
+			remove_variable = adv_cheat_SKO
+		}
+		trigger_event_silently = { id = adv_cheat_event.112 }
+	}
+
+	option = {
+		name = {
 			text = adv_cheat_event.country.SON
 			trigger = { NOT = { has_variable = adv_cheat_SON } }
 		}
@@ -4162,6 +4162,78 @@ adv_cheat_event.20 = {
 
 	option = {
 		name = {
+			text = adv_cheat_event.region.western_asia
+			trigger = { NOT = { is_adv_cheat_culture_western_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.western_asia.selected
+			trigger = { is_adv_cheat_culture_western_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.204 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.central_asia
+			trigger = { NOT = { is_adv_cheat_culture_central_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.central_asia.selected
+			trigger = { is_adv_cheat_culture_central_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.south_asia
+			trigger = { NOT = { is_adv_cheat_culture_south_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.south_asia.selected
+			trigger = { is_adv_cheat_culture_south_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.southeast_asia
+			trigger = { NOT = { is_adv_cheat_culture_southeast_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.southeast_asia.selected
+			trigger = { is_adv_cheat_culture_southeast_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.207 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.east_asia
+			trigger = { NOT = { is_adv_cheat_culture_east_asia_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.east_asia.selected
+			trigger = { is_adv_cheat_culture_east_asia_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.208 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.west_africa
+			trigger = { NOT = { is_adv_cheat_culture_west_africa_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.west_africa.selected
+			trigger = { is_adv_cheat_culture_west_africa_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.209 }
+	}
+
+	option = {
+		name = {
 			text = adv_cheat_event.region.southern_africa
 			trigger = { NOT = { is_adv_cheat_culture_southern_africa_on = yes } }
 		}
@@ -4169,7 +4241,31 @@ adv_cheat_event.20 = {
 			text = adv_cheat_event.region.southern_africa.selected
 			trigger = { is_adv_cheat_culture_southern_africa_on = yes }
 		}
-		trigger_event_silently = { id = adv_cheat_event.204 }
+		trigger_event_silently = { id = adv_cheat_event.210 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.north_america
+			trigger = { NOT = { is_adv_cheat_culture_north_america_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.north_america.selected
+			trigger = { is_adv_cheat_culture_north_america_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.211 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.region.south_america
+			trigger = { NOT = { is_adv_cheat_culture_south_america_on = yes } }
+		}
+		name = {
+			text = adv_cheat_event.region.south_america.selected
+			trigger = { is_adv_cheat_culture_south_america_on = yes }
+		}
+		trigger_event_silently = { id = adv_cheat_event.212 }
 	}
 
 	option = {
@@ -4181,19 +4277,7 @@ adv_cheat_event.20 = {
 			text = adv_cheat_event.region.oceania.selected
 			trigger = { is_adv_cheat_culture_oceania_on = yes }
 		}
-		trigger_event_silently = { id = adv_cheat_event.205 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.region.other
-			trigger = { NOT = { is_adv_cheat_culture_other_on = yes } }
-		}
-		name = {
-			text = adv_cheat_event.region.other.selected
-			trigger = { is_adv_cheat_culture_other_on = yes }
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
+		trigger_event_silently = { id = adv_cheat_event.213 }
 	}
 
 	option = {
@@ -4230,6 +4314,46 @@ adv_cheat_event.200 = {
 		}
 		else = {
 			remove_variable = adv_cheat_culture_anglo_irish
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.celtic_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_celtic_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.celtic_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_celtic_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.celtic_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_celtic_group } }
+			set_variable = adv_cheat_culgroup_celtic_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_celtic_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.english
+			trigger = { NOT = { has_variable = adv_cheat_culture_english } }
+		}
+		name = {
+			text = adv_cheat_event.culture.english.selected
+			trigger = { has_variable = adv_cheat_culture_english }
+		}
+		custom_tooltip = adv_cheat_event.culture.english.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_english } }
+			set_variable = adv_cheat_culture_english
+		}
+		else = {
+			remove_variable = adv_cheat_culture_english
 		}
 		trigger_event_silently = { id = adv_cheat_event.200 }
 	}
@@ -4276,6 +4400,46 @@ adv_cheat_event.200 = {
 
 	option = {
 		name = {
+			text = adv_cheat_event.culture.lorrain
+			trigger = { NOT = { has_variable = adv_cheat_culture_lorrain } }
+		}
+		name = {
+			text = adv_cheat_event.culture.lorrain.selected
+			trigger = { has_variable = adv_cheat_culture_lorrain }
+		}
+		custom_tooltip = adv_cheat_event.culture.lorrain.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_lorrain } }
+			set_variable = adv_cheat_culture_lorrain
+		}
+		else = {
+			remove_variable = adv_cheat_culture_lorrain
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.netherlandish_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_netherlandish_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.netherlandish_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_netherlandish_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.netherlandish_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_netherlandish_group } }
+			set_variable = adv_cheat_culgroup_netherlandish_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_netherlandish_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
 			text = adv_cheat_event.culture.norse_gael
 			trigger = { NOT = { has_variable = adv_cheat_culture_norse_gael } }
 		}
@@ -4290,6 +4454,46 @@ adv_cheat_event.200 = {
 		}
 		else = {
 			remove_variable = adv_cheat_culture_norse_gael
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.scottish_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_scottish_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.scottish_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_scottish_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.scottish_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_scottish_group } }
+			set_variable = adv_cheat_culgroup_scottish_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_scottish_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.200 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.welsh
+			trigger = { NOT = { has_variable = adv_cheat_culture_welsh } }
+		}
+		name = {
+			text = adv_cheat_event.culture.welsh.selected
+			trigger = { has_variable = adv_cheat_culture_welsh }
+		}
+		custom_tooltip = adv_cheat_event.culture.welsh.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_welsh } }
+			set_variable = adv_cheat_culture_welsh
+		}
+		else = {
+			remove_variable = adv_cheat_culture_welsh
 		}
 		trigger_event_silently = { id = adv_cheat_event.200 }
 	}
@@ -4534,6 +4738,26 @@ adv_cheat_event.201 = {
 
 	option = {
 		name = {
+			text = adv_cheat_event.culture_group.swiss_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_swiss_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.swiss_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_swiss_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.swiss_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_swiss_group } }
+			set_variable = adv_cheat_culgroup_swiss_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_swiss_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.201 }
+	}
+
+	option = {
+		name = {
 			text = adv_cheat_event.culture.western_pomeranian
 			trigger = { NOT = { has_variable = adv_cheat_culture_western_pomeranian } }
 		}
@@ -4652,6 +4876,46 @@ adv_cheat_event.202 = {
 
 	option = {
 		name = {
+			text = adv_cheat_event.culture_group.iberian_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_iberian_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.iberian_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_iberian_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.iberian_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_iberian_group } }
+			set_variable = adv_cheat_culgroup_iberian_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_iberian_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.202 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.neapolitan
+			trigger = { NOT = { has_variable = adv_cheat_culture_neapolitan } }
+		}
+		name = {
+			text = adv_cheat_event.culture.neapolitan.selected
+			trigger = { has_variable = adv_cheat_culture_neapolitan }
+		}
+		custom_tooltip = adv_cheat_event.culture.neapolitan.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_neapolitan } }
+			set_variable = adv_cheat_culture_neapolitan
+		}
+		else = {
+			remove_variable = adv_cheat_culture_neapolitan
+		}
+		trigger_event_silently = { id = adv_cheat_event.202 }
+	}
+
+	option = {
+		name = {
 			text = adv_cheat_event.culture.portuguese
 			trigger = { NOT = { has_variable = adv_cheat_culture_portuguese } }
 		}
@@ -4666,6 +4930,26 @@ adv_cheat_event.202 = {
 		}
 		else = {
 			remove_variable = adv_cheat_culture_portuguese
+		}
+		trigger_event_silently = { id = adv_cheat_event.202 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.sicilian
+			trigger = { NOT = { has_variable = adv_cheat_culture_sicilian } }
+		}
+		name = {
+			text = adv_cheat_event.culture.sicilian.selected
+			trigger = { has_variable = adv_cheat_culture_sicilian }
+		}
+		custom_tooltip = adv_cheat_event.culture.sicilian.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_sicilian } }
+			set_variable = adv_cheat_culture_sicilian
+		}
+		else = {
+			remove_variable = adv_cheat_culture_sicilian
 		}
 		trigger_event_silently = { id = adv_cheat_event.202 }
 	}
@@ -4710,6 +4994,86 @@ adv_cheat_event.203 = {
 
 	option = {
 		name = {
+			text = adv_cheat_event.culture.armenian_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_armenian_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.armenian_culture.selected
+			trigger = { has_variable = adv_cheat_culture_armenian_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.armenian_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_armenian_culture } }
+			set_variable = adv_cheat_culture_armenian_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_armenian_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.circassian_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_circassian_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.circassian_culture.selected
+			trigger = { has_variable = adv_cheat_culture_circassian_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.circassian_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_circassian_culture } }
+			set_variable = adv_cheat_culture_circassian_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_circassian_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.georgian_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_georgian_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.georgian_culture.selected
+			trigger = { has_variable = adv_cheat_culture_georgian_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.georgian_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_georgian_culture } }
+			set_variable = adv_cheat_culture_georgian_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_georgian_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.russian_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_russian_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.russian_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_russian_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.russian_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_russian_group } }
+			set_variable = adv_cheat_culgroup_russian_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_russian_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
 			text = adv_cheat_event.culture.ruthenian
 			trigger = { NOT = { has_variable = adv_cheat_culture_ruthenian } }
 		}
@@ -4729,15 +5093,383 @@ adv_cheat_event.203 = {
 	}
 
 	option = {
+		name = {
+			text = adv_cheat_event.culture.turkish_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_turkish_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.turkish_culture.selected
+			trigger = { has_variable = adv_cheat_culture_turkish_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.turkish_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_turkish_culture } }
+			set_variable = adv_cheat_culture_turkish_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_turkish_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.turkoman_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_turkoman_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.turkoman_culture.selected
+			trigger = { has_variable = adv_cheat_culture_turkoman_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.turkoman_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_turkoman_culture } }
+			set_variable = adv_cheat_culture_turkoman_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_turkoman_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.203 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Western Asia
+adv_cheat_event.204 = {
+	type = country_event
+	title = adv_cheat_event.204.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.arabian_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_arabian_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.arabian_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_arabian_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.arabian_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_arabian_group } }
+			set_variable = adv_cheat_culgroup_arabian_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_arabian_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.204 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.iranian_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_iranian_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.iranian_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_iranian_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.iranian_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_iranian_group } }
+			set_variable = adv_cheat_culgroup_iranian_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_iranian_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.204 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Central Asia
+adv_cheat_event.205 = {
+	type = country_event
+	title = adv_cheat_event.205.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.mongolian_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_mongolian_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.mongolian_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_mongolian_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.mongolian_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_mongolian_group } }
+			set_variable = adv_cheat_culgroup_mongolian_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_mongolian_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.205 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - South Asia
+adv_cheat_event.206 = {
+	type = country_event
+	title = adv_cheat_event.206.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.indian_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_indian_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.indian_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_indian_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.indian_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_indian_group } }
+			set_variable = adv_cheat_culgroup_indian_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_indian_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.206 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - Southeast Asia
+adv_cheat_event.207 = {
+	type = country_event
+	title = adv_cheat_event.207.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.thai_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_thai_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.thai_culture.selected
+			trigger = { has_variable = adv_cheat_culture_thai_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.thai_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_thai_culture } }
+			set_variable = adv_cheat_culture_thai_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_thai_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.207 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.vietnamese_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_vietnamese_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.vietnamese_culture.selected
+			trigger = { has_variable = adv_cheat_culture_vietnamese_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.vietnamese_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_vietnamese_culture } }
+			set_variable = adv_cheat_culture_vietnamese_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_vietnamese_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.207 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - East Asia
+adv_cheat_event.208 = {
+	type = country_event
+	title = adv_cheat_event.208.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.chinese_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_chinese_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.chinese_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_chinese_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.chinese_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_chinese_group } }
+			set_variable = adv_cheat_culgroup_chinese_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_chinese_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.208 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.japanese_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_japanese_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.japanese_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_japanese_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.japanese_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_japanese_group } }
+			set_variable = adv_cheat_culgroup_japanese_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_japanese_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.208 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture.jurchen_culture
+			trigger = { NOT = { has_variable = adv_cheat_culture_jurchen_culture } }
+		}
+		name = {
+			text = adv_cheat_event.culture.jurchen_culture.selected
+			trigger = { has_variable = adv_cheat_culture_jurchen_culture }
+		}
+		custom_tooltip = adv_cheat_event.culture.jurchen_culture.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culture_jurchen_culture } }
+			set_variable = adv_cheat_culture_jurchen_culture
+		}
+		else = {
+			remove_variable = adv_cheat_culture_jurchen_culture
+		}
+		trigger_event_silently = { id = adv_cheat_event.208 }
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.jurchen_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_jurchen_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.jurchen_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_jurchen_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.jurchen_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_jurchen_group } }
+			set_variable = adv_cheat_culgroup_jurchen_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_jurchen_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.208 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - West Africa
+adv_cheat_event.209 = {
+	type = country_event
+	title = adv_cheat_event.209.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.west_african_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_west_african_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.west_african_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_west_african_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.west_african_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_west_african_group } }
+			set_variable = adv_cheat_culgroup_west_african_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_west_african_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.209 }
+	}
+
+	option = {
 		name = adv_cheat_event.back
 		trigger_event_silently = { id = adv_cheat_event.20 }
 	}
 }
 
 # Culture - Southern Africa
-adv_cheat_event.204 = {
+adv_cheat_event.210 = {
 	type = country_event
-	title = adv_cheat_event.204.title
+	title = adv_cheat_event.210.title
 
 	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
 
@@ -4763,7 +5495,83 @@ adv_cheat_event.204 = {
 		else = {
 			remove_variable = adv_cheat_culture_shona_culture
 		}
-		trigger_event_silently = { id = adv_cheat_event.204 }
+		trigger_event_silently = { id = adv_cheat_event.210 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - North America
+adv_cheat_event.211 = {
+	type = country_event
+	title = adv_cheat_event.211.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.haudenosaunee_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_haudenosaunee_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.haudenosaunee_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_haudenosaunee_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.haudenosaunee_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_haudenosaunee_group } }
+			set_variable = adv_cheat_culgroup_haudenosaunee_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_haudenosaunee_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.211 }
+	}
+
+	option = {
+		name = adv_cheat_event.back
+		trigger_event_silently = { id = adv_cheat_event.20 }
+	}
+}
+
+# Culture - South America
+adv_cheat_event.212 = {
+	type = country_event
+	title = adv_cheat_event.212.title
+
+	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
+
+	trigger = {
+		is_human = yes
+		has_variable = adv_cheat_menu_open
+	}
+
+	option = {
+		name = {
+			text = adv_cheat_event.culture_group.andean_group
+			trigger = { NOT = { has_variable = adv_cheat_culgroup_andean_group } }
+		}
+		name = {
+			text = adv_cheat_event.culture_group.andean_group.selected
+			trigger = { has_variable = adv_cheat_culgroup_andean_group }
+		}
+		custom_tooltip = adv_cheat_event.culture_group.andean_group.custom_tooltip
+		if = {
+			limit = { NOT = { has_variable = adv_cheat_culgroup_andean_group } }
+			set_variable = adv_cheat_culgroup_andean_group
+		}
+		else = {
+			remove_variable = adv_cheat_culgroup_andean_group
+		}
+		trigger_event_silently = { id = adv_cheat_event.212 }
 	}
 
 	option = {
@@ -4773,9 +5581,9 @@ adv_cheat_event.204 = {
 }
 
 # Culture - Oceania
-adv_cheat_event.205 = {
+adv_cheat_event.213 = {
 	type = country_event
-	title = adv_cheat_event.205.title
+	title = adv_cheat_event.213.title
 
 	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
 
@@ -4801,285 +5609,7 @@ adv_cheat_event.205 = {
 		else = {
 			remove_variable = adv_cheat_culture_maori_culture
 		}
-		trigger_event_silently = { id = adv_cheat_event.205 }
-	}
-
-	option = {
-		name = adv_cheat_event.back
-		trigger_event_silently = { id = adv_cheat_event.20 }
-	}
-}
-
-# Culture - Other
-adv_cheat_event.206 = {
-	type = country_event
-	title = adv_cheat_event.206.title
-
-	image = "gfx/interface/illustrations/event/backgrounds/special/comet_sighted.dds"
-
-	trigger = {
-		is_human = yes
-		has_variable = adv_cheat_menu_open
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.armenian_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_armenian_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.armenian_culture.selected
-			trigger = { has_variable = adv_cheat_culture_armenian_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.armenian_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_armenian_culture } }
-			set_variable = adv_cheat_culture_armenian_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_armenian_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.circassian_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_circassian_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.circassian_culture.selected
-			trigger = { has_variable = adv_cheat_culture_circassian_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.circassian_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_circassian_culture } }
-			set_variable = adv_cheat_culture_circassian_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_circassian_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.english
-			trigger = { NOT = { has_variable = adv_cheat_culture_english } }
-		}
-		name = {
-			text = adv_cheat_event.culture.english.selected
-			trigger = { has_variable = adv_cheat_culture_english }
-		}
-		custom_tooltip = adv_cheat_event.culture.english.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_english } }
-			set_variable = adv_cheat_culture_english
-		}
-		else = {
-			remove_variable = adv_cheat_culture_english
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.georgian_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_georgian_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.georgian_culture.selected
-			trigger = { has_variable = adv_cheat_culture_georgian_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.georgian_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_georgian_culture } }
-			set_variable = adv_cheat_culture_georgian_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_georgian_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.jurchen_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_jurchen_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.jurchen_culture.selected
-			trigger = { has_variable = adv_cheat_culture_jurchen_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.jurchen_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_jurchen_culture } }
-			set_variable = adv_cheat_culture_jurchen_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_jurchen_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.lorrain
-			trigger = { NOT = { has_variable = adv_cheat_culture_lorrain } }
-		}
-		name = {
-			text = adv_cheat_event.culture.lorrain.selected
-			trigger = { has_variable = adv_cheat_culture_lorrain }
-		}
-		custom_tooltip = adv_cheat_event.culture.lorrain.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_lorrain } }
-			set_variable = adv_cheat_culture_lorrain
-		}
-		else = {
-			remove_variable = adv_cheat_culture_lorrain
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.neapolitan
-			trigger = { NOT = { has_variable = adv_cheat_culture_neapolitan } }
-		}
-		name = {
-			text = adv_cheat_event.culture.neapolitan.selected
-			trigger = { has_variable = adv_cheat_culture_neapolitan }
-		}
-		custom_tooltip = adv_cheat_event.culture.neapolitan.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_neapolitan } }
-			set_variable = adv_cheat_culture_neapolitan
-		}
-		else = {
-			remove_variable = adv_cheat_culture_neapolitan
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.sicilian
-			trigger = { NOT = { has_variable = adv_cheat_culture_sicilian } }
-		}
-		name = {
-			text = adv_cheat_event.culture.sicilian.selected
-			trigger = { has_variable = adv_cheat_culture_sicilian }
-		}
-		custom_tooltip = adv_cheat_event.culture.sicilian.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_sicilian } }
-			set_variable = adv_cheat_culture_sicilian
-		}
-		else = {
-			remove_variable = adv_cheat_culture_sicilian
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.thai_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_thai_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.thai_culture.selected
-			trigger = { has_variable = adv_cheat_culture_thai_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.thai_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_thai_culture } }
-			set_variable = adv_cheat_culture_thai_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_thai_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.turkish_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_turkish_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.turkish_culture.selected
-			trigger = { has_variable = adv_cheat_culture_turkish_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.turkish_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_turkish_culture } }
-			set_variable = adv_cheat_culture_turkish_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_turkish_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.turkoman_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_turkoman_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.turkoman_culture.selected
-			trigger = { has_variable = adv_cheat_culture_turkoman_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.turkoman_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_turkoman_culture } }
-			set_variable = adv_cheat_culture_turkoman_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_turkoman_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.vietnamese_culture
-			trigger = { NOT = { has_variable = adv_cheat_culture_vietnamese_culture } }
-		}
-		name = {
-			text = adv_cheat_event.culture.vietnamese_culture.selected
-			trigger = { has_variable = adv_cheat_culture_vietnamese_culture }
-		}
-		custom_tooltip = adv_cheat_event.culture.vietnamese_culture.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_vietnamese_culture } }
-			set_variable = adv_cheat_culture_vietnamese_culture
-		}
-		else = {
-			remove_variable = adv_cheat_culture_vietnamese_culture
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
-	}
-
-	option = {
-		name = {
-			text = adv_cheat_event.culture.welsh
-			trigger = { NOT = { has_variable = adv_cheat_culture_welsh } }
-		}
-		name = {
-			text = adv_cheat_event.culture.welsh.selected
-			trigger = { has_variable = adv_cheat_culture_welsh }
-		}
-		custom_tooltip = adv_cheat_event.culture.welsh.custom_tooltip
-		if = {
-			limit = { NOT = { has_variable = adv_cheat_culture_welsh } }
-			set_variable = adv_cheat_culture_welsh
-		}
-		else = {
-			remove_variable = adv_cheat_culture_welsh
-		}
-		trigger_event_silently = { id = adv_cheat_event.206 }
+		trigger_event_silently = { id = adv_cheat_event.213 }
 	}
 
 	option = {

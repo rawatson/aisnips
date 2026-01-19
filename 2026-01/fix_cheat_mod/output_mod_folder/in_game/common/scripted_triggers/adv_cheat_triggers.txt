@@ -49,7 +49,6 @@ is_adv_cheat_east_asia_on = {
 		has_variable = adv_cheat_CHI
 		has_variable = adv_cheat_KOR
 		has_variable = adv_cheat_MCH
-		has_variable = adv_cheat_SKO
 		has_variable = adv_cheat_TIB
 	}
 }
@@ -222,6 +221,7 @@ is_adv_cheat_west_africa_on = {
 	OR = {
 		has_variable = adv_cheat_DAH
 		has_variable = adv_cheat_MAL
+		has_variable = adv_cheat_SKO
 		has_variable = adv_cheat_SON
 	}
 }
@@ -271,6 +271,12 @@ is_adv_cheat_western_europe_on = {
 	}
 }
 
+is_adv_cheat_culture_central_asia_on = {
+	OR = {
+		has_variable = adv_cheat_culgroup_mongolian_group
+	}
+}
+
 is_adv_cheat_culture_central_europe_on = {
 	OR = {
 		has_variable = adv_cheat_culture_angrian
@@ -284,14 +290,36 @@ is_adv_cheat_culture_central_europe_on = {
 		has_variable = adv_cheat_culture_rhine_franconian
 		has_variable = adv_cheat_culture_ripuarian_franconian
 		has_variable = adv_cheat_culture_swabian
+		has_variable = adv_cheat_culgroup_swiss_group
 		has_variable = adv_cheat_culture_western_pomeranian
 		has_variable = adv_cheat_culture_westphalian
 	}
 }
 
+is_adv_cheat_culture_east_asia_on = {
+	OR = {
+		has_variable = adv_cheat_culgroup_chinese_group
+		has_variable = adv_cheat_culgroup_japanese_group
+		has_variable = adv_cheat_culture_jurchen_culture
+		has_variable = adv_cheat_culgroup_jurchen_group
+	}
+}
+
 is_adv_cheat_culture_eastern_europe_on = {
 	OR = {
+		has_variable = adv_cheat_culture_armenian_culture
+		has_variable = adv_cheat_culture_circassian_culture
+		has_variable = adv_cheat_culture_georgian_culture
+		has_variable = adv_cheat_culgroup_russian_group
 		has_variable = adv_cheat_culture_ruthenian
+		has_variable = adv_cheat_culture_turkish_culture
+		has_variable = adv_cheat_culture_turkoman_culture
+	}
+}
+
+is_adv_cheat_culture_north_america_on = {
+	OR = {
+		has_variable = adv_cheat_culgroup_haudenosaunee_group
 	}
 }
 
@@ -301,21 +329,22 @@ is_adv_cheat_culture_oceania_on = {
 	}
 }
 
-is_adv_cheat_culture_other_on = {
+is_adv_cheat_culture_south_america_on = {
 	OR = {
-		has_variable = adv_cheat_culture_armenian_culture
-		has_variable = adv_cheat_culture_circassian_culture
-		has_variable = adv_cheat_culture_english
-		has_variable = adv_cheat_culture_georgian_culture
-		has_variable = adv_cheat_culture_jurchen_culture
-		has_variable = adv_cheat_culture_lorrain
-		has_variable = adv_cheat_culture_neapolitan
-		has_variable = adv_cheat_culture_sicilian
+		has_variable = adv_cheat_culgroup_andean_group
+	}
+}
+
+is_adv_cheat_culture_south_asia_on = {
+	OR = {
+		has_variable = adv_cheat_culgroup_indian_group
+	}
+}
+
+is_adv_cheat_culture_southeast_asia_on = {
+	OR = {
 		has_variable = adv_cheat_culture_thai_culture
-		has_variable = adv_cheat_culture_turkish_culture
-		has_variable = adv_cheat_culture_turkoman_culture
 		has_variable = adv_cheat_culture_vietnamese_culture
-		has_variable = adv_cheat_culture_welsh
 	}
 }
 
@@ -330,17 +359,39 @@ is_adv_cheat_culture_southern_europe_on = {
 		has_variable = adv_cheat_culture_aragonese
 		has_variable = adv_cheat_culture_castilian
 		has_variable = adv_cheat_culture_catalan
+		has_variable = adv_cheat_culgroup_iberian_group
+		has_variable = adv_cheat_culture_neapolitan
 		has_variable = adv_cheat_culture_portuguese
+		has_variable = adv_cheat_culture_sicilian
 		has_variable = adv_cheat_culture_tuscan
+	}
+}
+
+is_adv_cheat_culture_west_africa_on = {
+	OR = {
+		has_variable = adv_cheat_culgroup_west_african_group
+	}
+}
+
+is_adv_cheat_culture_western_asia_on = {
+	OR = {
+		has_variable = adv_cheat_culgroup_arabian_group
+		has_variable = adv_cheat_culgroup_iranian_group
 	}
 }
 
 is_adv_cheat_culture_western_europe_on = {
 	OR = {
 		has_variable = adv_cheat_culture_anglo_irish
+		has_variable = adv_cheat_culgroup_celtic_group
+		has_variable = adv_cheat_culture_english
 		has_variable = adv_cheat_culture_frisian
 		has_variable = adv_cheat_culture_irish
+		has_variable = adv_cheat_culture_lorrain
+		has_variable = adv_cheat_culgroup_netherlandish_group
 		has_variable = adv_cheat_culture_norse_gael
+		has_variable = adv_cheat_culgroup_scottish_group
+		has_variable = adv_cheat_culture_welsh
 	}
 }
 
@@ -371,12 +422,19 @@ is_adv_cheat_any_country_on = {
 
 is_adv_cheat_any_culture_on = {
 	OR = {
+		is_adv_cheat_culture_central_asia_on = yes
 		is_adv_cheat_culture_central_europe_on = yes
+		is_adv_cheat_culture_east_asia_on = yes
 		is_adv_cheat_culture_eastern_europe_on = yes
+		is_adv_cheat_culture_north_america_on = yes
 		is_adv_cheat_culture_oceania_on = yes
-		is_adv_cheat_culture_other_on = yes
+		is_adv_cheat_culture_south_america_on = yes
+		is_adv_cheat_culture_south_asia_on = yes
+		is_adv_cheat_culture_southeast_asia_on = yes
 		is_adv_cheat_culture_southern_africa_on = yes
 		is_adv_cheat_culture_southern_europe_on = yes
+		is_adv_cheat_culture_west_africa_on = yes
+		is_adv_cheat_culture_western_asia_on = yes
 		is_adv_cheat_culture_western_europe_on = yes
 	}
 }

@@ -132,6 +132,7 @@ conquistador_advance = {
 	age = age_3_discovery
 	potential = {
 		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
 			has_variable = adv_cheat_religion_catholic
 			AND = {
 				religion = religion:catholic

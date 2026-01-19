@@ -73,6 +73,7 @@ tambo_advance = {
 		OR = {
 			has_variable = adv_cheat_CSU
 			has_variable = adv_cheat_INC
+			has_variable = adv_cheat_culgroup_andean_group
 			AND = {
 				OR = {
 					culture = {

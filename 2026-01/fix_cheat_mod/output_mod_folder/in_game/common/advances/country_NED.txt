@@ -1,8 +1,13 @@
 ﻿netherlandish_protoindustry = {
 	age = age_1_traditions
 	potential = {
-		culture = {
-			has_culture_group = culture_group:netherlandish_group
+		OR = {
+			has_variable = adv_cheat_culgroup_netherlandish_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:netherlandish_group
+				}
+			}
 		}
 	}
 	global_production_efficiency = medium_production_efficiency_bonus
@@ -134,8 +139,13 @@ utr_city_churches = {
 a_dynamic_society = {
 	age = age_2_renaissance
 	potential = {
-		culture = {
-			has_culture_group = culture_group:netherlandish_group
+		OR = {
+			has_variable = adv_cheat_culgroup_netherlandish_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:netherlandish_group
+				}
+			}
 		}
 	}
 	global_pop_promotion_speed_modifier = 0.2
@@ -268,8 +278,13 @@ utr_blessed_land = {
 an_early_urbanization = {
 	age = age_3_discovery
 	potential = {
-		culture = {
-			has_culture_group = culture_group:netherlandish_group
+		OR = {
+			has_variable = adv_cheat_culgroup_netherlandish_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:netherlandish_group
+				}
+			}
 		}
 	}
 	global_monthly_development = 0.001

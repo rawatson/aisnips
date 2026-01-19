@@ -1,8 +1,13 @@
 ﻿tercio = {
 	age = age_4_reformation
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = a_tercio
@@ -11,8 +16,13 @@
 catalan_galley = {
 	age = age_1_traditions
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = n_catalan_galley
@@ -21,8 +31,13 @@ catalan_galley = {
 early_iberian_caravel = {
 	age = age_1_traditions
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = n_early_iberian_caravel
@@ -31,8 +46,13 @@ early_iberian_caravel = {
 iberian_caravel = {
 	age = age_2_renaissance
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = n_iberian_caravel
@@ -41,8 +61,13 @@ iberian_caravel = {
 early_iberian_galleon = {
 	age = age_3_discovery
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = n_early_iberian_galleon
@@ -51,8 +76,13 @@ early_iberian_galleon = {
 square_rigged_caravel = {
 	age = age_3_discovery
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = n_square_rigged_caravel
@@ -61,8 +91,13 @@ square_rigged_caravel = {
 iberian_galleon = {
 	age = age_4_reformation
 	potential = {
-		culture = {
-			has_culture_group = culture_group:iberian_group
+		OR = {
+			has_variable = adv_cheat_culgroup_iberian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:iberian_group
+				}
+			}
 		}
 	}
 	unlock_unit = n_iberian_galleon

@@ -277,6 +277,10 @@ culture_regions:
   irish: western_europe
   norse_gael: western_europe
   anglo_irish: western_europe
+  english: western_europe
+  welsh: western_europe
+  lorrain: western_europe
+  scottish_group: western_europe
 
   # Central Europe
   swabian: central_europe
@@ -306,18 +310,27 @@ culture_regions:
   catalan: southern_europe
   castilian: southern_europe
   portuguese: southern_europe
+  neapolitan: southern_europe
+  sicilian: southern_europe
 
   # Eastern Europe
   armenian: eastern_europe
+  armenian_culture: eastern_europe
   georgian: eastern_europe
+  georgian_culture: eastern_europe
   russian_group: eastern_europe
   ruthenian: eastern_europe
+  circassian_culture: eastern_europe
+  turkish_culture: eastern_europe
+  turkoman_culture: eastern_europe
 
   # Western Asia
   arabian_group: western_asia
+  iranian_group: western_asia
 
   # Central Asia
   nomadic_steppe: central_asia
+  mongolian_group: central_asia
 
   # South Asia
   gujarati_language: south_asia
@@ -333,12 +346,16 @@ culture_regions:
   # Southeast Asia
   cham: southeast_asia
   thai: southeast_asia
+  thai_culture: southeast_asia
   vietnamese: southeast_asia
+  vietnamese_culture: southeast_asia
 
   # East Asia
   chinese_group: east_asia
   japanese_group: east_asia
   jurchen: east_asia
+  jurchen_culture: east_asia
+  jurchen_group: east_asia
 
   # West Africa
   west_african_group: west_africa

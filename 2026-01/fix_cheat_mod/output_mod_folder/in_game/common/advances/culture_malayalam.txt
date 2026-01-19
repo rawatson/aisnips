@@ -1,0 +1,17 @@
+﻿nair_military_advance = {
+	age = age_2_renaissance
+	icon = vij_an_army_for_city_of_victory
+	potential = {
+		OR = {
+			has_variable = adv_cheat_culgroup_indian_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:indian_group
+				}
+				culture.language = language:malayalam_language
+			}
+		}
+	}
+	requires = kalaripayattu_advance
+	nobles_estate_levy_size = 0.33
+}

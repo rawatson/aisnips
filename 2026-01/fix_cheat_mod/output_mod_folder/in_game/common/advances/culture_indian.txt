@@ -4,6 +4,7 @@
 		OR = {
 			has_variable = adv_cheat_AHO
 			has_variable = adv_cheat_MLB
+			has_variable = adv_cheat_culgroup_indian_group
 			AND = {
 				OR = {
 					has_or_had_tag = AHO

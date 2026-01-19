@@ -21,6 +21,7 @@ swiss_eternal_alliance = {
 			has_variable = adv_cheat_OBW
 			has_variable = adv_cheat_SYZ
 			has_variable = adv_cheat_URI
+			has_variable = adv_cheat_culgroup_swiss_group
 			AND = {
 				culture = {
 					has_culture_group = culture_group:swiss_group

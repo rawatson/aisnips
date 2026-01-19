@@ -1,8 +1,13 @@
 ﻿celtic_raiders_advance = {
 	age = age_1_traditions
 	potential = {
-		culture = {
-			has_culture_group = culture_group:celtic_group
+		OR = {
+			has_variable = adv_cheat_culgroup_celtic_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:celtic_group
+				}
+			}
 		}
 	}
 	army_initiative = 0.2
@@ -45,8 +50,13 @@ irish_monastacism_advance = {
 irish_travelling_bards_advance = {
 	age = age_1_traditions
 	potential = {
-		culture = {
-			has_culture_group = culture_group:celtic_group
+		OR = {
+			has_variable = adv_cheat_culgroup_celtic_group
+			AND = {
+				culture = {
+					has_culture_group = culture_group:celtic_group
+				}
+			}
 		}
 	}
 	hire_artist_cost_modifier = -0.025

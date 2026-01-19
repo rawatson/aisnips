@@ -398,6 +398,9 @@ class EntityExtractor:
                 )
             else:
                 self.entities[entity_id].source_files.add(source_file)
+        elif isinstance(value, dict):
+            # Recurse into nested blocks like { has_culture_group = ... }
+            self._extract_recursive(value, entities, source_file)
         elif isinstance(value, list):
             for v in value:
                 self._add_culture(v, entities, source_file)
@@ -621,8 +624,17 @@ class ModGenerator:
             elif entity.entity_type in ("culture", "culture_group"):
                 region = culture_region_mapping.get(entity.entity_id, "other")
                 entity.region = region
-                # Format culture names nicely
-                entity.display_name = entity.entity_id.replace('_', ' ').title()
+                # Format culture names nicely, removing "_culture" and "_group" suffixes
+                clean_id = entity.entity_id
+                is_group = entity.entity_type == "culture_group" or clean_id.endswith('_group')
+                for suffix in ('_culture', '_group'):
+                    if clean_id.endswith(suffix):
+                        clean_id = clean_id[:-len(suffix)]
+                display = clean_id.replace('_', ' ').title()
+                # Add "(Group)" suffix for culture groups to differentiate from individual cultures
+                if is_group:
+                    display += " (Group)"
+                entity.display_name = display
                 self.cultures[region].append(entity)
 
             elif entity.entity_type == "religion":
