@@ -4,43 +4,103 @@
 
 This mod for Europa Universalis V (EU5) allows players to unlock advances (technology/research options) from other nations, cultures, and religions through a cheat menu accessible by right-clicking their ruler.
 
+The mod is fully auto-generated from game data using `generate_mod.py`, ensuring consistency and easy updates when the game changes.
+
 ---
 
-## Part A: Original Design
+## Architecture
 
-### Architecture
+### File Structure
 
-The mod consists of four interconnected components:
+```
+fix_cheat_mod/
+├── common/                          # Source game data (copy from game files)
+│   ├── advances/                    # Advance definition files
+│   └── ...
+├── localization/                    # Source game localization
+│   └── english/
+│       └── country_names_l_english.yml
+├── output_mod_folder/               # Generated mod output
+│   ├── .metadata/
+│   │   └── metadata.json
+│   ├── in_game/
+│   │   ├── common/
+│   │   │   ├── advances/            # Transformed advance files
+│   │   │   ├── character_interactions/
+│   │   │   └── scripted_triggers/
+│   │   └── events/
+│   └── main_menu/
+│       └── localization/
+│           └── english/
+│               └── adv_cheat_l_english.yml
+├── generate_mod.py                  # Generation script
+├── config.yaml                      # Configuration
+├── DESIGN.md                        # This document
+└── CLAUDE.md                        # AI assistant notes
+```
 
-#### 1. Entry Point: Character Interaction
-**File:** `output_mod_folder/in_game/common/character_interactions/euro_tech_interaction.txt`
+### Components
+
+#### 1. Generator Script (`generate_mod.py`)
+
+The main Python script that:
+- Parses PDX script files using a custom parser
+- Extracts entity references (countries, cultures, religions, etc.) from `potential` blocks
+- Deduplicates countries with identical advance sets
+- Generates transformed advance files with cheat variable checks
+- Creates the event menu system
+- Generates scripted triggers for UI state
+- Produces localization with game-native variable lookups
+- Exports to the game mod folder
+
+#### 2. Configuration (`config.yaml`)
+
+Contains:
+- **export_path**: Where to copy the generated mod (e.g., game's mod folder)
+- **mod_name, mod_id, mod_version, game_version**: Metadata
+- **excluded_files**: Glob patterns for files to skip (generic game mechanics)
+- **formable_nations**: Country tags that get "(formable)" suffix in menu
+- **country_regions**: Manual mapping of country tags to regions
+- **culture_regions**: Manual mapping of cultures/culture groups to regions
+
+#### 3. Entry Point: Character Interaction
+
+**File:** `in_game/common/character_interactions/adv_cheat_interaction.txt`
 
 - Adds a menu option when right-clicking the ruler
 - Only available to human players
-- Triggers the main event `euro_advances_event.1`
+- Triggers the main event `adv_cheat_event.1`
 
-#### 2. Event System (UI/Logic)
-**File:** `output_mod_folder/in_game/events/euro_advances_event.txt` (7,403 lines, 77 events)
+#### 4. Event System (UI/Logic)
 
-Hierarchical menu structure in Korean:
+**File:** `in_game/events/adv_cheat_event.txt`
+
+Hierarchical menu structure:
 ```
-Main Menu (event.1)
-├── 현존 국가 (Existing Countries) → event.10 → event.1000-1021 (by region)
-├── 형성 국가 (Formable Countries) → event.11 → event.1100-1121 (by region)
-├── 문화/언어 (Culture/Language) → event.20 → event.2000-2020 (by region)
-├── 시대 진보 (Age Advances) → event.30 → event.3000-3005 (by age)
-└── 기타 진보 (Other Advances) → event.40 (religions, regions, etc.)
+Main Menu (event 1)
+├── Countries → Region Selector (event 10) → Region Menus (events 100+)
+├── Cultures → Region Selector (event 20) → Region Menus (events 200+)
+├── Religions → Direct Menu (event 30)
+└── Governments → Direct Menu (event 40)
 ```
 
-Each country/culture option toggles a variable (e.g., `set_variable = euro_tech_ENG`).
+Each entity option toggles a variable (e.g., `set_variable = adv_cheat_ENG`).
 
-#### 3. Scripted Triggers
-**File:** `output_mod_folder/in_game/common/scripted_triggers/euro_advances_triggers.txt` (747 lines)
+Menu features:
+- Selected items highlighted in green (`#g text#!` formatting)
+- Custom tooltips showing advances grouped by age
+- Regions ordered by continent (Europe → Asia → Africa → Americas → Oceania)
+- Merged entries for countries with identical advance sets
 
-Defines helper triggers like `is_euro_advances_western_europe_on` that check if any country in a region has been selected. Used for UI state (showing selected/unselected status).
+#### 5. Scripted Triggers
 
-#### 4. Modified Advance Files
-**Directory:** `output_mod_folder/in_game/common/advances/` (162 files)
+**File:** `in_game/common/scripted_triggers/adv_cheat_triggers.txt`
+
+Defines helper triggers like `is_adv_cheat_western_europe_on` that check if any entity in a region has been selected. Used for UI highlighting in region selectors.
+
+#### 6. Transformed Advance Files
+
+**Directory:** `in_game/common/advances/`
 
 Each advance's `potential` block is transformed to include cheat variables:
 
@@ -61,7 +121,7 @@ english_tradition = {
     age = age_1_traditions
     potential = {
         OR = {
-            has_variable = euro_tech_ENG    # Cheat bypass
+            has_variable = adv_cheat_ENG    # Cheat bypass
             AND = {
                 has_or_had_tag = ENG        # Original condition preserved
             }
@@ -71,207 +131,151 @@ english_tradition = {
 }
 ```
 
-### Data Flow
+#### 7. Localization
 
-```
-Player clicks ruler → Character Interaction → Event Menu
-                                                  ↓
-Player selects England → set_variable = euro_tech_ENG
-                                                  ↓
-Advance files check: OR { has_variable = euro_tech_ENG, has_or_had_tag = ENG }
-                                                  ↓
-English advances become visible and researchable
-```
+**File:** `main_menu/localization/english/adv_cheat_l_english.yml`
 
-### Current Statistics
-
-| Component | Count |
-|-----------|-------|
-| Source advance files | 189 |
-| Output advance files | 162 |
-| Events | 77 |
-| Event file lines | 7,403 |
-| Scripted triggers | ~100 |
-| Supported game version | 1.0.8 |
+Features:
+- Uses `$TAG$` lookups for country names (pulls from game localization)
+- Green text formatting: `#g text#!`
+- Custom tooltips with advance details:
+  ```
+  4 advances
+  $BULLET_WITH_TAB$[ShowShortAgeName('age_1_traditions')]: [ShowAdvanceName('advance_1')], [ShowAdvanceName('advance_2')]
+  $BULLET_WITH_TAB$[ShowShortAgeName('age_2_renaissance')]: [ShowAdvanceName('advance_3')], [ShowAdvanceName('advance_4')]
+  ```
 
 ---
 
-## Part B: Identified Issues
+## Entity Types Supported
 
-### 1. Missing Countries (6 country files not transformed)
-- `country_ITA.txt` (Italy)
-- `country_KRS.txt` (Kurdistan)
-- `country_MCH.txt` (Manchuria)
-- `country_MLC.txt` (Malacca)
-- `country_MSA.txt` (Mysore?)
-- `country_SKO.txt` (South Korea/Joseon-related?)
-
-These countries exist in source data but have no transformed output, making their advances inaccessible via the cheat menu.
-
-### 2. Hand-Coded Event File
-The 7,403-line event file appears to be entirely hand-written:
-- Country lists hard-coded in each regional event
-- Menu structure manually maintained
-- Korean text inline (no localization file)
-- Prone to typos and omissions
-
-### 3. Hand-Coded Triggers
-The scripted triggers file has manually curated country lists that must match:
-- The event file options
-- The actual advance file transformations
-- The source game data
-
-### 4. Version Drift
-- Mod targets version 1.0.8
-- Git history shows "Full EU5 1.0.10 import"
-- New countries/advances in 1.0.10 may not be covered
-
-### 5. Inconsistent Transformation
-Comparing source to output reveals the transformation was likely done semi-manually:
-- Some files transformed differently than others
-- The `4_choices_*.txt` files renamed to `zz_choices_*.txt` but not all advances included
-- Culture checks (e.g., `culture = culture:welsh`) extract country tags inconsistently
-
-### 6. No Generation Pipeline
-Without automation, every game update requires:
-- Manual identification of new/changed advance files
-- Manual transformation of potential blocks
-- Manual update of events for new countries
-- Manual update of triggers
-- Manual update of localization
+| Type | Variable Prefix | Example |
+|------|----------------|---------|
+| Country | `adv_cheat_` | `adv_cheat_ENG` |
+| Culture | `adv_cheat_culture_` | `adv_cheat_culture_welsh` |
+| Culture Group | `adv_cheat_culgroup_` | `adv_cheat_culgroup_chinese_group` |
+| Religion | `adv_cheat_religion_` | `adv_cheat_religion_catholic` |
+| Government | `adv_cheat_gov_` | `adv_cheat_gov_monarchy` |
+| Region | `adv_cheat_region_` | (detected but not shown in menu) |
+| Area | `adv_cheat_area_` | (detected but not shown in menu) |
 
 ---
 
-## Part C: Recommended Changes
+## Special Features
 
-### Primary Recommendation: Create an Automated Generation Pipeline
+### Country Deduplication
 
-Build a Python script (`generate_mod.py`) that:
+Countries with identical advance sets are merged into single menu entries displaying all names:
+- "Bavaria, Lower Bavaria, Upper Bavaria, ..." (7 Bavarian tags)
+- "Cusco, Inca Empire"
+- "Meissen, Saxony"
 
-#### Phase 1: Parse Source Data
-```
-common/advances/*.txt → Extract:
-  - All advance definitions
-  - potential blocks (has_or_had_tag, culture, religion checks)
-  - Country tag associations
-  - Culture associations
-  - Religion associations
-```
+This reduces menu clutter while maintaining full functionality.
 
-#### Phase 2: Build Country/Culture/Religion Registry
-```
-For each advance file:
-  - Extract all referenced country tags (ENG, FRA, etc.)
-  - Extract all referenced cultures (culture:welsh, etc.)
-  - Extract all referenced religions
-  - Map advance files → entities they unlock for
-```
+### Formable Nations
 
-#### Phase 3: Generate Output Files
+Countries in the `formable_nations` config list get a "(formable)" suffix:
+- "Great Britain (formable)"
+- "Roman Empire (formable)"
 
-**A. Transform Advance Files**
-- Parse each source file
-- Wrap `potential` blocks with `OR { has_variable = euro_tech_XXX, AND { original } }`
-- Handle multi-tag advances (e.g., ENG/WLS/GBR shares)
-- Output to `output_mod_folder/in_game/common/advances/`
+### Region Ordering
 
-**B. Generate Events File**
-- Build hierarchical menus from discovered data
-- Generate event options programmatically
-- Include proper toggle logic (set/remove variable)
-- Output to `output_mod_folder/in_game/events/`
+Regions are grouped by continent for logical menu navigation:
+1. Europe: Western, Central, Southern, Northern, Eastern
+2. Asia: Western, Central, South, Southeast, East, Japan
+3. Africa: North, West, Central, East, Southern
+4. Americas: North, Central, South
+5. Other: Oceania, Special, Other
 
-**C. Generate Scripted Triggers**
-- Create `is_euro_advances_*_on` triggers from country lists
-- Auto-generate all regional groupings
-- Output to `output_mod_folder/in_game/common/scripted_triggers/`
+### Culture Group Support
 
-**D. Generate Localization**
-- Create English localization file
-- Optionally keep Korean as alternative
-- Output to `output_mod_folder/in_game/localization/`
+Both individual cultures and culture groups are supported:
+- Individual cultures: "Welsh", "Castilian"
+- Culture groups: "Chinese (Group)", "Japanese (Group)"
 
-### Data Model
+The "(Group)" suffix distinguishes groups from individual cultures with similar names.
 
-```python
-@dataclass
-class AdvanceEntity:
-    type: str  # "country", "culture", "religion", "region", "government"
-    id: str    # "ENG", "welsh", "catholic", etc.
-    display_name: str
-    region: str  # "western_europe", "east_asia", etc.
-    files: List[str]  # Which advance files reference this
+---
 
-@dataclass
-class RegionGroup:
-    id: str
-    display_name: str
-    entities: List[AdvanceEntity]
-```
-
-### File Organization After Changes
+## Data Flow
 
 ```
-fix_cheat_mod/
-├── common/                          # Source game data (unchanged)
-├── output_mod_folder/               # Generated mod output
-├── generate_mod.py                  # Generation script
-├── config.yaml                      # Configuration (regions, display names)
-├── DESIGN.md                        # This document
-└── templates/                       # Jinja2 templates for events/triggers
-    ├── event_menu.txt.j2
-    ├── event_country.txt.j2
-    └── triggers.txt.j2
+Source Game Files (common/advances/*.txt)
+            ↓
+    PDX Parser extracts:
+    - Advance definitions
+    - Potential blocks
+    - Entity references (tags, cultures, religions)
+            ↓
+    Entity Extractor builds:
+    - Entity registry
+    - Advance-to-entity mapping
+            ↓
+    Country Deduplicator finds:
+    - Countries with identical advance sets
+    - Creates merged entities
+            ↓
+    Mod Generator outputs:
+    - Transformed advance files
+    - Event menu system
+    - Scripted triggers
+    - Localization
+            ↓
+    Export copies to game mod folder
 ```
 
-### Benefits
+---
 
-1. **Accuracy**: All countries/cultures from source data automatically included
+## Usage
+
+### Generating the Mod
+
+```bash
+python generate_mod.py
+```
+
+Output:
+- Processes all advance files
+- Reports entity counts and advance breakdown by age
+- Lists any merged/deduplicated countries
+- Generates all mod files
+- Exports to configured game mod folder
+
+### Configuration
+
+Edit `config.yaml` to:
+- Set the export path for your game installation
+- Update game version for compatibility
+- Add new formable nations
+- Override region assignments for countries/cultures
+
+### Updating for New Game Versions
+
+1. Copy new game files to `common/` and `localization/`
+2. Review and update `excluded_files` if needed
+3. Add any new formable nations to the config
+4. Run `generate_mod.py`
+5. Test in-game
+
+---
+
+## Statistics
+
+| Component | Current Count |
+|-----------|---------------|
+| Source advance files | ~162 (processed) |
+| Unique entities | ~175 |
+| Country regions | 22 |
+| Culture regions | ~15 |
+| Supported game version | 1.0.10 |
+
+---
+
+## Benefits of Automated Generation
+
+1. **Accuracy**: All entities from source data automatically included
 2. **Maintainability**: Game updates only require re-running the generator
 3. **Consistency**: Events, triggers, and advance files always in sync
-4. **Localization**: Proper localization support instead of inline Korean
-5. **Debuggability**: Clear mapping from source → output
-6. **Extensibility**: Easy to add new categories (governments, playstyles, etc.)
-
-### Implementation Approach
-
-1. Write a PDX script parser (the game's text format)
-2. Parse all `common/advances/*.txt` files
-3. Extract entity references from `potential` blocks
-4. Group entities by region (using a configuration file)
-5. Generate all output files using templates
-6. Update metadata.json with current game version
-
-### Configuration File Example (`config.yaml`)
-
-```yaml
-game_version: "1.0.10"
-mod_version: "2.0"
-
-regions:
-  western_europe:
-    display_name: "Western Europe"
-    countries: [ENG, SCO, WLS, FRA, BUR, ...]  # Auto-populated, can override
-
-  # ... other regions
-
-excluded_files:
-  - "0_age_*.txt"
-  - "1_building_unlocks.txt"
-  - "_advances_template.txt"
-  # Files that shouldn't be transformed
-```
-
----
-
-## Summary
-
-The current mod is functional but fragile due to hand-coded components that can drift out of sync with the game data. The recommended solution is to build an automated generation pipeline that:
-
-1. Parses the source game data
-2. Extracts all relevant entities (countries, cultures, religions)
-3. Generates all mod components programmatically
-4. Ensures consistency and completeness
-5. Makes future updates trivial
-
-This approach transforms maintenance from "manually edit 8,000+ lines across multiple files" to "run a script and review the output."
+4. **Localization**: Uses game's native variable lookups for proper names
+5. **Debuggability**: Clear mapping from source to output
+6. **Deduplication**: Automatically detects and merges identical advance sets
