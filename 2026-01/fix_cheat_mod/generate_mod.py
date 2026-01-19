@@ -609,6 +609,7 @@ class ModGenerator:
         region_mapping = self.config.get('country_regions', {})
         culture_region_mapping = self.config.get('culture_regions', {})
         country_names = self.config.get('country_names', {})
+        formable_nations = set(self.config.get('formable_nations', []))
 
         # First pass: set up all entities with their properties
         country_entities = []
@@ -617,8 +618,11 @@ class ModGenerator:
                 # Determine region from config or source file
                 region = region_mapping.get(entity.entity_id, self._guess_region_from_file(entity))
                 entity.region = region
-                # Set display name from config
-                entity.display_name = country_names.get(entity.entity_id, entity.entity_id)
+                # Set display name from config, add (formable) suffix if applicable
+                display_name = country_names.get(entity.entity_id, entity.entity_id)
+                if entity.entity_id in formable_nations:
+                    display_name += " (formable)"
+                entity.display_name = display_name
                 country_entities.append(entity)
 
             elif entity.entity_type in ("culture", "culture_group"):
@@ -720,8 +724,8 @@ class ModGenerator:
                 return 'south_asia'
         return 'other'
 
-    def _get_entity_advances_by_age(self, entity: AdvanceEntity) -> Dict[str, int]:
-        """Get a breakdown of advances by age for a given entity"""
+    def _get_entity_advances_by_age(self, entity: AdvanceEntity) -> Dict[str, List[str]]:
+        """Get advances grouped by age for a given entity"""
         # Build the full entity_id key used in advance.entities
         if entity.entity_type == "country":
             entity_key = f"country:{entity.entity_id}"
@@ -734,25 +738,33 @@ class ModGenerator:
         else:
             entity_key = f"{entity.entity_type}:{entity.entity_id}"
 
-        advances_by_age = defaultdict(int)
+        advances_by_age = defaultdict(list)
         for advance in self.processor.advances.values():
             if entity_key in advance.entities:
                 age = advance.age if advance.age else "unknown"
-                advances_by_age[age] += 1
+                advances_by_age[age].append(advance.advance_id)
+
+        # Sort advances within each age
+        for age in advances_by_age:
+            advances_by_age[age].sort()
 
         return dict(advances_by_age)
 
-    def _format_advances_description(self, advances_by_age: Dict[str, int]) -> str:
-        """Format advances breakdown as a localization description string"""
-        total = sum(advances_by_age.values())
+    def _format_advances_description(self, advances_by_age: Dict[str, List[str]]) -> str:
+        """Format advances as a detailed localization description string"""
+        total = sum(len(advs) for advs in advances_by_age.values())
         if total == 0:
             return "No advances"
 
         lines = [f"{total} advance{'s' if total != 1 else ''}"]
+
+        # Sort ages in order (age_1, age_2, etc.)
         for age in sorted(advances_by_age.keys()):
-            count = advances_by_age[age]
-            age_display = age.replace('_', ' ').title()
-            lines.append(f"{age_display}: {count}")
+            advances = advances_by_age[age]
+            # Format advances as comma-separated list
+            advance_list = ", ".join(f"[ShowAdvanceName('{adv_id}')]" for adv_id in advances)
+            # Single line with bullet, age name and advances
+            lines.append(f"$BULLET_WITH_TAB$[ShowShortAgeName('{age}')]: {advance_list}")
 
         return "\\n".join(lines)
 
@@ -1388,6 +1400,7 @@ class ModGenerator:
         lines.append("")
 
         # Country names (including merged entities)
+        formable_nations = set(self.config.get('formable_nations', []))
         for region_entities in self.countries.values():
             for entity in region_entities:
                 is_merged = isinstance(entity, MergedEntity)
@@ -1395,14 +1408,21 @@ class ModGenerator:
                 if is_merged:
                     # Use first entity's ID as the key
                     base_key = f"{self.NAMESPACE}.country.{entity.entities[0].entity_id}"
-                    # Combined display name with $TAG$ lookups
-                    name_parts = [f"${e.entity_id}$" for e in entity.entities]
+                    # Combined display name with $TAG$ lookups, adding (formable) where applicable
+                    name_parts = []
+                    for e in entity.entities:
+                        name = f"${e.entity_id}$"
+                        if e.entity_id in formable_nations:
+                            name += " (formable)"
+                        name_parts.append(name)
                     display_name = ", ".join(name_parts)
                     # Calculate advances for the first entity (all have same advances)
                     advances_by_age = self._get_entity_advances_by_age(entity.entities[0])
                 else:
                     base_key = f"{self.NAMESPACE}.country.{entity.entity_id}"
                     display_name = f"${entity.entity_id}$"
+                    if entity.entity_id in formable_nations:
+                        display_name += " (formable)"
                     advances_by_age = self._get_entity_advances_by_age(entity)
 
                 desc = self._format_advances_description(advances_by_age)

@@ -35,6 +35,39 @@ excluded_files:
   - "diplomacy_unlocks.txt"
   - "readme.txt"
 
+# Formable nations - these get "(formable)" suffix in the menu
+formable_nations:
+  - GBR   # Great Britain
+  - NED   # Netherlands
+  - IRE   # Ireland
+  - CEL   # Celtic Union
+  - PRU   # Prussia
+  - GER   # Germany
+  - TWS   # Two Sicilies
+  - ROM   # Roman Empire
+  - SPA   # Spain
+  - ITA   # Italy
+  - SCA   # Scandinavia
+  - FIN   # Finland
+  - CIR   # Circassia
+  - RUS   # Russia
+  - PLC   # Poland-Lithuania
+  - ILK   # Ilkhanate
+  - IRA   # Persia
+  - MGE   # Mongol Empire
+  - TIM   # Timurids
+  - HIN   # Hindustan
+  - MUG   # Mughals
+  - NPL   # Nepal
+  - AYU   # Ayutthaya
+  - SIA   # Siam
+  - CTH   # Carthage
+  - DAH   # Dahomey
+  - KON   # Kongo
+  - USA   # United States
+  - AZT   # Aztec Empire
+  - INC   # Inca Empire
+
 # Country to region mapping
 # Countries not listed here will be auto-assigned based on source file patterns
 country_regions:
