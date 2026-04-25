@@ -1,0 +1,92 @@
+You are completing a multiple-choice HellaSwag benchmark batch.
+
+For each item, pick the ending that most plausibly continues the context.
+Return only JSON in this exact shape:
+{"answers":[{"id":"EXAMPLE_ID","choice":0}]}
+
+Rules:
+- choice must be one integer: 0, 1, 2, or 3.
+- answer every id exactly once.
+- do not include explanations, markdown, confidence, or extra keys.
+
+Items:
+
+1. id: 24
+context: A man is sitting on a roof. he
+endings:
+0: is using wrap to wrap a pair of skis.
+1: is ripping level tiles off.
+2: is holding a rubik's cube.
+3: starts pulling up roofing on a roof.
+
+2. id: 92
+context: A lady walks to a barbell. She bends down and grabs the pole. the lady
+endings:
+0: swings and lands in her arms.
+1: pulls the barbell forward.
+2: pulls a rope attached to the barbell.
+3: stands and lifts the weight over her head.
+
+3. id: 106
+context: Two women in a child are shown in a canoe while a man pulls the canoe while standing in the water, with other individuals visible in the background. the child and a different man
+endings:
+0: are then shown paddling down a river in a boat while a woman talks.
+1: are driving the canoe, they go down the river flowing side to side.
+2: sit in a canoe while the man paddles.
+3: walking go down the rapids, while the man in his helicopter almost falls and goes out of canoehood.
+
+4. id: 114
+context: A boy is running down a track. the boy
+endings:
+0: runs into a car.
+1: gets in a mat.
+2: lifts his body above the height of a pole.
+3: stands on his hands and springs.
+
+5. id: 116
+context: The boy lifts his body above the height of a pole. The boy lands on his back on to a red mat. the boy
+endings:
+0: turns his body around on the mat.
+1: gets up from the mat.
+2: continues to lift his body over the pole.
+3: wiggles out of the mat.
+
+6. id: 117
+context: The boy lands on his back on to a red mat. The boy gets up from the mat. the boy
+endings:
+0: starts doing spins.
+1: celebrates by clapping and flexing both arms.
+2: is dancing on the mat.
+3: does jump jacks on his stick.
+
+7. id: 149
+context: A man is standing in front of a camera. He starts playing a harmonica for the camera. he
+endings:
+0: begins to play the harmonica with his body while looking at the camera.
+1: seems to be singing while playing the harmonica.
+2: rocks back and forth to the music as he goes.
+3: painted a fence in front of the camera.
+
+8. id: 170
+context: A cartoon animation video is shown with people wandering around and rockets being shot. two men
+endings:
+0: fight robots of evil and ends with a to be continued.
+1: are then shown in closeups shooting a shot put.
+2: push a child in a speedboat in the water.
+3: look in the cameraman's eye and smile.
+
+9. id: 180
+context: A man is holding a pocket knife while sitting on some rocks in the wilderness. then he
+endings:
+0: opens a can of oil put oil on the knife, and puts oil on a knife and press it through a can filled with oil then cuts several pieces from the sandwiches.
+1: takes a small stone from the flowing river and smashes it on another stone.
+2: uses the knife to shave his leg.
+3: sand the rocks and tops them by using strong pressure.
+
+10. id: 182
+context: Then he takes a small stone from the flowing river and smashes it on another stone. He starts to crush the small stone to smaller pieces. he
+endings:
+0: cuts the center stone in half and blow it on to make it bigger.
+1: grind it hard to make the pieces smaller.
+2: eventually brings it back into view and adds it to the smaller ones to make a small triangular shaped piece.
+3: starts to party with them and throw the pieces by hand while they celebrate.
